@@ -31,11 +31,12 @@
 
 样图与每种画风的示例提示词见 [examples/](examples/)。
 
-| 风格 1 · 纯人类手绘儿童涂色页 |
-|---|
-| <img src="examples/01-childlike-coloring.png" width="320"> |
+| | | | |
+|:--:|:--:|:--:|:--:|
+| <img src="examples/01-childlike-coloring.png" width="200"><br>**1** 纯人类手绘儿童涂色 | <img src="examples/02-minimal-line.png" width="200"><br>**2** 极简线条 xkcd 火柴人 | <img src="examples/03-crayon.png" width="200"><br>**3** 蜡笔童涂 | <img src="examples/04-ghibli.png" width="200"><br>**4** 吉卜力 |
+| <img src="examples/05-bean-doodle.png" width="200"><br>**5** 小豆人信息图 | <img src="examples/06-ms-paint.png" width="200"><br>**6** MS Paint 烂涂鸦 | <img src="examples/07-pen-scribble.png" width="200"><br>**7** 圆珠笔单线涂鸦 | |
 
-> 风格 2–7 的样图陆续补全中(均已用本仓库配方验证产出),完整对照见 [examples/](examples/)。
+> 每种画风的输入示例与完整提示词见 [examples/](examples/)。
 
 ## 接入各 Agent 工具
 

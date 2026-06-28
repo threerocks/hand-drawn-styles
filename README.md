@@ -22,10 +22,12 @@
 | 编号 | 名称 | 调性 | 英文别名 |
 |------|------|------|----------|
 | 1 | 纯人类手绘儿童涂色页 | 大人画粗黑线稿 + 孩子填色,真实纸面拍摄感,适合讲故事 / 亲子 | `handmade` `childlike-coloring` |
-| 2 | 极简黑白线条漫画手稿 | 粗糙速写、不闭合线条、高对比留白,独立漫画感 | `minimal-line` `ink-sketch` |
+| 2 | 极简黑白线条讲解漫画(xkcd 火柴人) | 纯细线火柴人、圆角分镜、标题+说明,讲解示意图 | `xkcd` `stickman` `minimal-line` |
 | 3 | 蜡笔童涂 | 5 岁小孩用蜡笔画的笨拙"坏画",歪扭出框、引人发笑 | `crayon` `kid-crayon` |
 | 4 | 吉卜力风 | 柔和水彩、暖光、治愈梦幻的手绘动画感 | `ghibli` |
-| 5 | 小豆人涂鸦信息图 | 黑色圆豆人讲解图,单橙点缀、手绘箭头标注,竖版多格 | `bean` `doodle` |
+| 5 | 小豆人涂鸦信息图 | 黑色圆豆人讲解图,单橙点缀、手绘箭头标注,竖版多格 | `bean` `blob` |
+| 6 | MS Paint 烂涂鸦 | 鼠标硬画的病毒级"故意画烂"风(第二个吉卜力),越烂越好笑 | `ms-paint` `bad-doodle` `ugly` |
+| 7 | 圆珠笔单线涂鸦 | 黑色圆珠笔缠绕线速写,艺术手稿感,适合肖像 / 动物 | `scribble` `pen-scribble` `ballpoint` |
 
 样图与每种画风的示例提示词见 [examples/](examples/)。
 
@@ -33,9 +35,11 @@
 |---|
 | <img src="examples/01-childlike-coloring.png" width="320"> |
 
+> 风格 2–7 的样图陆续补全中(均已用本仓库配方验证产出),完整对照见 [examples/](examples/)。
+
 ## 接入各 Agent 工具
 
-核心是两个工具无关的文件:[`PROTOCOL.md`](PROTOCOL.md)(执行流程)+ [`STYLES.md`](STYLES.md)(5 段画风配方)。任何 Agent 只要"读到"这两个文件即可。
+核心是两个工具无关的文件:[`PROTOCOL.md`](PROTOCOL.md)(执行流程)+ [`STYLES.md`](STYLES.md)(7 段画风配方)。任何 Agent 只要"读到"这两个文件即可。
 
 ```bash
 git clone https://github.com/threerocks/hand-drawn-styles.git

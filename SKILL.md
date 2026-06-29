@@ -1,6 +1,6 @@
 ---
 name: hand-drawn
-description: 生成手绘/插画风格的生图提示词(prompt)。内置 7 种已验证画风——①纯人类手绘儿童涂色页 ②极简黑白线条讲解漫画(xkcd火柴人) ③蜡笔童涂(5岁小孩坏画) ④吉卜力 ⑤小豆人黑色涂鸦信息图 ⑥MS Paint 烂涂鸦(the worse the better) ⑦圆珠笔单线涂鸦。用户没指定画风就列菜单让其选;也可用中文名/编号/英文别名显式指定。只产出最终 prompt 纯文本,不负责生图、不锁定出图比例。触发词:手绘、画风、用XX风格画、生成手绘提示词、童涂色、极简线条、火柴人、xkcd、蜡笔风、吉卜力、ghibli、小豆人、MS Paint、烂涂鸦、圆珠笔、scribble、doodle、hand-drawn style。
+description: 生成手绘/插画风格的生图提示词(prompt)。内置 8 种已验证画风——①纯人类手绘儿童涂色页 ②极简黑白线条讲解漫画(xkcd火柴人) ③蜡笔童涂(5岁小孩坏画) ④吉卜力 ⑤小豆人黑色涂鸦信息图 ⑥MS Paint 烂涂鸦(the worse the better) ⑦圆珠笔单线涂鸦 ⑧蜡笔实拍(像真蜡笔纸照片)。用户没指定画风就列菜单让其选;也可用中文名/编号/英文别名显式指定。只产出最终 prompt 纯文本,不负责生图、不锁定出图比例。触发词:手绘、画风、用XX风格画、生成手绘提示词、童涂色、极简线条、火柴人、xkcd、蜡笔风、吉卜力、ghibli、小豆人、MS Paint、烂涂鸦、圆珠笔、scribble、蜡笔实拍、real-crayon、doodle、hand-drawn style。
 ---
 
 # 手绘风格 prompt 生成器(Claude Code 适配)

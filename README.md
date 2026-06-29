@@ -28,19 +28,20 @@
 | 5 | 小豆人涂鸦信息图 | 黑色圆豆人讲解图,单橙点缀、手绘箭头标注,竖版多格 | `bean` `blob` |
 | 6 | MS Paint 烂涂鸦 | 鼠标硬画的病毒级"故意画烂"风(第二个吉卜力),越烂越好笑 | `ms-paint` `bad-doodle` `ugly` |
 | 7 | 圆珠笔单线涂鸦 | 黑色圆珠笔缠绕线速写,艺术手稿感,适合肖像 / 动物 | `scribble` `pen-scribble` `ballpoint` |
+| 8 | 蜡笔实拍 | 像一张真蜡笔纸的照片,强制露白 / 蜡质笔触,一眼真人手涂(比 #3 更真实) | `real-crayon` `crayon-photo` |
 
 样图与每种画风的示例提示词见 [examples/](examples/)。
 
 | | | | |
 |:--:|:--:|:--:|:--:|
 | <img src="examples/01-childlike-coloring.png" width="200"><br>**1** 纯人类手绘儿童涂色 | <img src="examples/02-minimal-line.png" width="200"><br>**2** 极简线条 xkcd 火柴人 | <img src="examples/03-crayon.png" width="200"><br>**3** 蜡笔童涂 | <img src="examples/04-ghibli.png" width="200"><br>**4** 吉卜力 |
-| <img src="examples/05-bean-doodle.png" width="200"><br>**5** 小豆人信息图 | <img src="examples/06-ms-paint.png" width="200"><br>**6** MS Paint 烂涂鸦 | <img src="examples/07-pen-scribble.png" width="200"><br>**7** 圆珠笔单线涂鸦 | |
+| <img src="examples/05-bean-doodle.png" width="200"><br>**5** 小豆人信息图 | <img src="examples/06-ms-paint.png" width="200"><br>**6** MS Paint 烂涂鸦 | <img src="examples/07-pen-scribble.png" width="200"><br>**7** 圆珠笔单线涂鸦 | <img src="examples/08-real-crayon.png" width="200"><br>**8** 蜡笔实拍 |
 
 > 每种画风的输入示例与完整提示词见 [examples/](examples/)。
 
 ## 接入各 Agent 工具
 
-核心是两个工具无关的文件:[`PROTOCOL.md`](PROTOCOL.md)(执行流程)+ [`STYLES.md`](STYLES.md)(7 段画风配方)。任何 Agent 只要"读到"这两个文件即可。
+核心是两个工具无关的文件:[`PROTOCOL.md`](PROTOCOL.md)(执行流程)+ [`STYLES.md`](STYLES.md)(8 段画风配方)。任何 Agent 只要"读到"这两个文件即可。
 
 ```bash
 git clone https://github.com/threerocks/hand-drawn-styles.git

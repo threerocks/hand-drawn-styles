@@ -47,25 +47,27 @@ xkcd 风格的极简黑白火柴人讲解漫画,画在米白/奶油色纸上。
 
 ## 3. 蜡笔童涂(5岁小孩坏画)
 
-> 纯风格。比例:不传则不注入。占位符 `【主体】【主色调】【标题词】` 自动推断。
+> 接近纯风格。比例:不传则不注入。占位符 `【主体】【主色调】【标题词】` 自动推断。
 >
-> 关键:必须当成"一张真蜡笔涂在纸上的照片",并强制"涂不满、大量露白、有方向笔触"——这是"一眼真人"的命门(经 gpt-image 实测,旧版偏数字/太干净已被否)。
+> 这是"小孩自己画的坏画"(偏插画/图形感)。要"像真蜡笔涂在纸上的照片、一眼真人手涂"请用 [#8 蜡笔实拍](#8-蜡笔实拍真儿童手涂纸张)。
 
 ```
-A cellphone PHOTO of a real drawing made by a 5-year-old with wax crayons on a slightly wrinkled sheet of white printer paper. It must look photographed on real paper — visible paper texture, faint shadows and wrinkles, off-white tone — NOT a digital illustration.
-Flat naive composition. Subject: 【主体】.
+A drawing made by a real 5-year-old child with crayons on white paper.
+NOT made by an artist. It should look clumsy, messy, and "bad" on purpose.
 
-Clumsy and "bad" on purpose: shaky wobbly hand-drawn outlines that wander and don't close; wrong proportions; uneven shapes; if there is a face, eyes different sizes and a crooked smile.
+Subject: 【主体】.
 
-The CRAYON COLORING must look genuinely real (most important):
-- real waxy crayon texture with visible directional strokes; heavy pressure marks in some spots and barely-there light strokes in others; waxy build-up and smudges
-- coverage is INCOMPLETE — large areas of bare white paper show THROUGH even inside the colored shapes (roughly 40–50% of each colored area left unfilled and streaky)
-- strokes go in different directions, overlapping and broken, like a kid scribbling with no plan
-- color clearly overflows past the outlines in several places
-- bright primary crayon colors (【主色调】, red, yellow, blue, green), absolutely NO smooth even fill, NO gradient, NO blending, NO uniform digital crayon-filter texture
-- a wobbly hand-lettered title "【标题词】" in uneven multicolor capital letters on a crooked baseline
+MANDATORY childlike flaws (do not clean these up):
+- shaky wobbly outlines that wander, overshoot corners, and never close neatly
+- often double-drawn lines where the kid went over the same edge twice
+- proportions clumsy and wrong; arms and legs are thin crooked stick-lines with no volume
+- face uneven and asymmetric: eyes different sizes and not level, crooked smile, features off-center
+- coloring is messy and goes OUTSIDE the outlines; large patches of white paper left unfilled; scribble strokes in random directions
+- bright flat primary crayon colors (【主色调】, and red, yellow, green, purple, black), no shading, no gradient, no blending
+- hand-lettered title "【标题词】" at the top in uneven wobbly capital letters, each a different color, on a crooked baseline, letters different sizes
 
-Avoid anything cute, polished, symmetric or professionally illustrated. It must look like a genuine photo of a real child's messy crayon page.
+Flat naïve composition, objects floating with no perspective, plain white background.
+Look genuinely crude — avoid anything cute, polished, symmetric, balanced, or professional.
 ```
 
 ---
@@ -138,4 +140,29 @@ Panels:
 大量快速、随性、来回缠绕的细线条,线条不闭合、带偶然性,靠线的疏密缠绕表现明暗与体积,一气呵成的速写感。
 纯单色——黑色墨线 + 白纸,无平涂色块,无数字渐变。
 自由、即兴、艺术化的手稿气质,而非工整插画。
+```
+
+---
+
+## 8. 蜡笔实拍(真·儿童手涂纸张)
+
+> 纯风格。比例:不传则不注入。占位符 `【主体】【主色调】【标题词】` 自动推断。
+>
+> 和 [#3 蜡笔童涂](#3-蜡笔童涂5岁小孩坏画) 的区别:#3 是"小孩自己画的坏画"(偏插画);#8 是"一张真蜡笔纸的照片",命门在实拍纸感 + 强制露白(每块色露白约 40–50%) + 蜡质方向笔触 + 反数字滤镜(经 gpt-image 实测)。
+
+```
+A cellphone PHOTO of a real drawing made by a 5-year-old with wax crayons on a slightly wrinkled sheet of white printer paper. It must look photographed on real paper — visible paper texture, faint shadows and wrinkles, off-white tone — NOT a digital illustration.
+Flat naive composition. Subject: 【主体】.
+
+Clumsy and "bad" on purpose: shaky wobbly hand-drawn outlines that wander and don't close; wrong proportions; uneven shapes; if there is a face, eyes different sizes and a crooked smile.
+
+The CRAYON COLORING must look genuinely real (most important):
+- real waxy crayon texture with visible directional strokes; heavy pressure marks in some spots and barely-there light strokes in others; waxy build-up and smudges
+- coverage is INCOMPLETE — large areas of bare white paper show THROUGH even inside the colored shapes (roughly 40–50% of each colored area left unfilled and streaky)
+- strokes go in different directions, overlapping and broken, like a kid scribbling with no plan
+- color clearly overflows past the outlines in several places
+- bright primary crayon colors (【主色调】, red, yellow, blue, green), absolutely NO smooth even fill, NO gradient, NO blending, NO uniform digital crayon-filter texture
+- a wobbly hand-lettered title "【标题词】" in uneven multicolor capital letters on a crooked baseline
+
+Avoid anything cute, polished, symmetric or professionally illustrated. It must look like a genuine photo of a real child's messy crayon page.
 ```

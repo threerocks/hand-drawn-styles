@@ -47,25 +47,25 @@ xkcd 风格的极简黑白火柴人讲解漫画,画在米白/奶油色纸上。
 
 ## 3. 蜡笔童涂(5岁小孩坏画)
 
-> 接近纯风格。比例:不传则不注入。占位符 `【主体】【主色调】【标题词】` 自动推断。
+> 纯风格。比例:不传则不注入。占位符 `【主体】【主色调】【标题词】` 自动推断。
+>
+> 关键:必须当成"一张真蜡笔涂在纸上的照片",并强制"涂不满、大量露白、有方向笔触"——这是"一眼真人"的命门(经 gpt-image 实测,旧版偏数字/太干净已被否)。
 
 ```
-A drawing made by a real 5-year-old child with crayons on white paper.
-NOT made by an artist. It should look clumsy, messy, and "bad" on purpose.
+A cellphone PHOTO of a real drawing made by a 5-year-old with wax crayons on a slightly wrinkled sheet of white printer paper. It must look photographed on real paper — visible paper texture, faint shadows and wrinkles, off-white tone — NOT a digital illustration.
+Flat naive composition. Subject: 【主体】.
 
-Subject: 【主体】.
+Clumsy and "bad" on purpose: shaky wobbly hand-drawn outlines that wander and don't close; wrong proportions; uneven shapes; if there is a face, eyes different sizes and a crooked smile.
 
-MANDATORY childlike flaws (do not clean these up):
-- shaky wobbly outlines that wander, overshoot corners, and never close neatly
-- often double-drawn lines where the kid went over the same edge twice
-- proportions clumsy and wrong; arms and legs are thin crooked stick-lines with no volume
-- face uneven and asymmetric: eyes different sizes and not level, crooked smile, features off-center
-- coloring is messy and goes OUTSIDE the outlines; large patches of white paper left unfilled; scribble strokes in random directions
-- bright flat primary crayon colors (【主色调】, and red, yellow, green, purple, black), no shading, no gradient, no blending
-- hand-lettered title "【标题词】" at the top in uneven wobbly capital letters, each a different color, on a crooked baseline, letters different sizes
+The CRAYON COLORING must look genuinely real (most important):
+- real waxy crayon texture with visible directional strokes; heavy pressure marks in some spots and barely-there light strokes in others; waxy build-up and smudges
+- coverage is INCOMPLETE — large areas of bare white paper show THROUGH even inside the colored shapes (roughly 40–50% of each colored area left unfilled and streaky)
+- strokes go in different directions, overlapping and broken, like a kid scribbling with no plan
+- color clearly overflows past the outlines in several places
+- bright primary crayon colors (【主色调】, red, yellow, blue, green), absolutely NO smooth even fill, NO gradient, NO blending, NO uniform digital crayon-filter texture
+- a wobbly hand-lettered title "【标题词】" in uneven multicolor capital letters on a crooked baseline
 
-Flat naïve composition, objects floating with no perspective, plain white background.
-Look genuinely crude — avoid anything cute, polished, symmetric, balanced, or professional.
+Avoid anything cute, polished, symmetric or professionally illustrated. It must look like a genuine photo of a real child's messy crayon page.
 ```
 
 ---
@@ -73,13 +73,15 @@ Look genuinely crude — avoid anything cute, polished, symmetric, balanced, or 
 ## 4. 吉卜力风
 
 > 纯风格。比例:不传则不注入。
+>
+> 注意:gpt-image(Codex/ChatGPT)上若用"lush/detailed"会出"稀碎感"(过度堆细节、画面碎)。已改为反堆细节——单一焦点、简化背景、大块柔和色面(经 gpt-image 实测)。
 
 ```
 Studio Ghibli style hand-drawn anime illustration of 【主体】.
-Soft hand-painted watercolor aesthetic with gentle cel-shaded coloring; warm cinematic lighting with sunlight softly diffusing from above and a tender glow.
-Bright yet harmonious, lightly saturated color palette; lush, detailed natural environments and dreamy, nostalgic atmosphere.
-Expressive Ghibli-inspired character features, gentle emotional tone, whimsical and heartwarming mood.
-Soft shading and atmospheric depth, clean delicate linework, painterly hand-drawn feel — not 3D, not photoreal, not a digital vector look.
+Clean, uncluttered composition with ONE clear focal subject; simplified background, large coherent soft shapes, generous calm negative space — avoid busy, fragmented, over-detailed or scattered compositions.
+Soft hand-painted watercolor look with smooth gentle gradients and soft cel-shading; warm cinematic light diffusing softly from above with a tender glow.
+Bright yet harmonious, lightly saturated palette; dreamy, nostalgic, heartwarming mood.
+Clean delicate linework, painterly hand-drawn feel — not 3D, not photoreal, not a digital vector, not cluttered.
 ```
 
 ---

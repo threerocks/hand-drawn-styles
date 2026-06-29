@@ -72,10 +72,12 @@ Look genuinely crude — avoid anything cute, polished, symmetric, balanced, or 
 
 ```
 Studio Ghibli style hand-drawn anime illustration of a girl sitting on a hillside gazing up at the clouds.
-Clean, uncluttered composition with ONE clear focal subject; simplified background, large coherent soft shapes, generous calm negative space — avoid busy, fragmented, over-detailed or scattered compositions.
+Clean, uncluttered composition with ONE clear focal subject; simplified background, generous calm negative space.
+SKY: a smooth, even watercolor-gradient sky, calm and clean — absolutely no patchy, mottled, speckled, grainy or noisy texture.
+CLOUDS: only a few large, simple, soft cumulus clouds with smooth, cohesive, rounded silhouettes — NOT many small scattered puffs, not broken, not fragmented.
 Soft hand-painted watercolor look with smooth gentle gradients and soft cel-shading; warm cinematic light diffusing softly from above with a tender glow.
 Bright yet harmonious, lightly saturated palette; dreamy, nostalgic, heartwarming mood.
-Clean delicate linework, painterly hand-drawn feel — not 3D, not photoreal, not a digital vector, not cluttered.
+Clean delicate linework, painterly hand-drawn feel — not 3D, not photoreal, not a digital vector, not cluttered, not fragmented.
 ```
 
 ---

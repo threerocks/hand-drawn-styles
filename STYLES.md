@@ -76,14 +76,15 @@ Look genuinely crude — avoid anything cute, polished, symmetric, balanced, or 
 
 > 纯风格。比例:不传则不注入。
 >
-> 注意:gpt-image(Codex/ChatGPT)上若用"lush/detailed"会出"稀碎感"(过度堆细节、画面碎)。已改为反堆细节——单一焦点、简化背景、大块柔和色面(经 gpt-image 实测)。
+> 注意:gpt-image(Codex/ChatGPT)上若用"lush/detailed"会出"稀碎感"(过度堆细节、天空云朵零碎)。已改为反堆细节——单一焦点、简化背景、大色块平滑渐变、云少而整(经 gpt-image 实测)。
 
 ```
 Studio Ghibli style hand-drawn anime illustration of 【主体】.
-Clean, uncluttered composition with ONE clear focal subject; simplified background, large coherent soft shapes, generous calm negative space — avoid busy, fragmented, over-detailed or scattered compositions.
+Clean, uncluttered composition with ONE clear focal subject; simplified background, generous calm negative space — avoid busy, fragmented, over-detailed or scattered compositions.
+Render any large areas (sky, water, fields, walls) as smooth, even watercolor gradients — no patchy, mottled, speckled or grainy texture. Any clouds should be a few large, simple, soft, cohesive shapes — not many small scattered puffs or broken fragments.
 Soft hand-painted watercolor look with smooth gentle gradients and soft cel-shading; warm cinematic light diffusing softly from above with a tender glow.
 Bright yet harmonious, lightly saturated palette; dreamy, nostalgic, heartwarming mood.
-Clean delicate linework, painterly hand-drawn feel — not 3D, not photoreal, not a digital vector, not cluttered.
+Clean delicate linework, painterly hand-drawn feel — not 3D, not photoreal, not a digital vector, not cluttered, not fragmented.
 ```
 
 ---

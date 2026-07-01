@@ -1,6 +1,6 @@
 # 画风样例
 
-每种画风一个具体示例:**样图 + 可直接复制的输入示例提示词**。下列 8 段配方均已用真实出图验证通过。
+每种画风一个具体示例:**样图 + 可直接复制的输入示例提示词**。下列 10 段配方均已用真实出图验证通过。
 
 > 注:样图文件由维护者陆续落盘;若某张暂未显示,说明图片文件还在补传中,提示词本身已验证可用。
 
@@ -147,24 +147,64 @@ Panels:
 
 ## 8. 蜡笔实拍(真·儿童手涂纸张)
 
-![蜡笔实拍 MY HOUSE](08-real-crayon.png)
+![蜡笔实拍 SUNNY DAY](08-real-crayon.png)
 
-> 输入示例:「用蜡笔实拍画一座房子、一棵树、一个太阳,标题 MY HOUSE」
+> 输入示例:「用蜡笔实拍画一只猫坐在花园里,有太阳、花和蝴蝶,标题 SUNNY DAY」
 > 和 #3 的区别:#3 偏插画式坏画,#8 像一张真蜡笔纸的照片。
+> 注:纸面奶白是"实拍照片感"的固有代价(已接受,不推纯白);本版重点是把"画得太好"压成真·幼稚——忽轻忽重没分寸、大量露白、黑色主要用于勾线。
 
 ```
-A cellphone PHOTO of a real drawing made by a 5-year-old with wax crayons on a slightly wrinkled sheet of white printer paper. It must look photographed on real paper — visible paper texture, faint shadows and wrinkles, off-white tone — NOT a digital illustration.
-Flat naive composition. Subject: a house with a tree and a sun.
+A cellphone PHOTO of a real drawing made by a 5-year-old with wax crayons on a slightly wrinkled sheet of white printer paper. It must look photographed on real paper — visible paper texture and faint wrinkles, clean bright white paper — NOT a digital illustration.
+Brightly and evenly lit, shot in soft bright daylight, well-exposed and high-key: the white paper reads clean and bright and FILLS almost the whole frame, with little or no surrounding desk or surface visible; only very soft barely-there wrinkle shadows, NO dark or moody shadows, NO underexposure, NO dim indoor lighting, NO grey or yellow cast.
+Flat naive composition. Subject: a smiling cat sitting in a garden with a big sun, a few flowers and a butterfly.
 
-Clumsy and "bad" on purpose: shaky wobbly hand-drawn outlines that wander and don't close; wrong proportions; uneven shapes.
+Genuinely crude and childish, like a real 5-year-old who can barely draw — NOT a skilled adult imitating a child: shaky wobbly outlines that wander and don't close; clumsy wrong proportions; lumpy, barely-recognizable shapes; eyes different sizes and a crooked smile.
 
 The CRAYON COLORING must look genuinely real (most important):
-- real waxy crayon texture with visible directional strokes; heavy pressure marks in some spots and barely-there light strokes in others; waxy build-up and smudges
-- coverage is INCOMPLETE — large areas of bare white paper show THROUGH even inside the colored shapes (roughly 40–50% of each colored area left unfilled and streaky)
-- strokes go in different directions, overlapping and broken, like a kid scribbling with no plan
-- color clearly overflows past the outlines in several places
-- bright primary crayon colors; absolutely NO smooth even fill, NO gradient, NO blending, NO uniform digital crayon-filter texture
-- a wobbly hand-lettered title "MY HOUSE" in uneven multicolor capital letters on a crooked baseline
+- a real kid has NO control over pressure — some strokes pressed hard and dark, others barely touch the paper, with no consistency; waxy build-up in the heavy spots, faint streaks in the light ones, small smudges
+- coloring is sparse and scribbly — bare white paper shows THROUGH everywhere, even inside the colored shapes (roughly 50–65% of each colored area left unfilled, white and streaky)
+- black crayon is used mainly for the thin wobbly outlines rather than filling big solid areas (no big solid-black patches on the cat)
+- strokes go in different directions, overlapping and broken, like a kid scribbling with no plan; color clearly overflows past the outlines in several places
+- bright primary crayon colors (orange, yellow, red, blue, green, pink); absolutely NO smooth even fill, NO gradient, NO blending, NO uniform digital crayon-filter texture
+- a wobbly hand-lettered title "SUNNY DAY" in uneven multicolor capital letters on a crooked baseline
 
-Avoid anything cute, polished, symmetric or professionally illustrated. It must look like a genuine photo of a real child's messy crayon page.
+Avoid anything cute, polished, symmetric or professionally illustrated. It must look like a genuine photo of a real child's messy, sparse crayon page.
+```
+
+---
+
+## 9. 水墨写意
+
+![水墨写意 奔马](09-ink-wash.png)
+
+> 输入示例:「用水墨画一匹奔腾的骏马」
+
+```
+中国传统写意水墨画,画在生宣纸上,纯手绘毛笔笔触,不是数字插画、不是照片。
+主体:一匹奔腾的骏马。
+用墨:以黑墨为主,讲究"墨分五色"——焦、浓、重、淡、清并存,同一笔里有浓淡干湿变化;见飞白枯笔(干笔擦出丝丝露白)与湿墨在宣纸上自然渗化晕开(墨晕),浓淡过渡靠水分,不是均匀灰度。
+笔法:写意、概括、一笔成形,寥寥数笔抓住神态,容许偶然的飞溅与断笔;不勾死板轮廓线,不填涂均匀色块。
+留白:大量空白宣纸作为画面主体,疏可走马、密不透风,主体偏置一侧,构图空灵。
+设色:以水墨为主,至多极少量淡赭石或花青点染;不要浓艳饱和的颜色,不要彩色铺底。
+点睛:画面一角一枚小小的朱红方形印章。
+纸感:能看出宣纸纤维与墨在纸上微微洇开的质感。
+严禁:照片写实、3D、数字矢量、均匀灰度滤镜、平滑渐变、密集琐碎的细节、厚涂、卡通描边、艳俗配色。
+```
+
+---
+
+## 10. 复古像素
+
+![复古像素 橙猫](10-pixel-art.png)
+
+> 输入示例:「用像素风画一只橙色的小猫」
+
+```
+复古像素风(pixel art)插画,像 8-bit / 16-bit 老游戏里的精灵图(sprite),由一颗颗清晰的方形像素手工摆出来,不是高清插画加像素滤镜。
+主体:一只橙色的小猫。
+像素:低分辨率观感,所有边缘都是硬朗的方块像素阶梯,像素大小一致、对齐同一网格;绝对没有抗锯齿、没有模糊、没有平滑渐变。
+配色:有限调色板(retro 风,约 8–16 色,以橙色为主),色块平涂;需要明暗过渡时用"抖动(dithering)"棋盘点阵,而不是渐变。
+轮廓:用清晰的深色像素描边或高对比色块区分主体;造型简洁、辨识度高,像素图标 / 游戏角色感。
+背景:单一平涂纯色或极简像素背景,不喧宾夺主。
+严禁:抗锯齿、柔边、模糊、平滑渐变、高清写实、3D 渲染、矢量光滑曲线、把高清图直接套像素滤镜的假像素感。
 ```

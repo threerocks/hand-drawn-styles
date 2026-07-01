@@ -8,7 +8,7 @@
 
 好用的"手绘风"提示词散落各处,每次生图都要翻找、拼凑,还容易把比例、版式等无关约束混进去。
 
-本项目把 **5 种已验证的手绘画风**沉淀成可复用配方。你只管说"画什么",Agent 负责:
+本项目把 **10 种已验证的手绘画风**沉淀成可复用配方。你只管说"画什么",Agent 负责:
 
 - 帮你选画风(没指定就列菜单,指定了就直接用);
 - 把你的内容自动填进该画风的提示词模板;
@@ -19,7 +19,7 @@
 
 ## 内置画风
 
-> 三大分组:**拟真手绘**(1/4/8)· **线条·讲解·速写**(2/5/7)· **故意画烂**(3/6)。编号是稳定身份(对应样图 01–08),分组只为分类挑选。
+> 四大分组:**拟真手绘**(1/4/8)· **线条·讲解·速写**(2/5/7)· **故意画烂**(3/6)· **传统·复古质感**(9/10)。编号是稳定身份(对应样图 01–10),分组只为分类挑选。
 
 | 组 | 编号 | 名称 | 调性 | 英文别名 |
 |----|------|------|------|----------|
@@ -31,6 +31,8 @@
 | 线条讲解 | 7 | 圆珠笔单线涂鸦 | 黑色圆珠笔缠绕线速写,艺术手稿感,适合肖像 / 动物 | `scribble` `pen-scribble` `ballpoint` |
 | 故意画烂 | 3 | 蜡笔童涂 | 5 岁小孩用蜡笔画的笨拙"坏画",歪扭出框、引人发笑 | `crayon` `kid-crayon` |
 | 故意画烂 | 6 | MS Paint 烂涂鸦 | 鼠标硬画的病毒级"故意画烂"风(第二个吉卜力),越烂越好笑 | `ms-paint` `bad-doodle` `ugly` |
+| 传统复古 | 9 | 水墨写意 | 毛笔黑墨、墨分五色、飞白留白、朱红印章,中国画手绘感 | `ink-wash` `ink` `shuimo` `chinese-painting` |
+| 传统复古 | 10 | 复古像素 | 8/16-bit 老游戏精灵图,硬方块像素、有限调色板、零抗锯齿 | `pixel` `pixel-art` `8-bit` `16-bit` |
 
 样图与每种画风的示例提示词见 [examples/](examples/)。
 
@@ -38,12 +40,13 @@
 |:--:|:--:|:--:|:--:|
 | <img src="examples/01-childlike-coloring.png" width="200"><br>**1** 纯人类手绘儿童涂色 | <img src="examples/02-minimal-line.png" width="200"><br>**2** 极简线条 xkcd 火柴人 | <img src="examples/03-crayon.png" width="200"><br>**3** 蜡笔童涂 | <img src="examples/04-ghibli.png" width="200"><br>**4** 吉卜力 |
 | <img src="examples/05-bean-doodle.png" width="200"><br>**5** 小豆人信息图 | <img src="examples/06-ms-paint.png" width="200"><br>**6** MS Paint 烂涂鸦 | <img src="examples/07-pen-scribble.png" width="200"><br>**7** 圆珠笔单线涂鸦 | <img src="examples/08-real-crayon.png" width="200"><br>**8** 蜡笔实拍 |
+| <img src="examples/09-ink-wash.png" width="200"><br>**9** 水墨写意 | <img src="examples/10-pixel-art.png" width="200"><br>**10** 复古像素 | | |
 
 > 每种画风的输入示例与完整提示词见 [examples/](examples/)。
 
 ## 接入各 Agent 工具
 
-核心是两个工具无关的文件:[`PROTOCOL.md`](PROTOCOL.md)(执行流程)+ [`STYLES.md`](STYLES.md)(8 段画风配方)。任何 Agent 只要"读到"这两个文件即可。
+核心是两个工具无关的文件:[`PROTOCOL.md`](PROTOCOL.md)(执行流程)+ [`STYLES.md`](STYLES.md)(10 段画风配方)。任何 Agent 只要"读到"这两个文件即可。
 
 ```bash
 git clone https://github.com/threerocks/hand-drawn-styles.git
@@ -102,7 +105,7 @@ hand-drawn-styles/
 ├── README.md
 ├── LICENSE
 ├── PROTOCOL.md        # 核心协议:选风格 / 比例 / 占位符 / 输出(工具无关)
-├── STYLES.md          # 核心配方:5 种画风的提示词模板(工具无关)
+├── STYLES.md          # 核心配方:10 种画风的提示词模板(工具无关)
 ├── SKILL.md           # Claude Code 适配层(薄,指向上面两个文件)
 ├── AGENTS.md          # Codex / Gemini / Cursor 等适配层(薄)
 └── examples/          # 样图 + 每种画风的示例提示词

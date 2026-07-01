@@ -152,18 +152,57 @@ Panels:
 > 和 [#3 蜡笔童涂](#3-蜡笔童涂5岁小孩坏画) 的区别:#3 是"小孩自己画的坏画"(偏插画);#8 是"一张真蜡笔纸的照片",命门在实拍纸感 + 强制露白(每块色露白约 40–50%) + 蜡质方向笔触 + 反数字滤镜(经 gpt-image 实测)。
 
 ```
-A cellphone PHOTO of a real drawing made by a 5-year-old with wax crayons on a slightly wrinkled sheet of white printer paper. It must look photographed on real paper — visible paper texture, faint shadows and wrinkles, off-white tone — NOT a digital illustration.
+A cellphone PHOTO of a real drawing made by a 5-year-old with wax crayons on a slightly wrinkled sheet of white printer paper. It must look photographed on real paper — visible paper texture and faint wrinkles, clean bright white paper — NOT a digital illustration.
+Brightly and evenly lit, shot in soft bright daylight, well-exposed and high-key: the white paper reads clean and bright and FILLS almost the whole frame, with little or no surrounding desk or surface visible; only very soft barely-there wrinkle shadows, NO dark or moody shadows, NO underexposure, NO dim indoor lighting, NO grey or yellow cast.
 Flat naive composition. Subject: 【主体】.
 
-Clumsy and "bad" on purpose: shaky wobbly hand-drawn outlines that wander and don't close; wrong proportions; uneven shapes; if there is a face, eyes different sizes and a crooked smile.
+Genuinely crude and childish, like a real 5-year-old who can barely draw — NOT a skilled adult imitating a child: shaky wobbly outlines that wander and don't close; clumsy wrong proportions; lumpy, barely-recognizable shapes; if there is a face, eyes different sizes and a crooked smile.
 
 The CRAYON COLORING must look genuinely real (most important):
-- real waxy crayon texture with visible directional strokes; heavy pressure marks in some spots and barely-there light strokes in others; waxy build-up and smudges
-- coverage is INCOMPLETE — large areas of bare white paper show THROUGH even inside the colored shapes (roughly 40–50% of each colored area left unfilled and streaky)
-- strokes go in different directions, overlapping and broken, like a kid scribbling with no plan
-- color clearly overflows past the outlines in several places
-- bright primary crayon colors (【主色调】, red, yellow, blue, green), absolutely NO smooth even fill, NO gradient, NO blending, NO uniform digital crayon-filter texture
+- a real kid has NO control over pressure — some strokes pressed hard and dark, others barely touch the paper, with no consistency; waxy build-up in the heavy spots, faint streaks in the light ones, small smudges
+- coloring is sparse and scribbly — bare white paper shows THROUGH everywhere, even inside the colored shapes (roughly 50–65% of each colored area left unfilled, white and streaky)
+- black crayon is used mainly for the thin wobbly outlines rather than filling big solid areas
+- strokes go in different directions, overlapping and broken, like a kid scribbling with no plan; color clearly overflows past the outlines in several places
+- bright primary crayon colors (【主色调】, red, yellow, blue, green, orange, pink); absolutely NO smooth even fill, NO gradient, NO blending, NO uniform digital crayon-filter texture
 - a wobbly hand-lettered title "【标题词】" in uneven multicolor capital letters on a crooked baseline
 
-Avoid anything cute, polished, symmetric or professionally illustrated. It must look like a genuine photo of a real child's messy crayon page.
+Avoid anything cute, polished, symmetric or professionally illustrated. It must look like a genuine photo of a real child's messy, sparse crayon page.
+```
+
+---
+
+## 9. 水墨写意
+
+> 纯风格,无内置版式。比例:不传则不注入。占位符 `【主体】` 自动推断。
+>
+> 命门:墨分五色的浓淡干湿 + 飞白枯笔 + 宣纸渗化(墨晕) + 大量留白 + 一枚朱红印章。最常踩的坑是模型出"均匀灰度数字滤镜"——硬性负向约束必须写死。默认只盖印章不写题字,避免伪中文(若要题款须用户明确给字)。
+
+```
+中国传统写意水墨画,画在生宣纸上,纯手绘毛笔笔触,不是数字插画、不是照片。
+主体:【主体】。
+用墨:以黑墨为主,讲究"墨分五色"——焦、浓、重、淡、清并存,同一笔里有浓淡干湿变化;见飞白枯笔(干笔擦出丝丝露白)与湿墨在宣纸上自然渗化晕开(墨晕),浓淡过渡靠水分,不是均匀灰度。
+笔法:写意、概括、一笔成形,寥寥数笔抓住神态,容许偶然的飞溅与断笔;不勾死板轮廓线,不填涂均匀色块。
+留白:大量空白宣纸作为画面主体,疏可走马、密不透风,主体偏置一侧,构图空灵。
+设色:以水墨为主,至多极少量淡赭石或花青点染;不要浓艳饱和的颜色,不要彩色铺底。
+点睛:画面一角一枚小小的朱红方形印章。
+纸感:能看出宣纸纤维与墨在纸上微微洇开的质感。
+严禁:照片写实、3D、数字矢量、均匀灰度滤镜、平滑渐变、密集琐碎的细节、厚涂、卡通描边、艳俗配色。
+```
+
+---
+
+## 10. 复古像素
+
+> 纯风格,无内置版式。比例:不传则不注入。占位符 `【主体】【主色调】` 自动推断。
+>
+> 命门:硬方块像素 + 统一像素网格 + 有限调色板 + 抖动(dithering)代替渐变 + 零抗锯齿。最常踩的坑是模型出"高清图套像素滤镜"的假像素(柔边、渐变、上千色)——负向约束必须写死。
+
+```
+复古像素风(pixel art)插画,像 8-bit / 16-bit 老游戏里的精灵图(sprite),由一颗颗清晰的方形像素手工摆出来,不是高清插画加像素滤镜。
+主体:【主体】。
+像素:低分辨率观感,所有边缘都是硬朗的方块像素阶梯,像素大小一致、对齐同一网格;绝对没有抗锯齿、没有模糊、没有平滑渐变。
+配色:有限调色板(retro 风,约 8–16 色,以【主色调】为主),色块平涂;需要明暗过渡时用"抖动(dithering)"棋盘点阵,而不是渐变。
+轮廓:用清晰的深色像素描边或高对比色块区分主体;造型简洁、辨识度高,像素图标 / 游戏角色感。
+背景:单一平涂纯色或极简像素背景,不喧宾夺主。
+严禁:抗锯齿、柔边、模糊、平滑渐变、高清写实、3D 渲染、矢量光滑曲线、把高清图直接套像素滤镜的假像素感。
 ```

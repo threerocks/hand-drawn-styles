@@ -8,7 +8,7 @@
 
 好用的"手绘风"提示词散落各处,每次生图都要翻找、拼凑,还容易把比例、版式等无关约束混进去。
 
-本项目把 **11 种已验证的手绘画风**沉淀成可复用配方。你只管说"画什么",Agent 负责:
+本项目把 **11 种已验证的手绘画风(另含 2 个变体,共 13 套配方)**沉淀成可复用配方。你只管说"画什么",Agent 负责:
 
 - 帮你选画风(没指定就列菜单,指定了就直接用);
 - 把你的内容自动填进该画风的提示词模板;
@@ -19,13 +19,15 @@
 
 ## 内置画风
 
-> 四大分组:**拟真手绘**(1/4/8/11)· **线条·讲解·速写**(2/5/7)· **故意画烂**(3/6)· **传统·复古质感**(9/10)。编号是稳定身份(对应样图 01–11),分组只为分类挑选。
+> 四大分组:**拟真手绘**(1/1.1/4/8/11)· **线条·讲解·速写**(2/5/7)· **故意画烂**(3/3.1/6)· **传统·复古质感**(9/10)。编号是稳定身份(对应样图 01–11),`x.1` 是某主风格的变体。
 
 | 组 | 编号 | 名称 | 调性 | 英文别名 |
 |----|------|------|------|----------|
 | 拟真手绘 | 1 | 纯人类手绘儿童涂色页 | 大人画粗黑线稿 + 孩子填色,真实纸面拍摄感,适合讲故事 / 亲子 | `handmade` `childlike-coloring` |
+| 拟真手绘 | 1.1 | 儿童涂色页-低饱和克制版 | #1 变体:极简留白背景 + 低饱和 ≤4 色 + 单一橙红点缀,冷静叙事感 | `coloring-muted` `restrained-coloring` |
 | 线条讲解 | 2 | 极简黑白线条讲解漫画(xkcd 火柴人) | 纯细线火柴人、圆角分镜、标题+说明,讲解示意图 | `xkcd` `stickman` `minimal-line` |
 | 故意画烂 | 3 | 蜡笔童涂 | 5 岁小孩用蜡笔画的笨拙"坏画",歪扭出框、引人发笑 | `crayon` `kid-crayon` |
+| 故意画烂 | 3.1 | 蜡笔童涂-潦草自画版 | #3 变体:整张像孩子全自画的简笔火柴娃 + 低饱和 ≤4 色单橙红,更潦草冷静 | `rawkid` `kid-scrawl` `stick-kid` |
 | 拟真手绘 | 4 | 吉卜力风 | 柔和水彩、暖光、治愈梦幻的手绘动画感 | `ghibli` |
 | 线条讲解 | 5 | 小豆人涂鸦信息图 | 黑色圆豆人讲解图,单橙点缀、手绘箭头标注,竖版多格 | `bean` `blob` |
 | 故意画烂 | 6 | MS Paint 烂涂鸦 | 鼠标硬画的病毒级"故意画烂"风(第二个吉卜力),越烂越好笑 | `ms-paint` `bad-doodle` `ugly` |
@@ -41,13 +43,14 @@
 |:--:|:--:|:--:|:--:|
 | <img src="examples/01-childlike-coloring.png" width="200"><br>**1** 纯人类手绘儿童涂色 | <img src="examples/02-minimal-line.png" width="200"><br>**2** 极简线条 xkcd 火柴人 | <img src="examples/03-crayon.png" width="200"><br>**3** 蜡笔童涂 | <img src="examples/04-ghibli.png" width="200"><br>**4** 吉卜力 |
 | <img src="examples/05-bean-doodle.png" width="200"><br>**5** 小豆人信息图 | <img src="examples/06-ms-paint.png" width="200"><br>**6** MS Paint 烂涂鸦 | <img src="examples/07-pen-scribble.png" width="200"><br>**7** 圆珠笔单线涂鸦 | <img src="examples/08-real-crayon.png" width="200"><br>**8** 蜡笔实拍 |
-| <img src="examples/09-ink-wash.png" width="200"><br>**9** 水墨写意 | <img src="examples/10-pixel-art.png" width="200"><br>**10** 复古像素 | <img src="examples/11-emo-sketch.png" width="200"><br>**11** 情绪叙事淡彩速写 | |
+| <img src="examples/09-ink-wash.png" width="200"><br>**9** 水墨写意 | <img src="examples/10-pixel-art.png" width="200"><br>**10** 复古像素 | <img src="examples/11-emo-sketch.png" width="200"><br>**11** 情绪叙事淡彩速写 | <img src="examples/01.1-coloring-muted.png" width="200"><br>**1.1** 儿童涂色-低饱和克制版 |
+| <img src="examples/03.1-crayon-rawkid.png" width="200"><br>**3.1** 蜡笔童涂-潦草自画版 | | | |
 
 > 每种画风的输入示例与完整提示词见 [examples/](examples/)。
 
 ## 接入各 Agent 工具
 
-核心是两个工具无关的文件:[`PROTOCOL.md`](PROTOCOL.md)(执行流程)+ [`STYLES.md`](STYLES.md)(11 段画风配方)。任何 Agent 只要"读到"这两个文件即可。
+核心是两个工具无关的文件:[`PROTOCOL.md`](PROTOCOL.md)(执行流程)+ [`STYLES.md`](STYLES.md)(13 段画风配方)。任何 Agent 只要"读到"这两个文件即可。
 
 ```bash
 git clone https://github.com/threerocks/hand-drawn-styles.git
@@ -106,7 +109,7 @@ hand-drawn-styles/
 ├── README.md
 ├── LICENSE
 ├── PROTOCOL.md        # 核心协议:选风格 / 比例 / 占位符 / 输出(工具无关)
-├── STYLES.md          # 核心配方:11 种画风的提示词模板(工具无关)
+├── STYLES.md          # 核心配方:11 种画风 + 2 变体的提示词模板(工具无关)
 ├── SKILL.md           # Claude Code 适配层(薄,指向上面两个文件)
 ├── AGENTS.md          # Codex / Gemini / Cursor 等适配层(薄)
 └── examples/          # 样图 + 每种画风的示例提示词

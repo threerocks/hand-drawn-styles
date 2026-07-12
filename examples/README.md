@@ -19,6 +19,7 @@
 ![儿童涂色页 低饱和克制版 我和我的猫](01.1-coloring-muted.png)
 
 > 输入示例:「用低饱和克制版画一个小女孩坐板凳上抱着橘猫,顶部标题 我和我的猫」
+> 样图为叠加 STYLES.md「附录 A·实拍纸质感增强层」后的效果(2026-07-13 更新);示例提示词已含该层。
 > 和 #1 的区别:极简留白背景 + 低饱和 ≤4 色 + 全画只一处橙红(橘猫)。命门是别让模型画精致——线要糙抖、脸要笨、色要露白越界。
 
 ```
@@ -31,6 +32,14 @@
 纸面:亮白真实纸,少量不规律褶皱、压痕与纸纤维感,大量留白,不要满屏纸纹滤镜。
 配色(严格):低到中饱和,像蜡笔轻涂;全页有彩色不超过 4 种,不要艳丽纯色、不要多色平均用力;主要用雾蓝(女孩衣服)、暖棕木色(板凳/头发)这类压住的低饱和色;强调色只有一个=橙红,只用在那只橘猫身上作为情绪焦点,别处不再出现橙红。
 严禁:平滑稳定等粗的数字线稿、完美圆、完美透视、完美对称、商业绘本精致可爱人物、渐变、阴影建模、3D、体积光、颜色平滑均匀填满、均匀蜡笔噪点滤镜、背景装修完整。整体像普通人随手画在纸上的投稿,笨拙、不完美、有明显手误,不是 AI 手绘滤镜。
+【材质增强层·最重要】整张图必须像"用手机在明亮柔和日光下拍摄的、画在真实纸上的画作照片",不是数字图:
+- 纸面有微距可见的纸纹颗粒(纸的凹凸牙口),纸有轻微起伏和一两道很淡的折痕;
+- 颜料有真实材料感:蜡笔/彩笔重压处颜料结块、有轻微蜡质反光,轻扫处颜料只挂在纸纹凸起上、露出大量纸白点;马克笔线有渗墨感,起笔收笔略粗;
+- 每个色块内部深浅明显不均,能看清一笔一笔的运笔方向、起笔收笔和折返;
+- 笔画边缘因纸面凹凸而毛糙断续,不是干净的边;
+- 纸上有极少量真实使用痕迹:一两处轻微蹭脏或指蹭痕;
+- 光照:明亮均匀,白纸干净发亮,只有极淡的纸面起伏阴影,无暗角。
+严禁:均匀的数字噪点滤镜、平滑均匀填色、干净矢量线、任何数字插画感。
 文字:画面顶部写手写中文标题,逐字为 我和我的猫,像儿童绘本手写字,笔画粗圆钝、轻重不均、结构宽松,但必须准确可读,不要乱码错字伪文字。
 ```
 
@@ -91,6 +100,7 @@ Look genuinely crude — avoid anything cute, polished, symmetric, balanced, or 
 ![蜡笔童涂 潦草自画版 今天好开心](03.1-crayon-rawkid.png)
 
 > 输入示例:「用潦草自画版画一个小孩牵着气球站在草地上,顶部标题 今天好开心」
+> 样图为叠加 STYLES.md「附录 A·实拍纸质感增强层」后的效果(2026-07-13 更新);示例提示词已含该层。
 > 和 #3 的区别:整张像 5-6 岁孩子全自己画的简笔火柴娃(大圆脸/点眼睛/叉子手)+ 低饱和 ≤4 色单橙红(气球)。
 
 ```
@@ -101,6 +111,14 @@ Look genuinely crude — avoid anything cute, polished, symmetric, balanced, or 
 纸面:亮白真实纸,少量褶皱,大量留白。
 配色(严格):低到中饱和,像蜡笔轻涂;全页有彩色不超过 4 种,不要艳丽纯色、不要多色平均用力;主要用雾蓝(小孩衣服)、芥末黄、暖棕这类低饱和色;强调色只有一个=橙红,只用在气球上作为情绪焦点,别处不再出现橙红。
 严禁:精致可爱绘本脸、稳定线条、均匀涂色、正确透视、完整背景、渐变、3D、彩虹式多色。整体要像孩子自己画的画,不是插画师作品、不是 AI 手绘滤镜。
+【材质增强层·最重要】整张图必须像"用手机在明亮柔和日光下拍摄的、画在真实纸上的画作照片",不是数字图:
+- 纸面有微距可见的纸纹颗粒(纸的凹凸牙口),纸有轻微起伏和一两道很淡的折痕;
+- 颜料有真实材料感:蜡笔/彩笔重压处颜料结块、有轻微蜡质反光,轻扫处颜料只挂在纸纹凸起上、露出大量纸白点;马克笔线有渗墨感,起笔收笔略粗;
+- 每个色块内部深浅明显不均,能看清一笔一笔的运笔方向、起笔收笔和折返;
+- 笔画边缘因纸面凹凸而毛糙断续,不是干净的边;
+- 纸上有极少量真实使用痕迹:一两处轻微蹭脏或指蹭痕;
+- 光照:明亮均匀,白纸干净发亮,只有极淡的纸面起伏阴影,无暗角。
+严禁:均匀的数字噪点滤镜、平滑均匀填色、干净矢量线、任何数字插画感。
 文字:画面顶部写手写中文标题,逐字为 今天好开心,像认真写字的儿童笔迹,笔画粗、歪歪扭扭、大小不一,但每个字必须准确可读,不要乱码错字伪文字。
 ```
 
@@ -194,6 +212,7 @@ Panels:
 > 输入示例:「用蜡笔实拍画一只猫坐在花园里,有太阳、花和蝴蝶,标题 SUNNY DAY」
 > 和 #3 的区别:#3 偏插画式坏画,#8 像一张真蜡笔纸的照片。
 > 注:纸面奶白是"实拍照片感"的固有代价(已接受,不推纯白);本版重点是把"画得太好"压成真·幼稚——忽轻忽重没分寸、大量露白、黑色主要用于勾线。
+> 样图为叠加 STYLES.md「附录 A·实拍纸质感增强层」后的效果(2026-07-13 更新);示例提示词已含该层。
 
 ```
 A cellphone PHOTO of a real drawing made by a 5-year-old with wax crayons on a slightly wrinkled sheet of white printer paper. It must look photographed on real paper — visible paper texture and faint wrinkles, clean bright white paper — NOT a digital illustration.
@@ -203,7 +222,8 @@ Flat naive composition. Subject: a smiling cat sitting in a garden with a big su
 Genuinely crude and childish, like a real 5-year-old who can barely draw — NOT a skilled adult imitating a child: shaky wobbly outlines that wander and don't close; clumsy wrong proportions; lumpy, barely-recognizable shapes; eyes different sizes and a crooked smile.
 
 The CRAYON COLORING must look genuinely real (most important):
-- a real kid has NO control over pressure — some strokes pressed hard and dark, others barely touch the paper, with no consistency; waxy build-up in the heavy spots, faint streaks in the light ones, small smudges
+- a real kid has NO control over pressure — some strokes pressed hard and dark, others barely touch the paper, with no consistency; waxy build-up in the heavy spots that catches a slight sheen, faint streaks in the light ones, small smudges and one or two finger smears
+- macro-visible paper tooth grain: crayon pigment sits only on the raised grain of the paper, strokes break up over the texture, edges rough and broken, never clean; one or two faint fold creases in the paper
 - coloring is sparse and scribbly — bare white paper shows THROUGH everywhere, even inside the colored shapes (roughly 50–65% of each colored area left unfilled, white and streaky)
 - black crayon is used mainly for the thin wobbly outlines rather than filling big solid areas (no big solid-black patches on the cat)
 - strokes go in different directions, overlapping and broken, like a kid scribbling with no plan; color clearly overflows past the outlines in several places
@@ -259,13 +279,14 @@ Avoid anything cute, polished, symmetric or professionally illustrated. It must 
 
 > 输入示例:「用情绪叙事淡彩速写画:下雨天妈妈把伞倾向女儿那边、自己肩膀淋在雨里,配文 妈妈那边 / 好像永远 / 不会淋湿」
 > 命门:靛蓝松散速写线(圆形/发髻用圈状搜索线)+ 大片留白 + 全画只有一处橙色点缀(这里是伞)+ 脸颊淡腮红 + 抖动线。多人场景也要守住"只有一处橙"。中文只写短句最稳。
+> 样图为叠加 STYLES.md「附录 A·实拍纸质感增强层」后的效果(2026-07-13 更新);示例提示词已含该层。
 
 ```
-一张情绪叙事风格的极简淡彩速写插画,画在干净白纸上,轻盈通透、略带稚拙的手绘感,不是数字精修插画、不是写实照片、不是水彩习作、不是日系动漫。
+一张情绪叙事风格的极简淡彩速写插画,画在带细腻纸纹颗粒的白色水彩纸上(纸的牙口微距可见,笔线穿过纸纹微微断续),轻盈通透、略带稚拙的手绘感,不是数字精修插画、不是写实照片、不是水彩习作、不是日系动漫。
 主体:下雨天,妈妈牵着小女儿的手走在路上,妈妈把一把伞明显倾向女儿那一边,自己半个肩膀淋在雨里。
 线条(最重要):用靛蓝/藏青色钢笔画松弛速写线,线条少而肯定、清爽通透,轮廓偶尔不闭合、带轻微手抖;画头发、发髻、圆形、蓬松或环形的东西时用来回缠绕的圈状"搜索线"叠画,而不是一根干净闭合线;绝不密集排线、绝不交叉排线、绝不用线涂黑或堆阴影;雨丝用寥寥几笔斜向短线示意。
 造型:真人比例与神态,大人半写实而简约、小孩圆润可爱,情绪到位、有故事感,不是Q版大头、不是写实照片、不是动漫脸;脸颊各轻点一小块淡淡腮红。
-上色(最重要):整幅以大面积白纸留白为主(约六到七成纯白),绝大部分只有蓝线、不上色;只给那把伞平涂一处高饱和橙色,作为全画唯一的暖色焦点,两人衣服基本留白或极淡;水彩薄、边缘不均匀、可露白,绝不铺满、绝不厚涂。
+上色(最重要):整幅以大面积白纸留白为主(约六到七成纯白),绝大部分只有蓝线、不上色;只给那把伞平涂一处高饱和橙色,作为全画唯一的暖色焦点,两人衣服基本留白或极淡;水彩薄、边缘不均匀、可露白,颜料在纸纹里有细小沉淀颗粒;绝不铺满、绝不厚涂。
 细节:主体旁寥寥几笔短促抖动线暗示情绪。
 构图:两人偏左并靠在一起,右侧大量空白,极简。
 调性:怀旧、温柔、略带心酸的家庭叙事感,画面干净轻盈。

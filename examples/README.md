@@ -368,15 +368,16 @@ Warm handcrafted editorial illustration mood. No text.
 ![北欧绘本水粉 红棕发髻女青年](15-nordic-storybook.png)
 
 > 输入示例:「用北欧绘本水粉画一个高个女青年,红棕色低发髻,奶白毛衣塞进丹宁蓝中长裙,芥末黄短靴,全身立绘」
-> 命门:①整画纸纹(含空背景)+大留白;②配色锁死丹宁蓝×芥末黄×奶油白+珊瑚腮红;③人物"设定稿味"=细长脖子+瘦长四肢+明显鼻子+小小 navy 椭圆眼+轮廓飞发丝,不写死会出主流萌娃圆脸;④全画唯一投影=脚下一抹淡蓝椭圆(半身像换奶黄椭圆光晕)。半身像样图(银发眼镜奶奶,淡冰蓝底+奶黄光晕)见 `15-nordic-storybook-grandma.png`。
+> 命门:①整画纸纹(含空背景)+大留白,纸必须"近白轻盈"——【纸底色】要带 ≈hex(暖白 #F8F7F2 / 冰蓝 #F3F7F9 / 暖灰 #ECEEED),不带色值模型会把底涂暗涂黄(数值实测:参考图底色 235–249,不写 hex 出 199–223);②配色锁死丹宁蓝×芥末黄×奶油白+珊瑚腮红,且蓝黄要敢饱和(参考图 95 分位饱和度 0.59–0.67);③人物"设定稿味"=细长脖子+瘦长四肢+明显鼻子(鼻头深珊瑚)+小小 navy 椭圆眼+微担忧眉+轮廓飞发丝,不写死会出主流萌娃圆脸;成人棱角原型=几何雕塑感发块+方下巴+极小点眼+夸张长腿;④全画唯一投影=脚下一抹淡蓝椭圆(半身像换身后奶黄椭圆光晕)。
+> 半身像样图(姜黄卷发胡子青年,冰蓝底+奶黄光晕+芥末圆框眼镜)见 `15-nordic-storybook-portrait.png`;棱角成人原型样图(藏青几何发块长腿男,暖灰底)见 `15-nordic-storybook-lanky.png`。三张样图均为最终模板逐字生成,背景色值/饱和度/纸纹幅度经与 4 张 MJ 原图数值对照通过。
 > 模板为已验证英文原文,占位符也填英文,不要转译。出身:Midjourney --sref 1002025125 的 gpt-image 复刻。
 
 ```
 Soft gouache children's picture-book illustration in a modern Scandinavian storybook style, character-design sheet energy.
-Subject: a tall slender young woman with a loose auburn low bun, wearing a warm cream chunky sweater tucked into a denim cornflower-blue midi skirt and mustard butter-yellow ankle boots, one hand holding her other arm's elbow, standing full-body, centered, against a vast empty warm off-white paper background with huge negative space around the single subject.
-PAPER (identity trait): subtle paper grain tooth texture visible across the ENTIRE image including the empty background.
-PALETTE (strict): muted cozy limited palette — denim cornflower blue, mustard butter yellow, warm cream white, soft coral blush; hair only in auburn, dark umber or silver grey; no other saturated colors anywhere.
-CHARACTER RECIPE: stylized quirky storybook proportions — long thin neck, slender elongated limbs, small hands; expressive minimalist face: two small navy oval eyes, an expressive prominent nose with a slightly darker coral tip, thin expressive eyebrows, faint subtle mouth, round rosy coral blush cheeks; hair painted as a few soft masses with a few thin flyaway hair-line strokes escaping the silhouette; gentle, slightly awkward endearing posture.
+Subject: a tall slender young woman with a loose auburn low bun, wearing a warm cream chunky sweater tucked into a denim cornflower-blue midi skirt and mustard butter-yellow ankle boots, one hand holding her other arm's elbow, standing full-body, centered, against a vast empty warm off-white (approx #F8F7F2) paper background with huge negative space around the single subject.
+PAPER (identity trait): the paper is VERY light and airy, close to near-white — never dark, never heavily tinted; subtle fine paper grain tooth texture visible across the ENTIRE image including the empty background.
+PALETTE (strict): cozy limited palette — denim cornflower blue and mustard butter yellow both clearly saturated enough to read cheerful, plus warm cream white and soft coral blush; hair only in auburn, dark umber, dark navy or silver grey; no other colors anywhere.
+CHARACTER RECIPE: stylized quirky storybook proportions — long thin neck, slender elongated limbs, small hands; expressive minimalist face: two small navy oval eyes, an expressive prominent nose with a slightly darker coral tip, thin expressive slightly-worried eyebrows, faint subtle mouth, round rosy coral blush cheeks; hair painted as a few soft masses with a few thin flyaway hair-line strokes escaping the silhouette; gentle, slightly awkward endearing posture, NOT cute mainstream cartoon.
 TEXTURE: flat matte gouache color masses with granular dry-brush stippled texture inside the clothing and hair, NO hard outlines, no volumetric 3D rendering, no glossy digital shading.
 LIGHT & SHADOW: One single soft pale-blue oval shadow under the feet, no other shading or shadows anywhere.
 Timeless heartwarming Scandinavian picture-book aesthetic. No text.

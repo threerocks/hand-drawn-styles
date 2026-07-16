@@ -384,6 +384,24 @@ RENDER: high-end CGI quality, clean, minimalist, playful deadpan charm.
 
 ---
 
+## 17. 聚光水粉立绘(gouache-spotlight)
+
+> 纯风格。比例:不传则不注入。占位符 `【主体】【背景色】【构图】【文字】` 自动推断:【背景色】按互补规则自动选——主体/服装偏蓝青就配 "warm amber-orange"(可用 "warm pale-amber" 减浓),主体偏暖橙就配 "soft sky-blue";同组图两种底色可混用(标杆组即两橙两蓝);【构图】默认 "waist-up centered portrait facing the viewer"(全身立绘/动物按需改写);【文字】默认 "No text anywhere."。
+>
+> 出身:Midjourney --sref 2344047981 的 gpt-image 复刻(2026-07-16 四张标杆图三轮对照定稿:惊讶男孩/呆脸大叔/圆胖小鸟三种主体 × 橙/蓝两种底色全部验证)。本质是"数码水粉动画概念立绘":满幅单色刷底 + 人物身后聚光晕 + 夸张比例大眼角色 + 软喷绘脸×干扫笔触,高级绘本 × 动画电影 vis-dev 气质。适合角色立绘、角色系列(跨张统一底色即成套)、i2v 动画锚图。
+> 命门(三轮翻车教训,全部写死):**①背景笔触密度是走钢丝**——写重了(heavy mottling)出深色油画斑驳底(首轮翻车),写平了(mostly flat)出数字平涂(次轮小鸟翻车);唯一验证通过的表述是 "clearly visible loose scumbled dry-brush strokes + gentle tonal variation + low contrast + matte";**②皮肤禁纹理**——脸和皮肤必须 airbrushed smooth 干净渐变,可见笔触只留在头发/皮毛/羽毛/衣服/背景;**③头发写圆团**——"big soft rounded masses + directional feathered strokes",不写死就出尖刺动漫发丝(首轮翻车);**④身份特征=满幅涂满+聚光晕**——单色刷底涂满到边、人物身后一圈更亮的柔光,四边绝不露白纸;**⑤互补色排布**——全画只有一对互补色:蓝青主体×暖橙底,或暖橙主体×蓝底。
+> 和 [#13 暖光童画](#13-暖光童画动画概念暖绘)同源(都是 MJ sref 动画 vis-dev 水粉的复刻),区别:#13 是"未画完的概念稿"(白纸留边+粉蓝奶黄碎笔背景+童画大虹膜),#17 是"画满的聚光立绘"(单色满幅底+聚光晕+虹膜正常留眼白,角色从萌娃到大叔小鸟全适配)。
+> 模板为已验证英文原文,占位符也填英文,不要转译。
+
+```
+Character concept art in a modern animated-feature visual-development style, painterly digital GOUACHE illustration — matte, opaque, simplified shapes with clearly visible brushwork.
+Subject: 【主体】, 【构图】.
+STYLE RECIPE (follow exactly): the whole image is built from CLEARLY VISIBLE soft brush strokes — every area shows the direction of the brush, like a hand-painted gouache concept painting, yet the values stay soft and low-contrast; BACKGROUND: one single 【背景色】 color field covering the whole canvas edge to edge, painted with clearly visible loose scumbled dry-brush strokes and gentle tonal variation (some patches slightly lighter, some slightly deeper), matte and calm — NOT heavy dark oil mottling, NOT flat digital fill; a noticeably lighter soft glow right behind the character like a soft spotlight; fully abstract with no scenery, no white paper border; FACE & SKIN: soft smooth airbrushed volume with clean gradients, NO canvas texture on the skin, warm rosy flush on cheeks, nose and ears; EYES: oversized round expressive eyes with bright white highlight dots, bold painterly eyebrows; exaggerated caricature proportions; HAIR / FUR / FEATHERS: painted as big soft rounded masses covered in visible directional feathered dry-brush strokes (NOT sharp spiky anime strands), warm rim light glowing on the edges; CLOTHING: big simplified color blocks with visible dry-brush strokes and slightly rough painterly edges, minimal detail; PALETTE: one complementary pair only — teal/denim blue against warm orange-amber — soft cinematic lighting, storybook charm, premium animated-film character concept art quality.
+【文字】
+```
+
+---
+
 ## 附录 A · 实拍纸质感增强层(可叠加)
 
 > 2026-07-13 经 Midjourney V7 标杆对照实测定稿(全过程见 `benchmarks/`)。适用对象:一切"画在纸上"的画风——#1/#1.1/#3/#3.1/#8 直接叠加;#11 用文末轻量版;#4/#9/#10 等非纸面画风不适用。

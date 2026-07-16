@@ -9,7 +9,7 @@
 ### 1. 确定画风
 
 - **用户已显式指定** → 直接采用。识别方式三选一(任一命中即可):
-  - 中文名:纯人类手绘 / 儿童涂色 / 极简线条 / 火柴人 / 蜡笔 / 童涂 / 吉卜力 / 小豆人 / MS Paint / 烂涂鸦 / 圆珠笔 / 单线涂鸦 / 蜡笔实拍 / 真蜡笔 / 水墨 / 写意 / 国画 / 像素 / 像素风 / 情绪叙事 / 淡彩速写 / 速写讲故事 / 复古动画 / 概念稿 / 概念设定 / 暖光童画 / 动画概念暖绘 / 北欧纸雕 / 纸雕 / 纸艺 / 衍纸 / 北欧绘本水粉 / 北欧绘本 / 绘本水粉 / 斯堪的纳维亚绘本 / 大鼻软偶 / 软偶 / 软胶潮玩 / 大鼻子潮玩 / 聚光水粉立绘 / 聚光立绘 / 水粉立绘 / 墨线绘本 / 墨线淡彩 / 线稿绘本 / 速写绘本 / 低饱和克制版(描线填色) / 潦草自画版(简笔涂鸦)
+  - 中文名:纯人类手绘 / 儿童涂色 / 极简线条 / 火柴人 / 蜡笔 / 童涂 / 吉卜力 / 小豆人 / MS Paint / 烂涂鸦 / 圆珠笔 / 单线涂鸦 / 蜡笔实拍 / 真蜡笔 / 水墨 / 写意 / 国画 / 像素 / 像素风 / 情绪叙事 / 淡彩速写 / 速写讲故事 / 二维水彩风格 / 二维水彩 / 复古动画 / 概念稿 / 概念设定 / 暖光童画 / 动画概念暖绘 / 北欧纸雕 / 纸雕 / 纸艺 / 衍纸 / 北欧绘本水粉 / 北欧绘本 / 绘本水粉 / 斯堪的纳维亚绘本 / 大鼻软偶 / 软偶 / 软胶潮玩 / 大鼻子潮玩 / 聚光水粉立绘 / 聚光立绘 / 水粉立绘 / 墨线绘本 / 墨线淡彩 / 线稿绘本 / 速写绘本 / 低饱和克制版(描线填色) / 潦草自画版(简笔涂鸦)
   - 编号:1–18,另有变体 1.1(儿童涂色-低饱和克制版)、3.1(蜡笔童涂-潦草自画版)
   - 英文别名:`handmade` `childlike-coloring` / `coloring-muted` `restrained-coloring`(1.1) / `xkcd` `stickman` `minimal-line` / `crayon` `kid-crayon` / `rawkid` `kid-scrawl` `stick-kid`(3.1) / `ghibli` / `bean` `blob` / `ms-paint` `bad-doodle` `ugly` / `scribble` `pen-scribble` `ballpoint` / `real-crayon` `crayon-photo` / `ink-wash` `ink` `shuimo` `chinese-painting` / `pixel` `pixel-art` `8-bit` `16-bit` / `emo-sketch` `story-sketch` `watercolor-sketch` `light-watercolor` / `retro-concept` `mid-century` `gouache-concept`(12) / `sunlit-storybook` `vis-dev` `storybook-visdev`(13) / `paper-folk` `papercraft` `nordic-papercraft` `paper-sculpture` `quilling`(14) / `nordic-storybook` `scandi-gouache` `scandinavian-storybook` `soft-gouache`(15) / `softnose` `softnose-vinyl` `bignose-toy` `vinyl-toy` `art-toy`(16) / `gouache-spotlight` `spotlight-gouache` `character-spotlight`(17) / `inked-storybook` `ink-storybook` `sketch-storybook` `storybook-ink`(18)
   - 注意 `涂鸦/doodle` 本身有歧义(#5 小豆人、#6 MS Paint、#7 圆珠笔都沾涂鸦):用户只说"涂鸦/画烂点"而不指明时,按未指定处理→展示菜单让其选。
@@ -40,7 +40,7 @@
   10. 复古像素 —— 8/16-bit 老游戏精灵图,硬方块像素、有限调色板、零抗锯齿
 
   【动画 · 概念设定】
-  12. 复古动画概念稿 —— 1950s 中古动画水粉设定稿,白纸高调+粉彩+单点强色,亲和复古
+  12. 二维水彩风格 —— 1950s 中古动画水粉设定稿,白纸高调+粉彩+单点强色,亲和复古(旧名:复古动画概念稿)
   13. 暖光童画 —— 现代动画 vis-dev 水粉童画,大眼大虹膜+蓬软发团飞丝+青橙互补+留白纸边,Pixar 概念稿感
   17. 聚光水粉立绘 —— 数码水粉动画立绘:满幅单色刷底+人物身后聚光晕+夸张比例大眼角色,软喷绘脸×干扫笔触,蓝橙互补,绘本×动画概念稿感
   18. 墨线绘本 —— 钢笔速写线稿×绘本淡彩:墨线定形起稿线外露+发丝逐根勾飞丝,大虹膜大眼,干净透亮柔和上色,水彩渐变背景+奶白纸边毛刷框,速写手账页气质

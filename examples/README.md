@@ -296,9 +296,9 @@ Avoid anything cute, polished, symmetric or professionally illustrated. It must 
 
 ---
 
-## 12. 复古动画概念稿
+## 12. 二维水彩风格(复古动画概念稿)
 
-![复古动画概念稿 草帽绅士](12-retro-concept.png)
+![二维水彩风格 草帽绅士](12-retro-concept.png)
 
 > 输入示例:「用复古动画概念稿画:一个戴草帽的清瘦男人,蓝西装白衬衫,长脸尖下巴,亲和地笑;焦点物件=金黄色草帽」
 > 命门:白纸高调(背景只有干刷扫痕,绝不满铺/绝不画光环圈)+ 奶白透粉的脸罩桃色暖光+大块 form shadow(复古海报式,不做柔和渲染)+ 少画多留(衣服大块平扫+定型线,禁细节)+ 粉彩调只留一处高饱和焦点物件。双人高浓度背景样图见 `12-retro-concept-duo.png`。

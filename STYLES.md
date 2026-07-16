@@ -371,7 +371,8 @@ Timeless heartwarming Scandinavian picture-book aesthetic. No text.
 
 > 纯风格。比例:不传则不注入。占位符 `【主体】【构图】【眼型】【穿搭】【胡茬】【肤色】【背景底色】` 自动推断:【构图】默认 "full-body standing, front view, centered, symmetrical, square composition"(半身像写 "bust portrait, head and shoulders only, front view, centered, character fills most of the frame, square composition");【眼型】默认困倦眯眼 "tiny half-lidded bored sleepy eyes (small white ovals, small black pupils, a heavy flat upper eyelid line)"(可换圆点眼 "tiny round white eyes with small black dot pupils, a mildly startled neutral gaze");【穿搭】用色板内颜色配街头穿搭(hoodie/卫衣/条纹T/毛线帽/棒球帽/耳机/大头板鞋);【胡茬】成年男性角色填 "Tiny 2D hand-drawn stubble ticks (short thin black line strokes) scattered only on the chin and jaw of the smooth 3D face.",女性/儿童删空;【肤色】默认 "blush pink"(可换 "warm tan");【背景底色】默认 "warm blush-peach"(可换 pale butter-yellow / warm beige,同组图统一一种)。
 >
-> 出身:Midjourney --sref 533812435 的 gpt-image 复刻(2026-07-16 全身站姿+半身特写两构图对照定稿):现代柔和 3D 潮玩美学——简单几何形体、夸张比例、极简人物;超大垂管鼻+眯缝小眼+一字嘴给角色一种俏皮的呆萌气质。适合角色立绘、潮玩头像、街头人物系列。
+> 出身:Midjourney --sref 533812435 的 gpt-image 复刻(2026-07-16 三形态对照定稿:全身站姿圆点眼镜男/半身毛帽眯眼男/坐姿耳机暖棕肤男,均与参考图并排盲测通过):现代柔和 3D 潮玩美学——简单几何形体、夸张比例、极简人物;超大垂管鼻+眯缝小眼+一字嘴给角色一种俏皮的呆萌气质。适合角色立绘、潮玩头像、街头人物系列。
+> 角色一致性 SOP:本配方保证的是**风格**一致,不保证**同一角色**跨图长得一样(gpt-image 没有 MJ --sref 的锚定机制)。要出同一角色的系列图(表情包/连载配图):先用本配方抽一张满意的**锚图**,之后全部走图生图("保持这个角色不变,改为……"),不要每张都从文字重新生成。
 > 命门(四条都必须写死):**①材质措辞**——必须写 "smooth matte soft-vinyl … NOT fuzzy, NOT felt, NOT wool",首测写 "felt-coated" 直接出毛毡绒公仔(翻车点),参考是光滑磨砂软胶;**②脸=身份**:超大垂管鼻盖过嘴 + 高位小眼 + **无眉毛** + 一字短嘴 + 长脸长脖,任何一项被"正常化"就串味(参考图人物一律无眉,长出眉毛立刻减分);**③2.5D 混维细节**:胡茬是 2D 短线手绘在光滑 3D 脸上,是本风格辨识度来源之一;**④背景与人同色板**:同色系纯色棚拍底 + 全暖限定色板,背景色必须从人物色板里取,脚下只留一小片软接触影。
 > 和 [#14 北欧纸雕](#14-北欧纸雕paper-folk)同属"软 3D 渲染",区别:#14 是纸材质+民俗图案+大投影强立体;#16 是软胶潮玩+街头穿搭+柔光平底,气质一冷静手工一呆萌潮流。
 > 模板为已验证英文原文,占位符也填英文,不要转译。

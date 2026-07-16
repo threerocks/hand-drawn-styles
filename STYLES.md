@@ -342,7 +342,7 @@ Warm handcrafted editorial illustration mood. No text.
 
 ## 15. 北欧绘本水粉(nordic-storybook)
 
-> 纯风格。比例:不传则不注入。占位符 `【主体】【构图】【纸底色】【光影】` 自动推断:【构图】默认 "standing full-body, centered"(半身像写 "bust portrait, head and shoulders, front facing, centered");【纸底色】默认 "warm off-white"(可换 "pale ice-blue",同组图统一一种);【光影】按构图自动选——全身立绘填 "One single soft pale-blue oval shadow under the feet, no other shading or shadows anywhere.",半身像填 "Behind the character floats one big soft warm cream-yellow oval halo of stippled gouache texture; no drop shadows anywhere."
+> 纯风格。比例:不传则不注入。占位符 `【主体】【构图】【纸底色】【光影】` 自动推断:【构图】默认 "standing full-body, centered"(半身像写 "bust portrait, head and shoulders, front facing, centered");【纸底色】默认 "warm off-white (≈#F8F7F2)"(可换 "pale ice-blue (≈#F3F7F9)" 或 "pale warm grey (≈#ECEEED)",同组图统一一种,务必带 ≈hex——不带色值模型会把底涂暗涂黄,已实测翻车);【光影】按构图自动选——全身立绘填 "One single soft pale-blue oval shadow under the feet, no other shading or shadows anywhere.",半身像填 "Behind the character floats one big soft warm cream-yellow oval halo of stippled gouache texture; no drop shadows anywhere."
 >
 > 出身:Midjourney --sref 1002025125 的 gpt-image 复刻(2026-07-16 三张同题对照定稿)——现代斯堪的纳维亚儿童绘本:柔和水粉纹理+温馨低饱和配色+富表现力的极简人物+微妙纸张纹理。适合角色立绘、绘本人物、温暖叙事场景。
 > 命门(四条都必须写死):**①整画纸纹+大留白**——纸纹牙口必须盖住包括空背景在内的整张图,丢了立刻变普通数字插画;**②配色锁死**——丹宁蓝×芥末黄×奶油白+珊瑚腮红,头发限 auburn/深棕/银灰,多一种饱和色就串味;**③人物"设定稿味"**——细长脖子+瘦长四肢+明显鼻子(鼻头偏深珊瑚色)+小小 navy 椭圆眼+轮廓上飞出的单根发丝,不写死会出主流萌娃圆脸(首测即翻车点);**④光影系统是身份特征**——全画唯一投影是脚下一抹淡蓝椭圆(半身像换成身后奶黄椭圆光晕),别处零阴影、零外轮廓线,平涂哑光+衣料内干刷颗粒。
@@ -352,9 +352,9 @@ Warm handcrafted editorial illustration mood. No text.
 ```
 Soft gouache children's picture-book illustration in a modern Scandinavian storybook style, character-design sheet energy.
 Subject: 【主体】, 【构图】, against a vast empty 【纸底色】 paper background with huge negative space around the single subject.
-PAPER (identity trait): subtle paper grain tooth texture visible across the ENTIRE image including the empty background.
-PALETTE (strict): muted cozy limited palette — denim cornflower blue, mustard butter yellow, warm cream white, soft coral blush; hair only in auburn, dark umber or silver grey; no other saturated colors anywhere.
-CHARACTER RECIPE: stylized quirky storybook proportions — long thin neck, slender elongated limbs, small hands; expressive minimalist face: two small navy oval eyes (for a glasses character: big round navy eyes behind round mustard wire glasses), an expressive prominent nose with a slightly darker coral tip, thin expressive eyebrows, faint subtle mouth, round rosy coral blush cheeks; hair painted as a few soft masses with a few thin flyaway hair-line strokes escaping the silhouette; gentle, slightly awkward endearing posture.
+PAPER (identity trait): the paper is VERY light and airy, close to near-white — never dark, never heavily tinted; subtle fine paper grain tooth texture visible across the ENTIRE image including the empty background.
+PALETTE (strict): cozy limited palette — denim cornflower blue and mustard butter yellow both clearly saturated enough to read cheerful, plus warm cream white and soft coral blush; hair only in auburn, dark umber, dark navy or silver grey; no other colors anywhere.
+CHARACTER RECIPE: stylized quirky storybook proportions — long thin neck, slender elongated limbs, small hands; expressive minimalist face: two small navy oval eyes (for a glasses character: big round navy eyes behind round mustard wire glasses; for an angular adult: tiny navy dot eyes), an expressive prominent nose with a slightly darker coral tip, thin expressive slightly-worried eyebrows, faint subtle mouth, round rosy coral blush cheeks; hair painted as a few soft masses with a few thin flyaway hair-line strokes escaping the silhouette (an angular adult may instead get one GEOMETRIC sculpted hair mass with a pointed swoop, a squared jaw and exaggerated elongated legs); gentle, slightly awkward endearing posture, NOT cute mainstream cartoon.
 TEXTURE: flat matte gouache color masses with granular dry-brush stippled texture inside the clothing and hair, NO hard outlines, no volumetric 3D rendering, no glossy digital shading.
 LIGHT & SHADOW: 【光影】
 Timeless heartwarming Scandinavian picture-book aesthetic. No text.
@@ -367,14 +367,14 @@ Timeless heartwarming Scandinavian picture-book aesthetic. No text.
 > 纯风格。比例:不传则不注入。占位符 `【主体】【构图】【眼型】【穿搭】【胡茬】【肤色】【背景底色】` 自动推断:【构图】默认 "full-body standing, front view, centered, symmetrical, square composition"(半身像写 "bust portrait, head and shoulders only, front view, centered, character fills most of the frame, square composition");【眼型】默认困倦眯眼 "tiny half-lidded bored sleepy eyes (small white ovals, small black pupils, a heavy flat upper eyelid line)"(可换圆点眼 "tiny round white eyes with small black dot pupils, a mildly startled neutral gaze");【穿搭】用色板内颜色配街头穿搭(hoodie/卫衣/条纹T/毛线帽/棒球帽/耳机/大头板鞋);【胡茬】成年男性角色填 "Tiny 2D hand-drawn stubble ticks (short thin black line strokes) scattered only on the chin and jaw of the smooth 3D face.",女性/儿童删空;【肤色】默认 "blush pink"(可换 "warm tan");【背景底色】默认 "warm blush-peach"(可换 pale butter-yellow / warm beige,同组图统一一种)。
 >
 > 出身:Midjourney --sref 533812435 的 gpt-image 复刻(2026-07-16 全身站姿+半身特写两构图对照定稿):现代柔和 3D 潮玩美学——简单几何形体、夸张比例、极简人物;超大垂管鼻+眯缝小眼+一字嘴给角色一种俏皮的呆萌气质。适合角色立绘、潮玩头像、街头人物系列。
-> 命门(四条都必须写死):**①材质措辞**——必须写 "smooth matte soft-vinyl … NOT fuzzy, NOT felt, NOT wool",首测写 "felt-coated" 直接出毛毡绒公仔(翻车点),参考是光滑磨砂软胶;**②脸=身份**:超大垂管鼻盖过嘴 + 高位小眼 + 一字短嘴 + 长脸长脖,任何一项被"正常化"就串味;**③2.5D 混维细节**:胡茬是 2D 短线手绘在光滑 3D 脸上,是本风格辨识度来源之一;**④背景与人同色板**:同色系纯色棚拍底 + 全暖限定色板,背景色必须从人物色板里取,脚下只留一小片软接触影。
+> 命门(四条都必须写死):**①材质措辞**——必须写 "smooth matte soft-vinyl … NOT fuzzy, NOT felt, NOT wool",首测写 "felt-coated" 直接出毛毡绒公仔(翻车点),参考是光滑磨砂软胶;**②脸=身份**:超大垂管鼻盖过嘴 + 高位小眼 + **无眉毛** + 一字短嘴 + 长脸长脖,任何一项被"正常化"就串味(参考图人物一律无眉,长出眉毛立刻减分);**③2.5D 混维细节**:胡茬是 2D 短线手绘在光滑 3D 脸上,是本风格辨识度来源之一;**④背景与人同色板**:同色系纯色棚拍底 + 全暖限定色板,背景色必须从人物色板里取,脚下只留一小片软接触影。
 > 和 [#14 北欧纸雕](#14-北欧纸雕paper-folk)同属"软 3D 渲染",区别:#14 是纸材质+民俗图案+大投影强立体;#16 是软胶潮玩+街头穿搭+柔光平底,气质一冷静手工一呆萌潮流。
 > 模板为已验证英文原文,占位符也填英文,不要转译。
 
 ```
 Soft matte 3D character render in the style of a modern designer collectible vinyl toy, built from simple rounded geometric shapes with playfully exaggerated proportions.
 Subject: 【主体】, 【构图】.
-CHARACTER ANATOMY (identity traits, most important): an extremely elongated tall face on a long cylindrical neck; an enormously oversized long drooping tubular nose hanging down over the mouth; 【眼型】 set high on the face and close together; a single short thin black dash for the mouth, deadpan subtle expression; small simple rounded ears sticking out; a massive inflated capsule-shaped torso with huge rounded sloping shoulders; smooth sausage-like arms tapering to small simple mitt hands with barely-defined chubby fingers; sturdy simple legs; enormous chunky cartoon sneakers with fat flat white laces.
+CHARACTER ANATOMY (identity traits, most important): an extremely elongated tall face on a long cylindrical neck; an enormously oversized long drooping tubular nose hanging down over the mouth; 【眼型】 set high on the face and close together, with NO eyebrows at all; a single short thin black dash for the mouth, deadpan subtle expression; small simple rounded ears sticking out; a massive inflated capsule-shaped torso with huge rounded sloping shoulders; smooth sausage-like arms tapering to small simple mitt hands with barely-defined chubby fingers; sturdy simple legs; enormous chunky cartoon sneakers with fat flat white laces.
 OUTFIT (streetwear): 【穿搭】.
 MATERIAL & TEXTURE: smooth matte soft-vinyl surfaces like a high-end art toy — soft-touch rubber coating with only a barely-visible ultra-fine grain, NOT fuzzy, NOT felt, NOT wool; no gloss, no metallic, no plastic shine. 【胡茬】
 COLOR PALETTE (strictly limited, warm): blush pink, salmon coral, butter yellow, cream white, warm peach, plus at most one dark accent (chocolate brown or black); 【肤色】 skin tone.
@@ -398,6 +398,29 @@ Character concept art in a modern animated-feature visual-development style, pai
 Subject: 【主体】, 【构图】.
 STYLE RECIPE (follow exactly): the whole image is built from CLEARLY VISIBLE soft brush strokes — every area shows the direction of the brush, like a hand-painted gouache concept painting, yet the values stay soft and low-contrast; BACKGROUND: one single 【背景色】 color field covering the whole canvas edge to edge, painted with clearly visible loose scumbled dry-brush strokes and gentle tonal variation (some patches slightly lighter, some slightly deeper), matte and calm — NOT heavy dark oil mottling, NOT flat digital fill; a noticeably lighter soft glow right behind the character like a soft spotlight; fully abstract with no scenery, no white paper border; FACE & SKIN: soft smooth airbrushed volume with clean gradients, NO canvas texture on the skin, warm rosy flush on cheeks, nose and ears; EYES: oversized round expressive eyes with bright white highlight dots, bold painterly eyebrows; exaggerated caricature proportions; HAIR / FUR / FEATHERS: painted as big soft rounded masses covered in visible directional feathered dry-brush strokes (NOT sharp spiky anime strands), warm rim light glowing on the edges; CLOTHING: big simplified color blocks with visible dry-brush strokes and slightly rough painterly edges, minimal detail; PALETTE: one complementary pair only — teal/denim blue against warm orange-amber — soft cinematic lighting, storybook charm, premium animated-film character concept art quality.
 【文字】
+```
+
+---
+
+## 18. 墨线绘本(inked-storybook)
+
+> 纯风格。比例:不传则不注入。占位符 `【主体】【构图】【背景色】【配色】【文字】` 自动推断:【构图】默认 "head-and-shoulders portrait"(可换 waist-up 等);【背景色】默认 "warm peach fading to pale cream near the top"(可换 "pale sky-blue with hints of soft cream" / "dusty earth-brown with a slice of pale blue-grey" 等,始终是单一氛围渐变);【配色】填一句 2–4 色的协调短语,人物主色与背景呼应或互补,如 "sky-blue hair, soft pink shirt, warm peach background";【文字】默认 "No text anywhere."。
+>
+> 出身:Midjourney --sref 3865390274 的 gpt-image 复刻(2026-07-16 三张标杆图对照 + 女孩/男孩双主体泛化验证定稿)——"富有表现力的绘本角色 + 绘画质感 + 温暖手工感"。本质是"钢笔速写线稿 × 绘本淡彩":墨线定形、起稿线外露、发丝逐根勾,底下是干净透亮的柔和数码上色,水彩渐变背景 + 奶白纸边毛刷框。适合角色立绘、故事绘本、头像、i2v 动画锚图。
+> 命门(首测翻车点,四条都必须写死):**①上色**必须写"clean bright digital painting + 三个 NO(彩铅颗粒/色块内排线/画布纹)",否则整张退化成灰扑扑的彩铅速写(首测即翻车);**②背景**必须写"简单柔和水彩渐变 + NO detailed clouds",否则出满幅细节火烧云抢戏;**③边框**必须写"大块毛边矩形 + 四边平整奶白纸边",写成模糊淡出就只剩羽化暗角,"手绘本的一页"感全丢;**④眼与发是身份特征**——虹膜几乎占满眼眶、只留眼角一点眼白;头发必须"逐根流畅墨线顺发流 + 轮廓外适量飞丝",且要写明"优雅、不是乱麻"(否则出满头乱线)。
+> 和 [#13 暖光童画](#13-暖光童画动画概念暖绘)同属 MJ 绘本 sref 复刻,区别:#13 是水粉厚涂 vis-dev(几乎无线稿、头发画成大体积块、青橙互补锁死);#18 线稿主导(墨线是画面的骨架)、上色轻薄透亮、配色每图一套协调即可,气质是"速写手账页"而非"厚涂概念稿"。
+> 模板为已验证英文原文,占位符也填英文,不要转译。
+
+```
+Expressive storybook character illustration — confident sketchy ink linework over clean soft digital painting.
+Subject: 【主体】, 【构图】.
+STYLE RECIPE (follow exactly):
+LINES: every shape is defined by confident loose sketchy ink lines (dark sepia-black, slightly varying thickness); a few overlapping construction strokes are left visible but the drawing stays elegant, NOT a chaotic scribble mess; hair is drawn as smooth flowing individual strand lines following the hair volume, with a moderate number of fine whippy flyaway strands escaping the silhouette; clothing folds are a few loose quick line strokes.
+COLOR: underneath the lines the coloring is clean bright digital painting — smooth soft airbrushed gradients, fresh luminous colors, absolutely NO grainy colored-pencil texture, NO hatching or cross-hatching inside color areas, NO canvas texture; skin is rendered clean and smooth with soft blush on cheeks and nose.
+EYES (critical): enormous round expressive eyes; the glossy dark-brown irises are VERY large and fill almost the entire eye with only tiny white sclera corners showing, one bright white highlight dot per eye, thick dark painterly upper lash line, bold expressive eyebrows. Tiny nose, small soft lips slightly parted, pointed chin, long slender neck.
+BACKGROUND: a simple soft watercolor gradient wash of 【背景色】, smooth and airbrushed with only very subtle soft mottling — NO detailed clouds, NO busy texture.
+FRAME (signature, must have): the painting fills a large rough-edged rectangle that does NOT reach the image edges; all four sides show a flat, clean, pale warm-cream blank paper margin; the boundary between the painted rectangle and the paper margin is made of ragged dry-brush streaks and slightly uneven edges, like a hand-painted page from an artist's sketchbook; only the faintest paper grain overall.
+Palette: 【配色】 — restrained and harmonized. 【文字】
 ```
 
 ---

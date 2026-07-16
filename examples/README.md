@@ -399,3 +399,25 @@ COLOR PALETTE (strictly limited, warm): blush pink, salmon coral, butter yellow,
 BACKGROUND & LIGHT: seamless solid pale butter-yellow studio backdrop, completely empty, drawn from the same warm palette as the character; soft even diffuse studio lighting, gentle ambient occlusion in crevices, one small soft contact shadow; no floor line, no horizon, no props.
 RENDER: high-end CGI quality, clean, minimalist, playful deadpan charm.
 ```
+
+---
+
+## 18. 墨线绘本(inked-storybook)
+
+![墨线绘本 蓝发丸子头女孩](18-inked-storybook.png)
+
+> 输入示例:「用墨线绘本画一个天蓝色头发扎松散丸子头的女孩,粉色宽松T恤,侧头睁大眼睛一脸惊讶」
+> 命门:①上色必须写 clean bright digital painting + 三个 NO(彩铅颗粒/色块内排线/画布纹)——首测出灰扑扑彩铅速写;②背景必须写"简单柔和水彩渐变 + NO detailed clouds",否则出满幅火烧云抢戏;③边框必须写"大块毛边矩形+四边平整奶白纸边",写成淡出就只剩羽化暗角;④虹膜几乎占满眼眶+头发逐根墨线带飞丝(且写明优雅不乱麻)是身份特征。男孩样图(圆眼镜芥末黄围巾+红纸飞机)见 `18-inked-storybook-boy.png`。
+> 模板为已验证英文原文,占位符也填英文,不要转译。出身:Midjourney --sref 3865390274 的 gpt-image 复刻。
+
+```
+Expressive storybook character illustration — confident sketchy ink linework over clean soft digital painting.
+Subject: a young woman with sky-blue hair tied in a loose messy bun, several long flyaway strands escaping, wearing a soft pink loose t-shirt, looking off to the side with wide surprised eyes, head-and-shoulders portrait.
+STYLE RECIPE (follow exactly):
+LINES: every shape is defined by confident loose sketchy ink lines (dark sepia-black, slightly varying thickness); a few overlapping construction strokes are left visible but the drawing stays elegant, NOT a chaotic scribble mess; hair is drawn as smooth flowing individual strand lines following the hair volume, with a moderate number of fine whippy flyaway strands escaping the silhouette; clothing folds are a few loose quick line strokes.
+COLOR: underneath the lines the coloring is clean bright digital painting — smooth soft airbrushed gradients, fresh luminous colors, absolutely NO grainy colored-pencil texture, NO hatching or cross-hatching inside color areas, NO canvas texture; skin is rendered clean and smooth with soft blush on cheeks and nose.
+EYES (critical): enormous round expressive eyes; the glossy dark-brown irises are VERY large and fill almost the entire eye with only tiny white sclera corners showing, one bright white highlight dot per eye, thick dark painterly upper lash line, bold expressive eyebrows. Tiny nose, small soft lips slightly parted, pointed chin, long slender neck.
+BACKGROUND: a simple soft watercolor gradient wash of warm peach fading to pale cream near the top, smooth and airbrushed with only very subtle soft mottling — NO detailed clouds, NO busy texture.
+FRAME (signature, must have): the painting fills a large rough-edged rectangle that does NOT reach the image edges; all four sides show a flat, clean, pale warm-cream blank paper margin; the boundary between the painted rectangle and the paper margin is made of ragged dry-brush streaks and slightly uneven edges, like a hand-painted page from an artist's sketchbook; only the faintest paper grain overall.
+Palette: sky-blue hair, soft pink shirt, warm peach background — restrained and harmonized. No text anywhere.
+```

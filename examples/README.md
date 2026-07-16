@@ -326,13 +326,16 @@ Avoid anything cute, polished, symmetric or professionally illustrated. It must 
 ![暖光童画 红发眼镜女孩](13-sunlit-storybook.png)
 
 > 输入示例:「用暖光童画画一个红发蓬蓬头、戴墨绿圆框眼镜的女孩,披青绿格纹披肩,半身,惊讶地望向一侧」
-> 命门:①头发写"少数大块柔软体积+轮廓飞丝",别让模型画满头细密小卷;②脸部干净柔滑、皮肤禁画布纹理(纹理只留背景和衣服);③虹膜占满眼眶只留眼角眼白;④四边露白纸边框+粉蓝奶油黄干擦背景是身份特征。换主体样图(黑发男孩抱橘猫)见 `13-sunlit-storybook-boy.png`。
+> 样图为 2026-07-16 三轮迭代后的 v3 定稿(哑光排刷笔触版);示例提示词即 v3 原文。
+> 命门:①整画 MATTE 哑光水粉、头发和衣服内部要有方向可读的排刷笔触,严禁光滑喷绘(前两版翻车主因);②头发"大块体积由可见笔触塑形+轮廓飞丝",别画满头细密小卷;③虹膜平涂图形化非 3D 亮球;④五官允许轻微不对称;⑤留白纸边档身份特征=四边露白纸+粉蓝奶油黄干擦;满幅场景档必须写死 HIGH-KEY 高调明亮,否则出暗琥珀油画室内。
+> 换主体样图(黑发男孩抱橘猫)见 `13-sunlit-storybook-boy.png`;满幅场景档样图(画室女教师)见 `13-sunlit-storybook-fullbleed.png`。
 > 模板为已验证英文原文,占位符也填英文,不要转译。
 
 ```
-Character concept art in a modern animated-feature visual-development style, painterly digital gouache illustration.
+Character concept art in a modern animated-feature visual-development style, traditional gouache painting look.
 Subject: a curious young girl with huge messy voluminous red-orange hair, wearing big round dark-teal glasses, dressed in a teal plaid shawl over a light blue shirt, waist-up portrait, slightly surprised wide-eyed expression looking off to the side.
-STYLE RECIPE (follow exactly): digital gouache painting with soft clean rendering on the face (smooth soft airbrushed shading, NO canvas texture on the skin), while the background and clothing keep loose visible dry-brush strokes; background is loosely scumbled pastel sky-blue with soft cream-yellow dry-brush patches, deliberately unfinished with raw white paper showing around the border like a concept sketch; EYES: enormous round expressive eyes, the dark irises are VERY large and fill most of the eye with only small white sclera corners, one bright white highlight dot per eye, thick dark painterly upper lash line, bold expressive eyebrows; tiny pointed chin, slender neck, rosy blush cheeks, subtle freckles; HAIR: painted as a few BIG soft volumetric masses with simple smooth shading (NOT detailed ringlet curls), then a moderate number of fine individual flyaway strands drawn on top of the silhouette, warm golden rim light glowing on the hair edges; palette: complementary teal and denim blue against warm orange, soft pastel overall, gentle warm lighting, storybook charm, Pixar-Disney visual development art quality.
+SCENE: background painted with long rough vertical and diagonal dry-brush streaks in pastel sky-blue with soft cream-yellow scuffed patches, bristle marks and broken paint edges visible, deliberately unfinished with raw white paper showing around the border like a concept sketch.
+STYLE RECIPE (follow exactly): MATTE traditional gouache finish over the whole image — absolutely NO glossy airbrush smoothness, NO digital gradient polish; the paint layer must read as real bristle-brush work: chunky directional brushstrokes clearly visible INSIDE the hair masses and clothing, each stroke direction readable like thick gouache dragged by a flat bristle brush; FACE: soft clean shading with sculptural plane changes on cheeks and nose, features slightly asymmetric and hand-painted (NOT a perfectly symmetric doll face), rosy blush, subtle freckles, tiny pointed chin, slender neck; EYES: enormous expressive eyes, the dark irises are VERY large and fill most of the eye, irises painted FLAT and graphic with subtle color variation — NOT shiny 3D orbs, only one small white highlight; thick dark painterly upper lash line, bold expressive eyebrows; HAIR: a few BIG soft volumetric masses shaped by visible directional strokes (NOT detailed ringlet curls), many fine individual flyaway strands drawn on top of the silhouette, warm golden rim light glowing on the hair edges; palette: complementary teal and denim blue against warm orange, soft pastel, gentle warm light, storybook charm, Pixar-Disney visual development art quality.
 No text anywhere.
 ```
 

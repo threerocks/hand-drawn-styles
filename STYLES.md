@@ -303,16 +303,21 @@ Avoid anything cute, polished, symmetric or professionally illustrated. It must 
 
 ## 13. 暖光童画(动画概念暖绘)
 
-> 纯风格。比例:不传则不注入。占位符 `【主体】【背景元素】【构图】【文字】` 自动推断:【背景元素】默认为空(整个占位符直接删掉);要加景物时填成英文接续短语,如" and sketchy green plant strokes"(必须是这类松散干刷笔触,保持概念稿式潦草),【构图】默认"waist-up portrait"半身像,【文字】默认"No text anywhere."。
+> 纯风格。比例:不传则不注入。占位符 `【主体】【构图】【场景】【背景元素】【文字】` 自动推断:【构图】默认"waist-up portrait"半身像;【场景】二选一(见下);【背景元素】只在留白纸边档使用,默认为空(整个占位符直接删掉),要加景物时填成英文接续短语,如" and loose sketchy green plant strokes"(必须是松散干刷笔触,保持概念稿式潦草);【文字】默认"No text anywhere."。
 >
-> 出身:Midjourney 双 --sref 组合画风的 gpt-image 复刻(2026-07-16 四张标杆图对照定稿)。本质是"现代动画电影视觉开发稿(vis-dev)× 绘本水粉":大眼大虹膜角色 + 蓬软发团飞丝 + 青蓝×橙红互补 + 干擦留白纸边,Pixar/Disney 概念设定稿气质。天然适配角色立绘、故事绘本、i2v 动画锚图。
-> 命门(第一版翻车点,三条都必须写死):**①头发**必须写"少数大块柔软体积 + 轮廓上叠少量单根飞丝",否则出满头细密小卷,画面变琐碎;**②脸部渲染**必须写"干净柔滑、皮肤禁画布纹理",纹理只许留在背景和衣服,否则全画油画布纹路过重;**③虹膜**必须写"占满眼眶、只留眼角少量眼白",否则眼白过多神韵全失。**④身份特征**:四边露白纸的"未画完"边框 + 粉蓝底奶油黄干擦背景,这两样丢了就不是这个风格。
+> 出身:Midjourney 双 --sref 组合画风的 gpt-image 复刻(2026-07-16 对照四张标杆图三轮迭代定稿,含换主体与满幅场景两档验证)。本质是"现代动画电影视觉开发稿(vis-dev)× 绘本水粉":大眼大虹膜角色 + 蓬软发团飞丝 + 青蓝×橙红互补 + 干刷水粉笔触,Pixar/Disney 概念设定稿气质。天然适配角色立绘、故事绘本、i2v 动画锚图。
+> 命门(每条都踩过坑,必须写死):**①哑光+笔触可读**——整画 MATTE 传统水粉质感,头发和衣服内部要有大块方向可读的排刷笔触,严禁光滑喷绘和数字渐变(第一、二版翻车主因:出图偏"平滑数字插画",MJ 原版的干涩笔触指纹全丢);**②头发**写"少数大块柔软体积由可见方向笔触塑形 + 轮廓上叠单根飞丝",否则出满头细密小卷;**③虹膜**写"平涂图形化、非 3D 亮球、只留一个小高光",否则出亮晶晶圆球眼;**④五官**允许轻微不对称的手绘感,否则出完美对称萌娃脸;**⑤场景两档**:留白纸边档的身份特征是四边露白纸+粉蓝奶油黄干擦背景;满幅档必须写死 HIGH-KEY 高调明亮(奶白+粉蓝、道具虚化淡出),否则出暗琥珀色油画室内(满幅第一版翻车原因)。
 > 模板为已验证的英文原文,不要转译成中文(转译等于换了一套未验证配方)。
+>
+> `【场景】` 二选一,整段照抄:
+> - **留白纸边档(默认)**:`SCENE: background painted with long rough vertical and diagonal dry-brush streaks in pastel sky-blue with soft cream-yellow scuffed patches【背景元素】, bristle marks and broken paint edges visible, deliberately unfinished with raw white paper showing around the border like a concept sketch.`
+> - **满幅场景档**(要完整环境时,如室内/街景):`TONAL KEY (most important): HIGH-KEY, light and airy — the whole image stays bright, milky and pastel like soft morning light; large areas wash out into soft creamy-white and pale powder-blue; NEVER darken the room, no deep warm shadows, no moody amber interior, background contrast stays low and faded. SCENE (full-bleed, edge to edge, NO white paper border): <一句英文场景描述,如 a cozy art studio interior with a pale chalkboard and jars of brushes on a light wooden counter> — painted LOOSELY with soft out-of-focus depth: props are blurry pale dry-brush suggestions with lost edges, never crisp; soft white window light floods one side.`
 
 ```
-Character concept art in a modern animated-feature visual-development style, painterly digital gouache illustration.
+Character concept art in a modern animated-feature visual-development style, traditional gouache painting look.
 Subject: 【主体】, 【构图】.
-STYLE RECIPE (follow exactly): digital gouache painting with soft clean rendering on the face (smooth soft airbrushed shading, NO canvas texture on the skin), while the background and clothing keep loose visible dry-brush strokes; background is loosely scumbled pastel sky-blue with soft cream-yellow dry-brush patches【背景元素】, deliberately unfinished with raw white paper showing around the border like a concept sketch; EYES: enormous round expressive eyes, the dark irises are VERY large and fill most of the eye with only small white sclera corners, one bright white highlight dot per eye, thick dark painterly upper lash line, bold expressive eyebrows; tiny pointed chin, slender neck, rosy blush cheeks, subtle freckles; HAIR: painted as a few BIG soft volumetric masses with simple smooth shading (NOT detailed ringlet curls), then a moderate number of fine individual flyaway strands drawn on top of the silhouette, warm golden rim light glowing on the hair edges; palette: complementary teal and denim blue against warm orange, soft pastel overall, gentle warm lighting, storybook charm, Pixar-Disney visual development art quality.
+【场景】
+STYLE RECIPE (follow exactly): MATTE traditional gouache finish over the whole image — absolutely NO glossy airbrush smoothness, NO digital gradient polish; the paint layer must read as real bristle-brush work: chunky directional brushstrokes clearly visible INSIDE the hair masses and clothing, each stroke direction readable like thick gouache dragged by a flat bristle brush; FACE: soft clean shading with sculptural plane changes on cheeks and nose, features slightly asymmetric and hand-painted (NOT a perfectly symmetric doll face), rosy blush, subtle freckles, tiny pointed chin, slender neck; EYES: enormous expressive eyes, the dark irises are VERY large and fill most of the eye, irises painted FLAT and graphic with subtle color variation — NOT shiny 3D orbs, only one small white highlight; thick dark painterly upper lash line, bold expressive eyebrows; HAIR: a few BIG soft volumetric masses shaped by visible directional strokes (NOT detailed ringlet curls), many fine individual flyaway strands drawn on top of the silhouette, warm golden rim light glowing on the hair edges; palette: complementary teal and denim blue against warm orange, soft pastel, gentle warm light, storybook charm, Pixar-Disney visual development art quality.
 【文字】
 ```
 

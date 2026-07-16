@@ -70,7 +70,7 @@
 - 拿不准也优先合理推断,不要为占位符反复追问用户。
 - 风格6(MS Paint):若用户附了参考照片,把模板首句改为"把这张照片重画成…"走图生图,效果最佳。
 - 风格11(情绪叙事淡彩速写):`【橙色关键物】` 从主体里挑一件最适合当暖色焦点的衣物/道具(如书包、毛衣、伞、裙子),全画只此一处橙;`【文字】` 按 STYLES.md 里的说明处理(要配文写成手写中文短句指令,不要文字写"不加任何文字")。
-- 风格13(暖光童画):模板是已验证英文,占位符也填英文;`【主体】` 写角色外形+服装+表情的英文短句,`【背景元素】` 默认删空,`【文字】` 默认 "No text anywhere."。
+- 风格13(暖光童画):模板是已验证英文,占位符也填英文;`【主体】` 写角色外形+服装+表情的英文短句;`【场景】` 二选一整段照抄 STYLES.md 里的现成英文——默认留白纸边档,用户要完整环境(室内/街景)时用满幅场景档(必须保留其中的 HIGH-KEY 段);`【背景元素】` 默认删空;`【文字】` 默认 "No text anywhere."。
 - 风格14(北欧纸雕):模板是已验证英文,占位符也填英文;`【主体】` 写角色/动物的外形+服饰+动作英文短句,`【构图】` 默认 "centered, waist-up"(叙事场景写 "full-body scene"),`【底色】` 默认 "warm ochre-brown",`【点缀元素】` 按主体挑 2–4 件民俗纸件(云/叶/花/螺旋/民俗鸟)。
 - 风格15(北欧绘本水粉):模板是已验证英文,占位符也填英文;`【主体】` 写角色外形+服装(服色从丹宁蓝/芥末黄/奶油白里配)的英文短句,`【构图】` 默认 "standing full-body, centered"(半身像写 "bust portrait, head and shoulders, front facing, centered"),`【纸底色】` 默认 "warm off-white"(可换 "pale ice-blue",同组图统一),`【光影】` 按构图自动选:全身填 "One single soft pale-blue oval shadow under the feet, no other shading or shadows anywhere.",半身填 "Behind the character floats one big soft warm cream-yellow oval halo of stippled gouache texture; no drop shadows anywhere."。
 - 风格16(大鼻软偶):模板是已验证英文,占位符也填英文;`【主体】` 写角色身份+动作的英文短句,`【构图】` 默认 "full-body standing, front view, centered, symmetrical, square composition"(半身像写 "bust portrait, head and shoulders only, front view, centered, character fills most of the frame, square composition"),`【眼型】` 默认困倦眯眼 "tiny half-lidded bored sleepy eyes (small white ovals, small black pupils, a heavy flat upper eyelid line)"(可换圆点眼),`【穿搭】` 用色板内颜色写街头穿搭英文短句,`【胡茬】` 成年男性填 STYLES.md 里的 2D 胡茬句、女性/儿童删空,`【肤色】` 默认 "blush pink",`【背景底色】` 默认 "warm blush-peach"(同组图统一)。

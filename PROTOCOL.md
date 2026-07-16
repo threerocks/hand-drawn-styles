@@ -9,9 +9,9 @@
 ### 1. 确定画风
 
 - **用户已显式指定** → 直接采用。识别方式三选一(任一命中即可):
-  - 中文名:纯人类手绘 / 儿童涂色 / 极简线条 / 火柴人 / 蜡笔 / 童涂 / 吉卜力 / 小豆人 / MS Paint / 烂涂鸦 / 圆珠笔 / 单线涂鸦 / 蜡笔实拍 / 真蜡笔 / 水墨 / 写意 / 国画 / 像素 / 像素风 / 情绪叙事 / 淡彩速写 / 速写讲故事 / 低饱和克制版(描线填色) / 潦草自画版(简笔涂鸦)
-  - 编号:1–11,另有变体 1.1(儿童涂色-低饱和克制版)、3.1(蜡笔童涂-潦草自画版)
-  - 英文别名:`handmade` `childlike-coloring` / `coloring-muted` `restrained-coloring`(1.1) / `xkcd` `stickman` `minimal-line` / `crayon` `kid-crayon` / `rawkid` `kid-scrawl` `stick-kid`(3.1) / `ghibli` / `bean` `blob` / `ms-paint` `bad-doodle` `ugly` / `scribble` `pen-scribble` `ballpoint` / `real-crayon` `crayon-photo` / `ink-wash` `ink` `shuimo` `chinese-painting` / `pixel` `pixel-art` `8-bit` `16-bit` / `emo-sketch` `story-sketch` `watercolor-sketch` `light-watercolor`
+  - 中文名:纯人类手绘 / 儿童涂色 / 极简线条 / 火柴人 / 蜡笔 / 童涂 / 吉卜力 / 小豆人 / MS Paint / 烂涂鸦 / 圆珠笔 / 单线涂鸦 / 蜡笔实拍 / 真蜡笔 / 水墨 / 写意 / 国画 / 像素 / 像素风 / 情绪叙事 / 淡彩速写 / 速写讲故事 / 复古动画 / 概念稿 / 概念设定 / 暖光童画 / 动画概念暖绘 / 低饱和克制版(描线填色) / 潦草自画版(简笔涂鸦)
+  - 编号:1–13,另有变体 1.1(儿童涂色-低饱和克制版)、3.1(蜡笔童涂-潦草自画版)
+  - 英文别名:`handmade` `childlike-coloring` / `coloring-muted` `restrained-coloring`(1.1) / `xkcd` `stickman` `minimal-line` / `crayon` `kid-crayon` / `rawkid` `kid-scrawl` `stick-kid`(3.1) / `ghibli` / `bean` `blob` / `ms-paint` `bad-doodle` `ugly` / `scribble` `pen-scribble` `ballpoint` / `real-crayon` `crayon-photo` / `ink-wash` `ink` `shuimo` `chinese-painting` / `pixel` `pixel-art` `8-bit` `16-bit` / `emo-sketch` `story-sketch` `watercolor-sketch` `light-watercolor` / `retro-concept` `mid-century` `gouache-concept`(12) / `sunlit-storybook` `vis-dev` `storybook-visdev`(13)
   - 注意 `涂鸦/doodle` 本身有歧义(#5 小豆人、#6 MS Paint、#7 圆珠笔都沾涂鸦):用户只说"涂鸦/画烂点"而不指明时,按未指定处理→展示菜单让其选。
 - **用户未指定** → 展示下面这个菜单,**停下等用户选**,不要自己替他挑:
 
@@ -38,8 +38,12 @@
   【传统 · 复古质感】
   9. 水墨写意 —— 毛笔黑墨、墨分五色、飞白留白、朱红印章,中国画手绘感
   10. 复古像素 —— 8/16-bit 老游戏精灵图,硬方块像素、有限调色板、零抗锯齿
+
+  【动画 · 概念设定】
+  12. 复古动画概念稿 —— 1950s 中古动画水粉设定稿,白纸高调+粉彩+单点强色,亲和复古
+  13. 暖光童画 —— 现代动画 vis-dev 水粉童画,大眼大虹膜+蓬软发团飞丝+青橙互补+留白纸边,Pixar 概念稿感
   ```
-  > 编号即风格的稳定身份(对应样图 01–10),不随分组改变;分组只是给用户分类挑选用。
+  > 编号即风格的稳定身份(对应样图 01–13),不随分组改变;分组只是给用户分类挑选用。
 
 ### 2. 取配方
 
@@ -55,13 +59,14 @@
 - 拿不准也优先合理推断,不要为占位符反复追问用户。
 - 风格6(MS Paint):若用户附了参考照片,把模板首句改为"把这张照片重画成…"走图生图,效果最佳。
 - 风格11(情绪叙事淡彩速写):`【橙色关键物】` 从主体里挑一件最适合当暖色焦点的衣物/道具(如书包、毛衣、伞、裙子),全画只此一处橙;`【文字】` 按 STYLES.md 里的说明处理(要配文写成手写中文短句指令,不要文字写"不加任何文字")。
+- 风格13(暖光童画):模板是已验证英文,占位符也填英文;`【主体】` 写角色外形+服装+表情的英文短句,`【背景元素】` 默认删空,`【文字】` 默认 "No text anywhere."。
 - 变体 1.1 / 3.1:同样用 `【主体】【文字】`;`【文字】` 按各自 STYLES.md 段落里的手写字说明处理(1.1 偏绘本手写字、3.1 偏儿童认真笔迹);两者都遵守"全页≤4 低饱和色 + 单一橙红强调色",橙红自动落在最合适的情绪焦点/关键道具上。
 
 ### 4. 处理比例(关键:不硬锁)
 
 - 用户**传了**比例(如 16:9 / 竖版 / 方图)→ 用用户的。
 - 用户**没传**:
-  - 纯风格(1、1.1、3、3.1、4、6、7、8、9、10、11)→ **不注入任何比例**。
+  - 纯风格(1、1.1、3、3.1、4、6、7、8、9、10、11、12、13)→ **不注入任何比例**。
   - 版式风格(2、5)→ 只注入**软结构提示**(2 用"多格网格排版";5 用"竖版、多格自上而下堆叠"),**不写具体数字比例**。
 
 ### 5. 输出

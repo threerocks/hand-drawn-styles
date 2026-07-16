@@ -1,6 +1,6 @@
 # 画风样例
 
-每种画风一个具体示例:**样图 + 可直接复制的输入示例提示词**。下列 11 种画风 + 2 变体(共 13 段)配方均已用真实出图验证通过。
+每种画风一个具体示例:**样图 + 可直接复制的输入示例提示词**。下列 13 种画风 + 2 变体(共 15 段)配方均已用真实出图验证通过。
 
 > 注:样图文件由维护者陆续落盘;若某张暂未显示,说明图片文件还在补传中,提示词本身已验证可用。
 
@@ -317,4 +317,21 @@ Avoid anything cute, polished, symmetric or professionally illustrated. It must 
 构图:方形1:1,半身,视线亲和。
 严禁:满铺背景、光环圈、深肤色、体积感渲染、3D、厚涂油亮、细节堆砌、纽扣缝线、外框线、试色块、深钴蓝、日系动漫脸。
 文字:不加任何文字。
+```
+
+---
+
+## 13. 暖光童画(动画概念暖绘)
+
+![暖光童画 红发眼镜女孩](13-sunlit-storybook.png)
+
+> 输入示例:「用暖光童画画一个红发蓬蓬头、戴墨绿圆框眼镜的女孩,披青绿格纹披肩,半身,惊讶地望向一侧」
+> 命门:①头发写"少数大块柔软体积+轮廓飞丝",别让模型画满头细密小卷;②脸部干净柔滑、皮肤禁画布纹理(纹理只留背景和衣服);③虹膜占满眼眶只留眼角眼白;④四边露白纸边框+粉蓝奶油黄干擦背景是身份特征。换主体样图(黑发男孩抱橘猫)见 `13-sunlit-storybook-boy.png`。
+> 模板为已验证英文原文,占位符也填英文,不要转译。
+
+```
+Character concept art in a modern animated-feature visual-development style, painterly digital gouache illustration.
+Subject: a curious young girl with huge messy voluminous red-orange hair, wearing big round dark-teal glasses, dressed in a teal plaid shawl over a light blue shirt, waist-up portrait, slightly surprised wide-eyed expression looking off to the side.
+STYLE RECIPE (follow exactly): digital gouache painting with soft clean rendering on the face (smooth soft airbrushed shading, NO canvas texture on the skin), while the background and clothing keep loose visible dry-brush strokes; background is loosely scumbled pastel sky-blue with soft cream-yellow dry-brush patches, deliberately unfinished with raw white paper showing around the border like a concept sketch; EYES: enormous round expressive eyes, the dark irises are VERY large and fill most of the eye with only small white sclera corners, one bright white highlight dot per eye, thick dark painterly upper lash line, bold expressive eyebrows; tiny pointed chin, slender neck, rosy blush cheeks, subtle freckles; HAIR: painted as a few BIG soft volumetric masses with simple smooth shading (NOT detailed ringlet curls), then a moderate number of fine individual flyaway strands drawn on top of the silhouette, warm golden rim light glowing on the hair edges; palette: complementary teal and denim blue against warm orange, soft pastel overall, gentle warm lighting, storybook charm, Pixar-Disney visual development art quality.
+No text anywhere.
 ```

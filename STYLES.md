@@ -301,6 +301,23 @@ Avoid anything cute, polished, symmetric or professionally illustrated. It must 
 
 ---
 
+## 13. 暖光童画(动画概念暖绘)
+
+> 纯风格。比例:不传则不注入。占位符 `【主体】【背景元素】【构图】【文字】` 自动推断:【背景元素】默认为空(整个占位符直接删掉);要加景物时填成英文接续短语,如" and sketchy green plant strokes"(必须是这类松散干刷笔触,保持概念稿式潦草),【构图】默认"waist-up portrait"半身像,【文字】默认"No text anywhere."。
+>
+> 出身:Midjourney 双 --sref 组合画风的 gpt-image 复刻(2026-07-16 四张标杆图对照定稿)。本质是"现代动画电影视觉开发稿(vis-dev)× 绘本水粉":大眼大虹膜角色 + 蓬软发团飞丝 + 青蓝×橙红互补 + 干擦留白纸边,Pixar/Disney 概念设定稿气质。天然适配角色立绘、故事绘本、i2v 动画锚图。
+> 命门(第一版翻车点,三条都必须写死):**①头发**必须写"少数大块柔软体积 + 轮廓上叠少量单根飞丝",否则出满头细密小卷,画面变琐碎;**②脸部渲染**必须写"干净柔滑、皮肤禁画布纹理",纹理只许留在背景和衣服,否则全画油画布纹路过重;**③虹膜**必须写"占满眼眶、只留眼角少量眼白",否则眼白过多神韵全失。**④身份特征**:四边露白纸的"未画完"边框 + 粉蓝底奶油黄干擦背景,这两样丢了就不是这个风格。
+> 模板为已验证的英文原文,不要转译成中文(转译等于换了一套未验证配方)。
+
+```
+Character concept art in a modern animated-feature visual-development style, painterly digital gouache illustration.
+Subject: 【主体】, 【构图】.
+STYLE RECIPE (follow exactly): digital gouache painting with soft clean rendering on the face (smooth soft airbrushed shading, NO canvas texture on the skin), while the background and clothing keep loose visible dry-brush strokes; background is loosely scumbled pastel sky-blue with soft cream-yellow dry-brush patches【背景元素】, deliberately unfinished with raw white paper showing around the border like a concept sketch; EYES: enormous round expressive eyes, the dark irises are VERY large and fill most of the eye with only small white sclera corners, one bright white highlight dot per eye, thick dark painterly upper lash line, bold expressive eyebrows; tiny pointed chin, slender neck, rosy blush cheeks, subtle freckles; HAIR: painted as a few BIG soft volumetric masses with simple smooth shading (NOT detailed ringlet curls), then a moderate number of fine individual flyaway strands drawn on top of the silhouette, warm golden rim light glowing on the hair edges; palette: complementary teal and denim blue against warm orange, soft pastel overall, gentle warm lighting, storybook charm, Pixar-Disney visual development art quality.
+【文字】
+```
+
+---
+
 ## 附录 A · 实拍纸质感增强层(可叠加)
 
 > 2026-07-13 经 Midjourney V7 标杆对照实测定稿(全过程见 `benchmarks/`)。适用对象:一切"画在纸上"的画风——#1/#1.1/#3/#3.1/#8 直接叠加;#11 用文末轻量版;#4/#9/#10 等非纸面画风不适用。

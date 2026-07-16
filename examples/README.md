@@ -1,6 +1,6 @@
 # 画风样例
 
-每种画风一个具体示例:**样图 + 可直接复制的输入示例提示词**。下列 14 种画风 + 2 变体(共 16 段)配方均已用真实出图验证通过。
+每种画风一个具体示例:**样图 + 可直接复制的输入示例提示词**。下列 16 种画风 + 2 变体(共 18 段)配方均已用真实出图验证通过。
 
 > 注:样图文件由维护者陆续落盘;若某张暂未显示,说明图片文件还在补传中,提示词本身已验证可用。
 
@@ -342,17 +342,60 @@ No text anywhere.
 
 ![北欧纸雕 衍纸卷发少女](14-paper-folk.png)
 
-> 输入示例:「用北欧纸雕画一个闭眼微笑的少女,紫红渐变的衍纸卷发,玫红纸大衣配芥末黄围巾,身边飘一朵纸云、几片叶子」
-> 命门:① NOT flat papercut 必须写——不写就出平面对称剪纸花边;②留白+不对称 editorial 构图写死,否则画面被填满变装饰壁纸;③立体感三件套=部件物理垫高+大而柔的真实投影+左上柔光,丢一样就"变平";④脸=闭眼细弧线+圆形腮红贴片+凸起三角纸鼻,眼睛一睁开就串味。全身叙事场景样图(纸偶乐手与民俗鸟)见 `14-paper-folk-musician.png`。
+> 输入示例:「用北欧纸雕画一个闭眼微笑的少女站立,紫红渐变的衍纸卷发,玫红纸大衣配芥末黄围巾,身后一朵淡黄纸云」
+> 命门:① NOT flat papercut 必须写——不写就出平面对称剪纸花边;②头是定格木偶式立体雕塑头——不写死就出"平面贴片脸+画上去的三角鼻":刘海是有体积的圆顶并在额头投影、鼻子是物理凸出的纸楔(一侧受光一侧投影);③留白+不对称 editorial 构图写死,否则画面被填满变装饰壁纸;④立体感=部件物理垫高+大而柔的真实投影+左上柔光+背景方向性明暗渐变;⑤脸=闭眼细弧线+圆形腮红贴片,眼睛一睁开就串味。全身叙事场景样图(纸偶乐手与民俗鸟)见 `14-paper-folk-musician.png`。
+> 满分打法(codex/gpt-image):生成前先 view_image 本页两张样图做风格锚定(只学风格不抄构图),再走模板,实测 96+;纯文字模板约 90。
 > 模板为已验证英文原文,占位符也填英文,不要转译。出身:Midjourney --sref 1399033614 的 gpt-image 复刻。
 
 ```
 A sculptural 3D paper-craft diorama artwork, rendered like a soft 3D render of a handcrafted layered paper sculpture, NOT flat papercut, NOT symmetrical ornament.
-Subject: a serene young woman with closed eyes and voluminous hair built from thick curved paper ribbons and large rolled quilling spirals in muted purple, indigo, magenta and orange, wearing a magenta-pink paper coat with a mustard yellow scarf, centered, waist-up, against a large plain textured warm ochre-brown cardstock backdrop with generous empty negative space around the subject.
-CHARACTER RECIPE (for any figure): gently three-dimensional sculpted paper face with smooth rounded cheeks, soft rosy blush circles, a small protruding geometric triangular paper nose casting a tiny shadow, closed eyes drawn as thin calm curved lines, tiny serene lips; hair and clothing built from thick curved paper ribbons, rolled quilling spirals, pleated paper fans and layered scalloped paper feathers like overlapping bird plumage; some pieces carry embossed damask folk patterns.
-FOLK ELEMENTS: a few Scandinavian folk-art paper pieces placed beside the subject — one stylized folk cloud, a few stylized leaves and one rolled paper spiral — sparse, asymmetric editorial composition with lots of breathing room.
+Subject: a serene young woman standing with hands gently folded, enormous hair of big flat swirling paper discs with rolled quilling spirals in muted purple, magenta, orange and indigo, wearing a magenta-pink paper coat with mustard yellow scarf and cuffs, teal legs, one pale yellow layered paper cloud behind her lower body, full-body scene, against a large plain textured warm ochre-brown cardstock backdrop with generous empty negative space around the subject.
+CHARACTER RECIPE (for any figure): THE HEAD IS SCULPTURAL — a smooth rounded three-dimensional sculpted form like a stop-motion puppet, softly shaded with real volume, NOT a flat paper cutout face; the bangs are a smooth volumetric dome of thick curved paper sweeping across the forehead and casting a soft shadow on it; the nose is a small 3D paper wedge physically protruding from the face, catching light on one side and casting a tiny shadow on the other; gently rounded cheeks with soft rosy blush circles; closed eyes as thin calm curved lines; tiny serene lips; hair and clothing built from thick curved paper ribbons, rolled quilling spirals, pleated paper fans and layered scalloped paper feathers like overlapping bird plumage; some pieces carry embossed damask folk patterns.
+FOLK ELEMENTS: a few Scandinavian folk-art paper pieces placed beside the subject — one pale yellow layered paper cloud and one rolled paper spiral — sparse, asymmetric editorial composition with lots of breathing room.
 MATERIAL: every piece is matte felt-like cardstock with visible embossed fiber texture and fine swirling filigree embossing, slightly curled edges.
-DEPTH & LIGHT (most important): strong sculptural depth — elements physically raised several millimeters off the background, casting large soft realistic drop shadows onto the wall and onto each other; soft warm studio lighting from upper left, gentle dark vignette at the edges.
+DEPTH & LIGHT (most important): strong sculptural depth — elements physically raised several millimeters off the background, casting large soft realistic drop shadows onto the wall and onto each other; soft warm studio lighting from upper left; the plain background has a soft directional light gradient — noticeably brighter toward the upper left, gently darker in the lower corners (gentle vignette).
 PALETTE: muted jewel tones — mustard yellow, ochre, coral orange, magenta pink, lilac purple, slate blue, teal — on a warm earthy backdrop.
 Warm handcrafted editorial illustration mood. No text.
+```
+
+---
+
+## 15. 北欧绘本水粉(nordic-storybook)
+
+![北欧绘本水粉 红棕发髻女青年](15-nordic-storybook.png)
+
+> 输入示例:「用北欧绘本水粉画一个高个女青年,红棕色低发髻,奶白毛衣塞进丹宁蓝中长裙,芥末黄短靴,全身立绘」
+> 命门:①整画纸纹(含空背景)+大留白;②配色锁死丹宁蓝×芥末黄×奶油白+珊瑚腮红;③人物"设定稿味"=细长脖子+瘦长四肢+明显鼻子+小小 navy 椭圆眼+轮廓飞发丝,不写死会出主流萌娃圆脸;④全画唯一投影=脚下一抹淡蓝椭圆(半身像换奶黄椭圆光晕)。半身像样图(银发眼镜奶奶,淡冰蓝底+奶黄光晕)见 `15-nordic-storybook-grandma.png`。
+> 模板为已验证英文原文,占位符也填英文,不要转译。出身:Midjourney --sref 1002025125 的 gpt-image 复刻。
+
+```
+Soft gouache children's picture-book illustration in a modern Scandinavian storybook style, character-design sheet energy.
+Subject: a tall slender young woman with a loose auburn low bun, wearing a warm cream chunky sweater tucked into a denim cornflower-blue midi skirt and mustard butter-yellow ankle boots, one hand holding her other arm's elbow, standing full-body, centered, against a vast empty warm off-white paper background with huge negative space around the single subject.
+PAPER (identity trait): subtle paper grain tooth texture visible across the ENTIRE image including the empty background.
+PALETTE (strict): muted cozy limited palette — denim cornflower blue, mustard butter yellow, warm cream white, soft coral blush; hair only in auburn, dark umber or silver grey; no other saturated colors anywhere.
+CHARACTER RECIPE: stylized quirky storybook proportions — long thin neck, slender elongated limbs, small hands; expressive minimalist face: two small navy oval eyes, an expressive prominent nose with a slightly darker coral tip, thin expressive eyebrows, faint subtle mouth, round rosy coral blush cheeks; hair painted as a few soft masses with a few thin flyaway hair-line strokes escaping the silhouette; gentle, slightly awkward endearing posture.
+TEXTURE: flat matte gouache color masses with granular dry-brush stippled texture inside the clothing and hair, NO hard outlines, no volumetric 3D rendering, no glossy digital shading.
+LIGHT & SHADOW: One single soft pale-blue oval shadow under the feet, no other shading or shadows anywhere.
+Timeless heartwarming Scandinavian picture-book aesthetic. No text.
+```
+
+---
+
+## 16. 大鼻软偶(softnose-vinyl)
+
+![大鼻软偶 毛线帽大鼻男半身像](16-softnose-vinyl.png)
+
+> 输入示例:「用大鼻软偶画一个戴深棕毛线帽的男人半身像,鲑鱼粉圆领毛衣配奶黄罗纹领,一脸没睡醒」
+> 命门:①材质必须写 smooth matte soft-vinyl + NOT fuzzy/felt/wool——首测写 felt-coated 直接出毛毡绒公仔;②脸=身份:超大垂管鼻盖过嘴+高位小眼+一字短嘴+长脸长脖,任何一项被"正常化"就串味;③2D 胡茬短线画在光滑 3D 脸上是辨识度来源;④背景纯色必须取自人物同一暖色板,脚下只留一小片软接触影。全身站姿样图(黄白拼色连帽衫+珊瑚短裤大叔)见 `16-softnose-vinyl-fullbody.png`。
+> 模板为已验证英文原文,占位符也填英文,不要转译。出身:Midjourney --sref 533812435 的 gpt-image 复刻。
+
+```
+Soft matte 3D character render in the style of a modern designer collectible vinyl toy, built from simple rounded geometric shapes with playfully exaggerated proportions.
+Subject: a middle-aged man with a bored deadpan look, bust portrait, head and shoulders only, front view, centered, character fills most of the frame, square composition.
+CHARACTER ANATOMY (identity traits, most important): an extremely elongated tall face on a long cylindrical neck; an enormously oversized long drooping tubular nose hanging down over the mouth; tiny half-lidded bored sleepy eyes (small white ovals, small black pupils, a heavy flat upper eyelid line) set high on the face and close together; a single short thin black dash for the mouth, deadpan subtle expression; small simple rounded ears sticking out; massive rounded sloping shoulders.
+OUTFIT (streetwear): a dusty salmon-pink crewneck sweater with a butter-yellow ribbed collar, and a dark chocolate-brown knitted beanie with a chunky ribbed fold-up cuff sitting low over the brow.
+MATERIAL & TEXTURE: smooth matte soft-vinyl surfaces like a high-end art toy — soft-touch rubber coating with only a barely-visible ultra-fine grain, NOT fuzzy, NOT felt, NOT wool; no gloss, no metallic, no plastic shine. Tiny 2D hand-drawn stubble ticks (short thin black line strokes) scattered only on the chin and jaw of the smooth 3D face.
+COLOR PALETTE (strictly limited, warm): blush pink, salmon coral, butter yellow, cream white, warm peach, plus at most one dark accent (chocolate brown or black); blush pink skin tone.
+BACKGROUND & LIGHT: seamless solid pale butter-yellow studio backdrop, completely empty, drawn from the same warm palette as the character; soft even diffuse studio lighting, gentle ambient occlusion in crevices, one small soft contact shadow; no floor line, no horizon, no props.
+RENDER: high-end CGI quality, clean, minimalist, playful deadpan charm.
 ```

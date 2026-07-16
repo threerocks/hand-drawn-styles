@@ -322,19 +322,64 @@ STYLE RECIPE (follow exactly): digital gouache painting with soft clean renderin
 
 > 纯风格。比例:不传则不注入。占位符 `【主体】【构图】【底色】【点缀元素】` 自动推断:【构图】默认 "centered, waist-up"(全身叙事场景写 "full-body scene");【底色】默认 "warm ochre-brown"(可换 muted olive-grey / dusty mauve-purple 等低饱和土色,同组图统一一种);【点缀元素】默认 "one stylized folk cloud, a few stylized leaves and one rolled paper spiral"。
 >
-> 出身:Midjourney --sref 1399033614 的 gpt-image 复刻(2026-07-16 三张同题对照定稿):层叠纸雕 × 斯堪的纳维亚民俗图案 × 编辑设计配色,手工、温暖、个性。适合人物立绘、民俗动物、叙事场景。
-> 命门(第一版翻车点,四条都必须写死):**① NOT flat papercut**——不写就出平面对称剪纸花边(第一版翻车原因);本风格是"立体纸雕塑的柔光渲染/实拍",不是剪纸;**②留白 + 不对称 editorial 构图**——不写死模型会把画面填满变成装饰壁纸;**③立体感三件套**:部件物理垫高 + 大而柔的真实投影 + 左上柔光,丢一样就"变平";**④脸的身份特征**:闭眼细弧线 + 圆形腮红贴片 + 凸起几何三角纸鼻,眼睛一睁开就串味。
+> 出身:Midjourney --sref 1399033614 的 gpt-image 复刻(2026-07-16 五张对照迭代定稿,refB 终评 96+):层叠纸雕 × 斯堪的纳维亚民俗图案 × 编辑设计配色,手工、温暖、个性。适合人物立绘、民俗动物、叙事场景。
+> 命门(两轮翻车点,五条都必须写死):**① NOT flat papercut**——不写就出平面对称剪纸花边(第一版翻车原因);本风格是"立体纸雕塑的柔光渲染/实拍",不是剪纸;**②头是定格木偶式立体雕塑头**——不写死就出"平面贴片脸+画上去的三角鼻"(第二轮翻车原因):刘海是有体积的圆顶并在额头投影、鼻子是物理凸出的纸楔(一侧受光一侧投影);**③留白 + 不对称 editorial 构图**——不写死模型会把画面填满变成装饰壁纸;**④立体感三件套**:部件物理垫高 + 大而柔的真实投影 + 左上柔光 + 背景方向性明暗渐变,丢一样就"变平";**⑤脸的身份特征**:闭眼细弧线 + 圆形腮红贴片,眼睛一睁开就串味。
+> 满分打法(codex/gpt-image 通道):生成前先用 view_image 看 `examples/14-paper-folk.png` 和 `14-paper-folk-musician.png` 做风格锚定(只学风格不抄构图),再走本模板——实测比纯文字模板再高一档(96+ vs ~90)。
 > 模板为已验证英文原文,占位符也填英文,不要转译。
 
 ```
 A sculptural 3D paper-craft diorama artwork, rendered like a soft 3D render of a handcrafted layered paper sculpture, NOT flat papercut, NOT symmetrical ornament.
 Subject: 【主体】, 【构图】, against a large plain textured 【底色】 cardstock backdrop with generous empty negative space around the subject.
-CHARACTER RECIPE (for any figure): gently three-dimensional sculpted paper face with smooth rounded cheeks, soft rosy blush circles, a small protruding geometric triangular paper nose casting a tiny shadow, closed eyes drawn as thin calm curved lines, tiny serene lips; hair and clothing built from thick curved paper ribbons, rolled quilling spirals, pleated paper fans and layered scalloped paper feathers like overlapping bird plumage; some pieces carry embossed damask folk patterns.
+CHARACTER RECIPE (for any figure): THE HEAD IS SCULPTURAL — a smooth rounded three-dimensional sculpted form like a stop-motion puppet, softly shaded with real volume, NOT a flat paper cutout face; the bangs are a smooth volumetric dome of thick curved paper sweeping across the forehead and casting a soft shadow on it; the nose is a small 3D paper wedge physically protruding from the face, catching light on one side and casting a tiny shadow on the other; gently rounded cheeks with soft rosy blush circles; closed eyes as thin calm curved lines; tiny serene lips; hair and clothing built from thick curved paper ribbons, rolled quilling spirals, pleated paper fans and layered scalloped paper feathers like overlapping bird plumage; some pieces carry embossed damask folk patterns.
 FOLK ELEMENTS: a few Scandinavian folk-art paper pieces placed beside the subject —【点缀元素】— sparse, asymmetric editorial composition with lots of breathing room.
 MATERIAL: every piece is matte felt-like cardstock with visible embossed fiber texture and fine swirling filigree embossing, slightly curled edges.
-DEPTH & LIGHT (most important): strong sculptural depth — elements physically raised several millimeters off the background, casting large soft realistic drop shadows onto the wall and onto each other; soft warm studio lighting from upper left, gentle dark vignette at the edges.
+DEPTH & LIGHT (most important): strong sculptural depth — elements physically raised several millimeters off the background, casting large soft realistic drop shadows onto the wall and onto each other; soft warm studio lighting from upper left; the plain background has a soft directional light gradient — noticeably brighter toward the upper left, gently darker in the lower corners (gentle vignette).
 PALETTE: muted jewel tones — mustard yellow, ochre, coral orange, magenta pink, lilac purple, slate blue, teal — on a warm earthy backdrop.
 Warm handcrafted editorial illustration mood. No text.
+```
+
+---
+
+## 15. 北欧绘本水粉(nordic-storybook)
+
+> 纯风格。比例:不传则不注入。占位符 `【主体】【构图】【纸底色】【光影】` 自动推断:【构图】默认 "standing full-body, centered"(半身像写 "bust portrait, head and shoulders, front facing, centered");【纸底色】默认 "warm off-white"(可换 "pale ice-blue",同组图统一一种);【光影】按构图自动选——全身立绘填 "One single soft pale-blue oval shadow under the feet, no other shading or shadows anywhere.",半身像填 "Behind the character floats one big soft warm cream-yellow oval halo of stippled gouache texture; no drop shadows anywhere."
+>
+> 出身:Midjourney --sref 1002025125 的 gpt-image 复刻(2026-07-16 三张同题对照定稿)——现代斯堪的纳维亚儿童绘本:柔和水粉纹理+温馨低饱和配色+富表现力的极简人物+微妙纸张纹理。适合角色立绘、绘本人物、温暖叙事场景。
+> 命门(四条都必须写死):**①整画纸纹+大留白**——纸纹牙口必须盖住包括空背景在内的整张图,丢了立刻变普通数字插画;**②配色锁死**——丹宁蓝×芥末黄×奶油白+珊瑚腮红,头发限 auburn/深棕/银灰,多一种饱和色就串味;**③人物"设定稿味"**——细长脖子+瘦长四肢+明显鼻子(鼻头偏深珊瑚色)+小小 navy 椭圆眼+轮廓上飞出的单根发丝,不写死会出主流萌娃圆脸(首测即翻车点);**④光影系统是身份特征**——全画唯一投影是脚下一抹淡蓝椭圆(半身像换成身后奶黄椭圆光晕),别处零阴影、零外轮廓线,平涂哑光+衣料内干刷颗粒。
+> 和 [#13 暖光童画](#13-暖光童画动画概念暖绘)的区别:#13 是 Pixar vis-dev 气质(大眼大虹膜、青橙互补、暖金辉光);#15 眼睛是小点、配色更冷静克制、零光效,是"安静的北欧绘本",两者气质相反。
+> 模板为已验证英文原文,占位符也填英文,不要转译。
+
+```
+Soft gouache children's picture-book illustration in a modern Scandinavian storybook style, character-design sheet energy.
+Subject: 【主体】, 【构图】, against a vast empty 【纸底色】 paper background with huge negative space around the single subject.
+PAPER (identity trait): subtle paper grain tooth texture visible across the ENTIRE image including the empty background.
+PALETTE (strict): muted cozy limited palette — denim cornflower blue, mustard butter yellow, warm cream white, soft coral blush; hair only in auburn, dark umber or silver grey; no other saturated colors anywhere.
+CHARACTER RECIPE: stylized quirky storybook proportions — long thin neck, slender elongated limbs, small hands; expressive minimalist face: two small navy oval eyes (for a glasses character: big round navy eyes behind round mustard wire glasses), an expressive prominent nose with a slightly darker coral tip, thin expressive eyebrows, faint subtle mouth, round rosy coral blush cheeks; hair painted as a few soft masses with a few thin flyaway hair-line strokes escaping the silhouette; gentle, slightly awkward endearing posture.
+TEXTURE: flat matte gouache color masses with granular dry-brush stippled texture inside the clothing and hair, NO hard outlines, no volumetric 3D rendering, no glossy digital shading.
+LIGHT & SHADOW: 【光影】
+Timeless heartwarming Scandinavian picture-book aesthetic. No text.
+```
+
+---
+
+## 16. 大鼻软偶(softnose-vinyl)
+
+> 纯风格。比例:不传则不注入。占位符 `【主体】【构图】【眼型】【穿搭】【胡茬】【肤色】【背景底色】` 自动推断:【构图】默认 "full-body standing, front view, centered, symmetrical, square composition"(半身像写 "bust portrait, head and shoulders only, front view, centered, character fills most of the frame, square composition");【眼型】默认困倦眯眼 "tiny half-lidded bored sleepy eyes (small white ovals, small black pupils, a heavy flat upper eyelid line)"(可换圆点眼 "tiny round white eyes with small black dot pupils, a mildly startled neutral gaze");【穿搭】用色板内颜色配街头穿搭(hoodie/卫衣/条纹T/毛线帽/棒球帽/耳机/大头板鞋);【胡茬】成年男性角色填 "Tiny 2D hand-drawn stubble ticks (short thin black line strokes) scattered only on the chin and jaw of the smooth 3D face.",女性/儿童删空;【肤色】默认 "blush pink"(可换 "warm tan");【背景底色】默认 "warm blush-peach"(可换 pale butter-yellow / warm beige,同组图统一一种)。
+>
+> 出身:Midjourney --sref 533812435 的 gpt-image 复刻(2026-07-16 全身站姿+半身特写两构图对照定稿):现代柔和 3D 潮玩美学——简单几何形体、夸张比例、极简人物;超大垂管鼻+眯缝小眼+一字嘴给角色一种俏皮的呆萌气质。适合角色立绘、潮玩头像、街头人物系列。
+> 命门(四条都必须写死):**①材质措辞**——必须写 "smooth matte soft-vinyl … NOT fuzzy, NOT felt, NOT wool",首测写 "felt-coated" 直接出毛毡绒公仔(翻车点),参考是光滑磨砂软胶;**②脸=身份**:超大垂管鼻盖过嘴 + 高位小眼 + 一字短嘴 + 长脸长脖,任何一项被"正常化"就串味;**③2.5D 混维细节**:胡茬是 2D 短线手绘在光滑 3D 脸上,是本风格辨识度来源之一;**④背景与人同色板**:同色系纯色棚拍底 + 全暖限定色板,背景色必须从人物色板里取,脚下只留一小片软接触影。
+> 和 [#14 北欧纸雕](#14-北欧纸雕paper-folk)同属"软 3D 渲染",区别:#14 是纸材质+民俗图案+大投影强立体;#16 是软胶潮玩+街头穿搭+柔光平底,气质一冷静手工一呆萌潮流。
+> 模板为已验证英文原文,占位符也填英文,不要转译。
+
+```
+Soft matte 3D character render in the style of a modern designer collectible vinyl toy, built from simple rounded geometric shapes with playfully exaggerated proportions.
+Subject: 【主体】, 【构图】.
+CHARACTER ANATOMY (identity traits, most important): an extremely elongated tall face on a long cylindrical neck; an enormously oversized long drooping tubular nose hanging down over the mouth; 【眼型】 set high on the face and close together; a single short thin black dash for the mouth, deadpan subtle expression; small simple rounded ears sticking out; a massive inflated capsule-shaped torso with huge rounded sloping shoulders; smooth sausage-like arms tapering to small simple mitt hands with barely-defined chubby fingers; sturdy simple legs; enormous chunky cartoon sneakers with fat flat white laces.
+OUTFIT (streetwear): 【穿搭】.
+MATERIAL & TEXTURE: smooth matte soft-vinyl surfaces like a high-end art toy — soft-touch rubber coating with only a barely-visible ultra-fine grain, NOT fuzzy, NOT felt, NOT wool; no gloss, no metallic, no plastic shine. 【胡茬】
+COLOR PALETTE (strictly limited, warm): blush pink, salmon coral, butter yellow, cream white, warm peach, plus at most one dark accent (chocolate brown or black); 【肤色】 skin tone.
+BACKGROUND & LIGHT: seamless solid 【背景底色】 studio backdrop, completely empty, drawn from the same warm palette as the character; soft even diffuse studio lighting, gentle ambient occlusion in crevices, one small soft contact shadow under the feet; no floor line, no horizon, no props.
+RENDER: high-end CGI quality, clean, minimalist, playful deadpan charm.
 ```
 
 ---

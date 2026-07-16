@@ -389,13 +389,13 @@ Timeless heartwarming Scandinavian picture-book aesthetic. No text.
 ![大鼻软偶 毛线帽大鼻男半身像](16-softnose-vinyl.png)
 
 > 输入示例:「用大鼻软偶画一个戴深棕毛线帽的男人半身像,鲑鱼粉圆领毛衣配奶黄罗纹领,一脸没睡醒」
-> 命门:①材质必须写 smooth matte soft-vinyl + NOT fuzzy/felt/wool——首测写 felt-coated 直接出毛毡绒公仔;②脸=身份:超大垂管鼻盖过嘴+高位小眼+一字短嘴+长脸长脖,任何一项被"正常化"就串味;③2D 胡茬短线画在光滑 3D 脸上是辨识度来源;④背景纯色必须取自人物同一暖色板,脚下只留一小片软接触影。全身站姿样图(黄白拼色连帽衫+珊瑚短裤大叔)见 `16-softnose-vinyl-fullbody.png`。
+> 命门:①材质必须写 smooth matte soft-vinyl + NOT fuzzy/felt/wool——首测写 felt-coated 直接出毛毡绒公仔;②脸=身份:超大垂管鼻盖过嘴+高位小眼+**无眉毛**+一字短嘴+长脸长脖,任何一项被"正常化"就串味(参考图人物一律无眉,长出眉毛立刻减分);③2D 胡茬短线画在光滑 3D 脸上是辨识度来源;④背景纯色必须取自人物同一暖色板,脚下只留一小片软接触影。全身站姿样图(珊瑚棒球帽+黑框眼镜圆点眼+插兜,黄白拼色连帽衫+珊瑚短裤大叔)见 `16-softnose-vinyl-fullbody.png`。
 > 模板为已验证英文原文,占位符也填英文,不要转译。出身:Midjourney --sref 533812435 的 gpt-image 复刻。
 
 ```
 Soft matte 3D character render in the style of a modern designer collectible vinyl toy, built from simple rounded geometric shapes with playfully exaggerated proportions.
 Subject: a middle-aged man with a bored deadpan look, bust portrait, head and shoulders only, front view, centered, character fills most of the frame, square composition.
-CHARACTER ANATOMY (identity traits, most important): an extremely elongated tall face on a long cylindrical neck; an enormously oversized long drooping tubular nose hanging down over the mouth; tiny half-lidded bored sleepy eyes (small white ovals, small black pupils, a heavy flat upper eyelid line) set high on the face and close together; a single short thin black dash for the mouth, deadpan subtle expression; small simple rounded ears sticking out; massive rounded sloping shoulders.
+CHARACTER ANATOMY (identity traits, most important): an extremely elongated tall face on a long cylindrical neck; an enormously oversized long drooping tubular nose hanging down over the mouth; tiny half-lidded bored sleepy eyes (small white ovals, small black pupils, a heavy flat upper eyelid line) set high on the face and close together, with NO eyebrows at all; a single short thin black dash for the mouth, deadpan subtle expression; small simple rounded ears sticking out; massive rounded sloping shoulders.
 OUTFIT (streetwear): a dusty salmon-pink crewneck sweater with a butter-yellow ribbed collar, and a dark chocolate-brown knitted beanie with a chunky ribbed fold-up cuff sitting low over the brow.
 MATERIAL & TEXTURE: smooth matte soft-vinyl surfaces like a high-end art toy — soft-touch rubber coating with only a barely-visible ultra-fine grain, NOT fuzzy, NOT felt, NOT wool; no gloss, no metallic, no plastic shine. Tiny 2D hand-drawn stubble ticks (short thin black line strokes) scattered only on the chin and jaw of the smooth 3D face.
 COLOR PALETTE (strictly limited, warm): blush pink, salmon coral, butter yellow, cream white, warm peach, plus at most one dark accent (chocolate brown or black); blush pink skin tone.

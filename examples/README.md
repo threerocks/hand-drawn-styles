@@ -1,6 +1,6 @@
 # 画风样例
 
-每种画风一个具体示例:**样图 + 可直接复制的输入示例提示词**。下列 13 种画风 + 2 变体(共 15 段)配方均已用真实出图验证通过。
+每种画风一个具体示例:**样图 + 可直接复制的输入示例提示词**。下列 14 种画风 + 2 变体(共 16 段)配方均已用真实出图验证通过。
 
 > 注:样图文件由维护者陆续落盘;若某张暂未显示,说明图片文件还在补传中,提示词本身已验证可用。
 
@@ -334,4 +334,25 @@ Character concept art in a modern animated-feature visual-development style, pai
 Subject: a curious young girl with huge messy voluminous red-orange hair, wearing big round dark-teal glasses, dressed in a teal plaid shawl over a light blue shirt, waist-up portrait, slightly surprised wide-eyed expression looking off to the side.
 STYLE RECIPE (follow exactly): digital gouache painting with soft clean rendering on the face (smooth soft airbrushed shading, NO canvas texture on the skin), while the background and clothing keep loose visible dry-brush strokes; background is loosely scumbled pastel sky-blue with soft cream-yellow dry-brush patches, deliberately unfinished with raw white paper showing around the border like a concept sketch; EYES: enormous round expressive eyes, the dark irises are VERY large and fill most of the eye with only small white sclera corners, one bright white highlight dot per eye, thick dark painterly upper lash line, bold expressive eyebrows; tiny pointed chin, slender neck, rosy blush cheeks, subtle freckles; HAIR: painted as a few BIG soft volumetric masses with simple smooth shading (NOT detailed ringlet curls), then a moderate number of fine individual flyaway strands drawn on top of the silhouette, warm golden rim light glowing on the hair edges; palette: complementary teal and denim blue against warm orange, soft pastel overall, gentle warm lighting, storybook charm, Pixar-Disney visual development art quality.
 No text anywhere.
+```
+
+---
+
+## 14. 北欧纸雕(paper-folk)
+
+![北欧纸雕 衍纸卷发少女](14-paper-folk.png)
+
+> 输入示例:「用北欧纸雕画一个闭眼微笑的少女,紫红渐变的衍纸卷发,玫红纸大衣配芥末黄围巾,身边飘一朵纸云、几片叶子」
+> 命门:① NOT flat papercut 必须写——不写就出平面对称剪纸花边;②留白+不对称 editorial 构图写死,否则画面被填满变装饰壁纸;③立体感三件套=部件物理垫高+大而柔的真实投影+左上柔光,丢一样就"变平";④脸=闭眼细弧线+圆形腮红贴片+凸起三角纸鼻,眼睛一睁开就串味。全身叙事场景样图(纸偶乐手与民俗鸟)见 `14-paper-folk-musician.png`。
+> 模板为已验证英文原文,占位符也填英文,不要转译。出身:Midjourney --sref 1399033614 的 gpt-image 复刻。
+
+```
+A sculptural 3D paper-craft diorama artwork, rendered like a soft 3D render of a handcrafted layered paper sculpture, NOT flat papercut, NOT symmetrical ornament.
+Subject: a serene young woman with closed eyes and voluminous hair built from thick curved paper ribbons and large rolled quilling spirals in muted purple, indigo, magenta and orange, wearing a magenta-pink paper coat with a mustard yellow scarf, centered, waist-up, against a large plain textured warm ochre-brown cardstock backdrop with generous empty negative space around the subject.
+CHARACTER RECIPE (for any figure): gently three-dimensional sculpted paper face with smooth rounded cheeks, soft rosy blush circles, a small protruding geometric triangular paper nose casting a tiny shadow, closed eyes drawn as thin calm curved lines, tiny serene lips; hair and clothing built from thick curved paper ribbons, rolled quilling spirals, pleated paper fans and layered scalloped paper feathers like overlapping bird plumage; some pieces carry embossed damask folk patterns.
+FOLK ELEMENTS: a few Scandinavian folk-art paper pieces placed beside the subject — one stylized folk cloud, a few stylized leaves and one rolled paper spiral — sparse, asymmetric editorial composition with lots of breathing room.
+MATERIAL: every piece is matte felt-like cardstock with visible embossed fiber texture and fine swirling filigree embossing, slightly curled edges.
+DEPTH & LIGHT (most important): strong sculptural depth — elements physically raised several millimeters off the background, casting large soft realistic drop shadows onto the wall and onto each other; soft warm studio lighting from upper left, gentle dark vignette at the edges.
+PALETTE: muted jewel tones — mustard yellow, ochre, coral orange, magenta pink, lilac purple, slate blue, teal — on a warm earthy backdrop.
+Warm handcrafted editorial illustration mood. No text.
 ```

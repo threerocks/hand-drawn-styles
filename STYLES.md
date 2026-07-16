@@ -318,6 +318,27 @@ STYLE RECIPE (follow exactly): digital gouache painting with soft clean renderin
 
 ---
 
+## 14. 北欧纸雕(paper-folk)
+
+> 纯风格。比例:不传则不注入。占位符 `【主体】【构图】【底色】【点缀元素】` 自动推断:【构图】默认 "centered, waist-up"(全身叙事场景写 "full-body scene");【底色】默认 "warm ochre-brown"(可换 muted olive-grey / dusty mauve-purple 等低饱和土色,同组图统一一种);【点缀元素】默认 "one stylized folk cloud, a few stylized leaves and one rolled paper spiral"。
+>
+> 出身:Midjourney --sref 1399033614 的 gpt-image 复刻(2026-07-16 三张同题对照定稿):层叠纸雕 × 斯堪的纳维亚民俗图案 × 编辑设计配色,手工、温暖、个性。适合人物立绘、民俗动物、叙事场景。
+> 命门(第一版翻车点,四条都必须写死):**① NOT flat papercut**——不写就出平面对称剪纸花边(第一版翻车原因);本风格是"立体纸雕塑的柔光渲染/实拍",不是剪纸;**②留白 + 不对称 editorial 构图**——不写死模型会把画面填满变成装饰壁纸;**③立体感三件套**:部件物理垫高 + 大而柔的真实投影 + 左上柔光,丢一样就"变平";**④脸的身份特征**:闭眼细弧线 + 圆形腮红贴片 + 凸起几何三角纸鼻,眼睛一睁开就串味。
+> 模板为已验证英文原文,占位符也填英文,不要转译。
+
+```
+A sculptural 3D paper-craft diorama artwork, rendered like a soft 3D render of a handcrafted layered paper sculpture, NOT flat papercut, NOT symmetrical ornament.
+Subject: 【主体】, 【构图】, against a large plain textured 【底色】 cardstock backdrop with generous empty negative space around the subject.
+CHARACTER RECIPE (for any figure): gently three-dimensional sculpted paper face with smooth rounded cheeks, soft rosy blush circles, a small protruding geometric triangular paper nose casting a tiny shadow, closed eyes drawn as thin calm curved lines, tiny serene lips; hair and clothing built from thick curved paper ribbons, rolled quilling spirals, pleated paper fans and layered scalloped paper feathers like overlapping bird plumage; some pieces carry embossed damask folk patterns.
+FOLK ELEMENTS: a few Scandinavian folk-art paper pieces placed beside the subject —【点缀元素】— sparse, asymmetric editorial composition with lots of breathing room.
+MATERIAL: every piece is matte felt-like cardstock with visible embossed fiber texture and fine swirling filigree embossing, slightly curled edges.
+DEPTH & LIGHT (most important): strong sculptural depth — elements physically raised several millimeters off the background, casting large soft realistic drop shadows onto the wall and onto each other; soft warm studio lighting from upper left, gentle dark vignette at the edges.
+PALETTE: muted jewel tones — mustard yellow, ochre, coral orange, magenta pink, lilac purple, slate blue, teal — on a warm earthy backdrop.
+Warm handcrafted editorial illustration mood. No text.
+```
+
+---
+
 ## 附录 A · 实拍纸质感增强层(可叠加)
 
 > 2026-07-13 经 Midjourney V7 标杆对照实测定稿(全过程见 `benchmarks/`)。适用对象:一切"画在纸上"的画风——#1/#1.1/#3/#3.1/#8 直接叠加;#11 用文末轻量版;#4/#9/#10 等非纸面画风不适用。

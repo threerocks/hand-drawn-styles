@@ -8,7 +8,7 @@
 
 好用的"手绘风"提示词散落各处,每次生图都要翻找、拼凑,还容易把比例、版式等无关约束混进去。
 
-本项目把 **12 种已验证的手绘画风(另含 2 个变体,共 14 套配方)**沉淀成可复用配方。你只管说"画什么",Agent 负责:
+本项目把 **14 种已验证的手绘画风(另含 2 个变体,共 16 套配方)**沉淀成可复用配方。你只管说"画什么",Agent 负责:
 
 - 帮你选画风(没指定就列菜单,指定了就直接用);
 - 把你的内容自动填进该画风的提示词模板;
@@ -19,7 +19,7 @@
 
 ## 内置画风
 
-> 四大分组:**拟真手绘**(1/1.1/4/8/11/12)· **线条·讲解·速写**(2/5/7)· **故意画烂**(3/3.1/6)· **传统·复古质感**(9/10)。编号是稳定身份(对应样图 01–12),`x.1` 是某主风格的变体。
+> 六大分组:**拟真手绘**(1/1.1/4/8/11)· **线条·讲解·速写**(2/5/7)· **故意画烂**(3/3.1/6)· **传统·复古质感**(9/10)· **动画·概念设定**(12/13)· **纸艺·立体手工**(14)。编号是稳定身份(对应样图 01–14),`x.1` 是某主风格的变体。
 
 | 组 | 编号 | 名称 | 调性 | 英文别名 |
 |----|------|------|------|----------|
@@ -36,7 +36,9 @@
 | 传统复古 | 9 | 水墨写意 | 毛笔黑墨、墨分五色、飞白留白、朱红印章,中国画手绘感 | `ink-wash` `ink` `shuimo` `chinese-painting` |
 | 传统复古 | 10 | 复古像素 | 8/16-bit 老游戏精灵图,硬方块像素、有限调色板、零抗锯齿 | `pixel` `pixel-art` `8-bit` `16-bit` |
 | 拟真手绘 | 11 | 情绪叙事淡彩速写 | 靛蓝松散速写线 + 大片留白 + 全画一处橙色点缀,催泪家庭故事感(小红书爆款风) | `emo-sketch` `story-sketch` `watercolor-sketch` `light-watercolor` |
-| 拟真手绘 | 12 | 复古动画概念稿 | 1950s 中古动画(Disney/UPA)概念设定稿:水粉厚涂+奶油暖底光晕+橙蓝互补+铅笔起稿线,亲和力拉满,天然适配 i2v 动画 | `retro-concept` `mid-century` `concept-art` `gouache-concept` |
+| 动画概念 | 12 | 复古动画概念稿 | 1950s 中古动画(Disney/UPA)概念设定稿:水粉厚涂+奶油暖底光晕+橙蓝互补+铅笔起稿线,亲和力拉满,天然适配 i2v 动画 | `retro-concept` `mid-century` `concept-art` `gouache-concept` |
+| 动画概念 | 13 | 暖光童画(动画概念暖绘) | 现代动画 vis-dev 水粉童画:大眼大虹膜+蓬软发团飞丝+青橙互补+干擦留白纸边,Pixar 概念稿感,适合角色立绘/绘本/i2v 锚图 | `sunlit-storybook` `vis-dev` `storybook-visdev` |
+| 纸艺立体 | 14 | 北欧纸雕 | 层叠纸雕塑+斯堪的纳维亚民俗+暖调珠宝色编辑设计:衍纸螺旋/压纹卡纸/大投影强立体,闭眼腮红三角纸鼻人偶,手工温暖 | `paper-folk` `papercraft` `nordic-papercraft` `quilling` |
 
 样图与每种画风的示例提示词见 [examples/](examples/)。
 
@@ -45,13 +47,13 @@
 | <img src="examples/01-childlike-coloring.png" width="200"><br>**1** 纯人类手绘儿童涂色 | <img src="examples/02-minimal-line.png" width="200"><br>**2** 极简线条 xkcd 火柴人 | <img src="examples/03-crayon.png" width="200"><br>**3** 蜡笔童涂 | <img src="examples/04-ghibli.png" width="200"><br>**4** 吉卜力 |
 | <img src="examples/05-bean-doodle.png" width="200"><br>**5** 小豆人信息图 | <img src="examples/06-ms-paint.png" width="200"><br>**6** MS Paint 烂涂鸦 | <img src="examples/07-pen-scribble.png" width="200"><br>**7** 圆珠笔单线涂鸦 | <img src="examples/08-real-crayon.png" width="200"><br>**8** 蜡笔实拍 |
 | <img src="examples/09-ink-wash.png" width="200"><br>**9** 水墨写意 | <img src="examples/10-pixel-art.png" width="200"><br>**10** 复古像素 | <img src="examples/11-emo-sketch.png" width="200"><br>**11** 情绪叙事淡彩速写 | <img src="examples/01.1-coloring-muted.png" width="200"><br>**1.1** 儿童涂色-低饱和克制版 |
-| <img src="examples/03.1-crayon-rawkid.png" width="200"><br>**3.1** 蜡笔童涂-潦草自画版 | <img src="examples/12-retro-concept.png" width="200"><br>**12** 复古动画概念稿 | | |
+| <img src="examples/03.1-crayon-rawkid.png" width="200"><br>**3.1** 蜡笔童涂-潦草自画版 | <img src="examples/12-retro-concept.png" width="200"><br>**12** 复古动画概念稿 | <img src="examples/13-sunlit-storybook.png" width="200"><br>**13** 暖光童画 | <img src="examples/14-paper-folk.png" width="200"><br>**14** 北欧纸雕 |
 
 > 每种画风的输入示例与完整提示词见 [examples/](examples/)。
 
 ## 接入各 Agent 工具
 
-核心是两个工具无关的文件:[`PROTOCOL.md`](PROTOCOL.md)(执行流程)+ [`STYLES.md`](STYLES.md)(14 段画风配方)。任何 Agent 只要"读到"这两个文件即可。
+核心是两个工具无关的文件:[`PROTOCOL.md`](PROTOCOL.md)(执行流程)+ [`STYLES.md`](STYLES.md)(16 段画风配方)。任何 Agent 只要"读到"这两个文件即可。
 
 ```bash
 git clone https://github.com/threerocks/hand-drawn-styles.git

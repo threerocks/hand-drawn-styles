@@ -450,8 +450,8 @@ Palette: sky-blue hair, soft pink shirt, warm peach background — restrained an
 ![暖色扁平绘本 一家三口](19-warm-flat-storybook.png)
 
 > 输入示例:「用暖色扁平绘本画一家三口:魁梧爸爸让小男孩骑在肩上,短发妈妈靠在爸爸身边,三个人开心互动」
-> 命门:①轮廓靠色块相接,只给五官/手指/发丝极少深藏青细线;②成人反萌系比例=长颈、细长肢体、小手脚、窄脸或方下巴,宽体型角色用巨肩胶囊躯干+圆弧手臂;③每个大色块最多一深一浅两块硬边同色阴影,禁渐变体积;④色板锁死暖米白+深藏青+雾蓝+珊瑚橙+金橙;⑤主体压在下部中央、约七成留白。单人抱书泛化样图见 `19-warm-flat-storybook-librarian.png`;动物共读泛化样图见 `19-warm-flat-storybook-animals.png`。
-> 两轮同题校准与三项无参考图泛化证据见 `benchmarks/style-19/`。
+> 命门:①轮廓靠色块相接,只给五官/手指/发丝极少深藏青细线;②成人反萌系比例=长颈、细长肢体、小手脚、窄脸或方下巴,宽体型角色用巨肩胶囊躯干+圆弧手臂;③每个大色块最多一深一浅两块硬边同色阴影,禁渐变体积;④色板锁死暖米白+深藏青+雾蓝+珊瑚橙+金橙;⑤主体压在下部中央、约七成留白。
+> 两轮同题校准与三项无参考图泛化证据只保留在 `benchmarks/style-19/`,不作为独立风格样图展示。
 
 ```
 Clean contemporary flat picture-book illustration built from large rounded geometric silhouettes.

@@ -2,12 +2,10 @@
   "auditedAt": "2026-07-23",
   "sanitizer": "sweety-image-privacy 1.1.0",
   "processor": "exiftool",
-  "filesAudited": 13,
+  "filesAudited": 11,
   "scopes": [
     "benchmarks/style-19",
-    "examples/19-warm-flat-storybook.png",
-    "examples/19-warm-flat-storybook-librarian.png",
-    "examples/19-warm-flat-storybook-animals.png"
+    "examples/19-warm-flat-storybook.png"
   ],
   "privacy": {
     "gpsPresent": false,

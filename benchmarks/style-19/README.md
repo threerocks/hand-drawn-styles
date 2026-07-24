@@ -40,5 +40,6 @@
 
 - 模板:`STYLES.md` #19。
 - 协议登记:`PROTOCOL.md`。
-- 最终样图:`examples/19-warm-flat-storybook.png`、`examples/19-warm-flat-storybook-librarian.png`、`examples/19-warm-flat-storybook-animals.png`。
+- 典型样图:`examples/19-warm-flat-storybook.png`。
+- 单人、双人和动物泛化图只作为本目录的验证证据,不进入公开样图画廊。
 - 隐私审计:`privacy-audit.json`。

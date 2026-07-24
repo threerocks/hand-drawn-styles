@@ -54,7 +54,7 @@
 | <img src="examples/09-ink-wash.png" width="200"><br>**9** 水墨写意 | <img src="examples/10-pixel-art.png" width="200"><br>**10** 复古像素 | <img src="examples/11-emo-sketch.png" width="200"><br>**11** 情绪叙事淡彩速写 | <img src="examples/01.1-coloring-muted.png" width="200"><br>**1.1** 儿童涂色-低饱和克制版 |
 | <img src="examples/03.1-crayon-rawkid.png" width="200"><br>**3.1** 蜡笔童涂-潦草自画版 | <img src="examples/12-retro-concept.png" width="200"><br>**12** 二维水彩风格 | <img src="examples/13-sunlit-storybook.png" width="200"><br>**13** 暖光童画 | <img src="examples/14-paper-folk.png" width="200"><br>**14** 北欧纸雕 |
 | <img src="examples/15-nordic-storybook.png" width="200"><br>**15** 北欧绘本水粉 | <img src="examples/16-softnose-vinyl.png" width="200"><br>**16** 大鼻软偶 | <img src="examples/17-gouache-spotlight.png" width="200"><br>**17** 聚光水粉立绘 | <img src="examples/18-inked-storybook.png" width="200"><br>**18** 墨线绘本 |
-| <img src="examples/19-warm-flat-storybook.png" width="200"><br>**19** 暖色扁平绘本 | <img src="examples/19-warm-flat-storybook-librarian.png" width="200"><br>**19** 单人泛化 | <img src="examples/19-warm-flat-storybook-animals.png" width="200"><br>**19** 动物泛化 | |
+| <img src="examples/19-warm-flat-storybook.png" width="200"><br>**19** 暖色扁平绘本 | | | |
 
 > 每种画风的输入示例与完整提示词见 [examples/](examples/)。
 

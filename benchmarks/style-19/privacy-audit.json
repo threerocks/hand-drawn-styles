@@ -1,0 +1,21 @@
+{
+  "auditedAt": "2026-07-23",
+  "sanitizer": "sweety-image-privacy 1.1.0",
+  "processor": "exiftool",
+  "filesAudited": 13,
+  "scopes": [
+    "benchmarks/style-19",
+    "examples/19-warm-flat-storybook.png",
+    "examples/19-warm-flat-storybook-librarian.png",
+    "examples/19-warm-flat-storybook-animals.png"
+  ],
+  "privacy": {
+    "gpsPresent": false,
+    "sourceExifPresent": false,
+    "requiredMacSourceXattrsPresent": []
+  },
+  "notes": [
+    "com.apple.provenance may remain as a system-managed local audit signal; it is not a required source xattr.",
+    "Metadata sanitization does not change or conceal the fact that the images were generated during style validation."
+  ]
+}

@@ -8,7 +8,7 @@
 
 好用的"手绘风"提示词散落各处,每次生图都要翻找、拼凑,还容易把比例、版式等无关约束混进去。
 
-本项目把 **16 种已验证的手绘画风(另含 2 个变体,共 18 套配方)**沉淀成可复用配方。你只管说"画什么",Agent 负责:
+本项目把 **19 种已验证的手绘画风(另含 2 个变体,共 21 套配方)**沉淀成可复用配方。你只管说"画什么",Agent 负责:
 
 - 帮你选画风(没指定就列菜单,指定了就直接用);
 - 把你的内容自动填进该画风的提示词模板;
@@ -19,7 +19,7 @@
 
 ## 内置画风
 
-> 八大分组:**拟真手绘**(1/1.1/4/8/11)· **线条·讲解·速写**(2/5/7)· **故意画烂**(3/3.1/6)· **传统·复古质感**(9/10)· **动画·概念设定**(12/13/17/18)· **纸艺·立体手工**(14)· **绘本·北欧**(15)· **3D·潮玩**(16)。编号是稳定身份(对应样图 01–18),`x.1` 是某主风格的变体。
+> 八大分组:**拟真手绘**(1/1.1/4/8/11)· **线条·讲解·速写**(2/5/7)· **故意画烂**(3/3.1/6)· **传统·复古质感**(9/10)· **动画·概念设定**(12/13/17/18)· **纸艺·立体手工**(14)· **绘本·扁平与北欧**(15/19)· **3D·潮玩**(16)。编号是稳定身份(对应样图 01–19),`x.1` 是某主风格的变体。
 
 | 组 | 编号 | 名称 | 调性 | 英文别名 |
 |----|------|------|------|----------|
@@ -43,6 +43,7 @@
 | 3D潮玩 | 16 | 大鼻软偶 | 现代柔和 3D 潮玩:光滑哑光软胶+超大垂管鼻+眯缝小眼+一字嘴+2D 胡茬短线,街头穿搭大头板鞋,全暖限定色板同色纯底,呆萌俏皮 | `softnose` `softnose-vinyl` `bignose-toy` `vinyl-toy` `art-toy` |
 | 动画概念 | 17 | 聚光水粉立绘 | 数码水粉动画立绘:满幅单色刷底+人物身后聚光晕+夸张比例大眼角色,软喷绘脸×干扫笔触,蓝橙互补,绘本×动画电影概念稿感 | `gouache-spotlight` `spotlight-gouache` `character-spotlight` |
 | 动画概念 | 18 | 墨线绘本 | 钢笔速写线稿×绘本淡彩:墨线定形起稿线外露+发丝逐根勾带飞丝,大虹膜大眼,干净透亮柔和上色+点缀排线,水彩刷涂背景+奶白纸边毛刷框,速写手账页气质 | `inked-storybook` `ink-storybook` `sketch-storybook` |
+| 绘本扁平 | 19 | 暖色扁平绘本 | 圆润几何大色块+几乎无外轮廓线,成人细长比例或巨肩胶囊体型,深藏青×雾蓝×珊瑚橙×金橙限定色板,暖米白大留白 | `warm-flat-storybook` `flat-storybook` `geometric-storybook` `warm-flat` |
 
 样图与每种画风的示例提示词见 [examples/](examples/)。
 
@@ -53,6 +54,7 @@
 | <img src="examples/09-ink-wash.png" width="200"><br>**9** 水墨写意 | <img src="examples/10-pixel-art.png" width="200"><br>**10** 复古像素 | <img src="examples/11-emo-sketch.png" width="200"><br>**11** 情绪叙事淡彩速写 | <img src="examples/01.1-coloring-muted.png" width="200"><br>**1.1** 儿童涂色-低饱和克制版 |
 | <img src="examples/03.1-crayon-rawkid.png" width="200"><br>**3.1** 蜡笔童涂-潦草自画版 | <img src="examples/12-retro-concept.png" width="200"><br>**12** 二维水彩风格 | <img src="examples/13-sunlit-storybook.png" width="200"><br>**13** 暖光童画 | <img src="examples/14-paper-folk.png" width="200"><br>**14** 北欧纸雕 |
 | <img src="examples/15-nordic-storybook.png" width="200"><br>**15** 北欧绘本水粉 | <img src="examples/16-softnose-vinyl.png" width="200"><br>**16** 大鼻软偶 | <img src="examples/17-gouache-spotlight.png" width="200"><br>**17** 聚光水粉立绘 | <img src="examples/18-inked-storybook.png" width="200"><br>**18** 墨线绘本 |
+| <img src="examples/19-warm-flat-storybook.png" width="200"><br>**19** 暖色扁平绘本 | <img src="examples/19-warm-flat-storybook-librarian.png" width="200"><br>**19** 单人泛化 | <img src="examples/19-warm-flat-storybook-animals.png" width="200"><br>**19** 动物泛化 | |
 
 > 每种画风的输入示例与完整提示词见 [examples/](examples/)。
 
@@ -117,7 +119,7 @@ hand-drawn-styles/
 ├── README.md
 ├── LICENSE
 ├── PROTOCOL.md        # 核心协议:选风格 / 比例 / 占位符 / 输出(工具无关)
-├── STYLES.md          # 核心配方:16 种画风 + 2 变体的提示词模板(工具无关)
+├── STYLES.md          # 核心配方:19 种画风 + 2 变体的提示词模板(工具无关)
 ├── SKILL.md           # Claude Code 适配层(薄,指向上面两个文件)
 ├── AGENTS.md          # Codex / Gemini / Cursor 等适配层(薄)
 └── examples/          # 样图 + 每种画风的示例提示词
@@ -131,6 +133,7 @@ hand-drawn-styles/
 - 移除比例硬约束(`1:1` / `3:4` 等),交由比例规则处理;
 - 把内容相关的部分抽象成 `【占位符】`;
 - 在 `examples/` 附 1–2 张该配方的出图样例,便于评审。
+- 新增或升级画风时至少验证“参考图同构场景 + 一个跨主体场景”;维护者可按 `AGENTS.md` 的验证例外调用图像模型,但最终入库样图必须先完成隐私元数据清理与审计。
 
 ## License
 

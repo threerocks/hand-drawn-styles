@@ -1,13 +1,12 @@
 ---
 name: hand-drawn
-description: 生成手绘/插画风格的生图提示词(prompt)。内置 18 种主画风 + 2 个变体(共 20 套已验证配方)——①纯人类手绘儿童涂色页(含 1.1 低饱和克制版:极简留白+≤4低饱和色+单橙红) ②极简黑白线条讲解漫画(xkcd火柴人) ③蜡笔童涂(5岁小孩坏画,含 3.1 潦草自画版:全自画简笔火柴娃+低饱和单橙红) ④吉卜力 ⑤小豆人黑色涂鸦信息图 ⑥MS Paint 烂涂鸦(the worse the better) ⑦圆珠笔单线涂鸦 ⑧蜡笔实拍(像真蜡笔纸照片) ⑨水墨写意 ⑩复古像素 ⑪情绪叙事淡彩速写(靛蓝松散线+大片留白+一处橙色点缀的催泪家庭故事风) ⑫二维水彩风格(旧名复古动画概念稿;1950s中古动画水粉设定稿:奶油暖底光晕+橙蓝互补+铅笔起稿线,亲和力强,适配i2v动画) ⑬暖光童画(现代动画vis-dev水粉童画:大眼大虹膜+蓬软发团飞丝+青橙互补+干擦留白纸边,Pixar概念稿感,适合角色立绘/绘本/i2v锚图) ⑭北欧纸雕(层叠纸雕塑+斯堪的纳维亚民俗+暖调珠宝色编辑设计:衍纸螺旋/压纹卡纸/大投影强立体,闭眼腮红三角纸鼻人偶,手工温暖,适合人物立绘/民俗动物/叙事场景) ⑮北欧绘本水粉(斯堪的纳维亚儿童绘本水粉:整画纸纹+大留白+丹宁蓝×芥末黄低饱和+极简小点眼人物+飞发丝+脚下淡蓝椭圆影,温暖隽永零光效,适合角色立绘/绘本人物/温暖叙事) ⑯大鼻软偶(现代柔和3D潮玩:光滑哑光软胶+超大垂管鼻+眯缝小眼+一字嘴+2D胡茬短线,街头穿搭大头板鞋,全暖限定色板同色纯底柔光,呆萌俏皮,适合角色立绘/潮玩头像/街头人物系列) ⑰聚光水粉立绘(数码水粉动画立绘:满幅单色刷底+人物身后聚光晕+夸张比例大眼角色+软喷绘脸×干扫笔触,蓝橙互补,绘本×动画电影概念稿感,适合角色立绘/角色系列/i2v锚图) ⑱墨线绘本(钢笔速写线稿×绘本淡彩:墨线定形起稿线外露+发丝逐根勾飞丝+大虹膜大眼+干净透亮柔和上色+水彩渐变背景+奶白纸边毛刷框,速写手账页气质,适合角色立绘/绘本/头像/i2v锚图)。用户没指定画风就列菜单让其选;也可用中文名/编号/英文别名显式指定。只产出最终 prompt 纯文本,不负责生图、不锁定出图比例。触发词:手绘、画风、用XX风格画、生成手绘提示词、童涂色、描线填色、极简线条、火柴人、xkcd、蜡笔风、吉卜力、ghibli、小豆人、MS Paint、烂涂鸦、圆珠笔、scribble、蜡笔实拍、real-crayon、水墨、写意、国画、ink-wash、像素、pixel-art、8-bit、doodle、潦草自画、简笔涂鸦、rawkid、情绪叙事、淡彩速写、速写讲故事、emo-sketch、story-sketch、二维水彩风格、二维水彩、复古动画、概念稿、概念设定、retro-concept、mid-century、水粉厚涂、gouache、暖光童画、动画概念暖绘、sunlit-storybook、vis-dev、visual development、皮克斯风、北欧纸雕、纸雕、纸艺、衍纸、纸塑、paper-folk、papercraft、quilling、paper sculpture、北欧绘本、绘本水粉、斯堪的纳维亚、北欧绘本水粉、nordic-storybook、scandi-gouache、scandinavian、soft gouache、大鼻软偶、软偶、软胶、潮玩、3D公仔、大鼻子、softnose、softnose-vinyl、vinyl toy、art toy、bignose、聚光水粉、聚光立绘、水粉立绘、gouache-spotlight、spotlight、数码水粉、digital gouache、墨线绘本、墨线淡彩、线稿绘本、速写绘本、inked-storybook、ink-storybook、sketch-storybook、hand-drawn style。
+description: Use when users ask for a hand-drawn or illustrated image prompt, name one of the repository's 19 numbered styles or 2 variants, or mention triggers such as 儿童涂色、蜡笔、吉卜力、水墨、像素、淡彩速写、动画概念、水粉、北欧绘本、纸雕、软胶潮玩、墨线绘本、暖色扁平绘本、flat-storybook、warm-flat-storybook. Produces prompt text only and does not generate images.
 ---
 
-# 手绘风格 prompt 生成器(Claude Code 适配)
+# 手绘风格 prompt 生成器
 
-本文件是 Claude Code skill 的入口。完整指令与画风配方是工具无关的,放在同目录:
+完整指令与画风配方是工具无关的,放在同目录:
 
-1. **执行流程**见 [PROTOCOL.md](PROTOCOL.md)——确定画风 → 取配方 → 自动填占位符 → 处理比例 → 输出 prompt。
-2. **画风配方**见 [STYLES.md](STYLES.md)。
-
-收到生图请求时:读 PROTOCOL.md 并严格按其 5 步流程执行,画风模板从 STYLES.md 取。只输出最终 prompt,不生图。
+1. 按 [PROTOCOL.md](PROTOCOL.md) 的 5 步流程执行:确定画风 → 取配方 → 自动填占位符 → 处理比例 → 输出 prompt。
+2. 从 [STYLES.md](STYLES.md) 取对应编号的完整模板。
+3. 只输出最终 prompt,不生图。仓库维护者新增或验收画风时,按 `AGENTS.md` 的维护者验证例外执行。

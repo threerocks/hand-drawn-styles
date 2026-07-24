@@ -1,6 +1,6 @@
 # 画风样例
 
-每种画风一个具体示例:**样图 + 可直接复制的输入示例提示词**。下列 16 种画风 + 2 变体(共 18 段)配方均已用真实出图验证通过。
+每种画风一个具体示例:**样图 + 可直接复制的输入示例提示词**。下列 19 种画风 + 2 变体(共 21 段)配方均已用真实出图验证通过。
 
 > 注:样图文件由维护者陆续落盘;若某张暂未显示,说明图片文件还在补传中,提示词本身已验证可用。
 
@@ -406,6 +406,22 @@ RENDER: high-end CGI quality, clean, minimalist, playful deadpan charm.
 
 ---
 
+## 17. 聚光水粉立绘(gouache-spotlight)
+
+![聚光水粉立绘 暴躁蓝西装大叔](17-gouache-spotlight.png)
+
+> 输入示例:「用聚光水粉立绘画一个圆胖的中年办公室大叔,稀疏乱发、粗眉、大鼻子、胡茬,穿蓝西装和橙色领带,半身正面,一脸不耐烦」
+> 命门:①背景必须是满幅单色干扫笔触+人物身后浅色聚光晕,既不能暗脏油画也不能数字平涂;②皮肤用干净柔和渐变,绝不叠画布纹;③头发/毛发是宽而柔的羽化笔触簇,禁尖刺与紧卷;④眼睛必须留白色眼白;⑤全画只用一对蓝橙互补色。男孩、老人和小鸟泛化样图分别见 `17-gouache-spotlight-boy.png`、`17-gouache-spotlight-oldman.png`、`17-gouache-spotlight-bird.png`。
+
+```
+Character concept art in a modern animated-feature visual-development style, painterly digital GOUACHE illustration — matte, opaque, simplified shapes with clearly visible brushwork.
+Subject: a grumpy heavyset middle-aged office man with an enormous round face and body, sparse messy dark hair, very thick eyebrows, a huge coral nose, visible chin stubble, wearing a bright denim-blue suit jacket, warm cream shirt and orange tie, waist-up centered portrait facing the viewer.
+STYLE RECIPE (follow exactly): the whole image is built from CLEARLY VISIBLE soft brush strokes — every area shows the direction of the brush, like a hand-painted gouache concept painting, yet the values stay soft and low-contrast; BACKGROUND (keep it CALM): one single soft MUTED warm pale-amber color field covering the whole canvas edge to edge, painted with clearly visible but GENTLE loose scumbled dry-brush strokes and subtle tonal variation (some patches slightly lighter, some slightly deeper), matte and calm — NOT fiery over-saturated color, NOT heavy dark oil mottling, NOT flat digital fill; a noticeably lighter soft glow right behind the character like a soft spotlight, fading calmly toward slightly deeper corners; fully abstract with no scenery, no white paper border; FACE & SKIN: soft smooth airbrushed volume with clean gradients, NO canvas texture on the skin, warm rosy flush on cheeks, nose and ears; EYES: oversized round expressive cartoon eyes with visible WHITE sclera around the irises and one bright white highlight dot each, bold painterly eyebrows; exaggerated caricature proportions; HAIR / FUR / FEATHERS: painted as soft FEATHERED brush-stroke tufts — each tuft is one wide soft feathered stroke, fluffy silhouette, warm rim light glowing on the edges, a few cool reflected-light strokes on the shadow side — NOT razor-sharp anime spikes, NOT tight curly ringlets; CLOTHING: big simplified color blocks with visible dry-brush strokes and slightly rough painterly edges, minimal detail; PALETTE: one complementary pair only — teal/denim blue against warm orange-amber — soft cinematic lighting, storybook charm, premium animated-film character concept art quality.
+No text anywhere.
+```
+
+---
+
 ## 18. 墨线绘本(inked-storybook)
 
 ![墨线绘本 蓝发丸子头女孩](18-inked-storybook.png)
@@ -425,4 +441,30 @@ EYES (critical): enormous round expressive eyes; the glossy dark-brown irises ar
 BACKGROUND: a loose atmospheric watercolor wash of warm peach and soft coral fading to pale cream, with visible soft brush streaks and gentle uneven mottling — painterly but low-detail, NO detailed scenery, NO detailed clouds.
 FRAME (signature, must have): the painting fills a large rough-edged rectangle that does NOT reach the image edges; all four sides show a flat, clean, pale warm-cream blank paper margin; the boundary between painting and margin is ragged dry-brush streaks, with one or two loose pale streaks overlapping into the painting, like a hand-painted page from an artist's sketchbook; only the faintest paper grain overall.
 Palette: sky-blue hair, soft pink shirt, warm peach background — restrained and harmonized. No text anywhere.
+```
+
+---
+
+## 19. 暖色扁平绘本(warm-flat-storybook)
+
+![暖色扁平绘本 一家三口](19-warm-flat-storybook.png)
+
+> 输入示例:「用暖色扁平绘本画一家三口:魁梧爸爸让小男孩骑在肩上,短发妈妈靠在爸爸身边,三个人开心互动」
+> 命门:①轮廓靠色块相接,只给五官/手指/发丝极少深藏青细线;②成人反萌系比例=长颈、细长肢体、小手脚、窄脸或方下巴,宽体型角色用巨肩胶囊躯干+圆弧手臂;③每个大色块最多一深一浅两块硬边同色阴影,禁渐变体积;④色板锁死暖米白+深藏青+雾蓝+珊瑚橙+金橙;⑤主体压在下部中央、约七成留白。单人抱书泛化样图见 `19-warm-flat-storybook-librarian.png`;动物共读泛化样图见 `19-warm-flat-storybook-animals.png`。
+> 两轮同题校准与三项无参考图泛化证据见 `benchmarks/style-19/`。
+
+```
+Clean contemporary flat picture-book illustration built from large rounded geometric silhouettes.
+Subject: a very broad tall father in a huge deep-navy pullover and pale cornflower trousers; a joyful small boy with compact dark curly hair sitting on his shoulders, wearing a golden-orange top, blue shorts and orange-white sneakers, spreading both arms; a slender mother with a short geometric navy bob wearing a golden-orange high-neck top, cornflower-blue cropped jacket and loose coral-orange trousers, standing close with one hand on the father's shoulder and the other lifted outward, compact overlapping group, full bodies visible, centered in the lower-middle with huge calm negative space, against a vast empty warm near-white (#FDF6ED) background.
+STYLE IDENTITY (follow exactly): almost no continuous outer contour lines; shapes meet through color contrast. Use only a few very thin dark-navy accent lines around hair, fingers and facial features, with occasional tiny pale rim accents on dark hair. Smooth matte local colors, not painterly.
+SHAPE LANGUAGE: simplify every figure and object into a few bold rounded geometric masses with a clear readable silhouette. Use long soft action arcs and compact overlapping groups for interaction. The father has an enormous wide capsule torso, massive rounded sloping shoulders and one large curved raised arm; the mother has a long neck, narrow oval face, elongated limbs, small hands and small feet.
+HUMAN FACES: adults have slightly elongated or angular faces, never round baby faces; the child has a slightly larger youthful head but remains slim, never chibi. Features are gently asymmetric and hand-shaped: two tiny vertical navy oval eyes, thin expressive eyebrows, one prominent simple nose shape, one clean curved mouth, and small coral cheek patches. Hair is built from only a few solid rounded or geometric dark-navy masses with at most one or two accent strands. No large glossy eyes.
+ANIMALS: translate the same shape language into broad capsule torsos or slender elongated bodies, tiny oval eyes, simple geometric muzzles, small paws and one or two bold silhouette features; never render fur, plush fibers or mascot-like 3D volume.
+SHADING (strict): mostly flat. On each large clothing, hair, body or object area use at most ONE darker same-hue graphic shadow shape and optionally ONE lighter same-hue shape, both broad and clean-edged. No smooth gradient inside subjects, no realistic light modeling.
+PALETTE (strict): deep navy #2A4A71, dark navy #172F4E, misty cornflower blue #7B9AD3, coral orange #D25F30, golden orange #F49441, warm peach skin accents, and the warm near-white background only. Reassign these colors to suit the subject, but introduce no green, purple, pink, brown, pure black or extra accent hue.
+BACKGROUND & GROUND: huge calm negative space, no scenery unless explicitly requested; one barely visible pale warm-grey oval contact shadow under the feet, no other cast shadows.
+TEXTURE: barely perceptible fine uncoated-paper softness across the whole image, including the empty background; never grainy and never visibly brushed.
+MOOD: intimate, playful, emotionally warm, elegant modern children’s storybook.
+AVOID: generic corporate vector clip-art, stock infographic people, mainstream round cartoon faces, chibi proportions, thick outlines, strong gradients, glossy airbrush, 3D, gouache, watercolor, pencil, dry brush, anime eyes, detailed or decorative background.
+No text anywhere.
 ```

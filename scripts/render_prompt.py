@@ -28,6 +28,10 @@ STYLE_ALIASES = {
 }
 STYLE_1_2_ANCHOR_PIXEL_SHA256 = "1ae67d0088d58f2527ae81aa05d8453ce1ccc9d4614342c0bb1ab71a5e4895cd"
 STYLE_1_2_ANCHOR_SIZE = (1086, 1448)
+STYLE_1_2_SCRIBBLE_CORRECTION_PROMPT = """Image 1 is the edit target. Image 2 is the approved style-only reference.
+Change ONLY the crayon coloring marks inside and around the existing people, clothing, hair, furniture, books, and props in Image 1. Preserve the exact characters, faces, poses, actions, composition, object count, outlines, colors, white background, and framing.
+Rework the coloring to match Image 2's genuinely clumsy child scribbling: coarse blunt wax-crayon strokes with abrupt starts and stops; visibly mixed horizontal, vertical, diagonal, looping, zigzag and crossing directions inside the SAME color area; uneven pressure; isolated heavy clumps next to large untouched white-paper holes; some strokes stop far before the black outline and some overshoot well beyond it. Each color area must have a different scribble rhythm.
+Critical: NO neat diagonal hatching, NO fine dense parallel lines, NO even spacing, NO uniform coverage, NO repeated digital crayon texture. Make the coloring obviously messier, coarser, patchier, emptier and more misregistered than Image 1. Do not add text or new objects."""
 STYLE_INJECTION_TERMS = (
     "画风",
     "风格",
@@ -53,6 +57,12 @@ STYLE_INJECTION_TERMS = (
     "冷调",
     "调色",
     "笔触",
+    "平行排线",
+    "均匀斜线",
+    "等间距排线",
+    "统一笔刷",
+    "覆盖均匀",
+    "蜡笔滤镜",
     "材质",
     "质感",
     "外轮廓",
@@ -330,7 +340,7 @@ def build_payload(
     if style_id == "1.2":
         anchor = ROOT / "assets/style-1.2/anchor-family.png"
         validate_style_1_2_anchor(anchor)
-        payload["style_contract"] = "family-crayon-card-v1"
+        payload["style_contract"] = "family-crayon-card-v2"
         references: list[dict[str, str]] = [
             {
                 "path": str(anchor),
@@ -350,6 +360,40 @@ def build_payload(
             for path in character_references
         )
         payload["references"] = references
+        payload["workflow"] = {
+            "final_output_stage": "scribble-correction",
+            "stages": [
+                {
+                    "id": "base-generation",
+                    "operation": "generate",
+                    "prompt_source": "prompt",
+                    "references_source": "references",
+                    "output_status": "intermediate-only",
+                },
+                {
+                    "id": "scribble-correction",
+                    "operation": "edit",
+                    "required": True,
+                    "prompt": STYLE_1_2_SCRIBBLE_CORRECTION_PROMPT,
+                    "references": [
+                        {
+                            "input_index": 1,
+                            "role": "edit-target",
+                            "source": "base-generation.output",
+                        },
+                        {
+                            "input_index": 2,
+                            "role": "style-only",
+                            "path": str(anchor),
+                        },
+                    ],
+                    "must_preserve": (
+                        "characters, faces, poses, actions, composition, object count, "
+                        "outlines, colors, white background, and framing"
+                    ),
+                },
+            ],
+        }
     return payload
 
 

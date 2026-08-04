@@ -47,7 +47,7 @@ class RenderPromptTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         payload = json.loads(result.stdout)
         self.assertEqual(payload["style_id"], "1.2")
-        self.assertEqual(payload["style_contract"], "family-crayon-card-v1")
+        self.assertEqual(payload["style_contract"], "family-crayon-card-v2")
         self.assertEqual(payload["references"][0]["role"], "style-only")
         self.assertEqual(payload["references"][0]["priority"], "primary-visual-truth")
         self.assertTrue(Path(payload["references"][0]["path"]).is_file())
@@ -56,6 +56,13 @@ class RenderPromptTests(unittest.TestCase):
         self.assertNotIn("【主体】", payload["prompt"])
         self.assertNotIn("【文字】", payload["prompt"])
         self.assertEqual(payload["inputs"]["variables"]["主体"], "爸爸把零食袋放回柜子,男孩站在旁边看着")
+        self.assertEqual(payload["workflow"]["final_output_stage"], "scribble-correction")
+        correction = payload["workflow"]["stages"][1]
+        self.assertEqual(correction["operation"], "edit")
+        self.assertTrue(correction["required"])
+        self.assertEqual(correction["references"][0]["role"], "edit-target")
+        self.assertEqual(correction["references"][1]["role"], "style-only")
+        self.assertIn("NO fine dense parallel lines", correction["prompt"])
 
     def test_parent_child_natural_language_alias_routes_to_style_1_2(self) -> None:
         result = self.run_renderer(
@@ -84,6 +91,25 @@ class RenderPromptTests(unittest.TestCase):
         payload = json.loads(result.stdout)
         self.assertEqual(payload["references"][0]["role"], "style-only")
 
+    def test_style_1_2_prompt_contains_irregular_crayon_trajectory_contract(self) -> None:
+        result = self.run_renderer(
+            "--style",
+            "1.2",
+            "--subject",
+            "妈妈坐着听女儿讲学校里的事",
+            "--text",
+            "不加任何文字",
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        payload = json.loads(result.stdout)
+        prompt = payload["prompt"]
+        self.assertIn("蜡笔涂抹轨迹(一级画风身份,不是后期纹理)", prompt)
+        self.assertIn("最高优先级·涂抹门禁:", prompt)
+        self.assertIn("中途停笔、从别处重新起笔、突然换方向和回头重压", prompt)
+        self.assertIn("单一方向的平行斜线", prompt)
+        self.assertIn("NO neat diagonal hatching", prompt)
+        self.assertIn("蜡笔排线滤镜", prompt)
+
     def test_style_1_2_plain_text_requires_explicit_preview(self) -> None:
         result = self.run_renderer(
             "--style",
@@ -104,6 +130,18 @@ class RenderPromptTests(unittest.TestCase):
             "1.2",
             "--subject",
             "妈妈牵着孩子,统一粗黑轮廓并使用低饱和四色配色",
+            "--text",
+            "不加任何文字",
+        )
+        self.assertEqual(result.returncode, 2)
+        self.assertIn("疑似业务画风注入", result.stderr)
+
+    def test_style_1_2_rejects_business_fill_trajectory_override(self) -> None:
+        result = self.run_renderer(
+            "--style",
+            "1.2",
+            "--subject",
+            "妈妈牵着孩子,改成均匀斜线并套统一蜡笔滤镜",
             "--text",
             "不加任何文字",
         )

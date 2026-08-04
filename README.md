@@ -120,7 +120,7 @@ python3 scripts/render_prompt.py \
   --format json
 ```
 
-风格 1.2 默认输出正式 JSON,其中包含 `prompt`、输入回放信息与必须随每张请求传入的 `references`;锚点会校验固定尺寸和解码后的像素 SHA-256,元数据变化不改变画风身份。业务项目只负责内容、准确标题、比例和可选角色参考,不得再维护第二套线条、五官、配色或纸面规则。无字页用 `--text '不加任何文字'`,有标题用 `--title '准确标题原文'`;纯文本只允许显式 `--format text --text-only-preview`,不得用于正式生图。
+风格 1.2 默认输出 `family-crayon-card-v2` 正式 JSON,其中包含 `prompt`、输入回放信息、每张必传的 `references` 与强制两阶段 `workflow`:基础生成只能得到中间图,随后必须执行 `scribble-correction`,第二阶段输出才是 final。锚点会校验固定尺寸和解码后的像素 SHA-256,元数据变化不改变画风身份。业务项目只负责内容、准确标题、比例和可选角色参考,不得再维护第二套线条、五官、配色、纸面或涂抹修正规则。无字页用 `--text '不加任何文字'`,有标题用 `--title '准确标题原文'`;纯文本只允许显式 `--format text --text-only-preview`,不得用于正式生图。
 
 ## 设计原则
 

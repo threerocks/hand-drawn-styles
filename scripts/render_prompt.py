@@ -17,22 +17,26 @@ ROOT = Path(__file__).resolve().parents[1]
 STYLES_PATH = ROOT / "STYLES.md"
 PLACEHOLDER_PATTERN = re.compile(r"【([^】]+)】")
 STYLE_ALIASES = {
-    "family-crayon-card": "1.2",
-    "parent-child-crayon": "1.2",
-    "submission-crayon": "1.2",
-    "亲子手绘": "1.2",
-    "家庭蜡笔画": "1.2",
-    "亲子蜡笔故事": "1.2",
-    "亲子投稿蜡笔故事卡": "1.2",
-    "家庭投稿蜡笔卡": "1.2",
+    "rawkid": "3.1",
+    "kid-scrawl": "3.1",
+    "stick-kid": "3.1",
+    "family-crayon-card": "3.1",
+    "parent-child-crayon": "3.1",
+    "submission-crayon": "3.1",
+    "亲子手绘": "3.1",
+    "家庭蜡笔画": "3.1",
+    "亲子蜡笔故事": "3.1",
+    "亲子投稿蜡笔故事卡": "3.1",
+    "家庭投稿蜡笔卡": "3.1",
+    "蜡笔童涂-潦草自画版": "3.1",
 }
-STYLE_1_2_ANCHOR_PIXEL_SHA256 = "1ae67d0088d58f2527ae81aa05d8453ce1ccc9d4614342c0bb1ab71a5e4895cd"
-STYLE_1_2_ANCHOR_SIZE = (1086, 1448)
-STYLE_1_2_SCRIBBLE_CORRECTION_PROMPT = """Image 1 is the edit target. Image 2 is the approved style-only reference.
+STYLE_3_1_ANCHOR_PIXEL_SHA256 = "1ae67d0088d58f2527ae81aa05d8453ce1ccc9d4614342c0bb1ab71a5e4895cd"
+STYLE_3_1_ANCHOR_SIZE = (1086, 1448)
+STYLE_3_1_SCRIBBLE_CORRECTION_PROMPT = """Image 1 is the edit target. Image 2 is the approved style-only reference.
 Change ONLY the crayon coloring marks inside and around the existing people, clothing, hair, furniture, books, and props in Image 1. Preserve the exact characters, faces, poses, actions, composition, object count, outlines, colors, white background, and framing.
 Rework the coloring to match Image 2's genuinely clumsy child scribbling: coarse blunt wax-crayon strokes with abrupt starts and stops; visibly mixed horizontal, vertical, diagonal, looping, zigzag and crossing directions inside the SAME color area; uneven pressure; isolated heavy clumps next to large untouched white-paper holes; some strokes stop far before the black outline and some overshoot well beyond it. Each color area must have a different scribble rhythm.
 Critical: NO neat diagonal hatching, NO fine dense parallel lines, NO even spacing, NO uniform coverage, NO repeated digital crayon texture. Make the coloring obviously messier, coarser, patchier, emptier and more misregistered than Image 1. Do not add text or new objects."""
-STYLE_1_2_SCRIBBLE_CHAOS_PROMPT = """Image 1 is the edit target after the first scribble correction. Image 2 is the only approved style reference.
+STYLE_3_1_SCRIBBLE_CHAOS_PROMPT = """Image 1 is the edit target after the first scribble correction. Image 2 is the only approved style reference.
 Perform a second, stricter correction on CRAYON COLORING MARKS ONLY. Preserve Image 1 exactly in characters, faces, expressions, poses, gestures, composition, object count, black outlines, existing color choices, white background, and framing.
 The remaining coloring is still too neat wherever it forms fine, dense, or consistently diagonal hatching. Replace those ordered areas with Image 2's clumsy family scribbling, not a digital crayon texture.
 For EACH color area, use a SMALL NUMBER of much thicker blunt wax-crayon strokes with visibly different lengths and pressure. Break the area into disconnected bouts: horizontal rubs, a vertical stab, an abrupt diagonal, a loop, a zigzag, and crossing retraced strokes, without repeating a sequence. Leave 35-55% of the white paper clearly untouched in irregular LARGE holes, including holes that reach the black outline. Put heavy opaque clumps directly beside totally blank areas. Many strokes must stop far before the boundary; several isolated strokes must overshoot far outside it. Adjacent color areas must have obviously different stroke direction and density.
@@ -122,7 +126,7 @@ def canonical_style_id(value: str) -> str:
 def extract_template(style_id: str) -> str:
     source = STYLES_PATH.read_text(encoding="utf-8")
     heading = re.compile(
-        rf"^## {re.escape(style_id)}(?:\s|$).*?^```(?:\w+)?\s*$\n(.*?)^```\s*$",
+        rf"^## {re.escape(style_id)}(?:\.)?(?:\s|$).*?^```(?:\w+)?\s*$\n(.*?)^```\s*$",
         re.MULTILINE | re.DOTALL,
     )
     match = heading.search(source)
@@ -274,27 +278,27 @@ def png_size(path: Path) -> tuple[int, int]:
     return width, height
 
 
-def validate_style_1_2_anchor(anchor: Path) -> None:
+def validate_style_3_1_anchor(anchor: Path) -> None:
     if not anchor.is_file():
-        raise ValueError(f"画风 1.2 锚点不可用,停止正式生产: {anchor}")
+        raise ValueError(f"画风 3.1 锚点不可用,停止正式生产: {anchor}")
     size, digest = png_pixel_sha256(anchor)
-    if size != STYLE_1_2_ANCHOR_SIZE:
-        raise ValueError(f"画风 1.2 锚点尺寸不匹配,停止正式生产: {anchor}")
-    if digest != STYLE_1_2_ANCHOR_PIXEL_SHA256:
-        raise ValueError(f"画风 1.2 锚点像素不匹配,停止正式生产: {anchor}")
+    if size != STYLE_3_1_ANCHOR_SIZE:
+        raise ValueError(f"画风 3.1 锚点尺寸不匹配,停止正式生产: {anchor}")
+    if digest != STYLE_3_1_ANCHOR_PIXEL_SHA256:
+        raise ValueError(f"画风 3.1 锚点像素不匹配,停止正式生产: {anchor}")
 
 
-def validate_style_1_2_subject(subject: str) -> None:
+def validate_style_3_1_subject(subject: str) -> None:
     hits = [term for term in STYLE_INJECTION_TERMS if term in subject]
     pattern_hits = ["受控画风表达"] if any(pattern.search(subject) for pattern in STYLE_INJECTION_PATTERNS) else []
     if hits or pattern_hits:
         raise ValueError(
-            "画风 1.2 的主体字段只能描述人物、动作、关系和道具;"
+            "画风 3.1 的主体字段只能描述人物、动作、关系和道具;"
             f"检测到疑似业务画风注入: {', '.join(hits + pattern_hits)}"
         )
 
 
-def style_1_2_title_instruction(title: str) -> str:
+def style_3_1_title_instruction(title: str) -> str:
     clean = title.strip()
     if not clean or "\n" in clean or "\r" in clean:
         raise ValueError("--title 必须是一行非空的准确标题原文")
@@ -304,13 +308,13 @@ def style_1_2_title_instruction(title: str) -> str:
     )
 
 
-def validate_style_1_2_text(text: str, expected_title_instruction: str | None) -> None:
+def validate_style_3_1_text(text: str, expected_title_instruction: str | None) -> None:
     allowed = {"不加任何文字"}
     if expected_title_instruction:
         allowed.add(expected_title_instruction)
     if text not in allowed:
         raise ValueError(
-            "画风 1.2 的文字输入只允许 --text '不加任何文字' 或独立 --title '准确标题原文';"
+            "画风 3.1 的文字输入只允许 --text '不加任何文字' 或独立 --title '准确标题原文';"
             "不得把画风或排版指令塞进 --text/--var 文字"
         )
 
@@ -342,9 +346,9 @@ def build_payload(
         "references": [],
         "inputs": {"variables": values, "aspect": aspect or None},
     }
-    if style_id == "1.2":
-        anchor = ROOT / "assets/style-1.2/anchor-family.png"
-        validate_style_1_2_anchor(anchor)
+    if style_id == "3.1":
+        anchor = ROOT / "assets/style-3.1/anchor-family.png"
+        validate_style_3_1_anchor(anchor)
         payload["style_contract"] = "family-crayon-card-v3"
         references: list[dict[str, str]] = [
             {
@@ -379,7 +383,7 @@ def build_payload(
                     "id": "scribble-correction",
                     "operation": "edit",
                     "required": True,
-                    "prompt": STYLE_1_2_SCRIBBLE_CORRECTION_PROMPT,
+                    "prompt": STYLE_3_1_SCRIBBLE_CORRECTION_PROMPT,
                     "references": [
                         {
                             "input_index": 1,
@@ -403,7 +407,7 @@ def build_payload(
                     "operation": "edit",
                     "required": True,
                     "output_status": "final",
-                    "prompt": STYLE_1_2_SCRIBBLE_CHAOS_PROMPT,
+                    "prompt": STYLE_3_1_SCRIBBLE_CHAOS_PROMPT,
                     "references": [
                         {
                             "input_index": 1,
@@ -434,14 +438,14 @@ def main() -> int:
     parser.add_argument("--style", required=True, help="画风编号或已登记别名")
     parser.add_argument("--subject", help="填入【主体】")
     parser.add_argument("--text", help="填入【文字】")
-    parser.add_argument("--title", help="风格 1.2 的准确标题原文;渲染器负责生成固定文字指令")
+    parser.add_argument("--title", help="风格 3.1 的准确标题原文;渲染器负责生成固定文字指令")
     parser.add_argument("--aspect", help="可选画幅比例,例如 3:4")
     parser.add_argument(
         "--character-reference",
         action="append",
         default=[],
         metavar="PATH",
-        help="可重复传入连续故事的角色参考图;不会替代 1.2 画风锚点",
+        help="可重复传入连续故事的角色参考图;不会替代 3.1 画风锚点",
     )
     parser.add_argument(
         "--var",
@@ -454,12 +458,12 @@ def main() -> int:
         "--format",
         choices=("auto", "text", "json"),
         default="auto",
-        help="auto 对 1.2 输出正式 JSON、其他画风输出 text;json 含画风锚点等调用合同",
+        help="auto 对 3.1 输出正式 JSON、其他画风输出 text;json 含画风锚点等调用合同",
     )
     parser.add_argument(
         "--text-only-preview",
         action="store_true",
-        help="只允许 1.2 的非生产预览显式输出纯 prompt;不得用于正式生图",
+        help="只允许 3.1 的非生产预览显式输出纯 prompt;不得用于正式生图",
     )
     args = parser.parse_args()
 
@@ -472,13 +476,13 @@ def main() -> int:
             values["主体"] = args.subject.strip()
         title_instruction = None
         if args.title is not None:
-            title_instruction = style_1_2_title_instruction(args.title)
+            title_instruction = style_3_1_title_instruction(args.title)
             values["文字"] = title_instruction
         if args.text is not None:
             values["文字"] = args.text.strip()
-        if style_id == "1.2":
-            validate_style_1_2_subject(values.get("主体", ""))
-            validate_style_1_2_text(values.get("文字", ""), title_instruction)
+        if style_id == "3.1":
+            validate_style_3_1_subject(values.get("主体", ""))
+            validate_style_3_1_text(values.get("文字", ""), title_instruction)
         character_references = validate_character_references(args.character_reference)
         template = extract_template(style_id)
         prompt = render(template, values, args.aspect)
@@ -489,12 +493,12 @@ def main() -> int:
             args.aspect,
             character_references,
         )
-        output_format = "json" if args.format == "auto" and style_id == "1.2" else args.format
+        output_format = "json" if args.format == "auto" and style_id == "3.1" else args.format
         if output_format == "auto":
             output_format = "text"
-        if style_id == "1.2" and output_format == "text" and not args.text_only_preview:
+        if style_id == "3.1" and output_format == "text" and not args.text_only_preview:
             raise ValueError(
-                "画风 1.2 正式生产不能只输出 prompt;请使用 --format json,"
+                "画风 3.1 正式生产不能只输出 prompt;请使用 --format json,"
                 "或仅在非生产预览时显式加 --text-only-preview"
             )
     except ValueError as error:

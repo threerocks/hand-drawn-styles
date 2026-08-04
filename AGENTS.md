@@ -9,8 +9,8 @@
 1. 按 [PROTOCOL.md](PROTOCOL.md) 的 5 步流程执行(确定画风 → 取配方 → 自动填占位符 → 处理比例 → 输出 prompt)。
 2. 画风模板从 [STYLES.md](STYLES.md) 取。
 3. 能执行脚本时优先用 `scripts/render_prompt.py`,禁止手工缩写、同义改写或混入业务项目自定义画风规则。
-4. 风格 1.2 的正式生产、多页或连续故事必须完整消费渲染器 JSON 中的三阶段 `workflow`:基础生成后依次执行 `scribble-correction` 与 `scribble-chaos-correction`;前两阶段不可作为 final,任一阶段缺失时停止生产。
-5. 其他画风默认只输出最终 prompt 纯文本;风格 1.2 正式生产输出 `family-crayon-card-v3` JSON 调用包。**不要生图**。
+4. 风格 3.1 的正式生产、多页或连续故事必须完整消费渲染器 JSON 中的三阶段 `workflow`:基础生成后依次执行 `scribble-correction` 与 `scribble-chaos-correction`;前两阶段不可作为 final,任一阶段缺失时停止生产。
+5. 其他画风默认只输出最终 prompt 纯文本;风格 3.1 正式生产输出 `family-crayon-card-v3` JSON 调用包。**不要生图**。
 
 ### 维护者验证例外
 

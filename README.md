@@ -8,7 +8,7 @@
 
 好用的"手绘风"提示词散落各处,每次生图都要翻找、拼凑,还容易把比例、版式等无关约束混进去。
 
-本项目把 **19 种已验证的手绘画风(另含 3 个变体,共 22 套配方)**沉淀成可复用配方。你只管说"画什么",Agent 负责:
+本项目把 **18 种已验证的整数编号画风 + 1 个稳定变体(3.1),共 19 套配方**沉淀成可复用配方。你只管说"画什么",Agent 负责:
 
 - 帮你选画风(没指定就列菜单,指定了就直接用);
 - 把你的内容自动填进该画风的提示词模板;
@@ -19,50 +19,45 @@
 
 ## 内置画风
 
-> 八大分组:**拟真手绘**(1/1.1/1.2/4/8/11)· **线条·讲解·速写**(2/5/7)· **故意画烂**(3/3.1/6)· **传统·复古质感**(9/10)· **动画·概念设定**(12/13/17/18)· **纸艺·立体手工**(14)· **绘本·扁平与北欧**(15/19)· **3D·潮玩**(16)。编号是稳定身份(对应样图 01–19),`x.y` 是某主风格的稳定变体。
+> 八大分组:**拟真手绘**(3/3.1/7/10)· **线条·讲解·速写**(1/4/6)· **故意画烂**(2/5)· **传统·复古质感**(8/9)· **动画·概念设定**(11/12/16/17)· **纸艺·立体手工**(13)· **绘本·扁平与北欧**(14/18)· **3D·潮玩**(15)。现有编号为 1–18，另含稳定变体 3.1，共 19 套配方。
 
 | 组 | 编号 | 名称 | 调性 | 英文别名 |
 |----|------|------|------|----------|
-| 拟真手绘 | 1 | 纯人类手绘儿童涂色页 | 大人画粗黑线稿 + 孩子填色,真实纸面拍摄感,适合讲故事 / 亲子 | `handmade` `childlike-coloring` |
-| 拟真手绘 | 1.1 | 儿童涂色页-低饱和克制版 | #1 变体:极简留白背景 + 低饱和 ≤4 色 + 单一橙红点缀,冷静叙事感 | `coloring-muted` `restrained-coloring` |
-| 拟真手绘 | 1.2 | 亲子投稿蜡笔故事卡 | #1 稳定叙事变体:普通大人歪线稿 + 孩子稀疏蜡笔填色,固定小点眼红脸蛋、明亮白底和大留白;多页强制内置画风锚点 | `family-crayon-card` `parent-child-crayon` `submission-crayon` |
-| 线条讲解 | 2 | 极简黑白线条讲解漫画(xkcd 火柴人) | 纯细线火柴人、圆角分镜、标题+说明,讲解示意图 | `xkcd` `stickman` `minimal-line` |
-| 故意画烂 | 3 | 蜡笔童涂 | 5 岁小孩用蜡笔画的笨拙"坏画",歪扭出框、引人发笑 | `crayon` `kid-crayon` |
-| 故意画烂 | 3.1 | 蜡笔童涂-潦草自画版 | #3 变体:整张像孩子全自画的简笔火柴娃 + 低饱和 ≤4 色单橙红,更潦草冷静 | `rawkid` `kid-scrawl` `stick-kid` |
-| 拟真手绘 | 4 | 吉卜力风 | 柔和水彩、暖光、治愈梦幻的手绘动画感 | `ghibli` |
-| 线条讲解 | 5 | 小豆人涂鸦信息图 | 黑色圆豆人讲解图,单橙点缀、手绘箭头标注,竖版多格 | `bean` `blob` |
-| 故意画烂 | 6 | MS Paint 烂涂鸦 | 鼠标硬画的病毒级"故意画烂"风(第二个吉卜力),越烂越好笑 | `ms-paint` `bad-doodle` `ugly` |
-| 线条讲解 | 7 | 圆珠笔单线涂鸦 | 黑色圆珠笔缠绕线速写,艺术手稿感,适合肖像 / 动物 | `scribble` `pen-scribble` `ballpoint` |
-| 拟真手绘 | 8 | 蜡笔实拍 | 像一张真蜡笔纸的照片,强制露白 / 蜡质笔触,一眼真人手涂(比 #3 更真实) | `real-crayon` `crayon-photo` |
-| 传统复古 | 9 | 水墨写意 | 毛笔黑墨、墨分五色、飞白留白、朱红印章,中国画手绘感 | `ink-wash` `ink` `shuimo` `chinese-painting` |
-| 传统复古 | 10 | 复古像素 | 8/16-bit 老游戏精灵图,硬方块像素、有限调色板、零抗锯齿 | `pixel` `pixel-art` `8-bit` `16-bit` |
-| 拟真手绘 | 11 | 情绪叙事淡彩速写 | 靛蓝松散速写线 + 大片留白 + 全画一处橙色点缀,催泪家庭故事感(小红书爆款风) | `emo-sketch` `story-sketch` `watercolor-sketch` `light-watercolor` |
-| 动画概念 | 12 | 二维水彩风格(复古动画概念稿) | 1950s 中古动画(Disney/UPA)概念设定稿:水粉厚涂+奶油暖底光晕+橙蓝互补+铅笔起稿线,亲和力拉满,天然适配 i2v 动画 | `retro-concept` `mid-century` `concept-art` `gouache-concept` |
-| 动画概念 | 13 | 暖光童画(动画概念暖绘) | 现代动画 vis-dev 水粉童画:大眼大虹膜+蓬软发团飞丝+青橙互补+干擦留白纸边,Pixar 概念稿感,适合角色立绘/绘本/i2v 锚图 | `sunlit-storybook` `vis-dev` `storybook-visdev` |
-| 纸艺立体 | 14 | 北欧纸雕 | 层叠纸雕塑+斯堪的纳维亚民俗+暖调珠宝色编辑设计:衍纸螺旋/压纹卡纸/大投影强立体,闭眼腮红三角纸鼻人偶,手工温暖 | `paper-folk` `papercraft` `nordic-papercraft` `quilling` |
-| 绘本北欧 | 15 | 北欧绘本水粉 | 斯堪的纳维亚儿童绘本水粉:整画纸纹+大留白、丹宁蓝×芥末黄低饱和、极简小点眼人物+飞发丝、脚下一抹淡蓝椭圆影,温暖隽永零光效 | `nordic-storybook` `scandi-gouache` `scandinavian-storybook` `soft-gouache` |
-| 3D潮玩 | 16 | 大鼻软偶 | 现代柔和 3D 潮玩:光滑哑光软胶+超大垂管鼻+眯缝小眼+一字嘴+2D 胡茬短线,街头穿搭大头板鞋,全暖限定色板同色纯底,呆萌俏皮 | `softnose` `softnose-vinyl` `bignose-toy` `vinyl-toy` `art-toy` |
-| 动画概念 | 17 | 聚光水粉立绘 | 数码水粉动画立绘:满幅单色刷底+人物身后聚光晕+夸张比例大眼角色,软喷绘脸×干扫笔触,蓝橙互补,绘本×动画电影概念稿感 | `gouache-spotlight` `spotlight-gouache` `character-spotlight` |
-| 动画概念 | 18 | 墨线绘本 | 钢笔速写线稿×绘本淡彩:墨线定形起稿线外露+发丝逐根勾带飞丝,大虹膜大眼,干净透亮柔和上色+点缀排线,水彩刷涂背景+奶白纸边毛刷框,速写手账页气质 | `inked-storybook` `ink-storybook` `sketch-storybook` |
-| 绘本扁平 | 19 | 暖色扁平绘本 | 圆润几何大色块+几乎无外轮廓线,成人细长比例或巨肩胶囊体型,深藏青×雾蓝×珊瑚橙×金橙限定色板,暖米白大留白 | `warm-flat-storybook` `flat-storybook` `geometric-storybook` `warm-flat` |
+| 线条讲解 | 1 | 极简黑白线条讲解漫画(xkcd 火柴人) | 纯细线火柴人、圆角分镜、标题+说明,讲解示意图 | `xkcd` `stickman` `minimal-line` |
+| 故意画烂 | 2 | 蜡笔童涂 | 5 岁小孩用蜡笔画的笨拙"坏画",歪扭出框、引人发笑 | `crayon` `kid-crayon` |
+| 拟真手绘 | 3 | 吉卜力风 | 柔和水彩、暖光、治愈梦幻的手绘动画感 | `ghibli` |
+| 拟真手绘 | 3.1 | 蜡笔童涂-潦草自画版 | 普通大人歪线稿 + 孩子粗乱蜡笔涂抹,固定小点眼红脸蛋、明亮白底和大留白;正式生产强制锚点与三阶段 workflow | `rawkid` `kid-scrawl` `stick-kid` `family-crayon-card` |
+| 线条讲解 | 4 | 小豆人涂鸦信息图 | 黑色圆豆人讲解图,单橙点缀、手绘箭头标注,竖版多格 | `bean` `blob` |
+| 故意画烂 | 5 | MS Paint 烂涂鸦 | 鼠标硬画的病毒级"故意画烂"风,越烂越好笑 | `ms-paint` `bad-doodle` `ugly` |
+| 线条讲解 | 6 | 圆珠笔单线涂鸦 | 黑色圆珠笔缠绕线速写,艺术手稿感,适合肖像 / 动物 | `scribble` `pen-scribble` `ballpoint` |
+| 拟真手绘 | 7 | 蜡笔实拍 | 像一张真蜡笔纸的照片,强制露白 / 蜡质笔触,一眼真人手涂 | `real-crayon` `crayon-photo` |
+| 传统复古 | 8 | 水墨写意 | 毛笔黑墨、墨分五色、飞白留白、朱红印章,中国画手绘感 | `ink-wash` `ink` `shuimo` `chinese-painting` |
+| 传统复古 | 9 | 复古像素 | 8/16-bit 老游戏精灵图,硬方块像素、有限调色板、零抗锯齿 | `pixel` `pixel-art` `8-bit` `16-bit` |
+| 拟真手绘 | 10 | 情绪叙事淡彩速写 | 靛蓝松散速写线 + 大片留白 + 全画一处橙色点缀,催泪家庭故事感 | `emo-sketch` `story-sketch` `watercolor-sketch` `light-watercolor` |
+| 动画概念 | 11 | 二维水彩风格(复古动画概念稿) | 1950s 中古动画概念设定稿:水粉厚涂+奶油暖底光晕+橙蓝互补+铅笔起稿线 | `retro-concept` `mid-century` `concept-art` `gouache-concept` |
+| 动画概念 | 12 | 暖光童画(动画概念暖绘) | 现代动画 vis-dev 水粉童画:大眼大虹膜+蓬软发团飞丝+青橙互补+干擦留白纸边 | `sunlit-storybook` `vis-dev` `storybook-visdev` |
+| 纸艺立体 | 13 | 北欧纸雕 | 层叠纸雕塑+斯堪的纳维亚民俗+暖调珠宝色编辑设计 | `paper-folk` `papercraft` `nordic-papercraft` `quilling` |
+| 绘本北欧 | 14 | 北欧绘本水粉 | 整画纸纹+大留白、丹宁蓝×芥末黄低饱和、极简小点眼人物 | `nordic-storybook` `scandi-gouache` `scandinavian-storybook` `soft-gouache` |
+| 3D潮玩 | 15 | 大鼻软偶 | 光滑哑光软胶+超大垂管鼻+眯缝小眼+街头穿搭 | `softnose` `softnose-vinyl` `bignose-toy` `vinyl-toy` `art-toy` |
+| 动画概念 | 16 | 聚光水粉立绘 | 满幅单色刷底+人物身后聚光晕+夸张比例大眼角色 | `gouache-spotlight` `spotlight-gouache` `character-spotlight` |
+| 动画概念 | 17 | 墨线绘本 | 钢笔速写线稿×绘本淡彩,墨线定形、轻薄透亮上色 | `inked-storybook` `ink-storybook` `sketch-storybook` |
+| 绘本扁平 | 18 | 暖色扁平绘本 | 圆润几何大色块+几乎无外轮廓线,蓝橙限定色板+暖白大留白 | `warm-flat-storybook` `flat-storybook` `geometric-storybook` `warm-flat` |
 
 样图与每种画风的示例提示词见 [examples/](examples/)。
 
 | | | | |
 |:--:|:--:|:--:|:--:|
-| <img src="examples/01-childlike-coloring.png" width="200"><br>**1** 纯人类手绘儿童涂色 | <img src="examples/02-minimal-line.png" width="200"><br>**2** 极简线条 xkcd 火柴人 | <img src="examples/03-crayon.png" width="200"><br>**3** 蜡笔童涂 | <img src="examples/04-ghibli.png" width="200"><br>**4** 吉卜力 |
-| <img src="examples/05-bean-doodle.png" width="200"><br>**5** 小豆人信息图 | <img src="examples/06-ms-paint.png" width="200"><br>**6** MS Paint 烂涂鸦 | <img src="examples/07-pen-scribble.png" width="200"><br>**7** 圆珠笔单线涂鸦 | <img src="examples/08-real-crayon.png" width="200"><br>**8** 蜡笔实拍 |
-| <img src="examples/09-ink-wash.png" width="200"><br>**9** 水墨写意 | <img src="examples/10-pixel-art.png" width="200"><br>**10** 复古像素 | <img src="examples/11-emo-sketch.png" width="200"><br>**11** 情绪叙事淡彩速写 | <img src="examples/01.1-coloring-muted.png" width="200"><br>**1.1** 儿童涂色-低饱和克制版 |
-| <img src="examples/03.1-crayon-rawkid.png" width="200"><br>**3.1** 蜡笔童涂-潦草自画版 | <img src="examples/12-retro-concept.png" width="200"><br>**12** 二维水彩风格 | <img src="examples/13-sunlit-storybook.png" width="200"><br>**13** 暖光童画 | <img src="examples/14-paper-folk.png" width="200"><br>**14** 北欧纸雕 |
-| <img src="examples/15-nordic-storybook.png" width="200"><br>**15** 北欧绘本水粉 | <img src="examples/16-softnose-vinyl.png" width="200"><br>**16** 大鼻软偶 | <img src="examples/17-gouache-spotlight.png" width="200"><br>**17** 聚光水粉立绘 | <img src="examples/18-inked-storybook.png" width="200"><br>**18** 墨线绘本 |
-| <img src="examples/19-warm-flat-storybook.png" width="200"><br>**19** 暖色扁平绘本 | | | |
-| <img src="assets/style-1.2/anchor-family.png" width="200"><br>**1.2** 亲子投稿蜡笔故事卡 | | | |
+| <img src="examples/01-minimal-line.png" width="200"><br>**1** 极简线条 xkcd 火柴人 | <img src="examples/02-crayon.png" width="200"><br>**2** 蜡笔童涂 | <img src="examples/03-ghibli.png" width="200"><br>**3** 吉卜力 | <img src="assets/style-3.1/anchor-family.png" width="200"><br>**3.1** 蜡笔童涂-潦草自画版 |
+| <img src="examples/04-bean-doodle.png" width="200"><br>**4** 小豆人信息图 | <img src="examples/05-ms-paint.png" width="200"><br>**5** MS Paint 烂涂鸦 | <img src="examples/06-pen-scribble.png" width="200"><br>**6** 圆珠笔单线涂鸦 | <img src="examples/07-real-crayon.png" width="200"><br>**7** 蜡笔实拍 |
+| <img src="examples/08-ink-wash.png" width="200"><br>**8** 水墨写意 | <img src="examples/09-pixel-art.png" width="200"><br>**9** 复古像素 | <img src="examples/10-emo-sketch.png" width="200"><br>**10** 情绪叙事淡彩速写 | <img src="examples/11-retro-concept.png" width="200"><br>**11** 二维水彩风格 |
+| <img src="examples/12-sunlit-storybook.png" width="200"><br>**12** 暖光童画 | <img src="examples/13-paper-folk.png" width="200"><br>**13** 北欧纸雕 | <img src="examples/14-nordic-storybook.png" width="200"><br>**14** 北欧绘本水粉 | <img src="examples/15-softnose-vinyl.png" width="200"><br>**15** 大鼻软偶 |
+| <img src="examples/16-gouache-spotlight.png" width="200"><br>**16** 聚光水粉立绘 | <img src="examples/17-inked-storybook.png" width="200"><br>**17** 墨线绘本 | <img src="examples/18-warm-flat-storybook.png" width="200"><br>**18** 暖色扁平绘本 | |
 
 > 每种画风的输入示例与完整提示词见 [examples/](examples/)。
 
 ## 接入各 Agent 工具
 
-核心是工具无关的 [`PROTOCOL.md`](PROTOCOL.md)(执行流程)+ [`STYLES.md`](STYLES.md)(画风配方)。对风格 1.2,还必须保留 `assets/style-1.2/anchor-family.png`;正式生产建议安装完整仓库,不要只复制文本片段。
+核心是工具无关的 [`PROTOCOL.md`](PROTOCOL.md)(执行流程)+ [`STYLES.md`](STYLES.md)(画风配方)。对风格 3.1,还必须保留 `assets/style-3.1/anchor-family.png`;正式生产建议安装完整仓库,不要只复制文本片段。
 
 ```bash
 git clone https://github.com/threerocks/hand-drawn-styles.git
@@ -85,8 +80,8 @@ git clone https://github.com/threerocks/hand-drawn-styles.git
 ```
 你：用手绘风画一只在下雨天打伞的猫
 Agent：请选择画风(回复编号或名字)：
-       1. 纯人类手绘儿童涂色页 …
-       2. 极简黑白线条漫画手稿 …
+       1. 极简黑白线条漫画手稿 …
+       2. 蜡笔童涂 …
        …
 ```
 
@@ -101,7 +96,7 @@ Agent：请选择画风(回复编号或名字)：
 ### 出图比例(不硬锁)
 
 - 你**传了**比例(如 `16:9` / 竖版 / 方图)→ 用你的。
-- 你**没传**:纯风格(1、3、4)不注入任何比例;版式风格(2、5)只注入"竖版多格堆叠"这类软结构提示,不写死数字。
+- 你**没传**:纯风格(2、3、3.1、5…18)不注入任何比例;版式风格(1、4)只注入"多格网格"或"竖版多格堆叠"这类软结构提示,不写死数字。
 
 ### 占位符自动推断
 
@@ -113,14 +108,14 @@ Agent：请选择画风(回复编号或名字)：
 
 ```bash
 python3 scripts/render_prompt.py \
-  --style 1.2 \
+  --style 3.1 \
   --subject '爸爸把零食袋放回柜子,男孩站在旁边看着' \
   --text '不加任何文字' \
   --aspect 3:4 \
   --format json
 ```
 
-风格 1.2 默认输出 `family-crayon-card-v3` 正式 JSON,其中包含 `prompt`、输入回放信息、每张必传的 `references` 与强制三阶段 `workflow`:基础生成后依次执行 `scribble-correction` 和 `scribble-chaos-correction`,前两阶段都只是中间图,第三阶段输出才是 final。锚点会校验固定尺寸和解码后的像素 SHA-256,元数据变化不改变画风身份。业务项目只负责内容、准确标题、比例和可选角色参考,不得再维护第二套线条、五官、配色、纸面或涂抹修正规则。无字页用 `--text '不加任何文字'`,有标题用 `--title '准确标题原文'`;纯文本只允许显式 `--format text --text-only-preview`,不得用于正式生图。
+风格 3.1 默认输出 `family-crayon-card-v3` 正式 JSON,其中包含 `prompt`、输入回放信息、每张必传的 `references` 与强制三阶段 `workflow`:基础生成后依次执行 `scribble-correction` 和 `scribble-chaos-correction`,前两阶段都只是中间图,第三阶段输出才是 final。锚点会校验固定尺寸和解码后的像素 SHA-256,元数据变化不改变画风身份。业务项目只负责内容、准确标题、比例和可选角色参考,不得再维护第二套线条、五官、配色、纸面或涂抹修正规则。无字页用 `--text '不加任何文字'`,有标题用 `--title '准确标题原文'`;纯文本只允许显式 `--format text --text-only-preview`,不得用于正式生图。
 
 ## 设计原则
 
@@ -136,7 +131,7 @@ hand-drawn-styles/
 ├── README.md
 ├── LICENSE
 ├── PROTOCOL.md        # 核心协议:选风格 / 比例 / 占位符 / 输出(工具无关)
-├── STYLES.md          # 核心配方:19 种画风 + 3 变体的提示词模板(工具无关)
+├── STYLES.md          # 核心配方:18 种整数编号画风 + 3.1 变体(工具无关)
 ├── SKILL.md           # Claude Code 适配层(薄,指向上面两个文件)
 ├── AGENTS.md          # Codex / Gemini / Cursor 等适配层(薄)
 ├── assets/            # 需要参考锚点的稳定画风资产

@@ -1,10 +1,10 @@
-# #1.2 亲子投稿蜡笔故事卡验证记录
+# #3.1 蜡笔童涂-潦草自画版验证记录
 
 ## 目标与视觉真源
 
-- 用户在 2026-08-03 再次指定的主视觉锚点:`../../assets/style-1.2/anchor-family.png`。新附件与仓库锚点的文件字节不同,但解码像素完全一致;因此视觉真源无需换图。
+- 用户在 2026-08-03 再次指定的主视觉锚点:`../../assets/style-3.1/anchor-family.png`。新附件与仓库锚点的文件字节不同,但解码像素完全一致;因此视觉真源无需换图。
 - 目标不是复刻锚点里的家庭成员,而是稳定继承线条、五官、人物比例、蜡笔填色、留白和明亮白底。
-- 配方与调用合同:`STYLES.md` #1.2 + `scripts/render_prompt.py`。
+- 配方与调用合同:`STYLES.md` #3.1 + `scripts/render_prompt.py`。
 
 判定维度:
 
@@ -22,14 +22,14 @@
 
 - 文件:`parent-snack-cabinet.png`。
 - 内容:爸爸弯腰把零食袋放回两层小柜子,短发男孩在旁边看着。
-- 输入:渲染器生成的完整 #1.2 prompt;画幅 3:4;每次请求附 `anchor-family.png` 作为 `style-only` 参考。
+- 输入:渲染器生成的完整 #3.1 prompt;画幅 3:4;每次请求附 `anchor-family.png` 作为 `style-only` 参考。
 - 结果:通过。五官、父子高矮、黑线身份、蜡笔露白与越界均命中;没有复制锚点中的四人站位与衣服。
 
 ### 跨身份场景
 
 - 文件:`librarian-book-return.png`。
 - 内容:灰色卷发的老奶奶图书管理员帮助双马尾女孩把绿书放回矮书架。
-- 输入:渲染器生成的完整 #1.2 prompt;画幅 3:4;每次请求附 `anchor-family.png` 作为 `style-only` 参考。
+- 输入:渲染器生成的完整 #3.1 prompt;画幅 3:4;每次请求附 `anchor-family.png` 作为 `style-only` 参考。
 - 结果:通过。老年人、儿童、书与书架均被翻译成同一线条和填色语言;没有回退成商业绘本脸或规整人体。
 
 ## 2026-08-03 主视觉强化回归
@@ -69,12 +69,12 @@
 
 ## 隐私与来源审计
 
-- 画风锚点已使用 `sweety-image-privacy --mode generated-asset` 成功处理;无 GPS、相机、设备序列号、主机或本地路径字段;像素摘要处理前后相同。审计见 `../../assets/style-1.2/anchor-family.png.privacy.json` 与 `.provenance.json`。
+- 画风锚点已使用 `sweety-image-privacy --mode generated-asset` 成功处理;无 GPS、相机、设备序列号、主机或本地路径字段;像素摘要处理前后相同。审计见 `../../assets/style-3.1/anchor-family.png.privacy.json` 与 `.provenance.json`。
 - 本页回归图均调用了同一 skill,但检测到 Codex 内置生成器写入的 C2PA/JUMBF 内容凭证。`sweety-image-privacy` 按 fail-closed 规则拒绝改写,以免破坏或伪造签名。ExifTool 只读复核显示 1086×1448 PNG 和 C2PA/JUMBF,未见 EXIF/GPS/相机字段;原始文件作为内部验证证据保留,不冒充“已清理发布图”。
 
 ## 入库结论
 
-- 新增稳定身份 `1.2` / `family-crayon-card` / `parent-child-crayon` / `submission-crayon`。
+- 稳定身份迁移为 `3.1` / `family-crayon-card` / `parent-child-crayon` / `submission-crayon`;旧编号 `1.2` 不再可调用。
 - 正式生产、多页和连续故事必须对每张图附同一内置画风锚点;只有 prompt 没有 `references` 即判调用不合格。
 - 锚点身份按解码像素而非整文件字节固定;隐私与来源元数据可以变化,实际画面像素不能变化。
 - 业务项目只能传画风编号、内容、文字和比例,不能维护或追加第二套画风规则。

@@ -32,6 +32,11 @@ STYLE_1_2_SCRIBBLE_CORRECTION_PROMPT = """Image 1 is the edit target. Image 2 is
 Change ONLY the crayon coloring marks inside and around the existing people, clothing, hair, furniture, books, and props in Image 1. Preserve the exact characters, faces, poses, actions, composition, object count, outlines, colors, white background, and framing.
 Rework the coloring to match Image 2's genuinely clumsy child scribbling: coarse blunt wax-crayon strokes with abrupt starts and stops; visibly mixed horizontal, vertical, diagonal, looping, zigzag and crossing directions inside the SAME color area; uneven pressure; isolated heavy clumps next to large untouched white-paper holes; some strokes stop far before the black outline and some overshoot well beyond it. Each color area must have a different scribble rhythm.
 Critical: NO neat diagonal hatching, NO fine dense parallel lines, NO even spacing, NO uniform coverage, NO repeated digital crayon texture. Make the coloring obviously messier, coarser, patchier, emptier and more misregistered than Image 1. Do not add text or new objects."""
+STYLE_1_2_SCRIBBLE_CHAOS_PROMPT = """Image 1 is the edit target after the first scribble correction. Image 2 is the only approved style reference.
+Perform a second, stricter correction on CRAYON COLORING MARKS ONLY. Preserve Image 1 exactly in characters, faces, expressions, poses, gestures, composition, object count, black outlines, existing color choices, white background, and framing.
+The remaining coloring is still too neat wherever it forms fine, dense, or consistently diagonal hatching. Replace those ordered areas with Image 2's clumsy family scribbling, not a digital crayon texture.
+For EACH color area, use a SMALL NUMBER of much thicker blunt wax-crayon strokes with visibly different lengths and pressure. Break the area into disconnected bouts: horizontal rubs, a vertical stab, an abrupt diagonal, a loop, a zigzag, and crossing retraced strokes, without repeating a sequence. Leave 35-55% of the white paper clearly untouched in irregular LARGE holes, including holes that reach the black outline. Put heavy opaque clumps directly beside totally blank areas. Many strokes must stop far before the boundary; several isolated strokes must overshoot far outside it. Adjacent color areas must have obviously different stroke direction and density.
+Critical failure conditions: NO fine pencil-like hatch marks; NO field of mostly parallel diagonals; NO even spacing; NO uniform coverage; NO repeated texture; NO tidy edge-following; NO tiny evenly distributed white gaps. Make the result substantially rougher, emptier, coarser, more asymmetrical, and more accidentally misregistered than Image 1. Do not change any clothing or object color. Do not add text, symbols, objects, shadows, paper texture, or scenery."""
 STYLE_INJECTION_TERMS = (
     "画风",
     "风格",
@@ -340,7 +345,7 @@ def build_payload(
     if style_id == "1.2":
         anchor = ROOT / "assets/style-1.2/anchor-family.png"
         validate_style_1_2_anchor(anchor)
-        payload["style_contract"] = "family-crayon-card-v2"
+        payload["style_contract"] = "family-crayon-card-v3"
         references: list[dict[str, str]] = [
             {
                 "path": str(anchor),
@@ -361,7 +366,7 @@ def build_payload(
         )
         payload["references"] = references
         payload["workflow"] = {
-            "final_output_stage": "scribble-correction",
+            "final_output_stage": "scribble-chaos-correction",
             "stages": [
                 {
                     "id": "base-generation",
@@ -390,6 +395,31 @@ def build_payload(
                     "must_preserve": (
                         "characters, faces, poses, actions, composition, object count, "
                         "outlines, colors, white background, and framing"
+                    ),
+                    "output_status": "intermediate-only",
+                },
+                {
+                    "id": "scribble-chaos-correction",
+                    "operation": "edit",
+                    "required": True,
+                    "output_status": "final",
+                    "prompt": STYLE_1_2_SCRIBBLE_CHAOS_PROMPT,
+                    "references": [
+                        {
+                            "input_index": 1,
+                            "role": "edit-target",
+                            "source": "scribble-correction.output",
+                        },
+                        {
+                            "input_index": 2,
+                            "role": "style-only",
+                            "path": str(anchor),
+                        },
+                    ],
+                    "must_preserve": (
+                        "characters, faces, expressions, poses, gestures, composition, "
+                        "object count, black outlines, existing color choices, white "
+                        "background, and framing"
                     ),
                 },
             ],

@@ -47,7 +47,7 @@ class RenderPromptTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         payload = json.loads(result.stdout)
         self.assertEqual(payload["style_id"], "1.2")
-        self.assertEqual(payload["style_contract"], "family-crayon-card-v2")
+        self.assertEqual(payload["style_contract"], "family-crayon-card-v3")
         self.assertEqual(payload["references"][0]["role"], "style-only")
         self.assertEqual(payload["references"][0]["priority"], "primary-visual-truth")
         self.assertTrue(Path(payload["references"][0]["path"]).is_file())
@@ -56,13 +56,23 @@ class RenderPromptTests(unittest.TestCase):
         self.assertNotIn("【主体】", payload["prompt"])
         self.assertNotIn("【文字】", payload["prompt"])
         self.assertEqual(payload["inputs"]["variables"]["主体"], "爸爸把零食袋放回柜子,男孩站在旁边看着")
-        self.assertEqual(payload["workflow"]["final_output_stage"], "scribble-correction")
+        self.assertEqual(payload["workflow"]["final_output_stage"], "scribble-chaos-correction")
         correction = payload["workflow"]["stages"][1]
         self.assertEqual(correction["operation"], "edit")
         self.assertTrue(correction["required"])
         self.assertEqual(correction["references"][0]["role"], "edit-target")
         self.assertEqual(correction["references"][1]["role"], "style-only")
         self.assertIn("NO fine dense parallel lines", correction["prompt"])
+        self.assertEqual(correction["output_status"], "intermediate-only")
+        chaos = payload["workflow"]["stages"][2]
+        self.assertEqual(chaos["id"], "scribble-chaos-correction")
+        self.assertEqual(chaos["operation"], "edit")
+        self.assertTrue(chaos["required"])
+        self.assertEqual(chaos["output_status"], "final")
+        self.assertEqual(chaos["references"][0]["source"], "scribble-correction.output")
+        self.assertEqual(chaos["references"][1]["role"], "style-only")
+        self.assertIn("Leave 35-55%", chaos["prompt"])
+        self.assertIn("Do not change any clothing or object color", chaos["prompt"])
 
     def test_parent_child_natural_language_alias_routes_to_style_1_2(self) -> None:
         result = self.run_renderer(

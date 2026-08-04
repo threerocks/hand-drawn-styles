@@ -1,0 +1,17 @@
+{
+  "input": "/Users/liulei/projects/hand-drawn-styles/assets/style-1.2/anchor-family.png",
+  "output": "/Users/liulei/projects/hand-drawn-styles/assets/style-1.2/anchor-family.png",
+  "aigcFieldBefore": "absent",
+  "aigcFieldAfter": "present",
+  "digitalSourceTypeBefore": "absent",
+  "digitalSourceTypeAfter": "https://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia",
+  "creatorToolBefore": "absent",
+  "creatorToolAfter": "Codex built-in image generation",
+  "c2paBefore": "absent",
+  "c2paAfter": "absent",
+  "rightsFieldsChanged": [],
+  "cameraProfileAdded": false,
+  "pixelDigestBefore": "30cc0076b6f739447859d10706a49fa5",
+  "pixelDigestAfter": "30cc0076b6f739447859d10706a49fa5",
+  "pixelDigestChanged": false
+}

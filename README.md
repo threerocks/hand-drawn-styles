@@ -8,7 +8,7 @@
 
 好用的"手绘风"提示词散落各处,每次生图都要翻找、拼凑,还容易把比例、版式等无关约束混进去。
 
-本项目把 **19 种已验证的手绘画风(另含 2 个变体,共 21 套配方)**沉淀成可复用配方。你只管说"画什么",Agent 负责:
+本项目把 **19 种已验证的手绘画风(另含 3 个变体,共 22 套配方)**沉淀成可复用配方。你只管说"画什么",Agent 负责:
 
 - 帮你选画风(没指定就列菜单,指定了就直接用);
 - 把你的内容自动填进该画风的提示词模板;
@@ -19,12 +19,13 @@
 
 ## 内置画风
 
-> 八大分组:**拟真手绘**(1/1.1/4/8/11)· **线条·讲解·速写**(2/5/7)· **故意画烂**(3/3.1/6)· **传统·复古质感**(9/10)· **动画·概念设定**(12/13/17/18)· **纸艺·立体手工**(14)· **绘本·扁平与北欧**(15/19)· **3D·潮玩**(16)。编号是稳定身份(对应样图 01–19),`x.1` 是某主风格的变体。
+> 八大分组:**拟真手绘**(1/1.1/1.2/4/8/11)· **线条·讲解·速写**(2/5/7)· **故意画烂**(3/3.1/6)· **传统·复古质感**(9/10)· **动画·概念设定**(12/13/17/18)· **纸艺·立体手工**(14)· **绘本·扁平与北欧**(15/19)· **3D·潮玩**(16)。编号是稳定身份(对应样图 01–19),`x.y` 是某主风格的稳定变体。
 
 | 组 | 编号 | 名称 | 调性 | 英文别名 |
 |----|------|------|------|----------|
 | 拟真手绘 | 1 | 纯人类手绘儿童涂色页 | 大人画粗黑线稿 + 孩子填色,真实纸面拍摄感,适合讲故事 / 亲子 | `handmade` `childlike-coloring` |
 | 拟真手绘 | 1.1 | 儿童涂色页-低饱和克制版 | #1 变体:极简留白背景 + 低饱和 ≤4 色 + 单一橙红点缀,冷静叙事感 | `coloring-muted` `restrained-coloring` |
+| 拟真手绘 | 1.2 | 亲子投稿蜡笔故事卡 | #1 稳定叙事变体:普通大人歪线稿 + 孩子稀疏蜡笔填色,固定小点眼红脸蛋、明亮白底和大留白;多页强制内置画风锚点 | `family-crayon-card` `parent-child-crayon` `submission-crayon` |
 | 线条讲解 | 2 | 极简黑白线条讲解漫画(xkcd 火柴人) | 纯细线火柴人、圆角分镜、标题+说明,讲解示意图 | `xkcd` `stickman` `minimal-line` |
 | 故意画烂 | 3 | 蜡笔童涂 | 5 岁小孩用蜡笔画的笨拙"坏画",歪扭出框、引人发笑 | `crayon` `kid-crayon` |
 | 故意画烂 | 3.1 | 蜡笔童涂-潦草自画版 | #3 变体:整张像孩子全自画的简笔火柴娃 + 低饱和 ≤4 色单橙红,更潦草冷静 | `rawkid` `kid-scrawl` `stick-kid` |
@@ -55,12 +56,13 @@
 | <img src="examples/03.1-crayon-rawkid.png" width="200"><br>**3.1** 蜡笔童涂-潦草自画版 | <img src="examples/12-retro-concept.png" width="200"><br>**12** 二维水彩风格 | <img src="examples/13-sunlit-storybook.png" width="200"><br>**13** 暖光童画 | <img src="examples/14-paper-folk.png" width="200"><br>**14** 北欧纸雕 |
 | <img src="examples/15-nordic-storybook.png" width="200"><br>**15** 北欧绘本水粉 | <img src="examples/16-softnose-vinyl.png" width="200"><br>**16** 大鼻软偶 | <img src="examples/17-gouache-spotlight.png" width="200"><br>**17** 聚光水粉立绘 | <img src="examples/18-inked-storybook.png" width="200"><br>**18** 墨线绘本 |
 | <img src="examples/19-warm-flat-storybook.png" width="200"><br>**19** 暖色扁平绘本 | | | |
+| <img src="assets/style-1.2/anchor-family.png" width="200"><br>**1.2** 亲子投稿蜡笔故事卡 | | | |
 
 > 每种画风的输入示例与完整提示词见 [examples/](examples/)。
 
 ## 接入各 Agent 工具
 
-核心是两个工具无关的文件:[`PROTOCOL.md`](PROTOCOL.md)(执行流程)+ [`STYLES.md`](STYLES.md)(18 段画风配方)。任何 Agent 只要"读到"这两个文件即可。
+核心是工具无关的 [`PROTOCOL.md`](PROTOCOL.md)(执行流程)+ [`STYLES.md`](STYLES.md)(画风配方)。对风格 1.2,还必须保留 `assets/style-1.2/anchor-family.png`;正式生产建议安装完整仓库,不要只复制文本片段。
 
 ```bash
 git clone https://github.com/threerocks/hand-drawn-styles.git
@@ -105,9 +107,24 @@ Agent：请选择画风(回复编号或名字)：
 
 配方里的 `【主体】【标题词】【主色调】【N】【分镜列表】` 由 Agent 从你的描述里自动推断填好,无需手填。
 
+### 稳定生产调用(推荐)
+
+能运行 Python 时,用渲染器原样提取配方,避免 Agent 自行缩写或混配:
+
+```bash
+python3 scripts/render_prompt.py \
+  --style 1.2 \
+  --subject '爸爸把零食袋放回柜子,男孩站在旁边看着' \
+  --text '不加任何文字' \
+  --aspect 3:4 \
+  --format json
+```
+
+风格 1.2 默认输出正式 JSON,其中包含 `prompt`、输入回放信息与必须随每张请求传入的 `references`;锚点会校验固定尺寸和 SHA-256。业务项目只负责内容、准确标题、比例和可选角色参考,不得再维护第二套线条、五官、配色或纸面规则。无字页用 `--text '不加任何文字'`,有标题用 `--title '准确标题原文'`;纯文本只允许显式 `--format text --text-only-preview`,不得用于正式生图。
+
 ## 设计原则
 
-- **只产 prompt,不生图**——保持轻量、可移植,不绑定任何图像后端。
+- **只产 prompt 或正式调用包,不生图**——保持轻量、可移植,不绑定任何图像后端。
 - **工具无关**——核心是纯文本协议 + 配方;Claude Code 的 `SKILL.md`、跨工具的 `AGENTS.md` 都只是薄适配层,不重复内容。
 - **配方库,而非统一调色板**——每种画风保留它原生的版式 / 结构(如风格 5 的竖版 N 格信息图),忠于已验证的效果,而不是强行抹平成"可互换的滤镜"。
 - **不锁比例**——比例是可选参数;版式风格仅给软结构提示,把画布自由度留给用户。
@@ -119,9 +136,11 @@ hand-drawn-styles/
 ├── README.md
 ├── LICENSE
 ├── PROTOCOL.md        # 核心协议:选风格 / 比例 / 占位符 / 输出(工具无关)
-├── STYLES.md          # 核心配方:19 种画风 + 2 变体的提示词模板(工具无关)
+├── STYLES.md          # 核心配方:19 种画风 + 3 变体的提示词模板(工具无关)
 ├── SKILL.md           # Claude Code 适配层(薄,指向上面两个文件)
 ├── AGENTS.md          # Codex / Gemini / Cursor 等适配层(薄)
+├── assets/            # 需要参考锚点的稳定画风资产
+├── scripts/           # 无改写配方渲染器与回归测试
 └── examples/          # 样图 + 每种画风的示例提示词
 ```
 

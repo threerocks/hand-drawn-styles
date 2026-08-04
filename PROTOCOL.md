@@ -2,16 +2,16 @@
 
 > 这是核心指令。任何能读自定义指令的 AI Agent（Claude Code、Cursor、Codex CLI、Gemini CLI、Cline、Windsurf 等）把本文件 + [STYLES.md](STYLES.md) 接入后,即可获得"手绘风格生图提示词"能力。
 >
-> 你（Agent）的职责:把用户要画的内容,套进一种内置画风配方,产出**可直接复制去喂图像模型的最终 prompt 纯文本**。你本身**不生图**。
+> 你（Agent）的职责:把用户要画的内容套进内置画风配方,产出最终 prompt;需要固定参考资产的稳定画风则产出包含 prompt 与 references 的正式调用包。你本身**不生图**。
 
 ## 执行流程
 
 ### 1. 确定画风
 
 - **用户已显式指定** → 直接采用。识别方式三选一(任一命中即可):
-  - 中文名:纯人类手绘 / 儿童涂色 / 极简线条 / 火柴人 / 蜡笔 / 童涂 / 吉卜力 / 小豆人 / MS Paint / 烂涂鸦 / 圆珠笔 / 单线涂鸦 / 蜡笔实拍 / 真蜡笔 / 水墨 / 写意 / 国画 / 像素 / 像素风 / 情绪叙事 / 淡彩速写 / 速写讲故事 / 二维水彩风格 / 二维水彩 / 复古动画 / 概念稿 / 概念设定 / 暖光童画 / 动画概念暖绘 / 北欧纸雕 / 纸雕 / 纸艺 / 衍纸 / 北欧绘本水粉 / 北欧绘本 / 绘本水粉 / 斯堪的纳维亚绘本 / 大鼻软偶 / 软偶 / 软胶潮玩 / 大鼻子潮玩 / 聚光水粉立绘 / 聚光立绘 / 水粉立绘 / 墨线绘本 / 墨线淡彩 / 线稿绘本 / 速写绘本 / 暖色扁平绘本 / 扁平暖色绘本 / 几何扁平绘本 / 低饱和克制版(描线填色) / 潦草自画版(简笔涂鸦)
-  - 编号:1–19,另有变体 1.1(儿童涂色-低饱和克制版)、3.1(蜡笔童涂-潦草自画版)
-  - 英文别名:`handmade` `childlike-coloring` / `coloring-muted` `restrained-coloring`(1.1) / `xkcd` `stickman` `minimal-line` / `crayon` `kid-crayon` / `rawkid` `kid-scrawl` `stick-kid`(3.1) / `ghibli` / `bean` `blob` / `ms-paint` `bad-doodle` `ugly` / `scribble` `pen-scribble` `ballpoint` / `real-crayon` `crayon-photo` / `ink-wash` `ink` `shuimo` `chinese-painting` / `pixel` `pixel-art` `8-bit` `16-bit` / `emo-sketch` `story-sketch` `watercolor-sketch` `light-watercolor` / `retro-concept` `mid-century` `gouache-concept`(12) / `sunlit-storybook` `vis-dev` `storybook-visdev`(13) / `paper-folk` `papercraft` `nordic-papercraft` `paper-sculpture` `quilling`(14) / `nordic-storybook` `scandi-gouache` `scandinavian-storybook` `soft-gouache`(15) / `softnose` `softnose-vinyl` `bignose-toy` `vinyl-toy` `art-toy`(16) / `gouache-spotlight` `spotlight-gouache` `character-spotlight`(17) / `inked-storybook` `ink-storybook` `sketch-storybook` `storybook-ink`(18) / `warm-flat-storybook` `flat-storybook` `geometric-storybook` `warm-flat`(19)
+  - 中文名:纯人类手绘 / 儿童涂色 / 亲子投稿蜡笔故事卡 / 家庭投稿蜡笔卡 / 极简线条 / 火柴人 / 蜡笔 / 童涂 / 吉卜力 / 小豆人 / MS Paint / 烂涂鸦 / 圆珠笔 / 单线涂鸦 / 蜡笔实拍 / 真蜡笔 / 水墨 / 写意 / 国画 / 像素 / 像素风 / 情绪叙事 / 淡彩速写 / 速写讲故事 / 二维水彩风格 / 二维水彩 / 复古动画 / 概念稿 / 概念设定 / 暖光童画 / 动画概念暖绘 / 北欧纸雕 / 纸雕 / 纸艺 / 衍纸 / 北欧绘本水粉 / 北欧绘本 / 绘本水粉 / 斯堪的纳维亚绘本 / 大鼻软偶 / 软偶 / 软胶潮玩 / 大鼻子潮玩 / 聚光水粉立绘 / 聚光立绘 / 水粉立绘 / 墨线绘本 / 墨线淡彩 / 线稿绘本 / 速写绘本 / 暖色扁平绘本 / 扁平暖色绘本 / 几何扁平绘本 / 低饱和克制版(描线填色) / 潦草自画版(简笔涂鸦)
+  - 编号:1–19,另有变体 1.1(儿童涂色-低饱和克制版)、1.2(亲子投稿蜡笔故事卡)、3.1(蜡笔童涂-潦草自画版)
+  - 英文别名:`handmade` `childlike-coloring` / `coloring-muted` `restrained-coloring`(1.1) / `family-crayon-card` `parent-child-crayon` `submission-crayon`(1.2) / `xkcd` `stickman` `minimal-line` / `crayon` `kid-crayon` / `rawkid` `kid-scrawl` `stick-kid`(3.1) / `ghibli` / `bean` `blob` / `ms-paint` `bad-doodle` `ugly` / `scribble` `pen-scribble` `ballpoint` / `real-crayon` `crayon-photo` / `ink-wash` `ink` `shuimo` `chinese-painting` / `pixel` `pixel-art` `8-bit` `16-bit` / `emo-sketch` `story-sketch` `watercolor-sketch` `light-watercolor` / `retro-concept` `mid-century` `gouache-concept`(12) / `sunlit-storybook` `vis-dev` `storybook-visdev`(13) / `paper-folk` `papercraft` `nordic-papercraft` `paper-sculpture` `quilling`(14) / `nordic-storybook` `scandi-gouache` `scandinavian-storybook` `soft-gouache`(15) / `softnose` `softnose-vinyl` `bignose-toy` `vinyl-toy` `art-toy`(16) / `gouache-spotlight` `spotlight-gouache` `character-spotlight`(17) / `inked-storybook` `ink-storybook` `sketch-storybook` `storybook-ink`(18) / `warm-flat-storybook` `flat-storybook` `geometric-storybook` `warm-flat`(19)
   - 注意 `涂鸦/doodle` 本身有歧义(#5 小豆人、#6 MS Paint、#7 圆珠笔都沾涂鸦):用户只说"涂鸦/画烂点"而不指明时,按未指定处理→展示菜单让其选。
 - **用户未指定** → 展示下面这个菜单,**停下等用户选**,不要自己替他挑:
 
@@ -21,6 +21,7 @@
   【拟真手绘 · 像真画/真纸】
   1. 纯人类手绘儿童涂色页 —— 粗黑线稿+孩子填色,真实纸面拍摄感,适合讲故事/亲子
   1.1 儿童涂色页-低饱和克制版 —— #1 变体:极简留白背景 + 低饱和≤4色 + 单一橙红点缀,冷静叙事感
+  1.2 亲子投稿蜡笔故事卡 —— #1 稳定叙事变体:普通大人歪线稿+孩子稀疏蜡笔填色,固定小点眼红脸蛋与明亮大留白;多页必须带内置画风锚点
   4. 吉卜力风 —— 柔和水彩、暖光、治愈梦幻的手绘动画感
   8. 蜡笔实拍 —— 像一张真蜡笔纸的照片,强制露白/蜡质笔触,一眼真人手涂
   11. 情绪叙事淡彩速写 —— 靛蓝松散速写线+大片留白+全画一处橙色点缀,催泪家庭故事感(小红书爆款风)
@@ -61,6 +62,17 @@
 
 打开 [STYLES.md](STYLES.md),取对应编号那段完整提示词模板。
 
+**禁止手工缩写或混配:**不得摘几句、同义改写、把多个画风揉在一起,也不得让业务项目追加第二套线条、五官、比例、填色、色板或纸面规则。运行环境能执行脚本时,优先使用 `scripts/render_prompt.py` 从 `STYLES.md` 原样提取并填充;业务项目只提供画风编号、内容、文字和比例。
+
+风格 1.2 有额外的稳定性合同:
+
+- 正式生产、连续故事和多页作品的每一张请求,都必须附带 `assets/style-1.2/anchor-family.png`,并标记为“纯画风参考”。不能只在角色卡或第一页使用一次。
+- 画风锚点只约束视觉语言,不能让模型复制其中人物、衣服、站位与情节。若还需固定角色,角色参考图作为另一份输入单独传递,不得替代画风锚点。
+- 锚点按 PNG 尺寸与 SHA-256 固定;缺失、损坏、被替换或调用端不能传参考图时,停止正式生产并明确报告“画风锚点未生效”;不得退回文字版、不得改用业务项目自定义画风块蒙混出图。
+- 需要可机读调用包时执行:`python3 scripts/render_prompt.py --style 1.2 --subject '…' --text '…' --aspect 3:4 --format json`。JSON 会给出最终 prompt、画风锚点绝对路径和参考角色。
+- 风格 1.2 的渲染器默认就是正式 JSON;`--format text` 会失败,只有明确加入 `--text-only-preview` 才允许非生产预览。连续角色参考用可重复的 `--character-reference PATH` 传入,它们排在固定 `style-only` 锚点之后。
+- `--subject` 只能描述人物、动作、关系和必要道具;检测到画风、线稿、配色、纸面及其常见组合表达时直接失败。1.2 无字页用 `--text '不加任何文字'`;有标题必须用独立 `--title '准确标题原文'`,渲染器负责生成固定文字指令,禁止自由填写 `--text` 或 `--var 文字`。
+
 ### 3. 自动填充占位符
 
 模板里的 `【主体】【标题词】【主色调】【N】【分镜列表】【橙色关键物】【文字】` 等占位符,**从用户给的内容自动推断填好**,不要把括号或占位符原样留在输出里:
@@ -79,14 +91,17 @@
 - 风格18(墨线绘本):模板是已验证英文,占位符也填英文;`【主体】` 写角色外形+发型+服装+表情的英文短句,`【构图】` 默认 "head-and-shoulders portrait",`【背景色】` 默认 "warm peach fading to pale cream near the top"(可换 pale sky-blue / dusty earth-brown 等单一氛围渐变),`【配色】` 填一句 2–4 色协调短语(人物主色与背景呼应或互补),`【文字】` 默认 "No text anywhere."。
 - 风格19(暖色扁平绘本):模板是已验证英文,占位符也填英文;`【主体】` 写角色/动物的外形、服装、动作与关系;`【构图】` 默认 "full-body, centered in the lower-middle with huge calm negative space",多人互动改为 "compact overlapping group, full bodies visible, centered in the lower-middle with huge calm negative space";宽体型角色在主体里明确 "an enormous wide capsule torso and massive rounded sloping shoulders",细长角色明确 "a long neck, narrow oval face and elongated limbs";`【文字】` 默认 "No text anywhere."。
 - 变体 1.1 / 3.1:同样用 `【主体】【文字】`;`【文字】` 按各自 STYLES.md 段落里的手写字说明处理(1.1 偏绘本手写字、3.1 偏儿童认真笔迹);两者都遵守"全页≤4 低饱和色 + 单一橙红强调色",橙红自动落在最合适的情绪焦点/关键道具上。
+- 变体 1.2:`【主体】` 只写这一页的人物身份、动作、关系和必要道具,不得把画风词混进去;`【文字】` 按 STYLES.md 段落处理。它允许家庭场景自然出现约 5-7 种蜡笔色,不得套用 1.1 的“≤4 色 + 单橙红”纪律。
 
 ### 4. 处理比例(关键:不硬锁)
 
 - 用户**传了**比例(如 16:9 / 竖版 / 方图)→ 用用户的。
 - 用户**没传**:
-  - 纯风格(1、1.1、3、3.1、4、6、7、8、9、10、11、12、13、14、15、16、17、18、19)→ **不注入任何比例**。
+  - 纯风格(1、1.1、1.2、3、3.1、4、6、7、8、9、10、11、12、13、14、15、16、17、18、19)→ **不注入任何比例**。
   - 版式风格(2、5)→ 只注入**软结构提示**(2 用"多格网格排版";5 用"竖版、多格自上而下堆叠"),**不写具体数字比例**。
 
 ### 5. 输出
 
-只输出最终 prompt,放进代码块方便整段复制。**不要生图,不要附加解说**(除非用户另外问)。结尾可以用一行说明用的是哪种画风 + 是否注入了比例提示。
+默认只输出最终 prompt,放进代码块方便整段复制。**不要生图,不要附加解说**(除非用户另外问)。结尾可以用一行说明用的是哪种画风 + 是否注入了比例提示。
+
+例外:风格 1.2 用于正式生产、连续故事或多页作品时,输出正式 JSON 调用包,调用端必须同时消费其中的 `prompt` 与全部 `references`;只复制 prompt 而丢掉画风锚点,属于不合格调用,不能开始生图。

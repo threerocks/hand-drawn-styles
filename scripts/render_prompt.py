@@ -9,6 +9,7 @@ import json
 import re
 import struct
 import sys
+import zlib
 from pathlib import Path
 
 
@@ -19,10 +20,13 @@ STYLE_ALIASES = {
     "family-crayon-card": "1.2",
     "parent-child-crayon": "1.2",
     "submission-crayon": "1.2",
+    "亲子手绘": "1.2",
+    "家庭蜡笔画": "1.2",
+    "亲子蜡笔故事": "1.2",
     "亲子投稿蜡笔故事卡": "1.2",
     "家庭投稿蜡笔卡": "1.2",
 }
-STYLE_1_2_ANCHOR_SHA256 = "d1eb06abd3e81115483b6d6227746ad1811f6c2bc8e0670f573fd4d6f9eaafc3"
+STYLE_1_2_ANCHOR_PIXEL_SHA256 = "1ae67d0088d58f2527ae81aa05d8453ce1ccc9d4614342c0bb1ab71a5e4895cd"
 STYLE_1_2_ANCHOR_SIZE = (1086, 1448)
 STYLE_INJECTION_TERMS = (
     "画风",
@@ -54,11 +58,45 @@ STYLE_INJECTION_TERMS = (
     "外轮廓",
     "内轮廓",
 )
+STYLE_RATIO_EXPRESSION = (
+    r"(?:\d+(?:\.\d+)?\s*%|百分之[零一二三四五六七八九十百两〇\d]+|"
+    r"[一二三四五六七八九十两\d]+成|"
+    r"[零一二三四五六七八九十百两〇\d]+分之[零一二三四五六七八九十百两〇\d]+)"
+)
+STYLE_LENGTH_EXPRESSION = r"[零一二三四五六七八九十百两〇\d]+(?:\.\d+)?\s*(?:毫米|厘米|mm|cm)"
 STYLE_INJECTION_PATTERNS = (
     re.compile(r"(?:加粗|变粗|粗一点|减细|变细).{0,8}(?:轮廓|边线|线)"),
     re.compile(r"(?:轮廓|边线|线).{0,8}(?:加粗|变粗|粗一点|减细|变细)"),
     re.compile(r"(?:只用|限制为|控制在).{0,16}(?:种|个).{0,10}(?:色|颜色|色调)"),
     re.compile(r"(?:改成|画成|采用|使用|渲染成).{0,24}(?:画风|风格|线稿|描边|配色|色调|质感|笔触|插画|绘本|水彩|蜡笔)"),
+    re.compile(
+        rf"(?:严格|固定|精确|统一|每块|每件|每处|全部).{{0,16}}"
+        rf"(?:留白|露白|越界|出界|涂色|空出|超出边缘).{{0,10}}{STYLE_RATIO_EXPRESSION}"
+    ),
+    re.compile(
+        rf"(?:留白|露白|越界|出界|涂色|空出|超出边缘).{{0,10}}{STYLE_RATIO_EXPRESSION}"
+    ),
+    re.compile(
+        rf"(?:每块|每件|每处|全部).{{0,16}}(?:空出|保留).{{0,8}}"
+        rf"{STYLE_RATIO_EXPRESSION}.{{0,4}}(?:白|空白)"
+    ),
+    re.compile(
+        r"(?:人物|角色|所有人|每个人|眼睛|五官|脸型|头型|肩宽|姿势).{0,20}"
+        r"(?:同一|统一|固定|标准).{0,8}(?:尺寸|模板|骨架|比例)"
+    ),
+    re.compile(
+        rf"(?:衣服|头发|肤色|蜡笔|色块|涂色).{{0,14}}(?:覆盖率|填色率).{{0,12}}"
+        rf"{STYLE_RATIO_EXPRESSION}"
+    ),
+    re.compile(
+        r"(?:每张|人物|角色|姿势).{0,14}(?:套用|使用|采用).{0,8}"
+        r"(?:同一|统一|固定|标准)?(?:人物|角色)?模板"
+    ),
+    re.compile(r"(?:姿势|人物|轮廓|五官).{0,14}(?:对称规整|尽量对称|统一规整|标准化)"),
+    re.compile(
+        rf"(?:越界|出界|色痕|线条).{{0,14}}(?:平均|统一|固定|精确).{{0,8}}"
+        rf"(?:控制|设为|定为)?(?:在)?{STYLE_LENGTH_EXPRESSION}"
+    ),
 )
 
 
@@ -114,26 +152,126 @@ def render(template: str, values: dict[str, str], aspect: str | None) -> str:
     return output
 
 
-def png_size(path: Path) -> tuple[int, int]:
+def png_chunks(path: Path) -> list[tuple[bytes, bytes]]:
     data = path.read_bytes()
-    if len(data) < 24 or data[:8] != b"\x89PNG\r\n\x1a\n":
+    if len(data) < 33 or data[:8] != b"\x89PNG\r\n\x1a\n":
         raise ValueError(f"参考图不是有效 PNG: {path}")
-    return struct.unpack(">II", data[16:24])
+
+    chunks: list[tuple[bytes, bytes]] = []
+    offset = 8
+    while offset < len(data):
+        if offset + 12 > len(data):
+            raise ValueError(f"参考图 PNG 数据不完整: {path}")
+        length = struct.unpack(">I", data[offset : offset + 4])[0]
+        chunk_type = data[offset + 4 : offset + 8]
+        chunk_data = data[offset + 8 : offset + 8 + length]
+        crc_offset = offset + 8 + length
+        if crc_offset + 4 > len(data):
+            raise ValueError(f"参考图 PNG 数据不完整: {path}")
+        expected_crc = struct.unpack(">I", data[crc_offset : crc_offset + 4])[0]
+        actual_crc = zlib.crc32(chunk_type + chunk_data) & 0xFFFFFFFF
+        if actual_crc != expected_crc:
+            raise ValueError(f"参考图 PNG 校验失败: {path}")
+        chunks.append((chunk_type, chunk_data))
+        offset = crc_offset + 4
+        if chunk_type == b"IEND":
+            break
+    if not chunks or chunks[-1][0] != b"IEND" or offset != len(data):
+        raise ValueError(f"参考图 PNG 结构不完整: {path}")
+    return chunks
+
+
+def png_pixel_sha256(path: Path) -> tuple[tuple[int, int], str]:
+    chunks = png_chunks(path)
+    ihdr_chunks = [chunk for chunk_type, chunk in chunks if chunk_type == b"IHDR"]
+    if len(ihdr_chunks) != 1 or len(ihdr_chunks[0]) != 13:
+        raise ValueError(f"参考图 PNG 缺少有效 IHDR: {path}")
+    width, height, bit_depth, color_type, compression, filtering, interlace = struct.unpack(
+        ">IIBBBBB", ihdr_chunks[0]
+    )
+    bytes_per_pixel = {0: 1, 2: 3, 3: 1, 4: 2, 6: 4}.get(color_type)
+    if (
+        bit_depth != 8
+        or bytes_per_pixel is None
+        or compression != 0
+        or filtering != 0
+        or interlace != 0
+    ):
+        raise ValueError(f"参考图 PNG 编码不受支持,停止正式生产: {path}")
+
+    compressed = b"".join(chunk for chunk_type, chunk in chunks if chunk_type == b"IDAT")
+    try:
+        raw = zlib.decompress(compressed)
+    except zlib.error as error:
+        raise ValueError(f"参考图 PNG 像素数据损坏: {path}") from error
+
+    stride = width * bytes_per_pixel
+    if len(raw) != (stride + 1) * height:
+        raise ValueError(f"参考图 PNG 像素长度不匹配: {path}")
+
+    rows: list[bytes] = []
+    previous = bytearray(stride)
+    offset = 0
+    for _ in range(height):
+        filter_type = raw[offset]
+        offset += 1
+        scanline = raw[offset : offset + stride]
+        offset += stride
+        reconstructed = bytearray(stride)
+        for index, value in enumerate(scanline):
+            left = reconstructed[index - bytes_per_pixel] if index >= bytes_per_pixel else 0
+            above = previous[index]
+            upper_left = previous[index - bytes_per_pixel] if index >= bytes_per_pixel else 0
+            if filter_type == 0:
+                predictor = 0
+            elif filter_type == 1:
+                predictor = left
+            elif filter_type == 2:
+                predictor = above
+            elif filter_type == 3:
+                predictor = (left + above) // 2
+            elif filter_type == 4:
+                candidate = left + above - upper_left
+                left_distance = abs(candidate - left)
+                above_distance = abs(candidate - above)
+                upper_left_distance = abs(candidate - upper_left)
+                predictor = (
+                    left
+                    if left_distance <= above_distance and left_distance <= upper_left_distance
+                    else above
+                    if above_distance <= upper_left_distance
+                    else upper_left
+                )
+            else:
+                raise ValueError(f"参考图 PNG 使用未知过滤器: {path}")
+            reconstructed[index] = (value + predictor) & 0xFF
+        rows.append(bytes(reconstructed))
+        previous = reconstructed
+    return (width, height), hashlib.sha256(b"".join(rows)).hexdigest()
+
+
+def png_size(path: Path) -> tuple[int, int]:
+    chunks = png_chunks(path)
+    ihdr_chunks = [chunk for chunk_type, chunk in chunks if chunk_type == b"IHDR"]
+    if len(ihdr_chunks) != 1 or len(ihdr_chunks[0]) != 13:
+        raise ValueError(f"参考图 PNG 缺少有效 IHDR: {path}")
+    width, height = struct.unpack(">II", ihdr_chunks[0][:8])
+    return width, height
 
 
 def validate_style_1_2_anchor(anchor: Path) -> None:
     if not anchor.is_file():
         raise ValueError(f"画风 1.2 锚点不可用,停止正式生产: {anchor}")
-    if png_size(anchor) != STYLE_1_2_ANCHOR_SIZE:
+    size, digest = png_pixel_sha256(anchor)
+    if size != STYLE_1_2_ANCHOR_SIZE:
         raise ValueError(f"画风 1.2 锚点尺寸不匹配,停止正式生产: {anchor}")
-    digest = hashlib.sha256(anchor.read_bytes()).hexdigest()
-    if digest != STYLE_1_2_ANCHOR_SHA256:
-        raise ValueError(f"画风 1.2 锚点哈希不匹配,停止正式生产: {anchor}")
+    if digest != STYLE_1_2_ANCHOR_PIXEL_SHA256:
+        raise ValueError(f"画风 1.2 锚点像素不匹配,停止正式生产: {anchor}")
 
 
 def validate_style_1_2_subject(subject: str) -> None:
     hits = [term for term in STYLE_INJECTION_TERMS if term in subject]
-    pattern_hits = [pattern.pattern for pattern in STYLE_INJECTION_PATTERNS if pattern.search(subject)]
+    pattern_hits = ["受控画风表达"] if any(pattern.search(subject) for pattern in STYLE_INJECTION_PATTERNS) else []
     if hits or pattern_hits:
         raise ValueError(
             "画风 1.2 的主体字段只能描述人物、动作、关系和道具;"
@@ -197,6 +335,7 @@ def build_payload(
             {
                 "path": str(anchor),
                 "role": "style-only",
+                "priority": "primary-visual-truth",
                 "required_for": "every production image",
                 "must_not_copy": "people, clothing, positions, or story content",
             }

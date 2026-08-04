@@ -1,6 +1,6 @@
 ---
 name: hand-drawn
-description: Use when users ask for a hand-drawn or illustrated image prompt, name one of the repository's 19 numbered styles or 3 variants, or mention triggers such as 儿童涂色、亲子投稿蜡笔故事卡、家庭蜡笔卡、蜡笔、吉卜力、水墨、像素、淡彩速写、动画概念、水粉、北欧绘本、纸雕、软胶潮玩、墨线绘本、暖色扁平绘本、family-crayon-card、parent-child-crayon、flat-storybook、warm-flat-storybook. Produces prompt text or a formal reference-bearing call bundle and does not generate images.
+description: Use when users ask for a hand-drawn or illustrated image prompt, name one of the repository's 19 numbered styles or 3 variants, or mention triggers such as 儿童涂色、亲子手绘、家庭蜡笔画、亲子蜡笔故事、亲子投稿蜡笔故事卡、家庭蜡笔卡、蜡笔、吉卜力、水墨、像素、淡彩速写、动画概念、水粉、北欧绘本、纸雕、软胶潮玩、墨线绘本、暖色扁平绘本、family-crayon-card、parent-child-crayon、flat-storybook、warm-flat-storybook. Produces prompt text or a formal reference-bearing call bundle and does not generate images.
 ---
 
 # 手绘风格 prompt 生成器

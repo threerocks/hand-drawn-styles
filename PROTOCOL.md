@@ -13,6 +13,7 @@
   - 编号:1–19,另有变体 1.1(儿童涂色-低饱和克制版)、1.2(亲子投稿蜡笔故事卡)、3.1(蜡笔童涂-潦草自画版)
   - 英文别名:`handmade` `childlike-coloring` / `coloring-muted` `restrained-coloring`(1.1) / `family-crayon-card` `parent-child-crayon` `submission-crayon`(1.2) / `xkcd` `stickman` `minimal-line` / `crayon` `kid-crayon` / `rawkid` `kid-scrawl` `stick-kid`(3.1) / `ghibli` / `bean` `blob` / `ms-paint` `bad-doodle` `ugly` / `scribble` `pen-scribble` `ballpoint` / `real-crayon` `crayon-photo` / `ink-wash` `ink` `shuimo` `chinese-painting` / `pixel` `pixel-art` `8-bit` `16-bit` / `emo-sketch` `story-sketch` `watercolor-sketch` `light-watercolor` / `retro-concept` `mid-century` `gouache-concept`(12) / `sunlit-storybook` `vis-dev` `storybook-visdev`(13) / `paper-folk` `papercraft` `nordic-papercraft` `paper-sculpture` `quilling`(14) / `nordic-storybook` `scandi-gouache` `scandinavian-storybook` `soft-gouache`(15) / `softnose` `softnose-vinyl` `bignose-toy` `vinyl-toy` `art-toy`(16) / `gouache-spotlight` `spotlight-gouache` `character-spotlight`(17) / `inked-storybook` `ink-storybook` `sketch-storybook` `storybook-ink`(18) / `warm-flat-storybook` `flat-storybook` `geometric-storybook` `warm-flat`(19)
   - 注意 `涂鸦/doodle` 本身有歧义(#5 小豆人、#6 MS Paint、#7 圆珠笔都沾涂鸦):用户只说"涂鸦/画烂点"而不指明时,按未指定处理→展示菜单让其选。
+  - 用户说“亲子手绘”“家庭蜡笔画”“亲子蜡笔故事”“像一家人站在白纸上的蜡笔画”时,直接采用 1.2;这些表达不再进入通用画风菜单。只有单独说“手绘风”且没有亲子、家庭或蜡笔语义时,才按未指定处理。
 - **用户未指定** → 展示下面这个菜单,**停下等用户选**,不要自己替他挑:
 
   ```
@@ -68,7 +69,7 @@
 
 - 正式生产、连续故事和多页作品的每一张请求,都必须附带 `assets/style-1.2/anchor-family.png`,并标记为“纯画风参考”。不能只在角色卡或第一页使用一次。
 - 画风锚点只约束视觉语言,不能让模型复制其中人物、衣服、站位与情节。若还需固定角色,角色参考图作为另一份输入单独传递,不得替代画风锚点。
-- 锚点按 PNG 尺寸与 SHA-256 固定;缺失、损坏、被替换或调用端不能传参考图时,停止正式生产并明确报告“画风锚点未生效”;不得退回文字版、不得改用业务项目自定义画风块蒙混出图。
+- 锚点按 PNG 尺寸与解码后的像素 SHA-256 固定;EXIF、IPTC、C2PA 等元数据变化不改变画风身份,但任何实际像素变化都必须失败关闭。锚点缺失、损坏、被换图或调用端不能传参考图时,停止正式生产并明确报告“画风锚点未生效”;不得退回文字版、不得改用业务项目自定义画风块蒙混出图。
 - 需要可机读调用包时执行:`python3 scripts/render_prompt.py --style 1.2 --subject '…' --text '…' --aspect 3:4 --format json`。JSON 会给出最终 prompt、画风锚点绝对路径和参考角色。
 - 风格 1.2 的渲染器默认就是正式 JSON;`--format text` 会失败,只有明确加入 `--text-only-preview` 才允许非生产预览。连续角色参考用可重复的 `--character-reference PATH` 传入,它们排在固定 `style-only` 锚点之后。
 - `--subject` 只能描述人物、动作、关系和必要道具;检测到画风、线稿、配色、纸面及其常见组合表达时直接失败。1.2 无字页用 `--text '不加任何文字'`;有标题必须用独立 `--title '准确标题原文'`,渲染器负责生成固定文字指令,禁止自由填写 `--text` 或 `--var 文字`。

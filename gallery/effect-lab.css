@@ -1,0 +1,46 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: #151b26;
+}
+
+#effect-lab-root {
+  width: 100%;
+  height: 100%;
+}
+
+.test-effect--stage {
+  width: 100%;
+  height: 100%;
+}
+
+.test-effect--stage .test-effect__plate {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: none;
+  filter: none;
+  mask-image: none;
+  opacity: 1;
+  transform: none;
+}
+
+.test-effect--stage .test-effect__plate--b {
+  opacity: 0;
+}
+
+.test-effect--stage .test-effect__caption strong {
+  font-size: clamp(3rem, 4vw, 4.5rem);
+}
+
+.test-effect--stage .test-effect__caption small {
+  font-size: clamp(1.5rem, 2vw, 2.25rem);
+}
+
+.test-effect--stage .test-effect__caption {
+  padding: 1.25rem 1.5rem;
+  border-left-width: 0.65rem;
+}

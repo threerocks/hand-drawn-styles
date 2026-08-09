@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1920, height=1080">
+  <title>HyperFrames effect runner</title>
+  <style>
+    html,
+    body {
+      width: 1920px;
+      height: 1080px;
+      margin: 0;
+      overflow: hidden;
+      background: #080808;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    "use strict";
+
+    const params = new URLSearchParams(window.location.search);
+    const source = params.get("src");
+    const localGsap = new URL("./assets/vendor/gsap.min.js", window.location.href).href;
+
+    const loadScript = (original) => new Promise((resolve, reject) => {
+      const script = document.createElement("script");
+      [...original.attributes].forEach((attribute) => {
+        script.setAttribute(attribute.name, attribute.value);
+      });
+      if (/\/gsap(?:\.min)?\.js/i.test(original.getAttribute("src") ?? "")) {
+        script.src = localGsap;
+      }
+      if (original.src) {
+        script.addEventListener("load", resolve, { once: true });
+        script.addEventListener("error", reject, { once: true });
+      } else {
+        script.textContent = original.textContent;
+      }
+      document.body.append(script);
+      if (!original.src) resolve();
+    });
+
+    const mount = async () => {
+      if (!source) throw new Error("Missing effect source");
+      const sourceUrl = new URL(source, window.location.href);
+      const response = await fetch(sourceUrl);
+      if (!response.ok) throw new Error(`Effect source returned ${response.status}`);
+      const parsed = new DOMParser().parseFromString(await response.text(), "text/html");
+      const base = document.createElement("base");
+      base.href = new URL("./", sourceUrl).href;
+      document.head.prepend(base);
+
+      parsed.head.querySelectorAll("style, link[rel='stylesheet']").forEach((node) => {
+        document.head.append(document.importNode(node, true));
+      });
+
+      const template = parsed.querySelector("template");
+      const content = template ? template.innerHTML : parsed.body.innerHTML;
+      document.body.innerHTML = content;
+
+      const sourceScripts = [
+        ...parsed.head.querySelectorAll("script"),
+        ...(template ? template.content.querySelectorAll("script") : parsed.body.querySelectorAll("script")),
+      ];
+      document.body.querySelectorAll("script").forEach((script) => script.remove());
+      for (const script of sourceScripts) {
+        await loadScript(script);
+      }
+
+      for (let attempt = 0; attempt < 30; attempt += 1) {
+        if (window.__timelines && Object.keys(window.__timelines).length > 0) break;
+        await new Promise((resolve) => window.setTimeout(resolve, 100));
+      }
+      window.seekEffect = (time) => {
+        Object.values(window.__timelines ?? {}).forEach((timeline) => {
+          if (typeof timeline.pause === "function") timeline.pause(time);
+        });
+      };
+      Object.values(window.__timelines ?? {}).forEach((timeline) => {
+        if (typeof timeline.play === "function") timeline.play(0);
+      });
+      window.__effectRunnerReady = true;
+    };
+
+    mount().catch((error) => {
+      document.body.textContent = `Unable to load effect: ${error.message}`;
+      document.body.style.color = "#fff";
+      window.__effectRunnerReady = true;
+    });
+  </script>
+</body>
+</html>

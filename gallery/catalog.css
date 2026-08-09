@@ -1,0 +1,431 @@
+.family-board {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.family-tile {
+  display: grid;
+  min-height: 9rem;
+  padding: var(--space-4);
+  border: 0.0625rem solid var(--line);
+  border-radius: var(--radius-card);
+  background: var(--surface);
+  text-align: left;
+  cursor: pointer;
+  transition: transform var(--transition-standard), border-color var(--transition-standard);
+}
+
+.family-tile:hover {
+  border-color: var(--accent);
+  transform: translateY(-0.2rem);
+}
+
+.family-tile__index {
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: var(--text-xs);
+}
+
+.family-tile strong {
+  align-self: end;
+  font-family: var(--display);
+  font-size: var(--text-lg);
+}
+
+.family-tile > span:last-child {
+  margin-top: var(--space-1);
+  color: var(--ink-muted);
+  font-size: var(--text-xs);
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 0.8fr 0.8fr;
+  gap: var(--space-3);
+  margin-top: var(--space-12);
+}
+
+.feature-story {
+  display: grid;
+  align-content: start;
+  min-height: 25rem;
+  padding: var(--space-6);
+  overflow: hidden;
+  border: 0.0625rem solid var(--line);
+  border-radius: var(--radius-card);
+  background: var(--surface);
+}
+
+.feature-story--wide {
+  grid-template-columns: minmax(0, 0.9fr) minmax(14rem, 1.1fr);
+  gap: var(--space-6);
+}
+
+.feature-story h3 {
+  margin: 0;
+  font-size: clamp(1.6rem, 3vw, 2.7rem);
+  font-weight: 600;
+  line-height: 1.08;
+}
+
+.feature-story p:not(.eyebrow) {
+  color: var(--ink-muted);
+  line-height: 1.7;
+}
+
+.feature-story > img,
+.feature-story > video {
+  width: 100%;
+  height: 16rem;
+  margin-top: auto;
+  border-radius: var(--radius-control);
+  object-fit: cover;
+}
+
+.inline-action,
+.card-action,
+.primary-action,
+.text-button,
+.filter {
+  border: 0.0625rem solid var(--line);
+  border-radius: var(--radius-control);
+  background: var(--surface);
+  cursor: pointer;
+  transition: transform var(--transition-standard), border-color var(--transition-standard), background var(--transition-standard);
+}
+
+.inline-action {
+  padding: var(--space-3) var(--space-4);
+}
+
+.inline-action:hover,
+.card-action:hover,
+.filter:hover {
+  border-color: var(--accent);
+  transform: translateY(-0.1rem);
+}
+
+.toolbar {
+  display: grid;
+  grid-template-columns: minmax(16rem, 24rem) minmax(0, 1fr);
+  gap: var(--space-4);
+  align-items: end;
+  margin-bottom: var(--space-8);
+}
+
+.search {
+  display: grid;
+  gap: var(--space-2);
+  color: var(--ink-muted);
+  font-size: var(--text-xs);
+}
+
+.search input {
+  width: 100%;
+  min-height: 2.8rem;
+  padding: 0 var(--space-4);
+  border: 0.0625rem solid var(--line);
+  border-radius: var(--radius-control);
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.filter {
+  padding: 0.65rem var(--space-3);
+  color: var(--ink-muted);
+}
+
+.filter.is-active {
+  border-color: var(--ink);
+  background: var(--surface-strong);
+  color: var(--ink);
+}
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+  gap: var(--space-4);
+}
+
+.catalog-card {
+  display: grid;
+  grid-template-rows: 17rem 1fr;
+  min-width: 0;
+  overflow: hidden;
+  border: 0.0625rem solid var(--line);
+  border-radius: var(--radius-card);
+  background: var(--surface);
+}
+
+.catalog-card__media {
+  min-width: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-bottom: 0.0625rem solid var(--line);
+  background: var(--surface-strong);
+  cursor: zoom-in;
+}
+
+.catalog-card__media img,
+.catalog-card__media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 450ms ease-out;
+}
+
+.catalog-card__media:hover img,
+.catalog-card__media:hover video {
+  transform: scale(1.025);
+}
+
+.catalog-card__media:focus-visible {
+  position: relative;
+  z-index: 1;
+  outline: 0;
+}
+
+.catalog-card__media:focus-visible::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 3px solid var(--accent);
+  pointer-events: none;
+}
+
+.catalog-card--style .catalog-card__media img {
+  object-fit: contain;
+}
+
+.catalog-card__body {
+  display: grid;
+  align-content: start;
+  gap: var(--space-3);
+  padding: var(--space-4);
+}
+
+.catalog-card__body h3 {
+  margin: 0;
+  font-size: var(--text-lg);
+  font-weight: 600;
+}
+
+.catalog-card__body > p {
+  margin: 0;
+  color: var(--ink-muted);
+  font-size: var(--text-sm);
+  line-height: 1.65;
+}
+
+.catalog-card__meta {
+  font-family: var(--mono);
+  font-size: var(--text-xs) !important;
+  letter-spacing: 0.03em;
+}
+
+.card-action {
+  justify-self: start;
+  margin-top: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-sm);
+}
+
+.result-count {
+  font-family: var(--mono);
+  font-size: var(--text-sm);
+}
+
+.effects-note {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin: calc(var(--space-6) * -1) 0 var(--space-8);
+  padding: var(--space-4);
+  border-left: 0.2rem solid var(--accent);
+  background: var(--surface);
+}
+
+.effects-note > span {
+  flex: 0 0 auto;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: var(--text-xs);
+}
+
+.effects-note p {
+  margin: 0;
+  color: var(--ink-muted);
+  font-size: var(--text-sm);
+}
+
+.effects-note__keep {
+  white-space: nowrap;
+}
+
+.empty-state {
+  padding: var(--space-16);
+  border: 0.0625rem dashed var(--line);
+  border-radius: var(--radius-card);
+  text-align: center;
+}
+
+.empty-state h3 {
+  margin: 0;
+}
+
+.empty-state p {
+  color: var(--ink-muted);
+}
+
+.detail-dialog {
+  width: min(94vw, 86rem);
+  height: min(88vh, 52rem);
+  padding: 0;
+  overflow: hidden;
+  border: 0.0625rem solid var(--line);
+  border-radius: var(--radius-dialog);
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.detail-dialog::backdrop {
+  background: color-mix(in srgb, #000 74%, transparent);
+  backdrop-filter: blur(0.45rem);
+}
+
+.dialog__frame {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(30rem, 0.55fr);
+  height: 100%;
+}
+
+.dialog__media {
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  border-right: 0.0625rem solid var(--line);
+  background: var(--surface-strong);
+}
+
+.dialog__asset {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.dialog__copy {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: var(--space-6);
+  min-height: 0;
+  padding: var(--space-8);
+  overflow: hidden;
+}
+
+.dialog__content {
+  display: grid;
+  align-content: start;
+  gap: var(--space-6);
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.dialog__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.dialog__meta {
+  margin: 0;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: var(--text-xs);
+}
+
+.dialog__copy h2 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 600;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+.dialog__description,
+.source-path {
+  margin: 0;
+  color: var(--ink-muted);
+  line-height: 1.7;
+}
+
+.dialog__description {
+  white-space: pre-line;
+  text-wrap: pretty;
+  word-break: auto-phrase;
+}
+
+.source-path {
+  padding: var(--space-3);
+  overflow-wrap: anywhere;
+  border-left: 0.15rem solid var(--line);
+  background: var(--surface-strong);
+  font-family: var(--mono);
+  font-size: var(--text-xs);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.tags span {
+  padding: var(--space-1) var(--space-2);
+  border: 0.0625rem solid var(--line);
+  border-radius: var(--radius-control);
+  color: var(--ink-muted);
+  font-family: var(--mono);
+  font-size: var(--text-xs);
+}
+
+.text-button,
+.primary-action {
+  padding: var(--space-3) var(--space-4);
+}
+
+.primary-action {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.dialog__style-gallery {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: min(84%, 40rem);
+  gap: var(--space-3);
+  width: 100%;
+  height: 100%;
+  padding: var(--space-4);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.dialog__style-gallery img {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-control);
+  object-fit: contain;
+  scroll-snap-align: center;
+}

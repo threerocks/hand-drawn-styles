@@ -45,6 +45,8 @@
 
 样图与每种画风的示例提示词见 [examples/](examples/)。
 
+想统一浏览生成器、真实画风样片和 HyperFrames 特效演示，可打开 **[生成能力图鉴](gallery/index.html)**；本地启动静态 HTTP 服务后即可使用搜索、筛选、放大样片和动态封面。
+
 | | | | |
 |:--:|:--:|:--:|:--:|
 | <img src="examples/01-minimal-line.png" width="200"><br>**1** 极简线条 xkcd 火柴人 | <img src="examples/02-crayon.png" width="200"><br>**2** 蜡笔童涂 | <img src="examples/03-ghibli.png" width="200"><br>**3** 吉卜力 | <img src="assets/style-3.1/anchor-family.png" width="200"><br>**3.1** 蜡笔童涂-潦草自画版 |
@@ -136,6 +138,7 @@ hand-drawn-styles/
 ├── AGENTS.md          # Codex / Gemini / Cursor 等适配层(薄)
 ├── assets/            # 需要参考锚点的稳定画风资产
 ├── scripts/           # 无改写配方渲染器与回归测试
+├── gallery/           # 统一生成能力、画风样片与真实特效演示图鉴
 └── examples/          # 样图 + 每种画风的示例提示词
 ```
 

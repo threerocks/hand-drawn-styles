@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">HyperFrames fixed test plate B</title>
+  <desc id="desc">Composition-matched transition plate with the same diagnostic geometry and alternate colors and content.</desc>
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#151b26"/>
+      <stop offset="1" stop-color="#223b62"/>
+    </linearGradient>
+    <linearGradient id="tone" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f4efe4"/>
+      <stop offset=".5" stop-color="#ef5b3f"/>
+      <stop offset="1" stop-color="#151b26"/>
+    </linearGradient>
+    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M50 0H0V50" fill="none" stroke="#f4efe4" stroke-opacity=".14" stroke-width="2"/>
+    </pattern>
+    <clipPath id="portrait"><rect x="865" y="105" width="560" height="690" rx="36"/></clipPath>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#paper)"/>
+  <rect width="1600" height="1000" fill="url(#grid)"/>
+  <rect x="72" y="64" width="1456" height="872" rx="44" fill="none" stroke="#f4efe4" stroke-width="6"/>
+  <rect x="72" y="64" width="1456" height="70" rx="34" fill="#f4efe4"/>
+  <circle cx="118" cy="99" r="11" fill="#ef5b3f"/>
+  <circle cx="154" cy="99" r="11" fill="#f4c84a"/>
+  <circle cx="190" cy="99" r="11" fill="#2aa66f"/>
+  <text x="236" y="111" fill="#151b26" font-family="Arial, sans-serif" font-size="31" font-weight="700" letter-spacing="8">HF EFFECT TEST / B</text>
+  <text x="96" y="285" fill="#f4efe4" font-family="Arial, sans-serif" font-size="154" font-weight="900">B</text>
+  <text x="265" y="240" fill="#22c7c9" font-family="Arial, sans-serif" font-size="55" font-weight="800">CONTROL PLATE</text>
+  <text x="265" y="302" fill="#f4efe4" font-family="Arial, sans-serif" font-size="31" letter-spacing="5">SHARP / SOFT / COLOR / MOTION</text>
+  <rect x="96" y="350" width="650" height="112" rx="18" fill="#f4efe4"/>
+  <text x="126" y="424" fill="#151b26" font-family="Arial, sans-serif" font-size="45" font-weight="700">Bb 9876543210</text>
+  <rect x="96" y="500" width="650" height="82" rx="14" fill="url(#tone)" stroke="#f4efe4" stroke-width="3"/>
+  <path d="M96 650H746M96 676H746M96 702H746M96 728H746" stroke="#f4efe4" stroke-width="5"/>
+  <path d="M96 650l650 78M96 728l650-78" stroke="#22c7c9" stroke-width="6"/>
+  <g transform="translate(102 790)">
+    <rect width="104" height="104" rx="14" fill="#22c7c9"/>
+    <rect x="124" width="104" height="104" rx="14" fill="#f4c84a"/>
+    <rect x="248" width="104" height="104" rx="14" fill="#ef5b3f"/>
+    <rect x="372" width="104" height="104" rx="14" fill="#2aa66f"/>
+    <rect x="496" width="104" height="104" rx="14" fill="#f4efe4"/>
+  </g>
+  <g clip-path="url(#portrait)">
+    <rect x="865" y="105" width="560" height="690" fill="#ef5b3f"/>
+    <circle cx="1160" cy="340" r="175" fill="#22c7c9"/>
+    <path d="M900 780c48-210 168-306 286-306s232 100 280 306" fill="#f4efe4"/>
+    <circle cx="1186" cy="355" r="118" fill="#8f4f35"/>
+    <path d="M1060 344c28-151 246-160 258 5-79-49-190-43-258-5Z" fill="#f4efe4"/>
+    <circle cx="1145" cy="365" r="10" fill="#f4efe4"/>
+    <circle cx="1232" cy="365" r="10" fill="#f4efe4"/>
+    <path d="M1150 420c29-23 58-23 86 0" fill="none" stroke="#f4efe4" stroke-width="8" stroke-linecap="round"/>
+    <path d="M865 180l560 460M865 640l560-460" stroke="#151b26" stroke-opacity=".28" stroke-width="6"/>
+  </g>
+  <rect x="865" y="105" width="560" height="690" rx="36" fill="none" stroke="#f4efe4" stroke-width="6"/>
+  <rect x="865" y="830" width="560" height="72" rx="14" fill="#22c7c9"/>
+  <text x="895" y="880" fill="#151b26" font-family="Arial, sans-serif" font-size="34" font-weight="900" letter-spacing="4">FIXED INPUT / FRAME B</text>
+</svg>

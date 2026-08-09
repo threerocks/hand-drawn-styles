@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="扫描 D:\GitHub Program 后建立的统一生成能力、视觉风格与特效素材库。">
+  <title>生成能力图鉴</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23b8442f'/%3E%3Ccircle cx='32' cy='32' r='15' fill='%23fff8ee'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./styles.css?v=20260728-2112">
+  <link rel="stylesheet" href="./catalog.css?v=20260809-1535">
+  <link rel="stylesheet" href="./effects.css?v=20260728-2112">
+  <link rel="stylesheet" href="./canonical-effects.css?v=20260728-2112">
+  <link rel="stylesheet" href="./responsive.css?v=20260728-2112">
+  <script src="./data/catalog-data.js?v=20260809-1125" defer></script>
+  <script src="./effect-specs.js?v=20260728-2112" defer></script>
+  <script src="./assets/vendor/gsap.min.js?v=20260728-2112" defer></script>
+  <script src="./effect-motion.js?v=20260809-1400" defer></script>
+  <script src="./ui-utils.js?v=20260728-2112" defer></script>
+  <script src="./renderers.js?v=20260728-2112" defer></script>
+  <script src="./invocations.js?v=20260807-2220" defer></script>
+  <script src="./gallery.js?v=20260809-1400" defer></script>
+  <script src="./effect-preview-motion.js?v=20260809-1400" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#catalog-main">跳到素材库</a>
+
+  <header class="masthead">
+    <a class="brand" href="#top" aria-label="生成能力图鉴首页">
+      <span class="brand__mark" aria-hidden="true"></span>
+      <span>GENERATION ATLAS</span>
+    </a>
+    <nav class="view-nav" aria-label="素材库分区">
+      <button class="view-nav__button is-active" type="button" data-view="overview" aria-pressed="true">总览</button>
+      <button class="view-nav__button" type="button" data-view="generators" aria-pressed="false">生成器</button>
+      <button class="view-nav__button" type="button" data-view="styles" aria-pressed="false">画风</button>
+      <button class="view-nav__button" type="button" data-view="effects" aria-pressed="false">特效</button>
+    </nav>
+  </header>
+
+  <main id="catalog-main">
+    <section id="top" class="hero" data-section="overview">
+      <div class="hero__copy">
+        <p class="eyebrow">D:\GITHUB PROGRAM / VISUAL CAPABILITY INDEX</p>
+        <h1>
+          <span>先看见能生成什么，</span>
+          <span>再决定用什么做。</span>
+        </h1>
+        <p class="hero__intro">
+          <span>扫描本地 76 个顶层项目。</span>
+          <span>整理为统一生成能力图鉴。</span>
+          <span>画风、视频、演示、字幕、声音，</span>
+          <span>以及 142 个真实特效演示，</span>
+          <span>全部在同一处比较。</span>
+        </p>
+        <dl class="hero__stats" aria-label="素材库统计">
+          <div><dt>204</dt><dd>可浏览条目</dd></div>
+          <div><dt>42</dt><dd>生成能力</dd></div>
+          <div><dt>142</dt><dd>真实特效</dd></div>
+          <div><dt>20</dt><dd>已验证画风</dd></div>
+        </dl>
+      </div>
+
+      <div class="hero__contact-sheet" aria-label="生成内容预览">
+        <figure class="hero__sample hero__sample--tall">
+          <img src="./assets/effect-plates/emo-sketch.png" alt="情绪叙事淡彩速写">
+          <figcaption>HAND-DRAWN / 11</figcaption>
+        </figure>
+        <figure class="hero__sample">
+          <img src="./assets/effect-plates/paper-folk.png" alt="北欧纸雕">
+          <figcaption>IMAGE / PAPER FOLK</figcaption>
+        </figure>
+        <figure class="hero__sample">
+          <div class="effect-mini effect-mini--dissolve" aria-hidden="true">
+            <img src="./assets/effect-plates/effect-ink-family.png" alt="">
+            <img src="./assets/effect-plates/effect-vinyl-explorer.png" alt="">
+          </div>
+          <figcaption>VFX / NEW PLATES</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="overview-board section-shell" data-section="overview" aria-labelledby="overview-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">THE WHOLE WORKBENCH</p>
+          <h2 id="overview-title">一张地图，看清全部生产能力</h2>
+        </div>
+        <p>这不是软件清单，而是按“最后能产出什么”重新编排的工作台。</p>
+      </div>
+      <div id="family-board" class="family-board"></div>
+      <div class="featured-grid">
+        <article class="feature-story feature-story--wide">
+          <div>
+            <p class="eyebrow">NEW EFFECT PLATES</p>
+            <h3>同一套底片，只比较特效</h3>
+            <p>单图效果统一使用测试底片 A，转场统一使用 A/B；卡片和实机演示使用完全相同的输入。</p>
+            <button class="inline-action" type="button" data-jump="effects">查看 142 个特效</button>
+          </div>
+          <div class="effect-mini effect-mini--dissolve" aria-hidden="true">
+            <img src="./assets/effect-plates/effect-gouache-portrait.png" alt="">
+            <img src="./assets/effect-plates/effect-paper-city.png" alt="">
+          </div>
+        </article>
+        <article class="feature-story">
+          <p class="eyebrow">REAL OUTPUT</p>
+          <h3>不只说明，也看真实成品</h3>
+          <img src="./assets/posters/handdraw-story.jpg" alt="手绘故事视频真实预览">
+        </article>
+        <article class="feature-story">
+          <p class="eyebrow">LIVE MOTION</p>
+          <h3>视频与动效直接播放</h3>
+          <video src="./assets/posters/workbuddy-animation.mp4" autoplay muted loop playsinline aria-label="WorkBuddy 产品动画"></video>
+        </article>
+      </div>
+    </section>
+
+    <section class="catalog section-shell" data-section="generators" hidden aria-labelledby="generators-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">42 GENERATIVE WORKFLOWS</p>
+          <h2 id="generators-title">按最终产物选择生成器</h2>
+        </div>
+        <p id="generator-count" class="result-count" aria-live="polite"></p>
+      </div>
+      <div class="toolbar">
+        <label class="search">
+          <span>搜索能力、产物或项目</span>
+          <input id="generator-search" type="search" placeholder="例如：封面、字幕、PPT、语音" autocomplete="off">
+        </label>
+        <div id="generator-filters" class="filters" role="group" aria-label="按生成能力分组"></div>
+      </div>
+      <div id="generator-grid" class="catalog-grid"></div>
+      <div id="generator-empty" class="empty-state" hidden>
+        <h3>没有匹配的生成能力</h3>
+        <p>换个关键词或回到全部分类。</p>
+        <button class="inline-action" type="button" data-clear="generators">清除筛选</button>
+      </div>
+    </section>
+
+    <section class="catalog section-shell" data-section="styles" hidden aria-labelledby="styles-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">20 VERIFIED VISUAL RECIPES</p>
+          <h2 id="styles-title">选择稳定可复用的画风</h2>
+        </div>
+        <p id="style-count" class="result-count" aria-live="polite"></p>
+      </div>
+      <div class="toolbar">
+        <label class="search">
+          <span>搜索名称、别名或用途</span>
+          <input id="style-search" type="search" placeholder="例如：水粉、讲解、潮玩" autocomplete="off">
+        </label>
+        <div id="style-filters" class="filters" role="group" aria-label="按画风分组"></div>
+      </div>
+      <div id="style-grid" class="catalog-grid catalog-grid--styles"></div>
+      <div id="style-empty" class="empty-state" hidden>
+        <h3>没有匹配的画风</h3>
+        <p>换一个关键词或清除当前筛选。</p>
+        <button class="inline-action" type="button" data-clear="styles">清除筛选</button>
+      </div>
+    </section>
+
+    <section class="catalog section-shell" data-section="effects" hidden aria-labelledby="effects-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">142 LIVE HYPERFRAMES DEMOS</p>
+          <h2 id="effects-title">统一生成图特效库</h2>
+        </div>
+        <p id="effect-count" class="result-count" aria-live="polite"></p>
+      </div>
+      <div class="effects-note">
+        <span>控制变量预览</span>
+        <p>单图效果只用固定 A，转场只用固定 A/B；点开后仍用同一套底片<span class="effects-note__keep">播放对应特效</span>。</p>
+      </div>
+      <div class="toolbar">
+        <label class="search">
+          <span>搜索特效名称或类型</span>
+          <input id="effect-search" type="search" placeholder="例如：dissolve、caption、glass、code" autocomplete="off">
+        </label>
+        <div id="effect-filters" class="filters" role="group" aria-label="按特效类型分组"></div>
+      </div>
+      <div id="effect-grid" class="effect-grid"></div>
+      <div id="effect-empty" class="empty-state" hidden>
+        <h3>没有匹配的特效</h3>
+        <p>尝试 shader、caption、transition 或 code。</p>
+        <button class="inline-action" type="button" data-clear="effects">清除筛选</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>目录依据 2026-08-09 的本地扫描生成。原始项目均保留在 D:\GitHub Program，网站只建立索引和预览。</p>
+  </footer>
+
+  <dialog id="detail-dialog" class="detail-dialog" aria-labelledby="detail-title">
+    <div class="dialog__frame">
+      <div id="detail-media" class="dialog__media"></div>
+      <div class="dialog__copy">
+        <div class="dialog__header">
+          <p id="detail-meta" class="dialog__meta"></p>
+          <button id="detail-close" class="text-button" type="button">关闭</button>
+        </div>
+        <div class="dialog__content">
+          <h2 id="detail-title"></h2>
+          <p id="detail-description" class="dialog__description"></p>
+          <div id="detail-tags" class="tags"></div>
+          <p id="detail-source" class="source-path"></p>
+        </div>
+        <button id="detail-copy" class="primary-action" type="button">复制调用信息</button>
+      </div>
+    </div>
+  </dialog>
+</body>
+</html>

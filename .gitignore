@@ -8,3 +8,7 @@
 
 # Claude Code local
 .claude/settings.local.json
+
+# Agent and generated QA artifacts
+.omo/
+gallery/qa-evidence/

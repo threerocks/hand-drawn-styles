@@ -151,13 +151,13 @@ const overview = await evaluate(`({
   overflow: document.documentElement.scrollWidth - innerWidth
 })`);
 assert("overview sections", overview.visible, (value) => value.every((item) => item === "overview"));
-assert("overview totals", overview.stats.join(","), "204,42,142,20");
+assert("overview totals", overview.stats.join(","), "202,40,142,20");
 assert("desktop overflow", overview.overflow, (value) => value <= 1);
 const desktopOverview = await screenshot("desktop-overview.png");
 
 await evaluate("document.querySelector('[data-view=\"generators\"]').click()");
 await wait(300);
-assert("generator count", await evaluate("document.querySelectorAll('#generator-grid .catalog-card').length"), 42);
+assert("generator count", await evaluate("document.querySelectorAll('#generator-grid .catalog-card').length"), 40);
 await evaluate("window.scrollTo(0, 0)");
 const desktopGenerators = await screenshot("desktop-generators.png");
 await evaluate(`document.querySelector('#generator-search').value='语音';
@@ -169,7 +169,7 @@ await evaluate(`document.querySelector('#generator-search').value='__no_generato
   document.querySelector('#generator-search').dispatchEvent(new Event('input',{bubbles:true}))`);
 assert("generator empty state", await evaluate("!document.querySelector('#generator-empty').hidden"), true);
 await evaluate("document.querySelector('[data-clear=\"generators\"]').click()");
-assert("generator clear restores", await evaluate("document.querySelectorAll('#generator-grid .catalog-card').length"), 42);
+assert("generator clear restores", await evaluate("document.querySelectorAll('#generator-grid .catalog-card').length"), 40);
 
 await evaluate("document.querySelector('[data-view=\"styles\"]').click()");
 await wait(250);

@@ -105,13 +105,14 @@ try {
   await mobilePage.goto(galleryUrl, { waitUntil: "load" });
   await mobilePage.locator('[data-view="effects"]').click();
 
-  // Then: the action phrase stays intact while the surrounding note may wrap naturally.
-  const notePhrase = mobilePage.locator(".effects-note__keep");
-  assert.equal(await notePhrase.count(), 1, "The protected note phrase must exist once");
-  assert.equal(
-    await notePhrase.evaluate((node) => node.getClientRects().length),
-    1,
-    "播放对应特效 must not split across lines",
+  // Then: both semantic phrases stay intact while the surrounding note may wrap naturally.
+  const protectedNotePhrases = await mobilePage.locator(".effects-note__keep").evaluateAll((nodes) =>
+    Object.fromEntries(nodes.map((node) => [node.textContent.trim(), node.getClientRects().length])),
+  );
+  assert.deepEqual(
+    protectedNotePhrases,
+    { "固定 A/B": 1, "播放对应特效": 1 },
+    "Meaningful phrases in the control note must not split across lines",
   );
   assert.equal(
     await mobilePage.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth),

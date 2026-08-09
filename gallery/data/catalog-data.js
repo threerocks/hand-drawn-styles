@@ -1736,24 +1736,6 @@ window.GENERATION_CATALOG = Object.freeze({
       "poster": "assets/effect-plates/gouache-spotlight.png"
     },
     {
-      "id": "comfyui",
-      "name": "ComfyUI 工作流",
-      "family": "图片与插画",
-      "output": "图片 / 视频 / 工作流",
-      "description": "节点式生成引擎，可组合图像、视频、放大、修复与模型工作流。",
-      "source": "D:\\GitHub Program\\ComfyUI",
-      "poster": "assets/effect-plates/paper-folk.png"
-    },
-    {
-      "id": "cover-anchor",
-      "name": "封面视觉锚点系统",
-      "family": "封面与营销图",
-      "output": "小红书 / 公众号封面",
-      "description": "围绕信息密度、标题钩子与视觉锚点生成社交媒体封面。",
-      "source": "D:\\GitHub Program\\ponyo-cover-anchor-system",
-      "poster": "assets/posters/cover-anchor.png"
-    },
-    {
       "id": "phil-aesthetic-formulas",
       "name": "Phil 审美公式",
       "family": "封面与营销图",

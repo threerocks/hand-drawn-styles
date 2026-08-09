@@ -2,7 +2,7 @@
 
 ## 1. Product and atmosphere
 
-This is a unified visual index of the generative systems under `D:\GitHub Program`: image recipes, video workflows, motion systems, presentation tools, audio generators, and the complete HyperFrames effect registry. It should feel like a quiet studio archive: warm paper, dark ink, real artwork, and compact editorial labels. Samples remain the focus. The interface must make 204 heterogeneous capabilities comparable without flattening them into one visual style.
+This is a unified visual index of the generative systems under `D:\GitHub Program`: image recipes, video workflows, motion systems, presentation tools, audio generators, and the complete HyperFrames effect registry. It should feel like a quiet studio archive: warm paper, dark ink, real artwork, and compact editorial labels. Samples remain the focus. The interface must make 202 heterogeneous capabilities comparable without flattening them into one visual style.
 
 ## 2. Color
 

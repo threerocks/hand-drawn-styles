@@ -1,0 +1,295 @@
+[
+  {
+    "id": "1",
+    "group": "拟真手绘",
+    "name": "纯人类手绘儿童涂色页",
+    "tone": "粗黑手绘线稿配儿童填色，保留纸面、越界和真实手误，适合亲子与故事场景。",
+    "aliases": [
+      "handmade",
+      "childlike-coloring"
+    ],
+    "images": [
+      "01-childlike-coloring.png"
+    ]
+  },
+  {
+    "id": "1.1",
+    "group": "拟真手绘",
+    "name": "儿童涂色页-低饱和克制版",
+    "tone": "极简留白、低饱和四色以内和单一橙红点缀，比普通儿童涂色更安静克制。",
+    "aliases": [
+      "coloring-muted",
+      "restrained-coloring"
+    ],
+    "images": [
+      "01.1-coloring-muted.png"
+    ]
+  },
+  {
+    "id": "2",
+    "group": "线条讲解",
+    "name": "极简黑白线条讲解漫画",
+    "tone": "xkcd 式细线火柴人、圆角分镜与清晰说明，适合把步骤和概念讲明白。",
+    "aliases": [
+      "xkcd",
+      "stickman",
+      "minimal-line"
+    ],
+    "images": [
+      "02-minimal-line.png"
+    ]
+  },
+  {
+    "id": "3",
+    "group": "故意画烂",
+    "name": "蜡笔童涂",
+    "tone": "像 5 岁孩子画的笨拙坏画，线歪、比例错、填色出框，幽默感来自不完美。",
+    "aliases": [
+      "crayon",
+      "kid-crayon"
+    ],
+    "images": [
+      "03-crayon.png"
+    ]
+  },
+  {
+    "id": "3.1",
+    "group": "故意画烂",
+    "name": "蜡笔童涂-潦草自画版",
+    "tone": "整张都像孩子自己起稿和涂色，简笔火柴娃、低饱和配色与唯一橙红焦点。",
+    "aliases": [
+      "rawkid",
+      "kid-scrawl",
+      "stick-kid"
+    ],
+    "images": [
+      "03.1-crayon-rawkid.png"
+    ]
+  },
+  {
+    "id": "4",
+    "group": "拟真手绘",
+    "name": "吉卜力风",
+    "tone": "柔和水彩、暖光、简洁背景和治愈梦幻的手绘动画气质。",
+    "aliases": [
+      "ghibli"
+    ],
+    "images": [
+      "04-ghibli.png"
+    ]
+  },
+  {
+    "id": "5",
+    "group": "线条讲解",
+    "name": "小豆人涂鸦信息图",
+    "tone": "黑色圆豆人贯穿多格讲解，只用一处橙色强调，适合清单、步骤和知识卡。",
+    "aliases": [
+      "bean",
+      "blob"
+    ],
+    "images": [
+      "05-bean-doodle.png"
+    ]
+  },
+  {
+    "id": "6",
+    "group": "故意画烂",
+    "name": "MS Paint 烂涂鸦",
+    "tone": "像用鼠标在画图软件里硬画出来的低质量数字涂鸦，越笨拙越有传播感。",
+    "aliases": [
+      "ms-paint",
+      "bad-doodle",
+      "ugly"
+    ],
+    "images": [
+      "06-ms-paint.png"
+    ]
+  },
+  {
+    "id": "7",
+    "group": "线条讲解",
+    "name": "圆珠笔单线涂鸦",
+    "tone": "大量来回缠绕的黑色细线，通过线的疏密塑造体积，像即兴艺术手稿。",
+    "aliases": [
+      "scribble",
+      "pen-scribble",
+      "ballpoint"
+    ],
+    "images": [
+      "07-pen-scribble.png"
+    ]
+  },
+  {
+    "id": "8",
+    "group": "拟真手绘",
+    "name": "蜡笔实拍",
+    "tone": "强调真实纸张、蜡质颜料和手机拍摄感，比蜡笔童涂更像一张真的儿童作品照片。",
+    "aliases": [
+      "real-crayon",
+      "crayon-photo"
+    ],
+    "images": [
+      "08-real-crayon.png"
+    ]
+  },
+  {
+    "id": "9",
+    "group": "传统复古",
+    "name": "水墨写意",
+    "tone": "毛笔黑墨、飞白、宣纸渗化与大片留白，用极少笔触抓住主体神态。",
+    "aliases": [
+      "ink-wash",
+      "ink",
+      "shuimo",
+      "chinese-painting"
+    ],
+    "images": [
+      "09-ink-wash.png"
+    ]
+  },
+  {
+    "id": "10",
+    "group": "传统复古",
+    "name": "复古像素",
+    "tone": "8-bit 或 16-bit 老游戏精灵图质感，硬像素边缘、有限调色板与点阵明暗。",
+    "aliases": [
+      "pixel",
+      "pixel-art",
+      "8-bit",
+      "16-bit"
+    ],
+    "images": [
+      "10-pixel-art.png"
+    ]
+  },
+  {
+    "id": "11",
+    "group": "拟真手绘",
+    "name": "情绪叙事淡彩速写",
+    "tone": "靛蓝松散速写线、大面积白纸和全画唯一橙色焦点，擅长温柔又心酸的家庭叙事。",
+    "aliases": [
+      "emo-sketch",
+      "story-sketch",
+      "watercolor-sketch",
+      "light-watercolor"
+    ],
+    "images": [
+      "11-emo-sketch.png"
+    ]
+  },
+  {
+    "id": "12",
+    "group": "动画概念",
+    "name": "二维水彩风格",
+    "tone": "1950 年代中古动画概念稿气质，奶油暖光、橙蓝互补和外露的铅笔起稿线。",
+    "aliases": [
+      "retro-concept",
+      "mid-century",
+      "concept-art",
+      "gouache-concept"
+    ],
+    "images": [
+      "12-retro-concept.png",
+      "12-retro-concept-duo.png"
+    ]
+  },
+  {
+    "id": "13",
+    "group": "动画概念",
+    "name": "暖光童画",
+    "tone": "现代动画 vis-dev 水粉童画，大眼角色、蓬松飞丝、青橙互补和干擦纸边。",
+    "aliases": [
+      "sunlit-storybook",
+      "vis-dev",
+      "storybook-visdev"
+    ],
+    "images": [
+      "13-sunlit-storybook.png",
+      "13-sunlit-storybook-boy.png",
+      "13-sunlit-storybook-fullbleed.png"
+    ]
+  },
+  {
+    "id": "14",
+    "group": "纸艺立体",
+    "name": "北欧纸雕",
+    "tone": "层叠卡纸、衍纸螺旋、压纹和明显投影，兼具斯堪的纳维亚民俗与手工温度。",
+    "aliases": [
+      "paper-folk",
+      "papercraft",
+      "nordic-papercraft",
+      "quilling"
+    ],
+    "images": [
+      "14-paper-folk.png",
+      "14-paper-folk-musician.png"
+    ]
+  },
+  {
+    "id": "15",
+    "group": "绘本北欧",
+    "name": "北欧绘本水粉",
+    "tone": "大留白、丹宁蓝与芥末黄、小点眼人物和纸纹水粉，温暖、安静、隽永。",
+    "aliases": [
+      "nordic-storybook",
+      "scandi-gouache",
+      "scandinavian-storybook",
+      "soft-gouache"
+    ],
+    "images": [
+      "15-nordic-storybook.png",
+      "15-nordic-storybook-lanky.png",
+      "15-nordic-storybook-portrait.png"
+    ]
+  },
+  {
+    "id": "16",
+    "group": "3D潮玩",
+    "name": "大鼻软偶",
+    "tone": "哑光软胶、超大垂管鼻、眯眼和大头板鞋，全暖色纯底带来呆萌潮玩感。",
+    "aliases": [
+      "softnose",
+      "softnose-vinyl",
+      "bignose-toy",
+      "vinyl-toy",
+      "art-toy"
+    ],
+    "images": [
+      "16-softnose-vinyl.png",
+      "16-softnose-vinyl-fullbody.png"
+    ]
+  },
+  {
+    "id": "17",
+    "group": "动画概念",
+    "name": "聚光水粉立绘",
+    "tone": "满幅刷色背景、人物背后聚光晕和夸张大眼角色，兼具绘本笔触与动画电影立绘感。",
+    "aliases": [
+      "gouache-spotlight",
+      "spotlight-gouache",
+      "character-spotlight"
+    ],
+    "images": [
+      "17-gouache-spotlight.png",
+      "17-gouache-spotlight-bird.png",
+      "17-gouache-spotlight-boy.png",
+      "17-gouache-spotlight-oldman.png"
+    ]
+  },
+  {
+    "id": "18",
+    "group": "动画概念",
+    "name": "墨线绘本",
+    "tone": "钢笔速写定形线配透亮淡彩，外露起稿、飞发丝、局部排线和奶白毛刷纸边。",
+    "aliases": [
+      "inked-storybook",
+      "ink-storybook",
+      "sketch-storybook"
+    ],
+    "images": [
+      "18-inked-storybook.png",
+      "18-inked-storybook-boy.png",
+      "18-inked-storybook-redhat.png"
+    ]
+  }
+]

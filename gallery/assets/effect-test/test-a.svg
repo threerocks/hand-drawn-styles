@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">HyperFrames fixed test plate A</title>
+  <desc id="desc">High contrast diagnostic plate with portrait, grid, text, fine lines, circles, and tonal blocks.</desc>
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f4efe4"/>
+      <stop offset="1" stop-color="#dce8f8"/>
+    </linearGradient>
+    <linearGradient id="tone" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#151b26"/>
+      <stop offset=".5" stop-color="#77839a"/>
+      <stop offset="1" stop-color="#f4efe4"/>
+    </linearGradient>
+    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M50 0H0V50" fill="none" stroke="#151b26" stroke-opacity=".12" stroke-width="2"/>
+    </pattern>
+    <clipPath id="portrait"><rect x="865" y="105" width="560" height="690" rx="36"/></clipPath>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#paper)"/>
+  <rect width="1600" height="1000" fill="url(#grid)"/>
+  <rect x="72" y="64" width="1456" height="872" rx="44" fill="none" stroke="#151b26" stroke-width="6"/>
+  <rect x="72" y="64" width="1456" height="70" rx="34" fill="#151b26"/>
+  <circle cx="118" cy="99" r="11" fill="#ef5b3f"/>
+  <circle cx="154" cy="99" r="11" fill="#f4c84a"/>
+  <circle cx="190" cy="99" r="11" fill="#2aa66f"/>
+  <text x="236" y="111" fill="#f4efe4" font-family="Arial, sans-serif" font-size="31" font-weight="700" letter-spacing="8">HF EFFECT TEST / A</text>
+  <text x="96" y="285" fill="#151b26" font-family="Arial, sans-serif" font-size="154" font-weight="900">A</text>
+  <text x="265" y="240" fill="#2563eb" font-family="Arial, sans-serif" font-size="55" font-weight="800">CONTROL PLATE</text>
+  <text x="265" y="302" fill="#151b26" font-family="Arial, sans-serif" font-size="31" letter-spacing="5">SHARP / SOFT / COLOR / MOTION</text>
+  <rect x="96" y="350" width="650" height="112" rx="18" fill="#151b26"/>
+  <text x="126" y="424" fill="#f4efe4" font-family="Arial, sans-serif" font-size="45" font-weight="700">Aa 0123456789</text>
+  <rect x="96" y="500" width="650" height="82" rx="14" fill="url(#tone)" stroke="#151b26" stroke-width="3"/>
+  <path d="M96 650H746M96 676H746M96 702H746M96 728H746" stroke="#151b26" stroke-width="5"/>
+  <path d="M96 650l650 78M96 728l650-78" stroke="#ef5b3f" stroke-width="6"/>
+  <g transform="translate(102 790)">
+    <circle cx="52" cy="52" r="50" fill="#2563eb"/>
+    <circle cx="176" cy="52" r="50" fill="#ef5b3f"/>
+    <circle cx="300" cy="52" r="50" fill="#f4c84a"/>
+    <circle cx="424" cy="52" r="50" fill="#22c7c9"/>
+    <circle cx="548" cy="52" r="50" fill="#2aa66f"/>
+  </g>
+  <g clip-path="url(#portrait)">
+    <rect x="865" y="105" width="560" height="690" fill="#2563eb"/>
+    <circle cx="1170" cy="355" r="170" fill="#f4c84a"/>
+    <path d="M900 780c48-210 168-306 286-306s232 100 280 306" fill="#151b26"/>
+    <circle cx="1186" cy="355" r="118" fill="#efb08f"/>
+    <path d="M1065 350c14-144 231-173 250-11-58-38-181-36-250 11Z" fill="#151b26"/>
+    <circle cx="1145" cy="365" r="10" fill="#151b26"/>
+    <circle cx="1232" cy="365" r="10" fill="#151b26"/>
+    <path d="M1150 420c29 23 58 23 86 0" fill="none" stroke="#151b26" stroke-width="8" stroke-linecap="round"/>
+    <path d="M865 180l560 460M865 640l560-460" stroke="#f4efe4" stroke-opacity=".25" stroke-width="6"/>
+  </g>
+  <rect x="865" y="105" width="560" height="690" rx="36" fill="none" stroke="#151b26" stroke-width="6"/>
+  <rect x="865" y="830" width="560" height="72" rx="14" fill="#ef5b3f"/>
+  <text x="895" y="880" fill="#151b26" font-family="Arial, sans-serif" font-size="34" font-weight="900" letter-spacing="4">FIXED INPUT / FRAME A</text>
+</svg>

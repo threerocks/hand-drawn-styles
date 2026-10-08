@@ -9,9 +9,9 @@
 ### 1. 确定画风
 
 - **用户已显式指定** → 直接采用。识别方式三选一(任一命中即可):
-  - 中文名:极简线条 / 火柴人 / 蜡笔 / 童涂 / 吉卜力 / 蜡笔童涂潦草版 / 潦草自画版 / 亲子投稿蜡笔故事卡 / 家庭投稿蜡笔卡 / 小豆人 / MS Paint / 烂涂鸦 / 圆珠笔 / 单线涂鸦 / 蜡笔实拍 / 真蜡笔 / 水墨 / 写意 / 国画 / 像素 / 像素风 / 情绪叙事 / 淡彩速写 / 速写讲故事 / 二维水彩风格 / 二维水彩 / 复古动画 / 概念稿 / 概念设定 / 暖光童画 / 动画概念暖绘 / 北欧纸雕 / 纸雕 / 纸艺 / 衍纸 / 北欧绘本水粉 / 北欧绘本 / 绘本水粉 / 斯堪的纳维亚绘本 / 大鼻软偶 / 软偶 / 软胶潮玩 / 大鼻子潮玩 / 聚光水粉立绘 / 聚光立绘 / 水粉立绘 / 墨线绘本 / 墨线淡彩 / 线稿绘本 / 速写绘本 / 暖色扁平绘本 / 扁平暖色绘本 / 几何扁平绘本 / 圆头红线 / 圆头红线极简童画 / 黑红白圆头童画 / 暖黄墨线 / 暖黄墨线情绪小剧场 / 手写独白 / 彩铅独白 / 独白卡 / 手写独白彩铅
-  - 编号:1–21,另有稳定变体 3.1(蜡笔童涂-潦草自画版)。旧编号 1.1、1.2 已删除。
-  - 英文别名:`xkcd` `stickman` `minimal-line`(1) / `crayon` `kid-crayon`(2) / `ghibli`(3) / `rawkid` `kid-scrawl` `stick-kid` `family-crayon-card` `parent-child-crayon` `submission-crayon`(3.1) / `bean` `blob`(4) / `ms-paint` `bad-doodle` `ugly`(5) / `scribble` `pen-scribble` `ballpoint`(6) / `real-crayon` `crayon-photo`(7) / `ink-wash` `ink` `shuimo` `chinese-painting`(8) / `pixel` `pixel-art` `8-bit` `16-bit`(9) / `emo-sketch` `story-sketch` `watercolor-sketch` `light-watercolor`(10) / `retro-concept` `mid-century` `gouache-concept`(11) / `sunlit-storybook` `vis-dev` `storybook-visdev`(12) / `paper-folk` `papercraft` `nordic-papercraft` `paper-sculpture` `quilling`(13) / `nordic-storybook` `scandi-gouache` `scandinavian-storybook` `soft-gouache`(14) / `softnose` `softnose-vinyl` `bignose-toy` `vinyl-toy` `art-toy`(15) / `gouache-spotlight` `spotlight-gouache` `character-spotlight`(16) / `inked-storybook` `ink-storybook` `sketch-storybook` `storybook-ink`(17) / `warm-flat-storybook` `flat-storybook` `geometric-storybook` `warm-flat`(18) / `roundhead-redline` `redline-roundhead` `graphite-redline`(19) / `warm-yellow-ink-story` `yellow-ink-story` `mustard-ink-story`(20) / `pencil-monologue` `handwritten-monologue` `monologue-card`(21)
+  - 中文名:极简线条 / 火柴人 / 蜡笔 / 童涂 / 吉卜力 / 蜡笔童涂潦草版 / 潦草自画版 / 亲子投稿蜡笔故事卡 / 家庭投稿蜡笔卡 / 小豆人 / MS Paint / 烂涂鸦 / 圆珠笔 / 单线涂鸦 / 蜡笔实拍 / 真蜡笔 / 水墨 / 写意 / 国画 / 像素 / 像素风 / 情绪叙事 / 淡彩速写 / 速写讲故事 / 二维水彩风格 / 二维水彩 / 复古动画 / 概念稿 / 概念设定 / 暖光童画 / 动画概念暖绘 / 北欧纸雕 / 纸雕 / 纸艺 / 衍纸 / 北欧绘本水粉 / 北欧绘本 / 绘本水粉 / 斯堪的纳维亚绘本 / 大鼻软偶 / 软偶 / 软胶潮玩 / 大鼻子潮玩 / 聚光水粉立绘 / 聚光立绘 / 水粉立绘 / 墨线绘本 / 墨线淡彩 / 线稿绘本 / 速写绘本 / 暖色扁平绘本 / 扁平暖色绘本 / 几何扁平绘本 / 圆头红线 / 圆头红线极简童画 / 黑红白圆头童画 / 暖黄墨线 / 暖黄墨线情绪小剧场
+  - 编号:1–20,另有稳定变体 3.1(蜡笔童涂-潦草自画版)。旧编号 1.1、1.2 已删除。
+  - 英文别名:`xkcd` `stickman` `minimal-line`(1) / `crayon` `kid-crayon`(2) / `ghibli`(3) / `rawkid` `kid-scrawl` `stick-kid` `family-crayon-card` `parent-child-crayon` `submission-crayon`(3.1) / `bean` `blob`(4) / `ms-paint` `bad-doodle` `ugly`(5) / `scribble` `pen-scribble` `ballpoint`(6) / `real-crayon` `crayon-photo`(7) / `ink-wash` `ink` `shuimo` `chinese-painting`(8) / `pixel` `pixel-art` `8-bit` `16-bit`(9) / `emo-sketch` `story-sketch` `watercolor-sketch` `light-watercolor`(10) / `retro-concept` `mid-century` `gouache-concept`(11) / `sunlit-storybook` `vis-dev` `storybook-visdev`(12) / `paper-folk` `papercraft` `nordic-papercraft` `paper-sculpture` `quilling`(13) / `nordic-storybook` `scandi-gouache` `scandinavian-storybook` `soft-gouache`(14) / `softnose` `softnose-vinyl` `bignose-toy` `vinyl-toy` `art-toy`(15) / `gouache-spotlight` `spotlight-gouache` `character-spotlight`(16) / `inked-storybook` `ink-storybook` `sketch-storybook` `storybook-ink`(17) / `warm-flat-storybook` `flat-storybook` `geometric-storybook` `warm-flat`(18) / `roundhead-redline` `redline-roundhead` `graphite-redline`(19) / `warm-yellow-ink-story` `yellow-ink-story` `mustard-ink-story`(20)
   - 注意 `涂鸦/doodle` 本身有歧义(#4 小豆人、#5 MS Paint、#6 圆珠笔都沾涂鸦):用户只说"涂鸦/画烂点"而不指明时,按未指定处理→展示菜单让其选。
   - 用户说“亲子手绘”“家庭蜡笔画”“亲子蜡笔故事”“像一家人站在白纸上的蜡笔画”或“潦草自画版”时,直接采用 3.1;这些表达不再进入通用画风菜单。只有单独说“手绘风”且没有亲子、家庭或蜡笔语义时,才按未指定处理。
 - **用户未指定** → 展示下面这个菜单,**停下等用户选**,不要自己替他挑:
@@ -39,10 +39,9 @@
   17. 墨线绘本 —— 钢笔速写线稿×绘本淡彩,墨线定形、轻薄透亮上色
   18. 暖色扁平绘本 —— 圆润几何大色块+几乎无外轮廓线,蓝橙限定色板+暖白大留白
   19. 圆头红线极简童画 —— 大圆头双竖眼+极细石墨四肢+黑红白限色+大留白,正式生产强制原创锚点与拒收检查
-  20. 暖黄墨线情绪小剧场 —— 暖白纸+干性黑墨排线+芥末黄+淡腮红,用紧凑人物和单一接触动作讲关系;正式生产强制 v3 原创锚点与失败关闭验收
-  21. 手写独白彩铅 —— 暖白到暖灰图画纸+细石墨线+干性彩铅排线+一两处饱和色+大留白+中粗黑笔手写中文文案;只定义风格,画什么、怎么排交给模型按文案决定;给一段文字直接出图
+  20. 暖黄墨线情绪小剧场 —— 暖白纸+干性黑墨排线+芥末黄+淡腮红,用紧凑人物和单一接触动作讲关系;正式生产强制原创锚点与失败关闭验收
   ```
-  > 编号按 1、2、3、3.1、4…21 顺序展示。
+  > 编号按 1、2、3、3.1、4…20 顺序展示。
 
 ### 2. 取配方
 
@@ -65,7 +64,7 @@
 
 - 正式生产每张请求都必须附带 `assets/style-19/anchor-roundhead-redline.png`，并标记为 `style-only`。只继承形体、五官、动作弧线、铅笔压力、干性颜料、限色色板和负空间，不复制锚点中的人物、动物、服装、道具、站位或动作。
 - 锚点按 1024×1536 尺寸和解码像素 SHA-256 固定。锚点缺失、损坏、像素变化，或调用端不能高保真传入参考图时停止正式生产；元数据变化不改变画风身份。
-- 正式调用执行 `python3 scripts/render_prompt.py --style 19 --subject '…' --aspect 3:4 --format json`。渲染器默认填入无字指令，输出 `roundhead-redline-v1` 调用包、固定模型快照要求、画风锚点、角色参考顺序、候选状态和拒收规则。
+- 正式调用执行 `python3 scripts/render_prompt.py --style 19 --subject '…' --aspect 3:4 --format json`。渲染器默认填入无字指令，输出 正式调用包、固定模型快照要求、画风锚点、角色参考顺序、候选状态和拒收规则。
 - 基础生成结果只能标为 `candidate-only`。调用端必须按 `acceptance_contract` 的 7 项维度评分，并检查所有硬失败条件；只有总分至少 30/35 且无硬失败项时才能标为 final。失败图拒收，不能靠统一抖线、加粗描边或蜡笔滤镜补救。
 - 角色参考图作为单独的 `character` 输入排在 `style-only` 锚点之后，不能替代画风锚点。锁定的模型快照不可用时，正式生产失败关闭；换模型或不锁快照只允许标为非生产预览。
 - 维护样图的 C2PA 只记录 `gpt-image 2.0`，未暴露精确快照；`gpt-image-2-2026-04-21` 是按 2026-08-24 官方模型目录写入的生产要求。首次接入显式 API 生产通道时必须用同一组基准场景补跑回归，不能把内置工具样图误报为已经验证该精确快照。
@@ -73,20 +72,13 @@
 
 风格 20 有独立的直接生成与失败关闭验收合同:
 
-- 正式生产每张请求都必须附带 `assets/style-20/anchor-warm-yellow-ink-story-v3.png`，并标记为 `style-only`。锚点只约束暖白负空间、紧凑形体、极简五官、干性墨线、方向性黑色排线、芥末黄、安静无纹样衣物和动作叙事，不能复制锚点中的人物、发型、衣服、道具、站位或动作。
+- 正式生产每张请求都必须附带 `assets/style-20/anchor-warm-yellow-ink-story.png`，并标记为 `style-only`。锚点只约束暖白负空间、紧凑形体、极简五官、干性墨线、方向性黑色排线、芥末黄、安静无纹样衣物和动作叙事，不能复制锚点中的人物、发型、衣服、道具、站位或动作。
 - 锚点按 1156×1361 尺寸和解码像素 SHA-256 固定。锚点缺失、损坏、像素变化，或调用端不能高保真传入参考图时停止正式生产；元数据变化不改变画风身份。
-- 正式调用执行 `python3 scripts/render_prompt.py --style 20 --subject '…' --aspect 3:4 --format json`。渲染器默认填入无字指令，输出 `warm-yellow-ink-story-v3` 调用包、固定模型快照要求、画风锚点、角色参考顺序、直接生成流程、最终验收流程和拒收规则。
-- 基础生成结果只能标为 `final-candidate`。不得用通用画风迁移编辑修补失败候选；v2 验证中此类编辑曾保留商业绘本偏差、替换动物身份并放大手部。失败时拒收整张图，并用同一正式调用包重新基础生成。
+- 正式调用执行 `python3 scripts/render_prompt.py --style 20 --subject '…' --aspect 3:4 --format json`。渲染器默认填入无字指令，输出 正式调用包、固定模型快照要求、画风锚点、角色参考顺序、直接生成流程、最终验收流程和拒收规则。
+- 基础生成结果只能标为 `final-candidate`。不得用通用画风迁移编辑修补失败候选。失败时拒收整张图，并用同一正式调用包重新基础生成。
 - 最终候选必须运行 `scripts/validate_style_20_asset.py`。验证器自动检查暖白、黑色、芥末黄、珊瑚红、禁用冷色和荧光黄比例。评分卡必须绑定候选图的 SHA-256，并记录预期主体、实际主体、身份是否保留、必要物件是否保留。只有主体内容锁通过、总分至少 34/40、无硬失败项且验证器退出码为 0 时才能标为 final。
 - 角色参考图作为单独的 `character` 输入排在 `style-only` 锚点之后，不能替代画风锚点。模型快照或高保真参考输入不可用时，正式生产失败关闭；换模型只允许标为非生产预览。
 - `--subject` 只能描述人物、动物、动作、关系和最多两件必要道具，不能塞入画风、线条、配色或纸面指令。正式生产固定无字；`--text` 只接受“不加任何文字”，`--title` 不适用。
-
-风格 21 是自带文案的独白类画风,没有参考锚点,配方只定义风格:
-
-- `--text` 必填,填要写进画里的中文原文;渲染器把它整理成一行一句(真实换行优先,单段落按 `，。！？；` 自动断句),最多 10 行,已验证 3–8 行。`--text '不加任何文字'` 会被拒绝,标题不走 `--title`。
-- `--subject` 可省略,省略时渲染器填入 STYLES.md 记录的默认指令:模型先读文案,再自行决定画什么、有没有人、从哪个角度、放在哪里。只有需要固定内容时才传 `--subject`,只描述内容,同样受画风注入检查。
-- 画幅默认竖版 3:4,写在配方首段的画幅句里;`--aspect 宽:高` 会替换该句,不另加比例行。默认输出纯文本 prompt;`--format json` 输出 `pencil-monologue-v2` 生成合同(无锚点、验收维度和硬失败项)。
-- 本机有 codex CLI 时,`scripts/generate_monologue_card_with_codex.sh --text '…' --out 路径.png` 会渲染 prompt、调用 codex 内置生图、去元数据并归一到 1086×1448。
 
 ### 3. 自动填充占位符
 
@@ -109,7 +101,6 @@
 - 风格18(暖色扁平绘本):模板是已验证英文,占位符也填英文;`【主体】` 写角色/动物的外形、服装、动作与关系;`【构图】` 默认 "full-body, centered in the lower-middle with huge calm negative space";`【文字】` 默认 "No text anywhere."。
 - 风格19(圆头红线极简童画):模板是已验证英文,`【主体】` 用具体动作、关系和最多两件必要道具描述;明确哪一件道具或服装细节承担唯一珊瑚红焦点;`【文字】` 固定为 "No text anywhere."，正式生产必须消费完整 JSON 调用包。
 - 风格20(暖黄墨线情绪小剧场):模板是已验证英文,`【主体】` 用一个清楚的动作或关系、角色差异和最多两件必要道具描述;不得指定另一套线条、配色、纸面或形体规则;`【文字】` 固定为 "No text anywhere."，正式生产必须消费完整直接生成与最终验收 JSON 调用包。
-- 风格21(手写独白彩铅):`【文字】` 是用户文案原文按行排列,空行保留为分段;`【主体】` 省略时用默认的“由文案决定内容与构图”指令;`【画幅】` 默认 `Vertical 3:4.`;不得在主体里塞入纸面、线条或配色规则。
 - 风格3.1:`【主体】` 只写这一页的人物身份、动作、关系和必要道具,不得把画风词混进去;`【文字】` 按 STYLES.md 处理。家庭场景可自然出现约 5–7 种蜡笔色,不得套用旧 1.1 的“≤4 色 + 单橙红”规则。
 
 ### 4. 处理比例(关键:不硬锁)
@@ -117,7 +108,6 @@
 - 用户**传了**比例(如 16:9 / 竖版 / 方图)→ 用用户的。
 - 用户**没传**:
   - 纯风格(2、3、3.1、5、6、7、8、9、10、11、12、13、14、15、16、17、18、19、20)→ **不注入任何比例**。
-  - 风格 21 默认竖版 3:4,写在配方的画幅句里;用户传比例时替换该句,不另加比例行。
   - 版式风格(1、4)→ 只注入**软结构提示**(1 用"多格网格排版";4 用"竖版、多格自上而下堆叠"),**不写具体数字比例**。
 
 ### 5. 输出
@@ -126,7 +116,7 @@
 
 例外:风格 3.1 用于正式生产、连续故事或多页作品时,输出正式 JSON 调用包,调用端必须完整执行三阶段 `workflow`;只复制 prompt、丢掉画风锚点或跳过任一修正阶段,都属于不合格调用,不能产出 final。风格 19 正式生产也输出 JSON 调用包;调用端必须携带原创锚点、锁定模型快照，并在基础生成后通过 `acceptance_contract` 才能把候选图标为 final。
 
-风格 20 正式生产同样输出 JSON 调用包；基础图只能标为 `final-candidate`，通过机读验收器后才能标为 final。风格 21 默认输出纯文本 prompt，文案必填。
+风格 20 正式生产同样输出 JSON 调用包；基础图只能标为 `final-candidate`，通过机读验收器后才能标为 final。
 
 ## 安装检查
 

@@ -429,7 +429,7 @@ class RenderPromptTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "PNG 校验失败|像素不匹配|像素数据损坏"):
                 RENDER_PROMPT.validate_style_19_anchor(candidate)
 
-    def test_style_20_alias_defaults_to_v3_generate_then_validate_contract(self) -> None:
+    def test_style_20_alias_defaults_to_generate_then_validate_contract(self) -> None:
         result = self.run_renderer(
             "--style",
             "warm-yellow-ink-story",
@@ -444,7 +444,7 @@ class RenderPromptTests(unittest.TestCase):
         self.assertEqual(payload["style_contract"], "warm-yellow-ink-story-v3")
         self.assertEqual(payload["references"][0]["role"], "style-only")
         self.assertIn(
-            "assets/style-20/anchor-warm-yellow-ink-story-v3.png",
+            "assets/style-20/anchor-warm-yellow-ink-story.png",
             payload["references"][0]["path"],
         )
         self.assertTrue(Path(payload["references"][0]["path"]).is_file())
@@ -469,7 +469,7 @@ class RenderPromptTests(unittest.TestCase):
         self.assertEqual(payload["acceptance_contract"]["maximum_score"], 40)
 
     def test_style_20_character_reference_follows_style_anchor(self) -> None:
-        character_reference = ROOT / "assets/style-20/anchor-warm-yellow-ink-story-v3.png"
+        character_reference = ROOT / "assets/style-20/anchor-warm-yellow-ink-story.png"
         result = self.run_renderer(
             "--style",
             "20",
@@ -517,62 +517,8 @@ class RenderPromptTests(unittest.TestCase):
         self.assertEqual(title_result.returncode, 2)
         self.assertIn("画风 19/20 的标题需走独立排版流程", title_result.stderr)
 
-    def test_style_21_defaults_to_text_driven_subject_and_splits_text(self) -> None:
-        result = self.run_renderer(
-            "--style",
-            "手写独白",
-            "--text",
-            "人总是这样，一瞬间想通了，释怀了，可下一秒又想不通了，大道理都懂，可小情绪难以自控……",
-        )
-        self.assertEqual(result.returncode, 0, result.stderr)
-        self.assertIn(RENDER_PROMPT.STYLE_21_DEFAULT_SUBJECT, result.stdout)
-        self.assertIn("Vertical 3:4.", result.stdout)
-        self.assertIn("人总是这样，\n一瞬间想通了，\n释怀了，\n", result.stdout)
-        self.assertIn("可小情绪难以自控\n……\nHandwriting", result.stdout)
-        self.assertNotIn("画幅比例", result.stdout)
-        self.assertNotIn("【", result.stdout)
-        self.assertIn(RENDER_PROMPT.STYLE_21_DEFAULT_SUBJECT, (ROOT / "STYLES.md").read_text(encoding="utf-8"))
-
-    def test_style_21_keeps_stanza_gaps_and_literal_newlines(self) -> None:
-        result = self.run_renderer("--style", "21", "--text", "有些人来过，\\n就已经很好了。\\n\\n\\n不必追问去向，\\n……\\n\\n")
-        self.assertEqual(result.returncode, 0, result.stderr)
-        self.assertIn("有些人来过，\n就已经很好了。\n\n不必追问去向，\n……\nHandwriting", result.stdout)
-
-    def test_style_21_requires_text_and_accepts_aspect_override(self) -> None:
-        missing = self.run_renderer("--style", "21")
-        self.assertEqual(missing.returncode, 2)
-        self.assertIn("必须给出要写进画里的中文原文", missing.stderr)
-        no_text = self.run_renderer("--style", "21", "--text", "不加任何文字")
-        self.assertEqual(no_text.returncode, 2)
-        square = self.run_renderer("--style", "21", "--text", "你好", "--aspect", "1:1")
-        self.assertEqual(square.returncode, 0, square.stderr)
-        self.assertIn("Square 1:1.", square.stdout)
-        self.assertNotIn("画幅比例", square.stdout)
-        bad = self.run_renderer("--style", "21", "--text", "你好", "--aspect", "竖版")
-        self.assertEqual(bad.returncode, 2)
-        too_long = self.run_renderer("--style", "21", "--text", "\n".join(["一句"] * 11))
-        self.assertEqual(too_long.returncode, 2)
-        self.assertIn("最多 10 行", too_long.stderr)
-
-    def test_style_21_rejects_subject_style_injection_and_title(self) -> None:
-        injected = self.run_renderer("--style", "21", "--text", "你好", "--subject", "一个女孩,采用水彩质感与统一粗黑轮廓")
-        self.assertEqual(injected.returncode, 2)
-        self.assertIn("画风 21 的主体字段只能描述人物、动作、关系和道具", injected.stderr)
-        title = self.run_renderer("--style", "21", "--text", "你好", "--title", "x")
-        self.assertEqual(title.returncode, 2)
-        self.assertIn("画风 21 的文案用 --text", title.stderr)
-
-    def test_style_21_json_contract_has_no_anchor_and_lists_lines(self) -> None:
-        result = self.run_renderer("--style", "pencil-monologue", "--text", "a\n\nb", "--format", "json")
-        self.assertEqual(result.returncode, 0, result.stderr)
-        payload = json.loads(result.stdout)
-        self.assertEqual(payload["style_contract"], "pencil-monologue-v2")
-        self.assertEqual(payload["references"], [])
-        self.assertEqual(payload["inputs"]["text_lines"], ["a", "", "b"])
-        self.assertFalse(payload["generation"]["reference_anchor_required"])
-
     def test_style_20_metadata_only_change_preserves_anchor_identity(self) -> None:
-        original = ROOT / "assets/style-20/anchor-warm-yellow-ink-story-v3.png"
+        original = ROOT / "assets/style-20/anchor-warm-yellow-ink-story.png"
         with tempfile.TemporaryDirectory() as temp_dir:
             candidate = Path(temp_dir) / "anchor.png"
             data = original.read_bytes()
@@ -591,7 +537,7 @@ class RenderPromptTests(unittest.TestCase):
             RENDER_PROMPT.validate_style_20_anchor(candidate)
 
     def test_style_20_modified_anchor_pixels_fail_closed(self) -> None:
-        original = ROOT / "assets/style-20/anchor-warm-yellow-ink-story-v3.png"
+        original = ROOT / "assets/style-20/anchor-warm-yellow-ink-story.png"
         with tempfile.TemporaryDirectory() as temp_dir:
             candidate = Path(temp_dir) / "anchor.png"
             data = bytearray(original.read_bytes())
@@ -766,7 +712,7 @@ class RenderPromptTests(unittest.TestCase):
     def test_user_text_and_parameter_values_are_not_substituted_again(self) -> None:
         prompt = RENDER_PROMPT.render("【主体】 / 【文字】", {"主体": "写着【文字】的书", "文字": "【加油】"}, None)
         self.assertEqual(prompt, "写着【文字】的书 / 【加油】")
-        result = self.run_renderer("--style", "21", "--text", "记住【加油】这句话。")
+        result = self.run_renderer("--style", "10", "--subject", "一个孩子举起书", "--var", "橙色关键物=书", "--text", "记住【加油】这句话。")
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn("【加油】", result.stdout)
 
@@ -790,12 +736,21 @@ class RenderPromptTests(unittest.TestCase):
         result = self.run_renderer("--list")
         self.assertEqual(result.returncode, 0, result.stderr)
         catalog = json.loads(result.stdout)
-        self.assertEqual(len(catalog), 22)
+        self.assertEqual(len(catalog), 21)
         self.assertEqual(catalog[0]["parameters"], ["N", "分镜列表"])
         self.assertEqual(catalog[3]["style_id"], "3.1")
+        self.assertEqual([style["style_id"] for style in catalog][-3:], ["18", "19", "20"])
         for style in catalog:
             with self.subTest(style_id=style["style_id"]):
                 self.assertEqual(RENDER_PROMPT.canonical_style_id(style["name"]), style["style_id"])
+
+    def test_removed_style_and_aliases_are_unavailable(self) -> None:
+        for style in ("21", "pencil-monologue", "handwritten-monologue", "monologue-card", "手写独白", "彩铅独白", "独白卡", "手写独白彩铅"):
+            with self.subTest(style=style):
+                result = self.run_renderer("--style", style, "--text", "今天慢一点。")
+                self.assertEqual(result.returncode, 2)
+                self.assertEqual(result.stdout, "")
+                self.assertIn("不存在画风", result.stderr)
 
     def test_paper_folk_json_includes_both_documented_reference_images(self) -> None:
         result = self.run_renderer("--style", "paper-folk", "--subject", "a musician holding a violin", "--var", "构图=centered, waist-up", "--var", "底色=warm ochre-brown", "--var", "点缀元素=one stylized folk cloud", "--format", "json")

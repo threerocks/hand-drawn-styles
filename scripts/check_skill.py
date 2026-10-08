@@ -20,7 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 RUNTIME_FILES = (
     "SKILL.md", "AGENTS.md", "PROTOCOL.md", "STYLES.md", "LICENSE", "INSTALL.md",
     "scripts/render_prompt.py", "scripts/check_skill.py",
-    "scripts/validate_style_20_asset.py", "scripts/generate_monologue_card_with_codex.sh",
+    "scripts/validate_style_20_asset.py",
 )
 DEFAULT_SCENE = (
     "SCENE: background painted with long rough vertical and diagonal dry-brush streaks "
@@ -50,7 +50,6 @@ SMOKE_PARAMETERS = {
     "18": {"主体": "a child holding a book", "构图": "full-body, centered in the lower-middle with huge calm negative space", "文字": "No text anywhere."},
     "19": {"主体": "a small elephant lifting one paper lantern with its trunk", "文字": "No text anywhere."},
     "20": {"主体": "a grandmother and child repairing one kite together", "文字": "No text anywhere."},
-    "21": {"文字": "今天慢一点，\n也能走到想去的地方。"},
 }
 
 

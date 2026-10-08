@@ -1,2 +1,0 @@
-命令: scripts/generate_style_21_with_codex.sh --text "后来才明白，很多事不是想不通，是舍不得。灯亮着，人就还有地方可以站一会儿。……" --out e2e-01-single-paragraph.png
-输入为单段落无换行,渲染器自动断成 5 行;默认招牌场景;耗时约 5 分 18 秒;输出已去元数据并归一到 1086×1448。

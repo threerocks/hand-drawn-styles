@@ -1,6 +1,6 @@
 # 历史编号 #19 / 当前 #18 暖色扁平绘本验证记录
 
-> 本目录名保留自 2026-08-23 之前的编号。当前 `STYLES.md` 中暖色扁平绘本是 #18;当前 #19 是 `roundhead-redline`,验证资料在 `../style-19-roundhead-redline/`。不要按本目录名调用当前 #19。
+> 本目录名保留自 2026-08-23 之前的编号。当前 `STYLES.md` 中暖色扁平绘本是 #18;当前 #19 是 `roundhead-redline`,定稿图在 `../../assets/style-19/anchor-roundhead-redline.png`。不要按本目录名调用当前 #19。
 
 ## 目标
 

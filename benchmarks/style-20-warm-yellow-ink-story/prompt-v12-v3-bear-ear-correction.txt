@@ -1,8 +1,0 @@
-Use case: precise-object-edit
-Asset type: single-defect species correction
-
-Image 1 is the only content truth and edit target. Preserve every person-free content fact and visual property: exactly one bear cub, one mustard leaf, the balancing pose, nose-to-leaf contact, face, muzzle, body, paws, dark directional lower-body strokes, position, scale, ground line, framing, palette, paper texture and empty space. Image 2 is style-only and must not contribute any person, clothing, object, pose or composition.
-
-Change exactly one defect: replace the large left-side human-like ear and its inner C-shaped line with one small rounded bear ear that matches the existing small top ear in diameter, line weight and simplicity. Attach it near the upper-left side of the head at the same height as the existing top/right bear ear. The output must show two small rounded bear ears of comparable size and no human ear anatomy.
-
-Do not change the head outline except for that local ear replacement. Do not move or redraw the eye, cheek, nose, mouth, muzzle, leaf, limbs, body or ground line. Add nothing else. No tail, fur, clothes, scenery, shadow, text, symbol, logo, signature, watermark or new color.

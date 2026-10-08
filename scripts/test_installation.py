@@ -44,6 +44,7 @@ class InstallationTests(unittest.TestCase):
             names = archive.namelist()
             self.assertTrue(all(name.startswith("hand-drawn/") for name in names))
             self.assertFalse(any(part in name for name in names for part in ("/.git/", "/benchmarks/", "/artifacts/", "/__pycache__/")))
+            self.assertFalse(any("monologue" in name or "style-21" in name for name in names))
             references = {reference for style in check_skill.render_prompt.list_styles() for reference in style["references"]}
             self.assertEqual(len(references), 5)
             for reference in references:
@@ -54,7 +55,7 @@ class InstallationTests(unittest.TestCase):
     def test_installed_archive_exercises_all_styles_outside_checkout(self) -> None:
         report = build_skill_package.verify_archive(self.archive)
         self.assertEqual(report["status"], "pass")
-        self.assertEqual(report["smoke_checked"], 22)
+        self.assertEqual(report["smoke_checked"], 21)
         self.assertTrue(all(style["status"] == "pass" for style in report["styles"]))
 
     def test_package_manifest_rejects_changed_and_missing_files(self) -> None:

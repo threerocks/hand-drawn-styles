@@ -92,38 +92,14 @@
 
 ## 19. 圆头红线极简童画
 
-![圆头红线极简童画人类动作回归](19-roundhead-redline.png)
+![圆头红线极简童画](../assets/style-19/anchor-roundhead-redline.png)
 
-![圆头红线极简童画跨主体回归](19-roundhead-redline-elephant.png)
-
-> 输入示例:「用 19 号画风画一只幼象踮脚用鼻子提起一盏珊瑚红纸灯笼,不加文字」
->
-> 正式生产必须把 `assets/style-19/anchor-roundhead-redline.png` 作为 `style-only` 参考随每张请求传入,锁定调用包指定的模型快照,并在基础生成后通过 `acceptance_contract`。基础输出是 `candidate-only`,不能直接当 final。
->
-> 锚点和两张样图都保留 OpenAI C2PA/JUMBF 内容凭证。隐私工具因无法验证后重签而没有改写文件;状态是“已审计,未清理”,具体结果见各图旁的 `.privacy.json` 与 `.provenance.json`。
+> 输入示例：「用 19 号画风画一只幼象用鼻子提起一盏珊瑚红纸灯笼，不加文字」。正式调用必须携带这张画风参考图，并执行调用包中的验收流程。
 
 ## 20. 暖黄墨线情绪小剧场
 
-![暖黄墨线情绪小剧场人类重复回归](20-warm-yellow-ink-story-v3.png)
+![暖黄墨线情绪小剧场](../assets/style-20/anchor-warm-yellow-ink-story.png)
 
-![暖黄墨线情绪小剧场人和狗跨主体回归](20-warm-yellow-ink-story-human-dog-v3.png)
+> 输入示例：「用 20 号画风画两个孩子一起搬一只暖黄色坐垫，不加文字」。正式调用必须携带这张画风参考图，直接生成候选图，再运行机读验收器。
 
-> 输入示例:「用 20 号画风画两个孩子一起搬一只暖黄色坐垫,不加文字」
->
-> 正式生产必须把 `assets/style-20/anchor-warm-yellow-ink-story-v3.png` 作为 `style-only` 参考传入基础生成。基础图只能标为 `final-candidate`;只有机读验收器同时通过像素检查、主体内容锁、8 项评分和硬失败检查后才是 final。失败候选整张拒收并重新生成,不得用通用画风编辑修补。
->
-> 锚点和两张样图都保留 OpenAI C2PA/JUMBF 内容凭证。隐私工具因无法验证后重签而没有改写文件;状态是“已审计,未清理”,具体结果见各图旁的 `.privacy.json` 与 `.provenance.json`。
-
-## 21. 手写独白彩铅
-
-![手写独白彩铅:走路的女孩](21-pencil-monologue.png)
-
-![手写独白彩铅:窗台](21-pencil-monologue-window.png)
-
-![手写独白彩铅:分段文案](21-pencil-monologue-mother.png)
-
-> 输入示例:「用 21 号画风,文案:小时候盼着长大，长大后才知道，有些人一转身，就是一辈子。……」
->
-> 配方只定义风格。`--text` 必填并保留空行分段;`--subject` 省略时由模型先读文案再决定内容与构图;画幅默认 3:4 可覆盖;不需要锚点。本机有 codex 时可用 `scripts/generate_monologue_card_with_codex.sh` 直接出图。三张样图都是只给文案、不给任何场景描述生成的。
->
-> 样图保留 OpenAI C2PA/JUMBF 内容凭证,ExifTool 审计未发现 GPS、设备、账号或本地路径字段;状态是“已审计,未清理”,见各图旁的 `.privacy.json` 与 `.provenance.json`。
+两张图均保留原始字节与 OpenAI C2PA/JUMBF 内容凭证。隐私审计状态为「已审计，未清理」，记录见各图旁的 `.privacy.json` 与 `.provenance.json`。

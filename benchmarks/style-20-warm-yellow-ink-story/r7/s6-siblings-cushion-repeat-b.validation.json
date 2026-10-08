@@ -1,0 +1,20 @@
+{
+  "style_contract": "warm-yellow-ink-story-v3",
+  "image": "/Users/liulei/projects/hand-drawn-styles/benchmarks/style-20-warm-yellow-ink-story/r7/s6-siblings-cushion-repeat-b.png",
+  "image_sha256": "6795762d05e0c777ab7f1517c13ff447a0a64ef1214d55db49d29e4670a3aabe",
+  "source_image": "/Users/liulei/projects/hand-drawn-styles/benchmarks/style-20-warm-yellow-ink-story/r7/s6-siblings-cushion-repeat-b.png",
+  "source_image_sha256": "6795762d05e0c777ab7f1517c13ff447a0a64ef1214d55db49d29e4670a3aabe",
+  "scorecard": "/Users/liulei/projects/hand-drawn-styles/benchmarks/style-20-warm-yellow-ink-story/r7/s6-siblings-cushion-repeat-b.scorecard.json",
+  "palette_metrics": {
+    "white_ratio": 0.8994864363257316,
+    "dark_ratio": 0.029746014796735564,
+    "mustard_ratio": 0.051674166730226526,
+    "coral_red_ratio": 0.0003114433173162484,
+    "disallowed_cool_ratio": 0.0,
+    "neon_yellow_ratio": 0.0
+  },
+  "review_score": 35,
+  "minimum_review_score": 34,
+  "failures": [],
+  "status": "pass"
+}

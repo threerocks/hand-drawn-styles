@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "audited_at": "2026-08-24T07:29:56Z",
+  "classification": "generated-asset",
+  "c2pa_jumbf_detected": true,
+  "software_agent": "gpt-image 2.0",
+  "claim_generator": "OpenAI Media Service API",
+  "digital_source_type": "http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia",
+  "sanitizer_result": "refused-to-modify-without-c2pa-resigning",
+  "provenance_preserved": true,
+  "bytes_modified": false
+}

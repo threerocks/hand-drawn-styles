@@ -1,0 +1,16 @@
+Use case: precise-object-edit
+Asset type: animal style-anchor migration
+
+CONTENT AND SPECIES LOCK — HIGHEST PRIORITY: Image 1 is the only content truth and edit target. Preserve exactly one fox, no people, its pointed ears, short muzzle, tail, paper-boat action, one-foot pose, face, position, scale, ground/contact marks, framing and empty-space composition. Image 2 supplies the approved v3 handmade human style grammar only. Never copy or substitute its elderly woman, child, hair, clothing, envelope, mitten, pose or composition.
+
+Correct only the remaining style differences between Image 1 and Image 2:
+
+1. Compress the fox slightly without changing the action: make the rounded-square head about 40% of total height, remove any visible neck, shorten the torso and limbs, and keep paws as tiny hooks. Preserve the exact pointed ears, white muzzle patch and large tail required to read as a fox.
+
+2. Replace smooth digital contours with restrained dry near-black pen: small pressure changes, a few short gaps, blunt starts and stops, slight wobble, sparse imperfect retracing and a few overshooting fur ends. Do not thicken the whole outline or add fuzzy noise.
+
+3. Rebuild existing black ear tips and paw tips from visibly separate short directional strokes with unequal spacing and irregular paper-white slivers. Keep the existing mustard fox body matte and lightly uneven. Remove smooth gradients, edge glow, airbrushed shading, fur texture and polished mascot volume.
+
+4. Keep the face to two tiny dot or short-line eyes, one tiny nose, one very short uneven mouth and faint coral cheeks. Remove all other face construction.
+
+Preserve the paper boat's identity and contact point, but reduce it to one outer hull and at most two uneven fold lines. Add nothing. No clothes, new props, scenery, shadow, text, symbol, logo, signature, watermark or new color. The output must remain an original economical pen-and-color fox vignette, not a plush toy, mascot, vector illustration, anime or 3D.

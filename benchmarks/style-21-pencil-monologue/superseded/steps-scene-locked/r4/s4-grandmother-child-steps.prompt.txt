@@ -1,0 +1,23 @@
+Create one original hand-drawn illustration that looks like colored pencil and graphite on cream drawing paper.
+
+PAPER: the whole canvas is one sheet of warm off-white cream drawing paper (around #EDE7D8) with a fine, even, matte paper grain that is only faintly visible and much weaker than the pencil strokes; slightly greyer and cooler toward the top edge. The grain must never become a mottled, embossed, marbled, fingerprint-like or swirling pattern. No pure white, no desk, no frame, no border, no vignette.
+
+MEDIUM: graphite pencil contours and colored pencil coloring. Outlines are thin, slightly wobbly graphite lines with pressure changes. Colors are laid down as short, straight or gently curved directional hatching strokes with paper grain showing through: dense and fairly saturated on the main garment and the animal, lighter elsewhere; strokes are never loops, scribble swirls or whorls. Stone and ground are shaded with light grey graphite hatching in visible parallel strokes. No digital smoothness, no vector lines, no airbrush, no watercolor, no 3D, and no swirling, embossed or repeated digital texture laid over the paper, the clothing or the stone.
+
+LAYOUT (most important): the canvas splits into two zones. The TOP 45% holds only the handwritten text block, centered on bare paper. The BOTTOM 45% holds the drawing. Between them stays a band of empty paper. Nothing else fills the page: no sky, no clouds, no sun, no distant landscape, no frame.
+
+SCENE: An elderly woman in a soft grey cardigan and a small girl of about five in a plain red dress sit side by side on the top step of three plain stone steps with their backs to the viewer; the girl leans her head against the woman's arm and they look into the distance together. One thin rose sapling with red buds stands on each side, with grass tufts along the platform edge.
+
+SCENE GRAMMAR: the figure is always seen from behind, seated and quiet, medium-small in the frame; a companion sits beside it with physical contact. The seat is a short flight of two or three plain stone steps, centered and only about 40-50% of the canvas width, drawn with light grey graphite hatching that leaves plenty of paper showing. Behind the steps a low stone platform edge runs the full width of the canvas as one slightly wobbly horizontal line, with small grass tufts scattered along it. The flowering shrubs are thin saplings, not bushes: each has one slender brown trunk, two or three branches, no more than ten small green leaves and three to five small red buds, with paper visible between them. Place one or two saplings on each side, well apart from the figure. Below the steps the ground is bare paper with a little grey hatching and one soft cast shadow to one side. Keep it sparse: no buildings, no fence, no path, no water, no extra characters, no full hedges.
+
+PALETTE: cream paper, graphite grey, one saturated accent color on the main garment, warm orange for the animal, small red buds, fresh green leaves and grass, brown trunks; skin left almost bare paper. All color stays pencil-grainy; no black fills, no gradients, no neon.
+
+TEXT: in the top zone, write these Chinese lines centered, one line each, exactly as given, no character changed, added or missing; an empty line means a visible blank line between two stanzas:
+陪伴不用说很多话，
+坐在一起，
+看同一个方向，
+就已经是回答了。
+……
+Handwriting style: casual but legible regular-script handwriting made with a medium-tip black felt pen (像用中粗黑笔一笔一画写的手写楷体), strokes slightly bold, characters slightly uneven in size and spacing, dark charcoal ink, no text box, no printed-font perfection. This is the only text on the image: no seal, no stamp, no signature, no watermark, no title, no logo.
+
+AVOID: red seal or stamp; toned grey paper; glossy digital rendering; anime face; chibi; realistic photo; heavy black outlines; sky or background scenery; text overlapping the drawing; multiple text blocks; dense hedges; wide heavy staircase; swirling digital texture; vertical 3:4 is required.

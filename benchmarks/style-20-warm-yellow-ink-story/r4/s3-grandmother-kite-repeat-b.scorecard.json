@@ -1,0 +1,25 @@
+{
+  "style_contract": "warm-yellow-ink-story-v2",
+  "image_sha256": "950837c6164b2888845dea6cb780fa4751ef20296810d23550f74e854b9e7f6f",
+  "source_image_sha256": "52f8fd1dee6a6dc78ec7199a26e0c7bae4edc412a3f4a6ff2cbea27648fc43bb",
+  "content_lock": {
+    "expected_subjects": {"human": 2},
+    "observed_subjects": {"human": 2},
+    "identity_preserved": true,
+    "required_objects_preserved": true
+  },
+  "reviewer_kind": "maintainer-visual-review",
+  "reviewed_at": "2026-08-24",
+  "scores": {
+    "shape-language": 5,
+    "face-language": 5,
+    "line-material": 4,
+    "directional-black-hatching": 5,
+    "mustard-yellow-material": 5,
+    "negative-space": 5,
+    "single-action-storytelling": 5,
+    "originality-boundary": 5
+  },
+  "hard_failures": [],
+  "notes": "Repeated base drifted into stripes, buttons and a wound spool; the two fixed edit stages removed all three without changing the action or composition."
+}

@@ -1,0 +1,99 @@
+{
+  "style_id": "20",
+  "style_contract": "warm-yellow-ink-story-v3",
+  "status": "accepted-engineering-and-user-visual-review",
+  "minimum_score": 34,
+  "maximum_score": 40,
+  "source_and_final_sha256_bound": true,
+  "content_lock_required": true,
+  "rounds": [
+    {
+      "round": 1,
+      "tests": [
+        {"scene": "s1-siblings-shoelace", "score": 29, "hard_failure": false, "accepted": false},
+        {"scene": "s2-fox-paper-boat", "score": 25, "hard_failure": false, "accepted": false}
+      ],
+      "stable_bias": "commercial-storybook proportions, long limbs, articulated hands, detailed shoes; cross-subject animal lost compact shape language"
+    },
+    {
+      "round": 2,
+      "tests": [
+        {"scene": "s1-siblings-shoelace-shape-corrected", "score": 37, "hard_failure": false, "accepted": true},
+        {"scene": "s2-fox-paper-boat-shape-corrected", "score": 37, "hard_failure": false, "accepted": true}
+      ],
+      "correction_scope": "shape language and excess construction detail only"
+    },
+    {
+      "round": 3,
+      "tests": [
+        {"scene": "s3-grandmother-kite-base", "score": 30, "hard_failure": true, "accepted": false},
+        {"scene": "s3-grandmother-kite-final", "score": 37, "hard_failure": false, "accepted": true}
+      ],
+      "correction_scope": "mandatory detail-simplification using only the original anchor"
+    },
+    {
+      "round": 4,
+      "tests": [
+        {"scene": "s3-grandmother-kite-repeat-a-minimal-final", "score": 37, "hard_failure": false, "accepted": true, "validator_status": "pass"},
+        {"scene": "s3-grandmother-kite-repeat-b-minimal-final", "score": 39, "hard_failure": false, "accepted": true, "validator_status": "pass"},
+        {"scene": "s3-grandmother-kite-repeat-c-minimal-final", "score": 39, "hard_failure": false, "accepted": true, "validator_status": "pass"}
+      ],
+      "stable_bias": "single detail-simplification pass left articulated fingers, garment construction marks, and mechanically wound spools",
+      "correction_scope": "mandatory minimal-detail-enforcement after detail-simplification"
+    },
+    {
+      "round": 5,
+      "tests": [
+        {"scene": "anchor-v2-hygiene", "score": 39, "hard_failure": false, "accepted": true},
+        {"scene": "s3-grandmother-kite-anchor-v2-minimal-final", "score": 39, "hard_failure": false, "accepted": true, "validator_status": "pass"}
+      ],
+      "root_cause": "the v1 anchor contained pale garment stripes that were inherited by repeated generations",
+      "correction_scope": "new stripe-free v2 anchor plus the complete two-edit pipeline"
+    },
+    {
+      "round": 6,
+      "tests": [
+        {"scene": "s2-fox-paper-boat-identity-collapse", "score": 0, "hard_failure": true, "accepted": false, "failure": "animal was replaced by people copied from the style anchor"},
+        {"scene": "s2-fox-paper-boat-anchor-v2-minimal-final", "score": 38, "hard_failure": false, "accepted": true, "validator_status": "pass"}
+      ],
+      "root_cause": "the edit prompt did not explicitly make Image 1 the sole truth for subject count, species and identity",
+      "correction_scope": "species lock in both edit stages and conditional prop simplification"
+    },
+    {
+      "round": 7,
+      "tests": [
+        {"scene": "anchor-v3-fresh-base", "score": 37, "hard_failure": false, "accepted": true, "validator_status": "pass"},
+        {"scene": "s6-siblings-cushion-repeat-a", "score": 35, "hard_failure": false, "accepted": true, "validator_status": "pass"},
+        {"scene": "s6-siblings-cushion-repeat-b", "score": 35, "hard_failure": false, "accepted": true, "validator_status": "pass"},
+        {"scene": "s6-siblings-cushion-repeat-c", "score": 35, "hard_failure": false, "accepted": true, "validator_status": "pass"},
+        {"scene": "s7-elderly-man-dog-scarf-v3", "score": 36, "hard_failure": false, "accepted": true, "validator_status": "pass"}
+      ],
+      "root_cause": "v2 passed its internal rubric while remaining smoother, more polished and more anatomically detailed than the ten frozen references",
+      "correction_scope": "fresh original v3 anchor, stricter 34/40 threshold, direct generation and whole-candidate rejection instead of style-transfer repair",
+      "rejected_evidence": [
+        "v2-derived edit retained commercial storybook habits",
+        "material edit enlarged hands into dominant white mittens",
+        "bear correction retained mascot polish or failed to replace a human-like ear",
+        "fox migration produced no material fidelity gain"
+      ]
+    }
+  ],
+  "anchor": {
+    "path": "assets/style-20/anchor-warm-yellow-ink-story-v3.png",
+    "dimensions": [1156, 1361],
+    "pixel_sha256": "1190a2cc02cf6ccb0ab165ba2f5d80234544438f9653d0b17d918ca718fbe030"
+  },
+  "privacy_status": "audited-not-sanitized",
+  "privacy_reason": "C2PA/JUMBF detected; sanitizer refused to modify without validation and re-signing",
+  "repeatability": {
+    "fixed_prompt_independent_runs": 3,
+    "accepted_after_complete_pipeline": 3,
+    "validator_scores": [35, 35, 35],
+    "v3_anchor_score": 37,
+    "v3_cross_subject_score": 36,
+    "production_strategy": "direct-generate-validate-reject-or-regenerate"
+  },
+  "user_visual_review_status": "approved",
+  "user_visual_reviewed_at": "2026-08-24T13:05:28Z",
+  "user_visual_review_evidence": "user replied: 通过"
+}

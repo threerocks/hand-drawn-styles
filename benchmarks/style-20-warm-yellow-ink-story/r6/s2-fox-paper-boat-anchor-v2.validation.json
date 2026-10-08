@@ -1,0 +1,20 @@
+{
+  "style_contract": "warm-yellow-ink-story-v2",
+  "image": "/Users/liulei/projects/hand-drawn-styles/benchmarks/style-20-warm-yellow-ink-story/r6/s2-fox-paper-boat-anchor-v2-minimal-final.png",
+  "image_sha256": "d37b849dbf621aacab6e4f9242a7a04e47a19400c2e83e611a308840d1aed7e5",
+  "source_image": "/Users/liulei/projects/hand-drawn-styles/benchmarks/style-20-warm-yellow-ink-story/r6/s2-fox-paper-boat-anchor-v2-base.png",
+  "source_image_sha256": "7b712c9f3008c7ec4fe26c30c9f75533640dc34874b9d522bbadaf480820e265",
+  "scorecard": "/Users/liulei/projects/hand-drawn-styles/benchmarks/style-20-warm-yellow-ink-story/r6/s2-fox-paper-boat-anchor-v2.scorecard.json",
+  "palette_metrics": {
+    "white_ratio": 0.9434857251859858,
+    "dark_ratio": 0.011680549373688561,
+    "mustard_ratio": 0.03963883766770522,
+    "coral_red_ratio": 0.00014624531061232276,
+    "disallowed_cool_ratio": 0.0,
+    "neon_yellow_ratio": 0.0004832453741972404
+  },
+  "review_score": 38,
+  "minimum_review_score": 32,
+  "failures": [],
+  "status": "pass"
+}

@@ -1,0 +1,13 @@
+Use case: precise-object-edit
+Asset type: style 20 anchor hygiene correction
+Input images: Image 1 is the current original style anchor and the only edit target.
+
+Primary request: remove ONLY three sources of repeat-generation drift from Image 1 while preserving every other visual fact exactly.
+
+1. Turn the standing child's pale shirt into one completely quiet, unpatterned warm-white field. Remove every horizontal yellow stripe, seam, cuff line, hem line and construction mark from that shirt. Keep its outline, shape, size and warm-white color unchanged.
+2. Simplify every visible hand into a tiny closed hook or mitten with zero, one or at most two short irregular finger notches. Remove groups of three or more parallel finger lines. Preserve every hand position, touch point and action.
+3. Keep the paper pinwheel, but simplify it to four broad uneven mustard-yellow paper blades around one small center and one plain black stick. Remove internal subdivisions, extra blade folds and mechanically precise geometry. Preserve its position, scale, color and identity.
+
+Preserve exactly: the two original people and their identities, ages, faces, expressions, hair silhouettes, body proportions, crouching-and-standing shoelace action, loose shoelace, clothing silhouettes, mustard-yellow placement on the crouching figure, black directional hatching in hair and lower garments, ground line, composition, framing, large warm-white negative space, paper softness, dry ink pressure variation, coral cheeks and all existing colors.
+
+Critical constraints: deletion and simplification only. Do not redesign, reposition, enlarge, shrink, recolor, add, replace or remove either person. Do not change the shoelace action, face, hair, pose, scale relationship, garment silhouette, black hatching, palette, paper texture, negative space or framing. Add no text, logo, signature, watermark, scenery, symbol, new prop, new texture, new color or new clothing detail.

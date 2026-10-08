@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "audited_at": "2026-08-24T11:33:51Z",
+  "status": "audited-not-sanitized",
+  "reason": "C2PA/JUMBF content credentials detected; the sanitizer cannot validate and re-sign them, so it refused to modify the file",
+  "file_sha256": "30a28cea22f821e92ed271fc52736a6cf545ce0d307fc85c81059df7b7d43060",
+  "pixel_sha256": "b74dd22a6c728ce954b7b9e5458e6c366af06e3ef57b473036b7c2918072e6cb",
+  "dimensions": [
+    1156,
+    1361
+  ],
+  "embedded_privacy_fields": {
+    "gps": false,
+    "device_make_or_model": false,
+    "device_serial": false,
+    "owner_name": false,
+    "host_computer": false,
+    "comment_or_user_comment": false,
+    "local_path_or_account": false
+  },
+  "macos_xattrs": {
+    "com.apple.provenance": true,
+    "where_from": false,
+    "quarantine": false
+  },
+  "bytes_modified": false
+}

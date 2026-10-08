@@ -1,0 +1,22 @@
+{
+  "style_contract": "warm-yellow-ink-story-v3",
+  "image_sha256": "f4e5cbf0a7908f3fa366c1ef4f00e994e59f8f25f507b560402111fd74799aa4",
+  "source_image_sha256": "f4e5cbf0a7908f3fa366c1ef4f00e994e59f8f25f507b560402111fd74799aa4",
+  "content_lock": {
+    "expected_subjects": {"human": 2},
+    "observed_subjects": {"human": 2},
+    "identity_preserved": true,
+    "required_objects_preserved": true
+  },
+  "scores": {
+    "shape-language": 4,
+    "face-language": 4,
+    "line-material": 4,
+    "directional-black-hatching": 5,
+    "mustard-yellow-material": 3,
+    "negative-space": 5,
+    "single-action-storytelling": 5,
+    "originality-boundary": 5
+  },
+  "hard_failures": []
+}

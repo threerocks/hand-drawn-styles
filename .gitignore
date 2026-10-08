@@ -8,3 +8,9 @@
 
 # Claude Code local
 .claude/settings.local.json
+
+# Python and local release outputs
+__pycache__/
+*.py[cod]
+dist/
+reports/

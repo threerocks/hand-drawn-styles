@@ -1,4 +1,6 @@
-# #19 暖色扁平绘本验证记录
+# 历史编号 #19 / 当前 #18 暖色扁平绘本验证记录
+
+> 本目录名保留自 2026-08-23 之前的编号。当前 `STYLES.md` 中暖色扁平绘本是 #18;当前 #19 是 `roundhead-redline`,验证资料在 `../style-19-roundhead-redline/`。不要按本目录名调用当前 #19。
 
 ## 目标
 
@@ -38,8 +40,8 @@
 
 ## 入库结果
 
-- 模板:`STYLES.md` #19。
+- 模板:`STYLES.md` #18。
 - 协议登记:`PROTOCOL.md`。
-- 典型样图:`examples/19-warm-flat-storybook.png`。
+- 典型样图:`examples/18-warm-flat-storybook.png`。
 - 单人、双人和动物泛化图只作为本目录的验证证据,不进入公开样图画廊。
 - 隐私审计:`privacy-audit.json`。

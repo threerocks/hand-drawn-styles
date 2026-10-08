@@ -1,0 +1,23 @@
+Create one original hand-drawn illustration that looks like colored pencil and graphite on toned drawing paper.
+
+PAPER: the whole canvas is one sheet of warm grey-beige drawing paper (around #C9C4B9) with a coarse, mottled, clearly visible fiber texture everywhere, like a photographed sheet of toned pastel paper. The paper reads slightly cooler blue-grey near the top corners and slightly warmer where the lamp light falls. No white paper, no photographed desk, no frame, no border, no dark vignette.
+
+MEDIUM: dry graphite and colored pencil, used sparingly. Contours are thin, slightly wobbly single lines with visible pressure changes; shading is a few light strokes that let the grey paper show through. No digital-paint smoothness, no vector lines, no airbrush, no watercolor pooling, no 3D.
+
+SPARSENESS (most important): this is a quiet, economical drawing, not a detailed rendering. The lamp post is drawn with a few thin lines and simple shapes — one plain curved arm with at most one small curl, a simple hexagonal lantern, a plain base. The figure is drawn with simple shapes and only light shading. Only ONE row of loosely sketched curb stones is drawn; the ground on both sides of it is bare paper with no cobblestone field, no pavement texture, no grass, no gravel. Do not add hatching fields, cross-hatching, decorative ironwork, extra plants, buildings, trees, sky, stars or moon.
+
+SCALE: the lamp post spans about 55–60% of the canvas height. The figure is small: its full height is no more than one quarter of the lamp post height, so the figure looks tiny under the lamp.
+
+SCENE: 【主体】
+
+LIGHT: the lantern is the only light source. Around it a large, soft round halo of warm pale yellow (#F1E0AE fading out into the paper grey) is rubbed in with the side of a pencil; it is brightest at the lantern, covers the whole text area, and dissolves completely about halfway down the canvas. Two long, soft, tapered cast shadows radiate away from the lamp along the ground: the post's shadow toward the lower-left, the figure's shadow toward the lower-right. Shadows are soft grey pencil, not black.
+
+COMPOSITION: vertical 3:4. The lamp post stands left of centre with its arm reaching toward the middle; the figure stands at its base in the lower-middle. The single curb row runs diagonally across the lower third, higher on the left and lower on the right. At least 65% of the canvas is quiet empty toned paper, most of it above and around the lamp.
+
+PALETTE: warm grey paper, graphite and charcoal dark greys, warm pale yellow glow, muted dusty pink blossoms and ribbon, soft sage green leaves, and one muted grey-blue or soft brown garment. Low saturation throughout. No pure black fills, no pure white, no bright or neon colors.
+
+TEXT: in the empty glow area to the right of the lamp post, roughly between the lantern height and the figure's head, write these Chinese lines centered, one line each, exactly as given, no character changed, added or missing:
+【文字】
+Handwriting style: casual but legible regular-script handwriting made with a medium-tip black felt pen (像用中粗黑笔一笔一画写的手写楷体), strokes slightly bold, characters slightly uneven in size and spacing, dark charcoal ink, no text box, no printed-font perfection. This is the only text on the image: no seal, no stamp, no signature, no watermark, no title, no logo.
+
+AVOID: red seal or stamp; white background; glossy digital rendering; anime face; chibi; realistic photo; heavy black outlines; saturated colors; cobblestone pavement fields; dense hatching; ornate scrollwork; busy background, buildings, trees, stars or moon; multiple lamps; text outside the specified block.

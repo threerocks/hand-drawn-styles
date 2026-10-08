@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "audited_at": "2026-09-04T05:38:21Z",
+  "classification": "generated-asset",
+  "c2pa_jumbf_detected": true,
+  "c2pa_actions": [
+    "c2pa.created",
+    "c2pa.converted",
+    "c2pa.watermarked.unbound"
+  ],
+  "software_agent": "gpt-image 2.0",
+  "claim_generator": "OpenAI Media Service API",
+  "digital_source_type": "http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia",
+  "generator_invocation": "Codex CLI built-in image_generation, prompt-v2-no-element-examples, text only (no --subject)",
+  "sanitizer_result": "not-modified-to-preserve-c2pa",
+  "provenance_preserved": true,
+  "bytes_modified": false
+}

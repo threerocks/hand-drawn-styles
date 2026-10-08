@@ -1,0 +1,29 @@
+name: Check skill and installation package
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.13']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -B -m unittest discover -s scripts -p 'test_*.py'
+      - run: python -B scripts/check_skill.py
+      - run: python -B scripts/build_skill_package.py
+      - uses: actions/upload-artifact@v4
+        if: matrix.python-version == '3.13'
+        with:
+          name: hand-drawn-skill
+          path: dist/hand-drawn-skill.zip

@@ -1,0 +1,25 @@
+{
+  "style_contract": "warm-yellow-ink-story-v2",
+  "image_sha256": "234232e5bb9ff2a0aeb9e8dc7a88327990f4d7adf7d710871c67a0a72662ae79",
+  "source_image_sha256": "92ae6b4bf17b8500cc818e8ca23f9a7b5e04c24a4cc0bf66fb5cb70e1f11b1a2",
+  "content_lock": {
+    "expected_subjects": {"human": 2},
+    "observed_subjects": {"human": 2},
+    "identity_preserved": true,
+    "required_objects_preserved": true
+  },
+  "reviewer_kind": "maintainer-visual-review",
+  "reviewed_at": "2026-08-24",
+  "scores": {
+    "shape-language": 4,
+    "face-language": 5,
+    "line-material": 4,
+    "directional-black-hatching": 5,
+    "mustard-yellow-material": 4,
+    "negative-space": 5,
+    "single-action-storytelling": 5,
+    "originality-boundary": 5
+  },
+  "hard_failures": [],
+  "notes": "Third-stage regression preserves the original action and removes clothing detail; the kite tail remains slightly more descriptive than repeats B and C."
+}

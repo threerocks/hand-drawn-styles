@@ -1,0 +1,11 @@
+Use case: precise-object-edit
+Asset type: cross-subject maintenance benchmark correction
+Input images: Image 1 is the edit target from round 1. Images 2-5 are visual references only for broad compact character geometry; do not copy their people, clothes, poses, compositions, text, or watermarks.
+
+Primary request: change only the fox's shape language. Keep the exact paper-boat lowering action, boat position, puddle marks, overall placement, yellow-and-black palette, dry black ink texture, warm-white paper, negative space, framing, and object count unchanged.
+
+Shape correction: convert the generic four-legged fox into a simple upright story-card figure balancing on one short leg while reaching down with one tiny hook paw to lower the boat. Give it a softly irregular rounded-square head, a very short blunt fox muzzle, two small tapered ears, a compact blocky torso, two extremely simple short arms, two simple short legs, and one loose curved tail. Preserve a readable fox silhouette without fur rendering or mascot volume. Remove anatomical joints, detailed paws, tapered realistic legs, and mainstream picture-book fox construction.
+
+Face correction: two tiny black dot or short-vertical eyes, one very short uneven mouth line, an optional tiny nose mark, and two small uneven coral cheek smudges. Emotion comes from head tilt, balancing foot, reaching paw, and tail curve. No eye whites, irises, highlights, eyelashes, detailed muzzle, or airbrushed volume.
+
+Constraints: change only the fox geometry. Do not change the composition, action, boat, water marks, palette, paper field, line material, or negative space. Add nothing. No text, logo, signature, or watermark.

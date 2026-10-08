@@ -1,0 +1,25 @@
+{
+  "style_contract": "warm-yellow-ink-story-v2",
+  "image_sha256": "21e60b93c709f83ce0acbc4f85052d688550999531d13891229f6ccb4b77cfd1",
+  "source_image_sha256": "15017e974168e7732c6484efeb383863938ecb12334598bd697d66131439d062",
+  "content_lock": {
+    "expected_subjects": {"human": 2},
+    "observed_subjects": {"human": 2},
+    "identity_preserved": true,
+    "required_objects_preserved": true
+  },
+  "reviewer_kind": "maintainer-visual-review",
+  "reviewed_at": "2026-08-24",
+  "scores": {
+    "shape-language": 5,
+    "face-language": 5,
+    "line-material": 4,
+    "directional-black-hatching": 5,
+    "mustard-yellow-material": 5,
+    "negative-space": 5,
+    "single-action-storytelling": 5,
+    "originality-boundary": 5
+  },
+  "hard_failures": [],
+  "notes": "The v2 anchor removes the pale repeated shirt stripes while preserving the original people, shoelace action, dry hatching, mustard accent, paper field and composition."
+}

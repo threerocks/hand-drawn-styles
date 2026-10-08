@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "audited_at": "2026-09-04T05:38:21Z",
+  "status": "audited-not-sanitized",
+  "reason": "C2PA/JUMBF content credentials detected; the file was not rewritten so the credentials stay verifiable. ExifTool audit found no GPS, device, owner, host, comment, account or local-path fields",
+  "audit_tool": "exiftool 13.55 (sweety-image-privacy not installed on this host)",
+  "file_sha256": "7b4951c055b705bdc74356b08c69a721fae50df156e29045eec3ffb3c0160f65",
+  "pixel_sha256": "3412197e2d0d87a98eed9ab1ff62e517b97828740662825786ff5260f4e28a33",
+  "dimensions": [
+    1086,
+    1448
+  ],
+  "embedded_privacy_fields": {
+    "gps": false,
+    "device_make_or_model": false,
+    "device_serial": false,
+    "owner_name": false,
+    "host_computer": false,
+    "comment_or_user_comment": false,
+    "local_path_or_account": false
+  },
+  "macos_xattrs": {
+    "com.apple.provenance": true,
+    "where_from": false,
+    "quarantine": false
+  },
+  "bytes_modified": false
+}

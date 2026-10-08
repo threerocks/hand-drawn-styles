@@ -1,0 +1,15 @@
+Use case: precise-object-edit
+Asset type: mandatory final-stage correction for style 20
+Input images: Image 1 is the newly generated edit target. Image 2 is the approved original style-only anchor.
+
+CONTENT AND SPECIES LOCK — HIGHEST PRIORITY: Image 1 is the only truth for subject count, species, identity, age, face, hair or fur silhouette, clothes, objects, pose and action. Image 2 supplies visual grammar only. If Image 1 contains one fox and no people, the output must contain the exact same one fox and no people. If Image 1 contains people, preserve those exact people. Never copy, import or substitute any person, animal, haircut, clothing, pinwheel, shoelace, object, pose or composition from Image 2.
+
+Primary request: remove only the excessive construction detail that makes Image 1 look like a polished commercial picture book. Preserve the exact people and animal identities, ages, facial expressions, poses, interaction, object count, object identities, character positions, composition, framing, ground line, warm-white background, paper softness, black-and-yellow palette, coral cheeks, dry ink pressure variation, directional black hatching, and yellow placement.
+
+Simplify Image 1's existing subjects within their current species while applying the anchor's compact handmade shape language: softly irregular rounded-square heads; short or absent necks; compact blocky torsos; short simple limbs; tiny hook or mitten hands with at most two short finger marks; rounded sock-like feet. Keep every species-defining ear, tail, muzzle patch or silhouette already present in Image 1. Keep clear age and size differences, but remove realistic anatomy and elongated forearms or legs.
+
+Simplify only what is overdescribed: remove individual articulated fingers, shoe construction lines, sock seams, garment ribbing, repeated clothing stripes, decorative stitching, small buttons, realistic joint creases, and mechanically precise prop construction. Keep only the minimum inner lines needed to identify the action and the required objects. If glasses are required, reduce them to two tiny imperfect loops and one short bridge.
+
+Keep black hair and dark lower garments as visible directional dry strokes with irregular white gaps and stroke endings. Do not turn them into smooth solid black. Keep yellow areas lightly uneven and matte. Do not alter colors.
+
+Critical constraints: change only geometry simplification and detail count. Do not redesign faces, hair identity, clothes, pose, action, composition, scale relationships, prop count, or palette. Do not add or remove people, animals, or required objects. No text, logo, signature, watermark, scenery, decorative symbols, new texture, or new color.

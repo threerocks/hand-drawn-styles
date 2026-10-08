@@ -1,0 +1,14 @@
+Use case: precise-object-edit
+Asset type: final material correction for an original style-anchor candidate
+
+Image 1 is the only content truth and edit target. Preserve its exact elderly woman and child, identities, faces, hair silhouettes, head and body proportions, wrist-fastening action, envelope, mitten, positions, overlap, scale, ground line, framing and empty-space composition. Images 2–4 provide line-and-fill material only; never copy their people, clothes, pose, composition, text, symbols or watermark.
+
+Change only these remaining material deviations:
+
+1. Break the overly even digital contour into restrained dry black pen marks. Keep the same outline path, but add small natural pressure changes, a few short gaps, blunt starts and stops, sparse imperfect retracing and slight local wobble where the pen catches on paper. Do not thicken the whole outline, add fuzzy noise or redraw the anatomy.
+
+2. Make the mustard garment and envelope matte and nearly flat. Remove smooth gradients, edge glow and airbrushed shading. Retain only slight uneven dry pigment density caused by paper tooth; keep the existing mustard hue and exact yellow placement.
+
+3. Simplify every visible hand to the same tiny hook or closed mitten at its current contact point. Keep zero to two short irregular finger notches. Remove groups of parallel fingers, fingernails and knuckle construction. Remove the child's drawn ear interior; keep only the minimum outer silhouette if needed.
+
+Preserve the directional scratch-built hair and black lower garments, irregular white slivers, warm-white paper, coral cheek marks and all other geometry. Add nothing. No text, logo, signature, watermark, symbols, scenery, shadows, new props or new color.

@@ -309,7 +309,7 @@ STYLE RECIPE (follow exactly): MATTE traditional gouache finish over the whole i
 >
 > 出身:Midjourney --sref 1399033614 的 gpt-image 复刻(2026-07-16 五张对照迭代定稿,refB 终评 96+):层叠纸雕 × 斯堪的纳维亚民俗图案 × 编辑设计配色,手工、温暖、个性。适合人物立绘、民俗动物、叙事场景。
 > 命门(两轮翻车点,五条都必须写死):**① NOT flat papercut**——不写就出平面对称剪纸花边(第一版翻车原因);本风格是"立体纸雕塑的柔光渲染/实拍",不是剪纸;**②头是定格木偶式立体雕塑头**——不写死就出"平面贴片脸+画上去的三角鼻"(第二轮翻车原因):刘海是有体积的圆顶并在额头投影、鼻子是物理凸出的纸楔(一侧受光一侧投影);**③留白 + 不对称 editorial 构图**——不写死模型会把画面填满变成装饰壁纸;**④立体感三件套**:部件物理垫高 + 大而柔的真实投影 + 左上柔光 + 背景方向性明暗渐变,丢一样就"变平";**⑤脸的身份特征**:闭眼细弧线 + 圆形腮红贴片,眼睛一睁开就串味。
-> 满分打法(codex/gpt-image 通道):生成前先用 view_image 看 `examples/14-paper-folk.png` 和 `14-paper-folk-musician.png` 做风格锚定(只学风格不抄构图),再走本模板——实测比纯文字模板再高一档(96+ vs ~90)。
+> 满分打法(codex/gpt-image 通道):生成前先用 view_image 看 `examples/13-paper-folk.png` 和 `examples/13-paper-folk-musician.png` 做风格锚定(只学风格不抄构图),再走本模板——实测比纯文字模板再高一档(96+ vs ~90)。
 > 模板为已验证英文原文,占位符也填英文,不要转译。
 
 ```
@@ -438,6 +438,127 @@ TEXTURE: barely perceptible fine uncoated-paper softness across the whole image,
 MOOD: intimate, playful, emotionally warm, elegant modern children’s storybook.
 AVOID: generic corporate vector clip-art, stock infographic people, mainstream round cartoon faces, chibi proportions, thick outlines, strong gradients, glossy airbrush, 3D, gouache, watercolor, pencil, dry brush, anime eyes, detailed or decorative background.
 【文字】
+```
+
+---
+
+## 19. 圆头红线极简童画(roundhead-redline)
+
+> 别名:`roundhead-redline`、`redline-roundhead`、`graphite-redline`、`圆头红线`、`黑红白圆头童画`。纯风格。比例:不传则不注入。占位符 `【主体】【文字】` 自动推断。正式生产必须附带 `assets/style-19/anchor-roundhead-redline.png`，默认无字。
+>
+> 研发边界:本配方从五张外部动画设定参考中抽取平面结构、铅笔压力、干性颜料、限色色板和负空间机制；锚点、样图、默认人物、服装、道具和动作均为原创，不保存或分发外部参考，不复现片名、标识、固定角色、固定红白横条服装或海报排版。
+>
+> 命门:①**锚点是主视觉真源**——正式生产每张都必须传入原创三主体锚点，锚点按 1024×1536 解码像素 SHA-256 固定；缺失、换图、像素变化或调用端不能传高保真参考图时停止生产；②**平面大头小身，但不是 Q 版**——头是轻微不规则的大圆/椭圆，躯干明显更小，四肢是极细弹性单线，动作靠长弧线、倾斜和失衡支点表达，禁止三维体积和标准化萌系骨架；③**脸只留两道竖眼**——两道粗重、不等长、不完全平行的炭黑竖痕，无眼白、虹膜、高光、写实鼻唇；情绪来自头部与全身姿态；④**线必须像真实铅笔**——细石墨轮廓在同一条曲线里有压力深浅、纸纹断续、少量试探性重描，不能是干净矢量线，也不能整画套统一抖动滤镜；⑤**黑红白限色**——暖白纸、石墨灰、炭黑和单一珊瑚红；红色每个动作只承担一个明确焦点，低压腮红除外；⑥**白底是构图的一部分**——只画一个主动作和最多两件必要道具，禁止完整房间、风景、透视地面和投影系统。
+>
+> 稳定性合同为 `roundhead-redline-v1`:基础生成必须使用固定锚点和锁定的模型快照，输出先标记为 `candidate-only`；调用端按机读硬失败条件检查后才能标记为 final。后期“统一加粗/抖线/蜡笔滤镜”不能补救偏离，失败图应拒收并从同一锚点重新生成。当前验证发现，只改线条的编辑阶段改善有限，因此不把编辑阶段设为强制步骤。
+>
+> `【文字】` 正式生产固定填 `No text anywhere.`。需要标题或海报文字时先生成无字底图，再走独立排版流程；不要让文字生成风险污染画风回归。
+>
+> 模板为已验证的英文原文，占位符中的主体也建议使用具体英文动作描述；不要转译或缩写配方。
+
+```
+Image 1 is the only approved style-only anchor. Transfer its visual grammar, not its people, animal, clothes, objects, positions or actions.
+
+SUBJECT: 【主体】.
+
+VISUAL CONTRACT:
+A radically minimal, flat, handmade children's-animation drawing on bright near-white paper. No 3D volume. Build each subject from one dominant large, slightly irregular round or oval head, a much smaller simple torso, extremely thin elastic single-line limbs, three- or four-stroke twig hands and tiny bent-hook feet. The gesture must read through long action arcs, asymmetry, body lean and an intentionally unstable point of balance. Do not reuse one standardized skeleton across subjects.
+
+Faces use exactly two thick near-vertical charcoal eye marks, slightly unequal and not perfectly parallel; no eye whites, pupils, irises, highlights, eyelashes, modeled nose or realistic lips. Emotion comes from head tilt, eye-mark tilt and whole-body gesture. Optional cheeks are two faint uneven low-pressure coral rubs.
+
+Outer contours are thin real graphite pencil lines, not clean vector paths: pressure visibly breathes from faint gray to darker graphite within a curve; paper tooth causes microscopic breaks; selected contours include one short offset searching stroke or a brief retraced dark patch. Keep this sparse and accidental, not an all-over sketch effect. Charcoal-black and coral-red filled areas show dry colored-pencil or wax-pastel rubbing with uneven pressure, starts, stops and crossing passes; never a repeated digital texture.
+
+STRICT PALETTE: bright near-white paper, graphite gray, charcoal black and one coral-red hue only. Coral red is one rhythmic focal accent on the explicitly named prop or garment detail, plus optional faint cheeks. Do not invent another coral garment or object.
+
+COMPOSITION: the unpainted white field occupies most of the canvas. One main action, at most two necessary props, no room, landscape, decorative background, horizon, perspective floor or cast-shadow system. Under a subject, at most one short loose gray pencil smudge.
+
+AVOID: any title, logo, watermark or poster layout; red-and-white striped shirt with black shorts; commercial vector art; stock icon; generic cute storybook; chibi; anime; 3D; realistic anatomy; smooth digital line; uniform thick outline; smooth gradient; airbrushed blush; repeated procedural crayon texture; photographic paper scene.
+
+【文字】
+```
+
+---
+
+## 20. 暖黄墨线情绪小剧场(warm-yellow-ink-story)
+
+> 别名:`warm-yellow-ink-story`、`yellow-ink-story`、`mustard-ink-story`、`暖黄墨线`。纯风格。比例:不传则不注入。占位符 `【主体】【文字】` 自动推断。正式生产必须附带 `assets/style-20/anchor-warm-yellow-ink-story-v3.png`，默认无字。
+>
+> 研发边界:本配方从十张外部参考中抽取暖白负空间、干性黑色墨线、方向性黑色排线、芥末黄、淡珊瑚腮红、紧凑形体和单动作叙事机制。原创锚点、样图、默认人物、动物和动作均为本轮新设计；不保存或分发外部参考，不复现作者名、账号、水印、固定黄兜帽角色、原作文案或原图布局。
+>
+> 命门:①**锚点是主视觉真源**——每次基础生成和细节简化都必须传入原创锚点，锚点按 1154×1363 解码像素 SHA-256 固定；②**形体紧凑但不是三维 Q 版**——圆方头约占总高度三分之一至二分之一，短颈或无颈、块状短躯干、短而松弛的四肢、钩形或连指手、圆钝袜形脚；③**脸只留最少信息**——小点或短竖线眼、极短弯嘴、可省略的小鼻点和两团低压淡珊瑚腮红，情绪主要靠倾斜、距离和接触动作；④**黑色不是矢量块**——轮廓有真实干性墨线的压力变化、断续和少量回描，头发与深色下装由方向性排线组成并保留不规则纸白缝；⑤**暖白、墨黑、芥末黄、淡珊瑚四色**——黄色只承担一至两个焦点，不出现大面积蓝紫色、渐变或彩色背景；⑥**白底承担构图**——只讲一个动作，最多两件必要道具，主体位于中下部，禁止完整室内、风景和投影系统。
+>
+> 稳定性合同为 `warm-yellow-ink-story-v3`。第一阶段按顶层 prompt 和 v3 锚点直接生成 `final-candidate`；随后必须运行 `validate_style_20_asset.py`，同时通过像素色板、主体内容锁、8 项人工评分和硬失败检查，才能标记为 final。候选不合格时整张拒收并从基础生成重新开始，禁止用通用画风迁移编辑修补。v2 的连续编辑曾稳定保留商业绘本偏差，并出现狐狸被锚点人物替换、手部被放大成白色手套等回归，因此不再进入正式合同。锚点失效、模型快照无法锁定、高保真参考图不可用或验收器缺失时，正式生产失败关闭。
+>
+> `【文字】` 正式生产固定填 `No text anywhere.`。标题、文案和排版应在无字底图验收后单独处理。
+>
+> 模板为已验证英文原文，占位符中的主体也建议使用具体英文动作描述；不要转译、缩写或追加第二套画风规则。
+
+```
+Image 1 is the only approved style-only anchor. Transfer its visual grammar, not its people, hair, clothes, animal, props, positions or actions.
+
+SUBJECT: 【主体】.
+
+Create one original minimalist warm-yellow ink story vignette on a flat warm-white drawing-paper field. The paper has only extremely subtle even fiber softness: no photographed sheet, desk, folds, paper edge, cast shadow or vignette.
+
+COMPOSITION: place one compact, immediately readable action in the lower-middle with large calm empty space around and above it. Use no scenery or decorative filler. Include at most two props that directly participate in the action. A single slightly crooked black ground line or a few loose graphite contact marks are allowed only when needed.
+
+SHAPE LANGUAGE: human figures use softly irregular rounded-square pale faces; heads occupy roughly 38–45% of figure height; necks are absent or nearly absent; torsos are compact and blunt; limbs are very short, simple and relaxed; hands stay tiny and subordinate, using only a few short non-anatomical marks; feet are rounded sock-like blocks. Keep clear age and size differences, and give recurring figures different head shapes, shoulder widths, hair silhouettes and postures. Animals inherit the compact proportions and tiny face while retaining every silhouette required to read the species; never force human clothing structure onto an animal. No chibi sphere heads, mascot volume or realistic anatomy.
+
+FACES: use two tiny black dots or short vertical eyes, one very short uneven curved mouth, an optional tiny nose mark and two faint uneven coral-pink cheek smudges. Emotion comes mainly from head tilt, body distance, touch and gesture. No eye whites, irises, highlights, eyelashes, detailed lips, airbrushed skin or copy-pasted smiles.
+
+LINE AND BLACK MASSES: use fine-to-medium near-black dry ink contours with small pressure changes, occasional broken ends, slight wobble, sparse retracing and a few flyaway hair lines. Hair and dark lower garments must be built from visible directional dry strokes with irregular white gaps, starts, stops and crossing passes. Never use clean vector paths, a uniform thick outline, smooth solid-black silhouettes or one repeated digital noise texture.
+
+COLOR AND MATERIAL: use only warm-white paper, near-black ink, one muted warm mustard yellow around #E6C45C and tiny coral-pink cheek marks around #E78E84. Yellow fill is lightly uneven, matte and dry, and appears on at most two clothing or prop areas. Do not introduce blue, purple, cyan, large green or red areas, gradients, rainbow clothing or a colored background.
+
+STORY DISCIPLINE: tell one relationship or action through posture and contact. Keep symbols secondary. Hands may use a few short finger marks only when they stay visually subordinate; reject oversized hands, anatomical joints, fingernails and realistic articulation. Remove shoe construction lines, sock seams, garment ribbing, repeated clothing stripes, decorative stitching, small buttons, realistic joint creases and mechanically precise prop construction. Keep only the minimum inner lines required to identify the action and objects.
+
+ORIGINALITY BOUNDARY: do not recreate any supplied character, paired yellow-hoodie combination, recognizable hairstyle, outfit, pose, composition, text, watermark or account identity. Add no title, logo, signature, caption, speech bubble, hearts, stars, flowers or unrelated ornament.
+
+AVOID: commercial children's-book polish; vector clip-art; generic cute storybook; chibi; anime; 3D; glossy rendering; smooth black fills; fluorescent yellow; detailed room or landscape; photographic paper scene.
+
+【文字】
+```
+
+---
+
+## 21. 手写独白彩铅(pencil-monologue)
+
+> 别名:`pencil-monologue`、`handwritten-monologue`、`monologue-card`、`手写独白`、`彩铅独白`、`独白卡`、`手写独白彩铅`。纯风格,**自带文案**。占位符 `【画幅】【主体】【文字】`:`【文字】` 必填;`【主体】` 默认是"先读文案,再由模型自己决定画什么、有没有人、从哪个角度、放在哪里"的指令,只有需要固定内容时才自定义;`【画幅】` 默认 `Vertical 3:4.`,用户传比例时替换。不需要参考锚点。
+>
+> 边界:本配方**只定义风格**,不定义构图、元素、场景和文字位置。两张外部参考(灰纸路灯下仰望的小女孩、暖白纸石阶上背影女子搂橘猫)是同一作者同一风格的两种内容,配方从中只抽取纸面、线、彩铅笔触、限色、留白和手写字机制。默认人物、场景、文案样例均为本轮新写;不保存或分发外部参考,不复现原图的红色印章、作者名或账号。
+>
+> 命门:①**图画纸**——暖白到暖灰的一整张图画纸,纸纹细密均匀且明显弱于铅笔线,不能是斑驳、浮雕、大理石或漩涡纹;②**细石墨线 + 干性彩铅**——轮廓细而微抖、有压力变化,彩铅是短直或微弯的方向性排线并露纸纹,不能是圈状涂抹、平涂、水彩或矢量线;③**低饱和限色**——全画最多一两处饱和铅笔色,其余是石墨灰、纸色和灰调色,没有渐变、黑色填充和彩色背景;④**稀疏大留白**——只画这段文案需要的东西,至少一半纸面留空,没有天空、远景和密排线场;⑤**手写中文**——中粗黑笔一笔一画的手写楷体,一行一句、居中、空行分段、逐字准确,写在没有画的空纸上,不与画重叠,没有印章、签名和水印;⑥**安静克制的语气**——画是文案的陪衬,不逐句图解。
+>
+> 验证(2026-09-04,Codex 内置生图):v1 在 ECONOMY 与 COLOR 段举了"人物、同伴、植物、衣物、动物"等元素例子,四段不同文案出图 4/4 都是"蓝毛衣背影 + 橘猫 + 盆栽";v2 删掉所有元素例子后,同样四段文案得到窗台杯花、走路的女孩、雨窗手机等不同内容,画风保持一致。之后做了同文案重复与新文案验证,详见 `benchmarks/style-21-pencil-monologue/`。前一版按场景锁定的"灯下独白"与"彩铅背影独白"配方已作废,记录归档在同目录 `superseded/`。
+>
+> 默认 `【主体】` 原文:
+>
+> `Read the text first and invent one small, quiet moment that fits its meaning and mood. The text alone decides what appears: it may be a person, two people, an animal, a single object or just a place; whether anyone is shown, from which angle, doing what, in what setting, and where the drawing and the text sit on the paper are all yours to choose. Do not default to the same scene every time.`
+>
+> `【文字】` 填法:一行一句,真实换行或字面 `\n`,单段落无换行时按 `，。！？；` 自动断句;空行画成两段之间的空行。已验证 3–8 行、每行 2–13 字。已知轻微漂移:末行省略号偶尔画成 5 个点;输出偶尔为 2:3,需归一到目标尺寸;不给主体时模型偏爱窗台静物,需要人物出现就传 `--subject`。
+>
+> 模板为已验证英文原文,不要转译或缩写。
+
+```
+Create one original illustration in this exact visual style: a quiet hand-drawn "words + small drawing" card made with graphite and colored pencil on drawing paper, the kind of page a person draws and hand-letters for a short personal reflection. 【画幅】
+
+PAPER: the whole canvas is one sheet of drawing paper, warm off-white to light warm grey (choose the tone that suits the mood, anywhere from cream #EDE7D8 to warm grey #C9C4B9), with a fine, even, matte paper grain that stays much weaker than the pencil strokes. The grain must never become a mottled, embossed, marbled, fingerprint-like or swirling pattern. No pure white, no desk, no frame, no border, no vignette.
+
+LINE AND MEDIUM: thin, slightly wobbly graphite contours with visible pressure changes and a few light hatching strokes for shading. Color is dry colored pencil laid down as short, straight or gently curved directional hatching with paper grain showing through; never loops, scribble swirls or whorls. Any glow or soft light is rubbed in with the side of a pencil. No digital smoothness, no vector lines, no airbrush, no watercolor, no ink fills, no 3D, no heavy black outlines.
+
+COLOR: mostly low saturation. At most one or two areas carry a clearly saturated pencil color; everything else stays graphite grey, paper tone and muted colors. No gradients, no black fills, no neon, no colored background.
+
+ECONOMY: a sparse drawing, not a rendered scene. Draw only what this particular text needs and nothing more; at least half of the paper stays empty. No sky, no distant landscape, no crowded props, no decorative fields of texture, no dense hatching areas.
+
+SUBJECT: 【主体】
+
+TEXT: hand-letter these Chinese lines on an empty part of the paper where the drawing is not, one line per given line, lines centered on each other, exactly as given, no character changed, added or missing; an empty line means a visible blank line between two stanzas:
+【文字】
+Handwriting: casual but legible regular-script handwriting made with a medium-tip black felt pen (像用中粗黑笔一笔一画写的手写楷体), strokes slightly bold, characters slightly uneven in size and spacing, dark charcoal ink, no text box, no printed-font perfection. Text and drawing never overlap. This is the only text on the image: no seal, no stamp, no signature, no watermark, no title, no logo.
+
+MOOD: quiet, gentle, a little wistful. The drawing is a small companion to the words, not an illustration of every phrase.
+
+AVOID: red seal or stamp; white or colored background; glossy digital rendering; anime face; chibi; realistic photo; heavy black outlines; saturated everything; busy background; swirling or embossed texture; dense cross-hatching fields; text overlapping the drawing; multiple text blocks.
 ```
 
 ---

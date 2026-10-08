@@ -1,0 +1,14 @@
+Use case: precise-object-edit
+Asset type: mandatory species-silhouette correction for style 20 cross-subject output
+
+CONTENT AND SPECIES LOCK — HIGHEST PRIORITY: Image 1 is the only content truth and edit target. It is intended to contain exactly one small bear cub balancing exactly one mustard-yellow leaf on its nose, with no people. Preserve its one-foot pose, head tilt, leaf contact, position, scale, ground line, framing, palette, paper, line material and empty-space composition. Image 2 supplies style only. Never copy or substitute Image 2's elderly woman, child, hair, clothes, envelope, mitten, pose or composition.
+
+Correct only the weak animal readability in Image 1. Make the existing figure unmistakably a bear cub while preserving the same compact silhouette:
+- show two small rounded bear ears attached symmetrically near the upper sides of the head, not human ears;
+- add one tiny pale oval muzzle patch around the existing black nose and mouth;
+- remove any human ear interior, human hairline, shirt neckline, waistband, shorts shape or sock seam;
+- merge the head, shoulders and torso into one compact animal body with four extremely short paw-like limbs;
+- keep the existing raised forepaws and one lifted hind paw at their current locations;
+- keep the dark lower-body region as irregular directional black strokes, but let it read as a simple fur patch rather than clothing.
+
+Do not enlarge the ears, muzzle, paws or leaf. Do not add claws, fur rendering, tail, clothes, accessories, scenery, shadow, text, symbol, logo, signature, watermark or new color. Do not polish or smooth the dry handmade line.

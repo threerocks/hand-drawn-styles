@@ -1,0 +1,20 @@
+{
+  "style_contract": "warm-yellow-ink-story-v2",
+  "image": "/Users/liulei/projects/hand-drawn-styles/benchmarks/style-20-warm-yellow-ink-story/r4/s3-grandmother-kite-repeat-a-minimal-final.png",
+  "image_sha256": "234232e5bb9ff2a0aeb9e8dc7a88327990f4d7adf7d710871c67a0a72662ae79",
+  "source_image": "/Users/liulei/projects/hand-drawn-styles/benchmarks/style-20-warm-yellow-ink-story/r3/s3-grandmother-kite-base.png",
+  "source_image_sha256": "92ae6b4bf17b8500cc818e8ca23f9a7b5e04c24a4cc0bf66fb5cb70e1f11b1a2",
+  "scorecard": "/Users/liulei/projects/hand-drawn-styles/benchmarks/style-20-warm-yellow-ink-story/r4/s3-grandmother-kite-repeat-a.scorecard.json",
+  "palette_metrics": {
+    "white_ratio": 0.918018195573809,
+    "dark_ratio": 0.04883941229949584,
+    "mustard_ratio": 0.008620963691501738,
+    "coral_red_ratio": 0.0002479480707732801,
+    "disallowed_cool_ratio": 0.0,
+    "neon_yellow_ratio": 0.0
+  },
+  "review_score": 37,
+  "minimum_review_score": 32,
+  "failures": [],
+  "status": "pass"
+}

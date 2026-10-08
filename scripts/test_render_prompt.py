@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 import importlib.util
 import struct
@@ -11,10 +12,12 @@ import tempfile
 import unittest
 import zlib
 from pathlib import Path
+from unittest.mock import patch
 
 
 ROOT = Path(__file__).resolve().parents[1]
 RENDERER = ROOT / "scripts/render_prompt.py"
+STYLE_20_VALIDATOR = ROOT / "scripts/validate_style_20_asset.py"
 SPEC = importlib.util.spec_from_file_location("render_prompt", RENDERER)
 RENDER_PROMPT = importlib.util.module_from_spec(SPEC)
 assert SPEC and SPEC.loader
@@ -22,9 +25,41 @@ SPEC.loader.exec_module(RENDER_PROMPT)
 
 
 class RenderPromptTests(unittest.TestCase):
+    def create_palette_fixture(self, directory: Path, name: str = "candidate") -> tuple[Path, Path]:
+        image = directory / f"{name}.png"
+        width = height = 100
+        paper = b"\xf8\xf7\xf1" if name == "candidate" else b"\xfa\xf9\xf3"
+        pixels = paper * 9000 + b"\x1e\x1e\x1e" * 400 + b"\xb4\x8c\x28" * 600
+        rows = b"".join(b"\x00" + pixels[row * width * 3:(row + 1) * width * 3] for row in range(height))
+
+        def png_chunk(kind: bytes, content: bytes) -> bytes:
+            return struct.pack(">I", len(content)) + kind + content + struct.pack(">I", zlib.crc32(kind + content) & 0xFFFFFFFF)
+
+        image.write_bytes(b"\x89PNG\r\n\x1a\n" + png_chunk(b"IHDR", struct.pack(">IIBBBBB", width, height, 8, 2, 0, 0, 0)) + png_chunk(b"IDAT", zlib.compress(rows)) + png_chunk(b"IEND", b""))
+        scorecard = directory / f"{name}.scorecard.json"
+        digest = hashlib.sha256(image.read_bytes()).hexdigest()
+        scorecard.write_text(json.dumps({
+            "style_contract": "warm-yellow-ink-story-v3",
+            "image_sha256": digest,
+            "source_image_sha256": digest,
+            "content_lock": {"expected_subjects": {"human": 2}, "observed_subjects": {"human": 2}, "identity_preserved": True, "required_objects_preserved": True},
+            "scores": {dimension: 5 for dimension in ("shape-language", "face-language", "line-material", "directional-black-hatching", "mustard-yellow-material", "negative-space", "single-action-storytelling", "originality-boundary")},
+            "hard_failures": [],
+        }), encoding="utf-8")
+        return image, scorecard
+
     def run_renderer(self, *args: str) -> subprocess.CompletedProcess[str]:
         return subprocess.run(
             [sys.executable, str(RENDERER), *args],
+            cwd=ROOT,
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+
+    def run_style_20_validator(self, *args: str) -> subprocess.CompletedProcess[str]:
+        return subprocess.run(
+            [sys.executable, str(STYLE_20_VALIDATOR), *args],
             cwd=ROOT,
             check=False,
             capture_output=True,
@@ -278,6 +313,394 @@ class RenderPromptTests(unittest.TestCase):
         self.assertEqual(payload["references"][1]["role"], "character")
         self.assertEqual(payload["references"][1]["must_not_replace"], "the style-only reference")
 
+    def test_style_19_alias_defaults_to_locked_json_contract(self) -> None:
+        result = self.run_renderer(
+            "--style",
+            "roundhead-redline",
+            "--subject",
+            "a small elephant calf lifting one coral-red paper lantern with its trunk",
+            "--aspect",
+            "3:4",
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        payload = json.loads(result.stdout)
+        self.assertEqual(payload["style_id"], "19")
+        self.assertEqual(payload["style_contract"], "roundhead-redline-v1")
+        self.assertEqual(payload["references"][0]["role"], "style-only")
+        self.assertIn("assets/style-19/anchor-roundhead-redline.png", payload["references"][0]["path"])
+        self.assertTrue(Path(payload["references"][0]["path"]).is_file())
+        self.assertEqual(payload["inputs"]["variables"]["文字"], "No text anywhere.")
+        self.assertIn("SUBJECT: a small elephant calf", payload["prompt"])
+        self.assertIn("画幅比例:3:4。", payload["prompt"])
+        self.assertNotIn("【主体】", payload["prompt"])
+        self.assertNotIn("【文字】", payload["prompt"])
+        self.assertEqual(
+            payload["model_requirements"]["model_snapshot"],
+            "gpt-image-2-2026-04-21",
+        )
+        self.assertTrue(payload["model_requirements"]["snapshot_lock_required"])
+        self.assertFalse(payload["validation_evidence"]["exact_candidate_snapshot_observed"])
+        self.assertEqual(payload["workflow"]["final_output_stage"], "style-contract-check")
+        self.assertEqual(payload["workflow"]["stages"][0]["output_status"], "candidate-only")
+        self.assertEqual(payload["workflow"]["stages"][1]["pass_status"], "final")
+        self.assertEqual(payload["acceptance_contract"]["minimum_score"], 30)
+        self.assertIn(
+            "clean digital outline without visible graphite pressure variation",
+            payload["acceptance_contract"]["hard_failures"],
+        )
+
+    def test_style_19_character_reference_follows_style_anchor(self) -> None:
+        character_reference = ROOT / "assets/style-19/anchor-roundhead-redline.png"
+        result = self.run_renderer(
+            "--style",
+            "19",
+            "--subject",
+            "a tall gardener leaning down to water one seedling",
+            "--character-reference",
+            str(character_reference),
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        payload = json.loads(result.stdout)
+        self.assertEqual(payload["references"][0]["role"], "style-only")
+        self.assertEqual(payload["references"][1]["role"], "character")
+        self.assertEqual(payload["references"][1]["must_not_replace"], "the style-only reference")
+
+    def test_style_19_rejects_subject_style_injection(self) -> None:
+        result = self.run_renderer(
+            "--style",
+            "19",
+            "--subject",
+            "一只狐狸采用水彩风格和粗黑轮廓",
+        )
+        self.assertEqual(result.returncode, 2)
+        self.assertIn("画风 19 的主体字段只能描述人物、动作、关系和道具", result.stderr)
+
+    def test_style_19_rejects_inline_text_and_title(self) -> None:
+        text_result = self.run_renderer(
+            "--style",
+            "19",
+            "--subject",
+            "a girl holding a kite",
+            "--text",
+            "hello",
+        )
+        self.assertEqual(text_result.returncode, 2)
+        self.assertIn("固定为无字底图", text_result.stderr)
+
+        title_result = self.run_renderer(
+            "--style",
+            "19",
+            "--subject",
+            "a girl holding a kite",
+            "--title",
+            "hello",
+        )
+        self.assertEqual(title_result.returncode, 2)
+        self.assertIn("标题需走独立排版流程", title_result.stderr)
+
+    def test_style_19_metadata_only_change_preserves_anchor_identity(self) -> None:
+        original = ROOT / "assets/style-19/anchor-roundhead-redline.png"
+        with tempfile.TemporaryDirectory() as temp_dir:
+            candidate = Path(temp_dir) / "anchor.png"
+            data = original.read_bytes()
+            iend_offset = data.rfind(b"\x00\x00\x00\x00IEND")
+            self.assertGreater(iend_offset, 0)
+            chunk_type = b"tEXt"
+            chunk_data = b"audit=metadata-only-change"
+            metadata_chunk = (
+                struct.pack(">I", len(chunk_data))
+                + chunk_type
+                + chunk_data
+                + struct.pack(">I", zlib.crc32(chunk_type + chunk_data) & 0xFFFFFFFF)
+            )
+            candidate.write_bytes(data[:iend_offset] + metadata_chunk + data[iend_offset:])
+            self.assertNotEqual(candidate.read_bytes(), original.read_bytes())
+            RENDER_PROMPT.validate_style_19_anchor(candidate)
+
+    def test_style_19_modified_anchor_pixels_fail_closed(self) -> None:
+        original = ROOT / "assets/style-19/anchor-roundhead-redline.png"
+        with tempfile.TemporaryDirectory() as temp_dir:
+            candidate = Path(temp_dir) / "anchor.png"
+            data = bytearray(original.read_bytes())
+            idat_offset = data.find(b"IDAT")
+            self.assertGreater(idat_offset, 0)
+            data[idat_offset + 8] ^= 1
+            candidate.write_bytes(data)
+            with self.assertRaisesRegex(ValueError, "PNG 校验失败|像素不匹配|像素数据损坏"):
+                RENDER_PROMPT.validate_style_19_anchor(candidate)
+
+    def test_style_20_alias_defaults_to_v3_generate_then_validate_contract(self) -> None:
+        result = self.run_renderer(
+            "--style",
+            "warm-yellow-ink-story",
+            "--subject",
+            "a grandmother and child repairing one mustard-yellow kite together",
+            "--aspect",
+            "3:4",
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        payload = json.loads(result.stdout)
+        self.assertEqual(payload["style_id"], "20")
+        self.assertEqual(payload["style_contract"], "warm-yellow-ink-story-v3")
+        self.assertEqual(payload["references"][0]["role"], "style-only")
+        self.assertIn(
+            "assets/style-20/anchor-warm-yellow-ink-story-v3.png",
+            payload["references"][0]["path"],
+        )
+        self.assertTrue(Path(payload["references"][0]["path"]).is_file())
+        self.assertEqual(payload["inputs"]["variables"]["文字"], "No text anywhere.")
+        self.assertIn("SUBJECT: a grandmother and child", payload["prompt"])
+        self.assertIn("画幅比例:3:4。", payload["prompt"])
+        self.assertEqual(
+            payload["model_requirements"]["model_snapshot"],
+            "gpt-image-2-2026-04-21",
+        )
+        self.assertEqual(payload["workflow"]["final_output_stage"], "style-contract-check")
+        base_stage, validation_stage = payload["workflow"]["stages"]
+        self.assertEqual(base_stage["output_status"], "final-candidate")
+        self.assertEqual(validation_stage["operation"], "validate")
+        self.assertEqual(validation_stage["input_source"], "base-generation.output")
+        self.assertEqual(validation_stage["validator"]["required_exit_code"], 0)
+        self.assertIn("validate_style_20_asset.py", validation_stage["validator"]["command"][1])
+        self.assertIn("--source-image", validation_stage["validator"]["command"])
+        self.assertEqual(validation_stage["pass_status"], "final")
+        self.assertIn("reject and regenerate", payload["workflow"]["rejection_policy"])
+        self.assertEqual(payload["acceptance_contract"]["minimum_score"], 34)
+        self.assertEqual(payload["acceptance_contract"]["maximum_score"], 40)
+
+    def test_style_20_character_reference_follows_style_anchor(self) -> None:
+        character_reference = ROOT / "assets/style-20/anchor-warm-yellow-ink-story-v3.png"
+        result = self.run_renderer(
+            "--style",
+            "20",
+            "--subject",
+            "a girl passing one paper boat to her grandfather",
+            "--character-reference",
+            str(character_reference),
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        payload = json.loads(result.stdout)
+        self.assertEqual(payload["references"][0]["role"], "style-only")
+        self.assertEqual(payload["references"][1]["role"], "character")
+        self.assertEqual(payload["references"][1]["must_not_replace"], "the style-only reference")
+
+    def test_style_20_rejects_subject_style_injection(self) -> None:
+        result = self.run_renderer(
+            "--style",
+            "20",
+            "--subject",
+            "一位奶奶和孩子采用水彩质感与统一粗黑轮廓",
+        )
+        self.assertEqual(result.returncode, 2)
+        self.assertIn("画风 20 的主体字段只能描述人物、动作、关系和道具", result.stderr)
+
+    def test_style_20_rejects_inline_text_and_title(self) -> None:
+        text_result = self.run_renderer(
+            "--style",
+            "20",
+            "--subject",
+            "a child holding a kite",
+            "--text",
+            "hello",
+        )
+        self.assertEqual(text_result.returncode, 2)
+        self.assertIn("固定为无字底图", text_result.stderr)
+
+        title_result = self.run_renderer(
+            "--style",
+            "20",
+            "--subject",
+            "a child holding a kite",
+            "--title",
+            "hello",
+        )
+        self.assertEqual(title_result.returncode, 2)
+        self.assertIn("画风 19/20 的标题需走独立排版流程", title_result.stderr)
+
+    def test_style_21_defaults_to_text_driven_subject_and_splits_text(self) -> None:
+        result = self.run_renderer(
+            "--style",
+            "手写独白",
+            "--text",
+            "人总是这样，一瞬间想通了，释怀了，可下一秒又想不通了，大道理都懂，可小情绪难以自控……",
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn(RENDER_PROMPT.STYLE_21_DEFAULT_SUBJECT, result.stdout)
+        self.assertIn("Vertical 3:4.", result.stdout)
+        self.assertIn("人总是这样，\n一瞬间想通了，\n释怀了，\n", result.stdout)
+        self.assertIn("可小情绪难以自控\n……\nHandwriting", result.stdout)
+        self.assertNotIn("画幅比例", result.stdout)
+        self.assertNotIn("【", result.stdout)
+        self.assertIn(RENDER_PROMPT.STYLE_21_DEFAULT_SUBJECT, (ROOT / "STYLES.md").read_text(encoding="utf-8"))
+
+    def test_style_21_keeps_stanza_gaps_and_literal_newlines(self) -> None:
+        result = self.run_renderer("--style", "21", "--text", "有些人来过，\\n就已经很好了。\\n\\n\\n不必追问去向，\\n……\\n\\n")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("有些人来过，\n就已经很好了。\n\n不必追问去向，\n……\nHandwriting", result.stdout)
+
+    def test_style_21_requires_text_and_accepts_aspect_override(self) -> None:
+        missing = self.run_renderer("--style", "21")
+        self.assertEqual(missing.returncode, 2)
+        self.assertIn("必须给出要写进画里的中文原文", missing.stderr)
+        no_text = self.run_renderer("--style", "21", "--text", "不加任何文字")
+        self.assertEqual(no_text.returncode, 2)
+        square = self.run_renderer("--style", "21", "--text", "你好", "--aspect", "1:1")
+        self.assertEqual(square.returncode, 0, square.stderr)
+        self.assertIn("Square 1:1.", square.stdout)
+        self.assertNotIn("画幅比例", square.stdout)
+        bad = self.run_renderer("--style", "21", "--text", "你好", "--aspect", "竖版")
+        self.assertEqual(bad.returncode, 2)
+        too_long = self.run_renderer("--style", "21", "--text", "\n".join(["一句"] * 11))
+        self.assertEqual(too_long.returncode, 2)
+        self.assertIn("最多 10 行", too_long.stderr)
+
+    def test_style_21_rejects_subject_style_injection_and_title(self) -> None:
+        injected = self.run_renderer("--style", "21", "--text", "你好", "--subject", "一个女孩,采用水彩质感与统一粗黑轮廓")
+        self.assertEqual(injected.returncode, 2)
+        self.assertIn("画风 21 的主体字段只能描述人物、动作、关系和道具", injected.stderr)
+        title = self.run_renderer("--style", "21", "--text", "你好", "--title", "x")
+        self.assertEqual(title.returncode, 2)
+        self.assertIn("画风 21 的文案用 --text", title.stderr)
+
+    def test_style_21_json_contract_has_no_anchor_and_lists_lines(self) -> None:
+        result = self.run_renderer("--style", "pencil-monologue", "--text", "a\n\nb", "--format", "json")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        payload = json.loads(result.stdout)
+        self.assertEqual(payload["style_contract"], "pencil-monologue-v2")
+        self.assertEqual(payload["references"], [])
+        self.assertEqual(payload["inputs"]["text_lines"], ["a", "", "b"])
+        self.assertFalse(payload["generation"]["reference_anchor_required"])
+
+    def test_style_20_metadata_only_change_preserves_anchor_identity(self) -> None:
+        original = ROOT / "assets/style-20/anchor-warm-yellow-ink-story-v3.png"
+        with tempfile.TemporaryDirectory() as temp_dir:
+            candidate = Path(temp_dir) / "anchor.png"
+            data = original.read_bytes()
+            iend_offset = data.rfind(b"\x00\x00\x00\x00IEND")
+            self.assertGreater(iend_offset, 0)
+            chunk_type = b"tEXt"
+            chunk_data = b"audit=metadata-only-change"
+            metadata_chunk = (
+                struct.pack(">I", len(chunk_data))
+                + chunk_type
+                + chunk_data
+                + struct.pack(">I", zlib.crc32(chunk_type + chunk_data) & 0xFFFFFFFF)
+            )
+            candidate.write_bytes(data[:iend_offset] + metadata_chunk + data[iend_offset:])
+            self.assertNotEqual(candidate.read_bytes(), original.read_bytes())
+            RENDER_PROMPT.validate_style_20_anchor(candidate)
+
+    def test_style_20_modified_anchor_pixels_fail_closed(self) -> None:
+        original = ROOT / "assets/style-20/anchor-warm-yellow-ink-story-v3.png"
+        with tempfile.TemporaryDirectory() as temp_dir:
+            candidate = Path(temp_dir) / "anchor.png"
+            data = bytearray(original.read_bytes())
+            idat_offset = data.find(b"IDAT")
+            self.assertGreater(idat_offset, 0)
+            data[idat_offset + 8] ^= 1
+            candidate.write_bytes(data)
+            with self.assertRaisesRegex(ValueError, "PNG 校验失败|像素不匹配|像素数据损坏"):
+                RENDER_PROMPT.validate_style_20_anchor(candidate)
+
+    def test_style_20_validator_accepts_bound_palette_fixture(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            image, scorecard = self.create_palette_fixture(Path(temp_dir))
+            result = self.run_style_20_validator("--image", str(image), "--source-image", str(image), "--scorecard", str(scorecard))
+        self.assertEqual(result.returncode, 0, result.stderr)
+        report = json.loads(result.stdout)
+        self.assertEqual(report["status"], "pass")
+        self.assertGreaterEqual(report["review_score"], 34)
+        self.assertEqual(report["failures"], [])
+
+    def test_style_20_validator_rejects_scorecard_for_different_bytes(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            source_image, scorecard = self.create_palette_fixture(Path(temp_dir))
+            image, _ = self.create_palette_fixture(Path(temp_dir), "different")
+            result = self.run_style_20_validator("--image", str(image), "--source-image", str(source_image), "--scorecard", str(scorecard))
+        self.assertEqual(result.returncode, 2)
+        report = json.loads(result.stdout)
+        self.assertIn("scorecard image_sha256 mismatch", report["failures"])
+
+    def test_style_20_validator_rejects_content_lock_mismatch(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            image, scorecard = self.create_palette_fixture(Path(temp_dir))
+            scorecard_data = json.loads(scorecard.read_text(encoding="utf-8"))
+            scorecard_data["content_lock"]["observed_subjects"] = {"fox": 1}
+            scorecard.write_text(json.dumps(scorecard_data), encoding="utf-8")
+            result = self.run_style_20_validator(
+                "--image",
+                str(image),
+                "--source-image",
+                str(image),
+                "--scorecard",
+                str(scorecard),
+            )
+        self.assertEqual(result.returncode, 2)
+        report = json.loads(result.stdout)
+        self.assertIn("content_lock observed_subjects mismatch", report["failures"])
+
+    def test_style_20_validator_rejects_blank_image_despite_high_review_scores(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            image = Path(temp_dir) / "blank.png"
+            width = 32
+            height = 32
+            raw_rows = b"".join(b"\x00" + b"\xff\xff\xff" * width for _ in range(height))
+
+            def png_chunk(chunk_type: bytes, chunk_data: bytes) -> bytes:
+                return (
+                    struct.pack(">I", len(chunk_data))
+                    + chunk_type
+                    + chunk_data
+                    + struct.pack(">I", zlib.crc32(chunk_type + chunk_data) & 0xFFFFFFFF)
+                )
+
+            image.write_bytes(
+                b"\x89PNG\r\n\x1a\n"
+                + png_chunk(b"IHDR", struct.pack(">IIBBBBB", width, height, 8, 2, 0, 0, 0))
+                + png_chunk(b"IDAT", zlib.compress(raw_rows))
+                + png_chunk(b"IEND", b"")
+            )
+            scorecard = Path(temp_dir) / "scorecard.json"
+            scorecard.write_text(
+                json.dumps(
+                    {
+                        "style_contract": "warm-yellow-ink-story-v3",
+                        "image_sha256": hashlib.sha256(image.read_bytes()).hexdigest(),
+                        "source_image_sha256": hashlib.sha256(image.read_bytes()).hexdigest(),
+                        "content_lock": {
+                            "expected_subjects": {"human": 1},
+                            "observed_subjects": {"human": 1},
+                            "identity_preserved": True,
+                            "required_objects_preserved": True,
+                        },
+                        "scores": {dimension: 5 for dimension in (
+                            "shape-language",
+                            "face-language",
+                            "line-material",
+                            "directional-black-hatching",
+                            "mustard-yellow-material",
+                            "negative-space",
+                            "single-action-storytelling",
+                            "originality-boundary",
+                        )},
+                        "hard_failures": [],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            result = self.run_style_20_validator(
+                "--image",
+                str(image),
+                "--source-image",
+                str(image),
+                "--scorecard",
+                str(scorecard),
+            )
+            self.assertEqual(result.returncode, 2)
+            report = json.loads(result.stdout)
+            self.assertEqual(report["status"], "rejected")
+            self.assertTrue(any("white_ratio" in failure for failure in report["failures"]))
+
     def test_metadata_only_change_preserves_anchor_identity(self) -> None:
         original = ROOT / "assets/style-3.1/anchor-family.png"
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -332,6 +755,73 @@ class RenderPromptTests(unittest.TestCase):
         )
         self.assertEqual(result.returncode, 2)
         self.assertIn("配方不包含这些占位符", result.stderr)
+
+    def test_minimal_line_renders_without_replacing_fixed_label(self) -> None:
+        result = self.run_renderer("--style", "minimal-line", "--var", "N=3", "--var", "分镜列表=准备、工作、休息")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("【最重要·硬性负向约束】", result.stdout)
+        self.assertIn("版式:3格", result.stdout)
+        self.assertNotIn("【分镜列表】", result.stdout)
+
+    def test_user_text_and_parameter_values_are_not_substituted_again(self) -> None:
+        prompt = RENDER_PROMPT.render("【主体】 / 【文字】", {"主体": "写着【文字】的书", "文字": "【加油】"}, None)
+        self.assertEqual(prompt, "写着【文字】的书 / 【加油】")
+        result = self.run_renderer("--style", "21", "--text", "记住【加油】这句话。")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("【加油】", result.stdout)
+
+    def test_optional_stubble_can_be_empty_but_subject_cannot(self) -> None:
+        self.assertEqual(RENDER_PROMPT.parse_vars(["胡茬="]), {"胡茬": ""})
+        with self.assertRaises(ValueError):
+            RENDER_PROMPT.parse_vars(["主体="])
+
+    def test_scene_background_is_expanded_without_rewriting_scene(self) -> None:
+        for background in (None, " and loose sketchy green plant strokes"):
+            arguments = ["--style", "12", "--subject", "a child", "--var", "构图=waist-up portrait", "--var", "场景=SCENE: pale dry brush【背景元素】.", "--text", "No text anywhere."]
+            if background is not None:
+                arguments.extend(("--var", f"背景元素={background}"))
+            with self.subTest(background=background):
+                result = self.run_renderer(*arguments)
+                self.assertEqual(result.returncode, 0, result.stderr)
+                self.assertNotIn("【背景元素】", result.stdout)
+                self.assertIn("SCENE: pale dry brush and loose sketchy green plant strokes." if background else "SCENE: pale dry brush.", result.stdout)
+
+    def test_menu_contains_all_styles_and_declared_parameters(self) -> None:
+        result = self.run_renderer("--list")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        catalog = json.loads(result.stdout)
+        self.assertEqual(len(catalog), 22)
+        self.assertEqual(catalog[0]["parameters"], ["N", "分镜列表"])
+        self.assertEqual(catalog[3]["style_id"], "3.1")
+        for style in catalog:
+            with self.subTest(style_id=style["style_id"]):
+                self.assertEqual(RENDER_PROMPT.canonical_style_id(style["name"]), style["style_id"])
+
+    def test_paper_folk_json_includes_both_documented_reference_images(self) -> None:
+        result = self.run_renderer("--style", "paper-folk", "--subject", "a musician holding a violin", "--var", "构图=centered, waist-up", "--var", "底色=warm ochre-brown", "--var", "点缀元素=one stylized folk cloud", "--format", "json")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        payload = json.loads(result.stdout)
+        self.assertEqual({Path(reference["path"]).name for reference in payload["references"]}, {"13-paper-folk.png", "13-paper-folk-musician.png"})
+        self.assertTrue(all(reference["role"] == "style-only" for reference in payload["references"]))
+
+    def test_missing_paper_folk_reference_is_reported(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            with patch.object(RENDER_PROMPT, "ROOT", Path(temp_dir)):
+                with self.assertRaisesRegex(ValueError, "参考图不可用"):
+                    RENDER_PROMPT.build_payload("13", "prompt", {"主体": "a musician"}, None, [])
+
+    def test_missing_recipe_does_not_steal_next_style_template(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            styles = Path(temp_dir) / "STYLES.md"
+            styles.write_text("## 1. First\nNo recipe.\n## 2. Second\n```\nsecond recipe\n```\n", encoding="utf-8")
+            with patch.object(RENDER_PROMPT, "STYLES_PATH", styles):
+                with self.assertRaisesRegex(ValueError, "不存在画风 1"):
+                    RENDER_PROMPT.extract_template("1")
+
+    def test_missing_catalog_is_a_readable_cli_error(self) -> None:
+        with patch.object(RENDER_PROMPT, "STYLES_PATH", Path("/missing-style-catalog/STYLES.md")):
+            with patch.object(sys, "argv", ["render_prompt.py", "--list"]):
+                self.assertEqual(RENDER_PROMPT.main(), 2)
 
 
 if __name__ == "__main__":

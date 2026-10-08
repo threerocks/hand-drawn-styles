@@ -1,0 +1,23 @@
+Use case: illustration-story
+Asset type: maintenance benchmark for an original reusable hand-drawn style
+Input images: Images 1-10 are visual references only. Extract only broad visual mechanisms: warm-white negative space, loose dry black ink, directional black hatching, restrained mustard-yellow accents, tiny coral cheeks, compact emotional gestures. Do not copy any person, hairstyle, outfit, pose, composition, text, watermark, account identity, or recurring character combination from the references.
+
+Primary request: Create an original warm-yellow ink story vignette. A short-curly-haired older sister crouches to tie her younger brother's loose shoelace. The younger brother stands looking down and holds one small warm-yellow paper pinwheel. Their faces, hair, clothes, body shapes, and positions must be newly designed and visibly different from every reference image.
+
+Scene/backdrop: a flat warm-white drawing-paper field with extremely subtle even fiber softness; no photographed sheet, no desk, no folds, no paper edge, no cast shadow, no vignette.
+
+Composition/framing: portrait benchmark; the two figures form one compact readable action in the lower-middle; large calm empty space around and above them; only one slightly crooked black ground line; no scenery and no decorative filler.
+
+Style/medium: original minimalist hand-drawn narrative illustration made with loose dry black ink, graphite-like pressure variation, and restrained dry colored-pencil or wax-pencil fill. Confident but imperfect lines, not childish scribbling and not polished commercial line art.
+
+Character shape language: rounded-square pale faces; head roughly one-third to two-fifths of figure height; short or absent neck; compact blocky torso; short simple limbs; tiny hook hands or two-to-four short finger marks; rounded sock-like feet. The two people must have different head shapes, shoulder widths, hair silhouettes, and postures. No chibi sphere heads and no realistic anatomy.
+
+Faces: two tiny black dot or short-vertical eyes; a very short uneven curved mouth; optional tiny nose mark; two faint uneven coral-pink cheek smudges. Emotion comes mainly from head tilt, distance, hands, and posture. No eye whites, irises, highlights, eyelashes, detailed lips, airbrushed skin, or identical copy-pasted smiles.
+
+Line and black masses: fine-to-medium near-black dry ink contours with small pressure changes, occasional broken ends, slight wobble, sparse retracing, and a few flyaway hair lines. Hair and dark lower garments are built from dense directional dry strokes with visible white gaps and stroke endings; never smooth vector-black silhouettes.
+
+Color palette: warm white paper, near-black ink, one muted warm mustard yellow around #E6C45C, and tiny coral-pink cheek marks around #E78E84 only. Use yellow on the pinwheel and at most one clothing area. No blue, purple, cyan, green, gradients, rainbow clothing, or colored background.
+
+Narrative: the shoelace-tying gesture must read immediately. Keep the pinwheel secondary. Add no hearts, stars, flowers, speech bubbles, captions, logos, signatures, watermarks, or extra props.
+
+Avoid: recognizable recreation of any supplied character; paired yellow hoodies; copied haircuts or poses; commercial children's-book cuteness; vector clip-art; uniform thick outline; 3D; anime; glossy rendering; smooth solid black fills; repeated digital crayon texture; detailed room or landscape; photographic paper scene.

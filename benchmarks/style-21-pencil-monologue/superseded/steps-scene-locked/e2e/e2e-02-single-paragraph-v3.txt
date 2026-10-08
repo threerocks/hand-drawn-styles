@@ -1,0 +1,2 @@
+命令: scripts/generate_monologue_card_with_codex.sh --style 22 --text "有些告别没有仪式，就是某一天突然发现，那个人已经很久没有出现了。可你还是会在老地方坐一会儿，替他把风景看完。……" --out e2e-02-single-paragraph-v3.png
+使用 v3 定稿配方;输入为单段落无换行,渲染器自动断句;默认招牌场景;输出已去元数据并归一到 1086×1448。

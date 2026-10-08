@@ -1,0 +1,19 @@
+Create one original hand-drawn illustration that looks like colored pencil and graphite on toned drawing paper.
+
+PAPER: the whole canvas is one sheet of warm grey-beige drawing paper (around #C9C4B9) with fine, visible paper tooth and fiber grain everywhere. The paper reads slightly cooler blue-grey near the top corners and slightly warmer where the lamp light falls. No white paper, no photographed desk, no frame, no border, no dark vignette.
+
+MEDIUM: dry graphite and colored pencil. Contours are thin, slightly wobbly lines with visible pressure changes and short light hatching; colors are dry and grainy, catching only the raised tooth so the grey paper shows through everywhere. No digital-paint smoothness, no vector lines, no airbrush, no watercolor pooling, no 3D.
+
+SCENE: 【主体】
+
+LIGHT: the lantern is the only light source. Around it a soft round halo of warm pale yellow (#F1E0AE fading out into the paper grey) is rubbed in with the side of a pencil; it is brightest at the lantern and dissolves completely within roughly one third of the canvas. Long, soft, tapered cast shadows of the post and of the figure stretch away from the lamp along the ground.
+
+COMPOSITION: vertical 3:4. The lamp post stands left of centre with its curved arm reaching toward the middle of the canvas; the small figure stands at its base in the lower-middle. One row of loosely sketched cobblestone curb runs diagonally across the lower third. Everything else is empty toned paper: at least 60% of the canvas stays quiet empty space, most of it above the lamp.
+
+PALETTE: warm grey paper, graphite and charcoal dark greys, warm pale yellow glow, muted dusty pink blossoms, soft sage green leaves, and one muted grey-blue or soft brown garment. Low saturation throughout. No pure black fills, no pure white, no bright or neon colors.
+
+TEXT: in the empty glow area to the right of the lamp post, write these Chinese lines centered, one line each, exactly as given, no character changed, added or missing:
+【文字】
+Handwriting style: neat regular-script handwriting made with a fine black felt-tip pen (像用细黑笔一笔一画写的手写楷体), characters slightly uneven in size and spacing, dark charcoal ink, no text box, no printed-font perfection. This is the only text on the image: no seal, no stamp, no signature, no watermark, no title, no logo.
+
+AVOID: red seal or stamp; white background; glossy digital rendering; anime face; chibi; realistic photo; heavy black outlines; saturated colors; busy background, buildings, trees, stars or moon; multiple lamps; text outside the specified block.

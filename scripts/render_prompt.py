@@ -15,8 +15,20 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 STYLES_PATH = ROOT / "STYLES.md"
-PLACEHOLDER_PATTERN = re.compile(r"【([^】]+)】")
+PLACEHOLDER_PATTERN = re.compile(r"【([A-Za-z_\u3400-\u9fff][A-Za-z0-9_\u3400-\u9fff]*)】")
+EMPTY_PARAMETER_NAMES = {"胡茬", "背景元素"}
 STYLE_ALIASES = {
+    "xkcd": "1",
+    "stickman": "1",
+    "minimal-line": "1",
+    "极简线条": "1",
+    "火柴人": "1",
+    "crayon": "2",
+    "kid-crayon": "2",
+    "蜡笔童涂": "2",
+    "ghibli": "3",
+    "吉卜力": "3",
+    "吉卜力风": "3",
     "rawkid": "3.1",
     "kid-scrawl": "3.1",
     "stick-kid": "3.1",
@@ -29,9 +41,122 @@ STYLE_ALIASES = {
     "亲子投稿蜡笔故事卡": "3.1",
     "家庭投稿蜡笔卡": "3.1",
     "蜡笔童涂-潦草自画版": "3.1",
+    "蜡笔童涂潦草版": "3.1",
+    "潦草自画版": "3.1",
+    "bean": "4",
+    "blob": "4",
+    "小豆人": "4",
+    "小豆人涂鸦信息图": "4",
+    "ms-paint": "5",
+    "bad-doodle": "5",
+    "ugly": "5",
+    "ms paint": "5",
+    "scribble": "6",
+    "pen-scribble": "6",
+    "ballpoint": "6",
+    "圆珠笔": "6",
+    "real-crayon": "7",
+    "crayon-photo": "7",
+    "蜡笔实拍": "7",
+    "ink-wash": "8",
+    "ink": "8",
+    "shuimo": "8",
+    "chinese-painting": "8",
+    "水墨": "8",
+    "pixel": "9",
+    "pixel-art": "9",
+    "8-bit": "9",
+    "16-bit": "9",
+    "像素": "9",
+    "emo-sketch": "10",
+    "story-sketch": "10",
+    "watercolor-sketch": "10",
+    "light-watercolor": "10",
+    "情绪叙事": "10",
+    "淡彩速写": "10",
+    "retro-concept": "11",
+    "mid-century": "11",
+    "concept-art": "11",
+    "gouache-concept": "11",
+    "二维水彩": "11",
+    "sunlit-storybook": "12",
+    "vis-dev": "12",
+    "storybook-visdev": "12",
+    "暖光童画": "12",
+    "paper-folk": "13",
+    "papercraft": "13",
+    "nordic-papercraft": "13",
+    "paper-sculpture": "13",
+    "quilling": "13",
+    "北欧纸雕": "13",
+    "剪纸民俗": "13",
+    "nordic-storybook": "14",
+    "scandi-gouache": "14",
+    "scandinavian-storybook": "14",
+    "soft-gouache": "14",
+    "北欧绘本水粉": "14",
+    "softnose": "15",
+    "softnose-vinyl": "15",
+    "bignose-toy": "15",
+    "vinyl-toy": "15",
+    "art-toy": "15",
+    "大鼻软偶": "15",
+    "gouache-spotlight": "16",
+    "spotlight-gouache": "16",
+    "character-spotlight": "16",
+    "聚光水粉立绘": "16",
+    "inked-storybook": "17",
+    "ink-storybook": "17",
+    "sketch-storybook": "17",
+    "storybook-ink": "17",
+    "墨线绘本": "17",
+    "warm-flat-storybook": "18",
+    "flat-storybook": "18",
+    "geometric-storybook": "18",
+    "warm-flat": "18",
+    "暖色扁平绘本": "18",
+    "roundhead-redline": "19",
+    "redline-roundhead": "19",
+    "graphite-redline": "19",
+    "圆头红线": "19",
+    "圆头红线极简童画": "19",
+    "黑红白圆头童画": "19",
+    "warm-yellow-ink-story": "20",
+    "yellow-ink-story": "20",
+    "mustard-ink-story": "20",
+    "暖黄墨线": "20",
+    "暖黄墨线情绪小剧场": "20",
+    "pencil-monologue": "21",
+    "handwritten-monologue": "21",
+    "monologue-card": "21",
+    "手写独白": "21",
+    "彩铅独白": "21",
+    "独白卡": "21",
+    "手写独白彩铅": "21",
 }
+
 STYLE_3_1_ANCHOR_PIXEL_SHA256 = "1ae67d0088d58f2527ae81aa05d8453ce1ccc9d4614342c0bb1ab71a5e4895cd"
 STYLE_3_1_ANCHOR_SIZE = (1086, 1448)
+STYLE_19_ANCHOR_PIXEL_SHA256 = "5170a941b4222be7c4acd13eb83b87689231ade46ac5db35a957632676efedfa"
+STYLE_19_ANCHOR_SIZE = (1024, 1536)
+STYLE_19_MODEL_SNAPSHOT = "gpt-image-2-2026-04-21"
+STYLE_20_ANCHOR_PIXEL_SHA256 = "1190a2cc02cf6ccb0ab165ba2f5d80234544438f9653d0b17d918ca718fbe030"
+STYLE_20_ANCHOR_SIZE = (1156, 1361)
+STYLE_20_MODEL_SNAPSHOT = "gpt-image-2-2026-04-21"
+STYLE_21_DEFAULT_SUBJECT = (
+    "Read the text first and invent one small, quiet moment that fits its meaning and mood. "
+    "The text alone decides what appears: it may be a person, two people, an animal, a single "
+    "object or just a place; whether anyone is shown, from which angle, doing what, in what "
+    "setting, and where the drawing and the text sit on the paper are all yours to choose. "
+    "Do not default to the same scene every time."
+)
+STYLE_21_DEFAULT_ASPECT = "3:4"
+STYLE_21_MAX_LINES = 10
+STYLE_21_TARGET_SIZE = (1086, 1448)
+STYLE_21_NO_TEXT_MARKERS = {"不加任何文字", "No text anywhere."}
+STYLE_21_SPLIT_PUNCTUATION = "，。！？；"
+STYLE_21_CONTRACT = "pencil-monologue-v2"
+STYLE_21_WRAPPER = "scripts/generate_monologue_card_with_codex.sh"
 STYLE_3_1_SCRIBBLE_CORRECTION_PROMPT = """Image 1 is the edit target. Image 2 is the approved style-only reference.
 Change ONLY the crayon coloring marks inside and around the existing people, clothing, hair, furniture, books, and props in Image 1. Preserve the exact characters, faces, poses, actions, composition, object count, outlines, colors, white background, and framing.
 Rework the coloring to match Image 2's genuinely clumsy child scribbling: coarse blunt wax-crayon strokes with abrupt starts and stops; visibly mixed horizontal, vertical, diagonal, looping, zigzag and crossing directions inside the SAME color area; uneven pressure; isolated heavy clumps next to large untouched white-paper holes; some strokes stop far before the black outline and some overshoot well beyond it. Each color area must have a different scribble rhythm.
@@ -41,6 +166,36 @@ Perform a second, stricter correction on CRAYON COLORING MARKS ONLY. Preserve Im
 The remaining coloring is still too neat wherever it forms fine, dense, or consistently diagonal hatching. Replace those ordered areas with Image 2's clumsy family scribbling, not a digital crayon texture.
 For EACH color area, use a SMALL NUMBER of much thicker blunt wax-crayon strokes with visibly different lengths and pressure. Break the area into disconnected bouts: horizontal rubs, a vertical stab, an abrupt diagonal, a loop, a zigzag, and crossing retraced strokes, without repeating a sequence. Leave 35-55% of the white paper clearly untouched in irregular LARGE holes, including holes that reach the black outline. Put heavy opaque clumps directly beside totally blank areas. Many strokes must stop far before the boundary; several isolated strokes must overshoot far outside it. Adjacent color areas must have obviously different stroke direction and density.
 Critical failure conditions: NO fine pencil-like hatch marks; NO field of mostly parallel diagonals; NO even spacing; NO uniform coverage; NO repeated texture; NO tidy edge-following; NO tiny evenly distributed white gaps. Make the result substantially rougher, emptier, coarser, more asymmetrical, and more accidentally misregistered than Image 1. Do not change any clothing or object color. Do not add text, symbols, objects, shadows, paper texture, or scenery."""
+STYLE_20_DETAIL_SIMPLIFICATION_PROMPT = """Use case: precise-object-edit
+Asset type: mandatory final-stage correction for style 20
+Input images: Image 1 is the newly generated edit target. Image 2 is the approved original style-only anchor.
+
+CONTENT AND SPECIES LOCK — HIGHEST PRIORITY: Image 1 is the only truth for subject count, species, identity, age, face, hair or fur silhouette, clothes, objects, pose and action. Image 2 supplies visual grammar only. If Image 1 contains one fox and no people, the output must contain the exact same one fox and no people. If Image 1 contains people, preserve those exact people. Never copy, import or substitute any person, animal, haircut, clothing, pinwheel, shoelace, object, pose or composition from Image 2.
+
+Primary request: remove only the excessive construction detail that makes Image 1 look like a polished commercial picture book. Preserve the exact people and animal identities, ages, facial expressions, poses, interaction, object count, object identities, character positions, composition, framing, ground line, warm-white background, paper softness, black-and-yellow palette, coral cheeks, dry ink pressure variation, directional black hatching, and yellow placement.
+
+Simplify Image 1's existing subjects within their current species while applying the anchor's compact handmade shape language: softly irregular rounded-square heads; short or absent necks; compact blocky torsos; short simple limbs; tiny hook or mitten hands with at most two short finger marks; rounded sock-like feet. Keep every species-defining ear, tail, muzzle patch or silhouette already present in Image 1. Keep clear age and size differences, but remove realistic anatomy and elongated forearms or legs.
+
+Simplify only what is overdescribed: remove individual articulated fingers, shoe construction lines, sock seams, garment ribbing, repeated clothing stripes, decorative stitching, small buttons, realistic joint creases, and mechanically precise prop construction. Keep only the minimum inner lines needed to identify the action and the required objects. If glasses are required, reduce them to two tiny imperfect loops and one short bridge.
+
+Keep black hair and dark lower garments as visible directional dry strokes with irregular white gaps and stroke endings. Do not turn them into smooth solid black. Keep yellow areas lightly uneven and matte. Do not alter colors.
+
+Critical constraints: change only geometry simplification and detail count. Do not redesign faces, hair identity, clothes, pose, action, composition, scale relationships, prop count, or palette. Do not add or remove people, animals, or required objects. No text, logo, signature, watermark, scenery, decorative symbols, new texture, or new color."""
+STYLE_20_MINIMAL_DETAIL_ENFORCEMENT_PROMPT = """Use case: precise-object-edit
+Asset type: mandatory final minimal-detail enforcement for style 20
+Input images: Image 1 is the output of the detail-simplification stage. Image 2 is the approved original style-only anchor.
+
+CONTENT AND SPECIES LOCK — HIGHEST PRIORITY: Image 1 is the only truth for subject count, species, identity, age, face, hair or fur silhouette, clothes, objects, pose and action. Image 2 supplies visual grammar only. If Image 1 contains one fox and no people, the output must contain the exact same one fox and no people. If Image 1 contains people, preserve those exact people. Never copy, import or substitute any person, animal, haircut, clothing, pinwheel, shoelace, object, pose or composition from Image 2.
+
+Primary request: remove ONLY the remaining small construction details that still violate the anchor's minimal handmade grammar. Preserve Image 1 exactly in people, identities, ages, faces, expressions, hair silhouettes, pose, interaction, character positions, body proportions, clothes, object identities, object count, composition, framing, ground line, warm-white paper, black-and-yellow palette, coral cheeks, dry ink pressure variation, directional black hatching, and yellow placement.
+
+HANDS: convert every visible articulated hand into a tiny closed hook or mitten. Each hand may contain zero, one, or at most two short irregular finger notches. Remove all groups of three or more parallel finger lines. Do not change where a hand touches or holds an object.
+
+CLOTHING: remove every remaining button, buttonhole, repeated stripe, cuff rib, hem rib, seam, pocket line, decorative stitch, and shoe or sock construction line. Keep each upper garment as one quiet unpatterned field. Keep each lower garment as directional dry black hatching with irregular white gaps.
+
+PROPS — ONLY WHEN ALREADY PRESENT IN IMAGE 1: simplify an existing thread spool to two tiny uneven end caps joined by one plain short cylinder and a single loose thread line; simplify an existing kite to one handmade diamond with only the minimum two crossing support lines; simplify an existing paper boat to one outer hull and at most two uneven fold lines; simplify an existing stool to the fewest lines needed to read as a low stool. Remove concentric rings, repeated winding lines, mechanical grooves, perfect symmetry and ornamental folds. Never add a spool, kite, boat, stool, tail ornament or any other named object that is absent from Image 1.
+
+Critical constraints: this is a deletion-and-simplification pass only. Do not redesign, reposition, enlarge, shrink, recolor, add, replace, or remove any person or required object. Do not change faces, hair, pose, action, scale relationships, palette, paper texture, negative space, or framing. Add no text, logo, signature, watermark, scenery, symbol, new prop, new texture, new color, or new clothing detail."""
 STYLE_INJECTION_TERMS = (
     "画风",
     "风格",
@@ -120,19 +275,59 @@ STYLE_INJECTION_PATTERNS = (
 
 
 def canonical_style_id(value: str) -> str:
-    return STYLE_ALIASES.get(value.strip().lower(), value.strip())
+    normalized = value.strip().lower()
+    if normalized in STYLE_ALIASES:
+        return STYLE_ALIASES[normalized]
+    for style_id, section in load_style_sections().items():
+        heading = section.splitlines()[0]
+        name = re.sub(r"^## \d+(?:\.\d+)?\.?\s+", "", heading)
+        if normalized in {name.lower(), re.split(r"[（(]", name)[0].strip().lower()}:
+            return style_id
+    return value.strip()
+
+
+def load_style_sections() -> dict[str, str]:
+    source = STYLES_PATH.read_text(encoding="utf-8")
+    headings = list(re.finditer(r"^## .+$", source, re.MULTILINE))
+    sections: dict[str, str] = {}
+    for index, heading in enumerate(headings):
+        identity = re.match(r"## (\d+(?:\.\d+)?)\.?\s+", heading.group())
+        if identity is None:
+            continue
+        style_id = identity.group(1)
+        if style_id in sections:
+            raise ValueError(f"STYLES.md 中画风编号重复: {style_id}")
+        end = headings[index + 1].start() if index + 1 < len(headings) else len(source)
+        sections[style_id] = source[heading.start():end]
+    return sections
 
 
 def extract_template(style_id: str) -> str:
-    source = STYLES_PATH.read_text(encoding="utf-8")
-    heading = re.compile(
-        rf"^## {re.escape(style_id)}(?:\.)?(?:\s|$).*?^```(?:\w+)?\s*$\n(.*?)^```\s*$",
-        re.MULTILINE | re.DOTALL,
-    )
-    match = heading.search(source)
-    if not match:
+    section = load_style_sections().get(style_id, "")
+    templates = re.findall(r"^```(?:\w+)?[ \t]*\n(.*?)^```[ \t]*$", section, re.MULTILINE | re.DOTALL)
+    if len(templates) != 1:
         raise ValueError(f"STYLES.md 中不存在画风 {style_id} 的代码块配方")
-    return match.group(1).strip()
+    return templates[0].strip()
+
+
+def list_styles() -> list[dict[str, object]]:
+    catalog = []
+    for style_id, section in sorted(load_style_sections().items(), key=lambda pair: tuple(map(int, pair[0].split(".")))):
+        name = re.sub(r"^## \d+(?:\.\d+)?\.?\s+", "", section.splitlines()[0])
+        references = style_reference_paths(style_id)
+        catalog.append({
+            "style_id": style_id,
+            "name": name,
+            "aliases": sorted(alias for alias, target in STYLE_ALIASES.items() if target == style_id),
+            "parameters": sorted(set(PLACEHOLDER_PATTERN.findall(extract_template(style_id)))),
+            "references": references,
+        })
+    return catalog
+
+
+def style_reference_paths(style_id: str) -> list[str]:
+    section = load_style_sections().get(style_id, "")
+    return sorted(set(re.findall(r"`((?:assets|examples)/[^`\n]+\.(?:png|jpg|jpeg|webp))`", section)))
 
 
 def parse_vars(items: list[str]) -> dict[str, str]:
@@ -142,9 +337,9 @@ def parse_vars(items: list[str]) -> dict[str, str]:
             raise ValueError(f"--var 必须使用 名称=内容 格式: {item}")
         key, value = item.split("=", 1)
         key = key.strip().removeprefix("【").removesuffix("】")
-        if not key or not value.strip():
+        if not key or (not value.strip() and key not in EMPTY_PARAMETER_NAMES):
             raise ValueError(f"--var 的名称和内容都不能为空: {item}")
-        values[key] = value.strip()
+        values[key] = value if key == "背景元素" else value.strip()
     return values
 
 
@@ -158,13 +353,8 @@ def render(template: str, values: dict[str, str], aspect: str | None) -> str:
     if missing:
         raise ValueError(f"缺少占位符: {', '.join(missing)}")
 
-    output = template
-    for key, value in values.items():
-        output = output.replace(f"【{key}】", value)
-
-    unresolved = sorted(set(PLACEHOLDER_PATTERN.findall(output)))
-    if unresolved:
-        raise ValueError(f"仍有未替换占位符: {', '.join(unresolved)}")
+    # Substitute template parameters once; bracketed user text is literal content.
+    output = PLACEHOLDER_PATTERN.sub(lambda match: values[match.group(1)], template)
 
     if aspect:
         output = f"{output}\n\n画幅比例:{aspect.strip()}。"
@@ -200,7 +390,7 @@ def png_chunks(path: Path) -> list[tuple[bytes, bytes]]:
     return chunks
 
 
-def png_pixel_sha256(path: Path) -> tuple[tuple[int, int], str]:
+def decode_png_pixel_bytes(path: Path) -> tuple[tuple[int, int], int, int, bytes]:
     chunks = png_chunks(path)
     ihdr_chunks = [chunk for chunk_type, chunk in chunks if chunk_type == b"IHDR"]
     if len(ihdr_chunks) != 1 or len(ihdr_chunks[0]) != 13:
@@ -266,7 +456,12 @@ def png_pixel_sha256(path: Path) -> tuple[tuple[int, int], str]:
             reconstructed[index] = (value + predictor) & 0xFF
         rows.append(bytes(reconstructed))
         previous = reconstructed
-    return (width, height), hashlib.sha256(b"".join(rows)).hexdigest()
+    return (width, height), color_type, bytes_per_pixel, b"".join(rows)
+
+
+def png_pixel_sha256(path: Path) -> tuple[tuple[int, int], str]:
+    size, _, _, pixel_bytes = decode_png_pixel_bytes(path)
+    return size, hashlib.sha256(pixel_bytes).hexdigest()
 
 
 def png_size(path: Path) -> tuple[int, int]:
@@ -288,14 +483,46 @@ def validate_style_3_1_anchor(anchor: Path) -> None:
         raise ValueError(f"画风 3.1 锚点像素不匹配,停止正式生产: {anchor}")
 
 
-def validate_style_3_1_subject(subject: str) -> None:
+def validate_style_19_anchor(anchor: Path) -> None:
+    if not anchor.is_file():
+        raise ValueError(f"画风 19 锚点不可用,停止正式生产: {anchor}")
+    size, digest = png_pixel_sha256(anchor)
+    if size != STYLE_19_ANCHOR_SIZE:
+        raise ValueError(f"画风 19 锚点尺寸不匹配,停止正式生产: {anchor}")
+    if digest != STYLE_19_ANCHOR_PIXEL_SHA256:
+        raise ValueError(f"画风 19 锚点像素不匹配,停止正式生产: {anchor}")
+
+
+def validate_style_20_anchor(anchor: Path) -> None:
+    if not anchor.is_file():
+        raise ValueError(f"画风 20 锚点不可用,停止正式生产: {anchor}")
+    size, digest = png_pixel_sha256(anchor)
+    if size != STYLE_20_ANCHOR_SIZE:
+        raise ValueError(f"画风 20 锚点尺寸不匹配,停止正式生产: {anchor}")
+    if digest != STYLE_20_ANCHOR_PIXEL_SHA256:
+        raise ValueError(f"画风 20 锚点像素不匹配,停止正式生产: {anchor}")
+
+
+def validate_locked_style_subject(style_id: str, subject: str) -> None:
     hits = [term for term in STYLE_INJECTION_TERMS if term in subject]
     pattern_hits = ["受控画风表达"] if any(pattern.search(subject) for pattern in STYLE_INJECTION_PATTERNS) else []
     if hits or pattern_hits:
         raise ValueError(
-            "画风 3.1 的主体字段只能描述人物、动作、关系和道具;"
+            f"画风 {style_id} 的主体字段只能描述人物、动作、关系和道具;"
             f"检测到疑似业务画风注入: {', '.join(hits + pattern_hits)}"
         )
+
+
+def validate_style_3_1_subject(subject: str) -> None:
+    validate_locked_style_subject("3.1", subject)
+
+
+def validate_style_19_subject(subject: str) -> None:
+    validate_locked_style_subject("19", subject)
+
+
+def validate_style_20_subject(subject: str) -> None:
+    validate_locked_style_subject("20", subject)
 
 
 def style_3_1_title_instruction(title: str) -> str:
@@ -317,6 +544,72 @@ def validate_style_3_1_text(text: str, expected_title_instruction: str | None) -
             "画风 3.1 的文字输入只允许 --text '不加任何文字' 或独立 --title '准确标题原文';"
             "不得把画风或排版指令塞进 --text/--var 文字"
         )
+
+
+def validate_style_19_text(text: str) -> None:
+    if text != "No text anywhere.":
+        raise ValueError(
+            "画风 19 正式生产固定为无字底图;请使用 --text '不加任何文字'"
+            "或省略 --text,标题需在独立排版流程处理"
+        )
+
+
+def validate_style_20_text(text: str) -> None:
+    if text != "No text anywhere.":
+        raise ValueError(
+            "画风 20 正式生产固定为无字底图;请使用 --text '不加任何文字'"
+            "或省略 --text,标题需在独立排版流程处理"
+        )
+
+
+def normalize_style_21_text(style_id: str, text: str) -> str:
+    """把画风 21 的文案整理成一行一句;真实换行优先,单段落按标点断句,空行表示分段。"""
+    raw = text.replace("\r\n", "\n").replace("\r", "\n").replace("\\n", "\n").strip()
+    if not raw or raw in STYLE_21_NO_TEXT_MARKERS:
+        raise ValueError(
+            f"画风 {style_id} 的文案是画面主体之一,--text 必须给出要写进画里的中文原文;"
+            "不能省略,也不能填“不加任何文字”"
+        )
+    if "\n" in raw:
+        lines: list[str] = []
+        for line in raw.split("\n"):
+            line = line.strip()
+            if line:
+                lines.append(line)
+            elif lines and lines[-1] != "":
+                lines.append("")
+    else:
+        lines, current = [], ""
+        for char in raw:
+            current += char
+            if char in STYLE_21_SPLIT_PUNCTUATION:
+                lines.append(current.strip())
+                current = ""
+        if current.strip():
+            lines.append(current.strip())
+        if lines and lines[-1].endswith("……") and lines[-1] != "……":
+            tail = lines.pop()[:-2].strip()
+            lines.extend([tail, "……"] if tail else ["……"])
+    while lines and lines[-1] == "":
+        lines.pop()
+    if not lines:
+        raise ValueError(f"画风 {style_id} 的文案整理后为空")
+    text_lines = [line for line in lines if line]
+    if len(text_lines) > STYLE_21_MAX_LINES:
+        raise ValueError(
+            f"画风 {style_id} 的文案最多 {STYLE_21_MAX_LINES} 行(已验证 3–8 行),当前 {len(text_lines)} 行;"
+            "请精简或拆成多张"
+        )
+    return "\n".join(lines)
+
+
+def style_21_aspect_sentence(aspect: str | None) -> str:
+    clean = (aspect or STYLE_21_DEFAULT_ASPECT).strip()
+    if not re.fullmatch(r"\d+(?:\.\d+)?:\d+(?:\.\d+)?", clean):
+        raise ValueError(f"画风 21 的 --aspect 需要是 宽:高 形式,例如 3:4 或 1:1: {clean}")
+    width, height = (float(part) for part in clean.split(":"))
+    orientation = "Vertical" if height > width else "Square" if height == width else "Horizontal"
+    return f"{orientation} {clean}."
 
 
 def validate_character_references(items: list[str]) -> list[Path]:
@@ -346,6 +639,19 @@ def build_payload(
         "references": [],
         "inputs": {"variables": values, "aspect": aspect or None},
     }
+    if style_id not in {"3.1", "19", "20"}:
+        for relative_path in style_reference_paths(style_id):
+            reference = (ROOT / relative_path).resolve()
+            if not reference.is_relative_to(ROOT.resolve()) or not reference.is_file():
+                raise ValueError(f"画风 {style_id} 参考图不可用: {relative_path}")
+            if reference.suffix.lower() == ".png":
+                png_size(reference)
+            payload["references"].append({
+                "path": str(reference),
+                "role": "style-only",
+                "must_not_copy": "characters, objects, composition, or story content",
+            })
+        payload["references"].extend({"path": str(reference), "role": "character"} for reference in character_references)
     if style_id == "3.1":
         anchor = ROOT / "assets/style-3.1/anchor-family.png"
         validate_style_3_1_anchor(anchor)
@@ -428,6 +734,209 @@ def build_payload(
                 },
             ],
         }
+    elif style_id == "19":
+        anchor = ROOT / "assets/style-19/anchor-roundhead-redline.png"
+        validate_style_19_anchor(anchor)
+        payload["style_contract"] = "roundhead-redline-v1"
+        references = [
+            {
+                "path": str(anchor),
+                "role": "style-only",
+                "priority": "primary-visual-truth",
+                "required_for": "every production image",
+                "must_not_copy": "people, animal, clothing, props, positions, or actions",
+            }
+        ]
+        references.extend(
+            {
+                "path": str(path),
+                "role": "character",
+                "required_for": "every image containing this recurring character",
+                "must_not_replace": "the style-only reference",
+            }
+            for path in character_references
+        )
+        payload["references"] = references
+        payload["model_requirements"] = {
+            "provider": "OpenAI",
+            "model_snapshot": STYLE_19_MODEL_SNAPSHOT,
+            "snapshot_lock_required": True,
+            "high_fidelity_image_input_required": True,
+            "production_fallback": "fail-closed",
+            "preview_fallback": "allowed only when explicitly labeled non-production",
+        }
+        payload["validation_evidence"] = {
+            "candidate_generator": "Codex built-in image generation",
+            "candidate_c2pa_software_agent": "gpt-image 2.0",
+            "exact_candidate_snapshot_observed": False,
+            "snapshot_requirement_basis": "current official OpenAI model catalog",
+        }
+        payload["acceptance_contract"] = {
+            "minimum_score": 30,
+            "maximum_score": 35,
+            "dimensions": [
+                "shape-language",
+                "face-language",
+                "gesture-language",
+                "material-language",
+                "palette",
+                "negative-space",
+                "originality-boundary",
+            ],
+            "hard_failures": [
+                "title, logo, watermark, credited name, or poster layout",
+                "red-and-white striped shirt combined with black shorts",
+                "commercial vector, generic cute storybook, chibi, anime, 3D, or realism",
+                "uniform thick outline, smooth gradient, or airbrushed blush",
+                "filled background, more than two props, perspective floor, or cast-shadow system",
+                "any main hue outside near-white, graphite gray, charcoal black, and coral red",
+                "clean digital outline without visible graphite pressure variation",
+            ],
+        }
+        payload["workflow"] = {
+            "final_output_stage": "style-contract-check",
+            "stages": [
+                {
+                    "id": "base-generation",
+                    "operation": "generate",
+                    "prompt_source": "prompt",
+                    "references_source": "references",
+                    "output_status": "candidate-only",
+                },
+                {
+                    "id": "style-contract-check",
+                    "operation": "validate",
+                    "required": True,
+                    "acceptance_source": "acceptance_contract",
+                    "input_source": "base-generation.output",
+                    "pass_status": "final",
+                    "fail_status": "rejected",
+                },
+            ],
+        }
+    elif style_id == "20":
+        anchor = ROOT / "assets/style-20/anchor-warm-yellow-ink-story-v3.png"
+        validate_style_20_anchor(anchor)
+        payload["style_contract"] = "warm-yellow-ink-story-v3"
+        references = [
+            {
+                "path": str(anchor),
+                "role": "style-only",
+                "priority": "primary-visual-truth",
+                "required_for": "every production image",
+                "must_not_copy": "people, animal, hair, clothing, props, positions, or actions",
+            }
+        ]
+        references.extend(
+            {
+                "path": str(path),
+                "role": "character",
+                "required_for": "every image containing this recurring character",
+                "must_not_replace": "the style-only reference",
+            }
+            for path in character_references
+        )
+        payload["references"] = references
+        payload["model_requirements"] = {
+            "provider": "OpenAI",
+            "model_snapshot": STYLE_20_MODEL_SNAPSHOT,
+            "snapshot_lock_required": True,
+            "high_fidelity_image_input_required": True,
+            "production_fallback": "fail-closed",
+            "preview_fallback": "allowed only when explicitly labeled non-production",
+        }
+        payload["validation_evidence"] = {
+            "candidate_generator": "Codex built-in image generation",
+            "candidate_c2pa_software_agent": "gpt-image 2.0",
+            "exact_candidate_snapshot_observed": False,
+            "snapshot_requirement_basis": "current official OpenAI model catalog",
+        }
+        payload["acceptance_contract"] = {
+            "minimum_score": 34,
+            "maximum_score": 40,
+            "dimensions": [
+                "shape-language",
+                "face-language",
+                "line-material",
+                "directional-black-hatching",
+                "mustard-yellow-material",
+                "negative-space",
+                "single-action-storytelling",
+                "originality-boundary",
+            ],
+            "hard_failures": [
+                "title, logo, watermark, account name, credited name, or copied caption",
+                "recognizable supplied character, paired yellow hoodies, or copied composition",
+                "commercial vector, generic cute storybook, chibi, anime, 3D, or realism",
+                "uniform thick outline or smooth solid-black hair and lower garments",
+                "fluorescent yellow, large blue or purple area, gradient, or colored background",
+                "filled background, complete room or landscape, or more than two props",
+                "long realistic anatomy, oversized or anatomically articulated hands, detailed shoes, repeated garment stripes, or decorative stitching",
+                "missing warm-white dominance, dry ink pressure variation, or readable single action",
+            ],
+        }
+        payload["workflow"] = {
+            "final_output_stage": "style-contract-check",
+            "stages": [
+                {
+                    "id": "base-generation",
+                    "operation": "generate",
+                    "prompt_source": "prompt",
+                    "references_source": "references",
+                    "output_status": "final-candidate",
+                },
+                {
+                    "id": "style-contract-check",
+                    "operation": "validate",
+                    "required": True,
+                    "input_source": "base-generation.output",
+                    "acceptance_source": "acceptance_contract",
+                    "validator": {
+                        "command": [
+                            "python3",
+                            str(ROOT / "scripts/validate_style_20_asset.py"),
+                            "--image",
+                            "{candidate_path}",
+                            "--source-image",
+                            "{base_generation_path}",
+                            "--scorecard",
+                            "{scorecard_path}",
+                        ],
+                        "required_exit_code": 0,
+                    },
+                    "pass_status": "final",
+                    "fail_status": "rejected",
+                },
+            ],
+            "rejection_policy": "reject and regenerate from base-generation; do not repair a failed candidate by style-transfer editing",
+        }
+    elif style_id == "21":
+        payload["style_contract"] = STYLE_21_CONTRACT
+        payload["inputs"]["text_lines"] = values["文字"].split("\n")
+        payload["generation"] = {
+            "validated_generator": "Codex built-in image generation (gpt-image 2.0 per C2PA)",
+            "reference_anchor_required": False,
+            "target_size": list(STYLE_21_TARGET_SIZE),
+            "local_wrapper": str(ROOT / STYLE_21_WRAPPER),
+        }
+        payload["acceptance_contract"] = {
+            "dimensions": [
+                "toned-drawing-paper-with-fine-even-grain",
+                "thin-graphite-contours-and-dry-colored-pencil-hatching",
+                "low-saturation-with-one-or-two-accents",
+                "sparse-drawing-with-half-the-paper-empty",
+                "handwritten-chinese-text-exact-centered-with-stanza-gaps",
+                "quiet-restrained-mood",
+            ],
+            "hard_failures": [
+                "any character in the text differs from the input",
+                "white or colored background instead of toned drawing paper",
+                "swirling, embossed or marbled digital texture",
+                "glossy digital rendering, vector lines, watercolor or heavy black outlines",
+                "sky, distant landscape, crowded props or dense hatching fields",
+                "text overlapping the drawing, red seal, signature, watermark, logo or extra text",
+            ],
+        }
     return payload
 
 
@@ -435,7 +944,8 @@ def main() -> int:
     parser = argparse.ArgumentParser(
         description="从 STYLES.md 原样提取配方、填占位符并输出最终 prompt。"
     )
-    parser.add_argument("--style", required=True, help="画风编号或已登记别名")
+    parser.add_argument("--style", help="画风编号、中文名称或已登记别名")
+    parser.add_argument("--list", action="store_true", help="输出全部画风、别名、参数和参考图的 JSON 菜单")
     parser.add_argument("--subject", help="填入【主体】")
     parser.add_argument("--text", help="填入【文字】")
     parser.add_argument("--title", help="风格 3.1 的准确标题原文;渲染器负责生成固定文字指令")
@@ -445,7 +955,7 @@ def main() -> int:
         action="append",
         default=[],
         metavar="PATH",
-        help="可重复传入连续故事的角色参考图;不会替代 3.1 画风锚点",
+        help="可重复传入连续故事的角色参考图;不会替代锁定画风的 style-only 锚点",
     )
     parser.add_argument(
         "--var",
@@ -458,18 +968,30 @@ def main() -> int:
         "--format",
         choices=("auto", "text", "json"),
         default="auto",
-        help="auto 对 3.1 输出正式 JSON、其他画风输出 text;json 含画风锚点等调用合同",
+        help="auto 对 3.1/19/20 输出正式 JSON、其他画风(含 21)输出 text;json 含画风锚点或生成合同",
     )
     parser.add_argument(
         "--text-only-preview",
         action="store_true",
-        help="只允许 3.1 的非生产预览显式输出纯 prompt;不得用于正式生图",
+        help="只允许 3.1/19/20 的非生产预览显式输出纯 prompt;不得用于正式生图",
     )
     args = parser.parse_args()
+
+    if args.list:
+        try:
+            print(json.dumps(list_styles(), ensure_ascii=False, indent=2))
+        except (OSError, ValueError) as error:
+            print(f"render_prompt: {error}", file=sys.stderr)
+            return 2
+        return 0
+    if args.style is None:
+        parser.error("必须提供 --style 或 --list")
 
     try:
         style_id = canonical_style_id(args.style)
         values = parse_vars(args.var)
+        if args.title is not None and style_id != "3.1":
+            raise ValueError("--title 只适用于画风 3.1;画风 19/20 的标题需走独立排版流程,画风 21 的文案用 --text")
         if args.text is not None and args.title is not None:
             raise ValueError("--text 与 --title 不能同时使用")
         if args.subject is not None:
@@ -483,6 +1005,28 @@ def main() -> int:
         if style_id == "3.1":
             validate_style_3_1_subject(values.get("主体", ""))
             validate_style_3_1_text(values.get("文字", ""), title_instruction)
+        elif style_id == "19":
+            validate_style_19_subject(values.get("主体", ""))
+            if values.get("文字", "") in {"", "不加任何文字"}:
+                values["文字"] = "No text anywhere."
+            validate_style_19_text(values["文字"])
+        elif style_id == "20":
+            validate_style_20_subject(values.get("主体", ""))
+            if values.get("文字", "") in {"", "不加任何文字"}:
+                values["文字"] = "No text anywhere."
+            validate_style_20_text(values["文字"])
+        elif style_id == "21":
+            values["画幅"] = style_21_aspect_sentence(args.aspect)
+            args.aspect = None
+            values.setdefault("主体", STYLE_21_DEFAULT_SUBJECT)
+            validate_locked_style_subject("21", values["主体"])
+            values["文字"] = normalize_style_21_text("21", values.get("文字", ""))
+        if style_id == "12":
+            scene = values.get("场景", "")
+            if "【背景元素】" in scene:
+                values["场景"] = scene.replace("【背景元素】", values.pop("背景元素", ""))
+            elif "背景元素" in values:
+                raise ValueError("画风 12 的场景没有【背景元素】参数;请在留白纸边档场景中使用")
         character_references = validate_character_references(args.character_reference)
         template = extract_template(style_id)
         prompt = render(template, values, args.aspect)
@@ -493,15 +1037,16 @@ def main() -> int:
             args.aspect,
             character_references,
         )
-        output_format = "json" if args.format == "auto" and style_id == "3.1" else args.format
+        locked_style_ids = {"3.1", "19", "20"}
+        output_format = "json" if args.format == "auto" and style_id in locked_style_ids else args.format
         if output_format == "auto":
             output_format = "text"
-        if style_id == "3.1" and output_format == "text" and not args.text_only_preview:
+        if style_id in locked_style_ids and output_format == "text" and not args.text_only_preview:
             raise ValueError(
-                "画风 3.1 正式生产不能只输出 prompt;请使用 --format json,"
+                f"画风 {style_id} 正式生产不能只输出 prompt;请使用 --format json,"
                 "或仅在非生产预览时显式加 --text-only-preview"
             )
-    except ValueError as error:
+    except (OSError, ValueError) as error:
         print(f"render_prompt: {error}", file=sys.stderr)
         return 2
 

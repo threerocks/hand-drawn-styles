@@ -1,0 +1,381 @@
+{
+  "format_version": 1,
+  "base_url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn",
+  "images": {
+    "assets/style-19/anchor-roundhead-redline.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/assets/style-19/anchor-roundhead-redline.png",
+      "bytes": 1572238,
+      "sha256": "a804cff3553665df666c072c9b1d6118a48ffef537f98155e2d48173e90c985d"
+    },
+    "assets/style-20/anchor-warm-yellow-ink-story.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/assets/style-20/anchor-warm-yellow-ink-story.png",
+      "bytes": 1720913,
+      "sha256": "29602439c2ca2f2aa847f6449eab824c90832e8790b543451fe0cbab914cde32"
+    },
+    "assets/style-3.1/anchor-family.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/assets/style-3.1/anchor-family.png",
+      "bytes": 1814203,
+      "sha256": "d1eb06abd3e81115483b6d6227746ad1811f6c2bc8e0670f573fd4d6f9eaafc3"
+    },
+    "benchmarks/codex-r1/s11-emosketch.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/codex-r1/s11-emosketch.png",
+      "bytes": 1848475,
+      "sha256": "bb48b98e3d0633aa852add2c77e732fcd2a5c3d7875ef714270a660c0a9ca6b4"
+    },
+    "benchmarks/codex-r1/s1_1-coloring.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/codex-r1/s1_1-coloring.png",
+      "bytes": 2344530,
+      "sha256": "8bd2d778709856efa142774c57dbd149c1985938d7f7275f10d34f13c9573e7f"
+    },
+    "benchmarks/codex-r1/s31-rawkid.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/codex-r1/s31-rawkid.png",
+      "bytes": 2206787,
+      "sha256": "00e47c3243d6273df507fc0d408e905e4c521e1300342bfa5af838cb6ce812b8"
+    },
+    "benchmarks/codex-r1/s8-realcrayon.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/codex-r1/s8-realcrayon.png",
+      "bytes": 2450642,
+      "sha256": "034fcba5d79f5ec0f07d0066d33b0c7fe744bd94f14b9769adb6b797b37b5961"
+    },
+    "benchmarks/codex-r2/s11-emosketch.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/codex-r2/s11-emosketch.png",
+      "bytes": 2175036,
+      "sha256": "a35c32a441cdf31f65a088f78011ca08c6992b5b7ef203848e10bb3fe5a19415"
+    },
+    "benchmarks/codex-r2/s1_1-coloring.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/codex-r2/s1_1-coloring.png",
+      "bytes": 2248516,
+      "sha256": "5d33aff1557c2d9abb16367aae8559a839f1bb778d5689367286aad949fab441"
+    },
+    "benchmarks/codex-r2/s31-rawkid.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/codex-r2/s31-rawkid.png",
+      "bytes": 3112631,
+      "sha256": "3a17cbae4ead6dad2aa103aecb58422b8578d58463c39afcf9f5af441fffdf52"
+    },
+    "benchmarks/codex-r2/s8-realcrayon.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/codex-r2/s8-realcrayon.png",
+      "bytes": 2658864,
+      "sha256": "6a126d394255d5dcaedae2ab9366c7f72577ab5bc9a95c790293f6adb3872571"
+    },
+    "benchmarks/compare/s11-emosketch.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/compare/s11-emosketch.png",
+      "bytes": 1520142,
+      "sha256": "b173283d1945ce8e86bd240e91883c5990335f75a5d4b26fbfab2d209492389d"
+    },
+    "benchmarks/compare/s1_1-coloring.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/compare/s1_1-coloring.png",
+      "bytes": 1949360,
+      "sha256": "3261fdc2988f29c81784cf7cb6ef8c26c261825d3c3038c78c914a16c20e1d3d"
+    },
+    "benchmarks/compare/s31-rawkid.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/compare/s31-rawkid.png",
+      "bytes": 2068482,
+      "sha256": "02d1a3ebde5168cff2302f3e723e4f176cc3edd7a911593639a437782e6fe4b8"
+    },
+    "benchmarks/compare/s8-realcrayon.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/compare/s8-realcrayon.png",
+      "bytes": 1914165,
+      "sha256": "c4319ab73dce82677ae3fcce9f96caac17150c4c61edc221961537c5a5ba2f87"
+    },
+    "benchmarks/mj/grid-a.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/mj/grid-a.png",
+      "bytes": 8883401,
+      "sha256": "ed590e1bc65fe664521592bbca357d1b0d6c2c5425dc319c90917be896831196"
+    },
+    "benchmarks/mj/grid-b.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/mj/grid-b.png",
+      "bytes": 8519076,
+      "sha256": "f32419c851a9fca2511d35a42387aa53cf77f1633c18a19ceeda5ef54c033ce1"
+    },
+    "benchmarks/mj/grid-c.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/mj/grid-c.png",
+      "bytes": 8769996,
+      "sha256": "14654665977e4214800dc0f746418e6d41aa6e32be1a8104d406fef09c1469f2"
+    },
+    "benchmarks/mj/grid-d.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/mj/grid-d.png",
+      "bytes": 9360073,
+      "sha256": "329bd8e8dad9135cceb3958192644a1e527df360a145112d2dd0f6d10590c997"
+    },
+    "benchmarks/mj/grid-e.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/mj/grid-e.png",
+      "bytes": 5932733,
+      "sha256": "70cc52a0a61c66cb707bc6c7938136b1d4bf82a3ebfabdfa65025c68b01a8c76"
+    },
+    "benchmarks/mj/s11-emosketch.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/mj/s11-emosketch.png",
+      "bytes": 1455268,
+      "sha256": "0c18ac016ce976330239a0bd9c11615ae030a78ff069607ea5a7e66461bc1728"
+    },
+    "benchmarks/mj/s1_1-coloring.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/mj/s1_1-coloring.png",
+      "bytes": 2320820,
+      "sha256": "b7967a2412d5163b163c4c4eba331fa769d1cc296e2857bef7b01e0b6c95c1f3"
+    },
+    "benchmarks/mj/s31-rawkid.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/mj/s31-rawkid.png",
+      "bytes": 2273194,
+      "sha256": "02284c0d75c28a4a4cc760c93c5bfa85f0686493a4ffddfcf42a3519b454b5f1"
+    },
+    "benchmarks/mj/s8-realcrayon.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/mj/s8-realcrayon.png",
+      "bytes": 2008615,
+      "sha256": "f9406cd71229c26ef4acc58ccd4808fd5ad4325eaa273ae2f87ed1e832434c28"
+    },
+    "benchmarks/style-19/compare/final-contact-sheet.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/style-19/compare/final-contact-sheet.png",
+      "bytes": 882385,
+      "sha256": "735a6f9a3259194212a8e95250484db230342b443b36274d5375a767d89eefbc"
+    },
+    "benchmarks/style-19/compare/r1-contact-sheet.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/style-19/compare/r1-contact-sheet.png",
+      "bytes": 963577,
+      "sha256": "4e46f71d5e1818487b61f7627d853d200c95721d9da96a3775ed5ecc33cd748e"
+    },
+    "benchmarks/style-19/generalization/bear-and-fox.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/style-19/generalization/bear-and-fox.png",
+      "bytes": 1806033,
+      "sha256": "17c8f013c87b12f800e2e3c0d36082e1a47d4dfe861eba261e0d3e3097d31ef6"
+    },
+    "benchmarks/style-19/generalization/high-five.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/style-19/generalization/high-five.png",
+      "bytes": 1787213,
+      "sha256": "1d8b0c95f1a344821453c870615b3c5318a3e498978e1ee0589d630f2a792675"
+    },
+    "benchmarks/style-19/generalization/librarian.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/style-19/generalization/librarian.png",
+      "bytes": 1699043,
+      "sha256": "4768ae5f805f9f7bcc4b5ecf5df275e2a5ae08f76c417e19eb4bcf3504679e3e"
+    },
+    "benchmarks/style-19/r1/candidate-a-clean-flat.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/style-19/r1/candidate-a-clean-flat.png",
+      "bytes": 1416464,
+      "sha256": "392c3c370893298ce2d5e272852499b64c2c8be54061fac704fab9b9f7527274"
+    },
+    "benchmarks/style-19/r1/candidate-b-paper-flat.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/style-19/r1/candidate-b-paper-flat.png",
+      "bytes": 1529457,
+      "sha256": "34f7ba54d5cd93205026dc5d6fa456bef632ed869dafd1a9b32a9a61eb30f3cd"
+    },
+    "benchmarks/style-19/r1/candidate-c-soft-depth.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/style-19/r1/candidate-c-soft-depth.png",
+      "bytes": 1020825,
+      "sha256": "f97b12f5b6dac95628aa2c089630f9755c40d9341963b58bccbb2ab1016fb35c"
+    },
+    "benchmarks/style-19/r2/family-refined.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/style-19/r2/family-refined.png",
+      "bytes": 1129272,
+      "sha256": "ff5baf34ab04c813a0fe1512f174dea0fd15aee1f978a937b8520e7f6853ffc9"
+    },
+    "benchmarks/style-19/reference.webp": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/style-19/reference.webp",
+      "bytes": 193486,
+      "sha256": "0929c5352b539626984c05edf0759a37b195771949fe822f3637a685c57bbfc2"
+    },
+    "benchmarks/style-3.1/librarian-book-return-v2.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/style-3.1/librarian-book-return-v2.png",
+      "bytes": 1849457,
+      "sha256": "dc1466dc845fbf5c8fcbdd692c6968d293a3831cf48950b54e8cec38061aba55"
+    },
+    "benchmarks/style-3.1/librarian-book-return-v3-failed.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/style-3.1/librarian-book-return-v3-failed.png",
+      "bytes": 1789433,
+      "sha256": "fcf62db3a5b991f7813f10d7eb8c0e06c025260d3d206368cb30eb7d2a3b8e92"
+    },
+    "benchmarks/style-3.1/librarian-book-return-v4-two-pass.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/style-3.1/librarian-book-return-v4-two-pass.png",
+      "bytes": 1805599,
+      "sha256": "1c8f3d535fb1a0a898c127f67f6341b75f1970f62378ec1dedeec0f9b816a01b"
+    },
+    "benchmarks/style-3.1/librarian-book-return-v5-three-stage.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/style-3.1/librarian-book-return-v5-three-stage.png",
+      "bytes": 1738714,
+      "sha256": "c2da5457a569044da030e3658222f0a5662340401986900f0ee659b6286c5f68"
+    },
+    "benchmarks/style-3.1/librarian-book-return.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/style-3.1/librarian-book-return.png",
+      "bytes": 1721369,
+      "sha256": "2e7eb5f48fa70f5cd5b1c0691e81190a62976cdb27845287155478d35448bd8e"
+    },
+    "benchmarks/style-3.1/parent-listening-v2.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/style-3.1/parent-listening-v2.png",
+      "bytes": 1626006,
+      "sha256": "242eefa3ede06da99cdb2a13b4bb19f56a662ea6d51ae90398cced36569f1cdd"
+    },
+    "benchmarks/style-3.1/parent-listening-v3-failed.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/style-3.1/parent-listening-v3-failed.png",
+      "bytes": 1827118,
+      "sha256": "df67f41d2cf49ae9530941a1ad995f5c5fe51f2a14ee3866ad3138f441195767"
+    },
+    "benchmarks/style-3.1/parent-listening-v4-two-pass.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/style-3.1/parent-listening-v4-two-pass.png",
+      "bytes": 1754094,
+      "sha256": "4752582eb713c323b5e6178d4fbfb0e61da9f0b1c06af27897c58bbd7c48c056"
+    },
+    "benchmarks/style-3.1/parent-listening-v5-single-strong-correction-failed.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/style-3.1/parent-listening-v5-single-strong-correction-failed.png",
+      "bytes": 1541912,
+      "sha256": "acbb7624677d77a0bf826ad72e285d74be16a9a7ef583c1c2189f599e0c33863"
+    },
+    "benchmarks/style-3.1/parent-listening-v5-three-stage.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/style-3.1/parent-listening-v5-three-stage.png",
+      "bytes": 1726424,
+      "sha256": "d1b170d7cff68fc2ca6646bbd58b4d80b682d8c81f206c8c148feb819a8ca03c"
+    },
+    "benchmarks/style-3.1/parent-snack-cabinet.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/style-3.1/parent-snack-cabinet.png",
+      "bytes": 1679789,
+      "sha256": "0c0351ff259a4268bc76b69bff37c9e9cd8c0fafd163f8b1fca360dabbc698d7"
+    },
+    "examples/01-minimal-line.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/01-minimal-line.png",
+      "bytes": 1279341,
+      "sha256": "ce83f98357d3eaf9d1a2ec391493ec524cb5050b843ac48d5287ad6b53d07900"
+    },
+    "examples/02-crayon.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/02-crayon.png",
+      "bytes": 2274627,
+      "sha256": "a7df8d30c61877ec88cb6c5d754edf8f46d51d10098e9ac28f369ec39536f379"
+    },
+    "examples/03-ghibli.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/03-ghibli.png",
+      "bytes": 2083634,
+      "sha256": "2e3b624cdf893105f1de6becc0abadcac66ab1546d07803932ebe8d5600a33aa"
+    },
+    "examples/04-bean-doodle.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/04-bean-doodle.png",
+      "bytes": 2248200,
+      "sha256": "802642f13deb157549b3b34cb9563b8450048b1f5ce2ed05f12dd380f3517670"
+    },
+    "examples/05-ms-paint.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/05-ms-paint.png",
+      "bytes": 984488,
+      "sha256": "ff941d0ade84f188bf68d57341150f1979f12152acdf28d978296db499f3c97c"
+    },
+    "examples/06-pen-scribble.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/06-pen-scribble.png",
+      "bytes": 2762861,
+      "sha256": "be56f278c5f9c17462e6225a3b57030ad22b9a84ff0714892344c0655ab4a3c6"
+    },
+    "examples/07-real-crayon.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/07-real-crayon.png",
+      "bytes": 2867492,
+      "sha256": "4a60d662d682b973ebdb8333a6f5001c32fbc0636b38bbe88615ec771f70b2a7"
+    },
+    "examples/08-ink-wash.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/08-ink-wash.png",
+      "bytes": 2969841,
+      "sha256": "529f184781b2b52b37bfb69a6379db7bce80fce74ece6f60ff34678158f08158"
+    },
+    "examples/09-pixel-art.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/09-pixel-art.png",
+      "bytes": 927895,
+      "sha256": "9fe50bb540cb52a737f4d2569385301b2973e97fe37ff3d9d6d0c23cc5da94cc"
+    },
+    "examples/10-emo-sketch.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/10-emo-sketch.png",
+      "bytes": 2498720,
+      "sha256": "30258b917929c9cad4acc4a8eaa660893bbd0b2b961cb1fb535d52b12295e98d"
+    },
+    "examples/11-retro-concept-duo.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/11-retro-concept-duo.png",
+      "bytes": 2872390,
+      "sha256": "112275fd889a95daf4088b91ac291fb8801e9ade83a4fbec972bf9651ccc50a5"
+    },
+    "examples/11-retro-concept.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/11-retro-concept.png",
+      "bytes": 2438699,
+      "sha256": "ed6c4da05bce524f85f87b8e64ea3a7bfb74ed1f81ac90f698c0cf584c1ea5eb"
+    },
+    "examples/12-sunlit-storybook-boy.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/12-sunlit-storybook-boy.png",
+      "bytes": 3166508,
+      "sha256": "463dc4c512ec0c25023678a77cb57af81744ca5325f9e52505ffe1a5dc7ba26b"
+    },
+    "examples/12-sunlit-storybook-fullbleed.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/12-sunlit-storybook-fullbleed.png",
+      "bytes": 2529712,
+      "sha256": "6943c5a985eaba292ed8e6b457737c9dc0c6299ec358a0870af08a18752c1a4a"
+    },
+    "examples/12-sunlit-storybook.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/12-sunlit-storybook.png",
+      "bytes": 2932536,
+      "sha256": "a284612e532c3e6d7ecd55b03518eb75865c24210f5ef7d37b97c548464b8c53"
+    },
+    "examples/13-paper-folk-musician.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/13-paper-folk-musician.png",
+      "bytes": 2656370,
+      "sha256": "4f8b3aeed14c02c4ac6c55b3e0b9d8e0cbd5dc330ea91f8736a3961b45f66199"
+    },
+    "examples/13-paper-folk.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/13-paper-folk.png",
+      "bytes": 2426454,
+      "sha256": "4fee20799a3fbe8d07309b540d53f08b0e9517d0f8ffc75011c6dc4c842ec4d1"
+    },
+    "examples/14-nordic-storybook-lanky.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/14-nordic-storybook-lanky.png",
+      "bytes": 2456944,
+      "sha256": "afc2cc7cff56c5fc3d95532ca266fa9fd0ff332aaef02b81f44b1f0e5edadd46"
+    },
+    "examples/14-nordic-storybook-portrait.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/14-nordic-storybook-portrait.png",
+      "bytes": 2630433,
+      "sha256": "fa11b6ddb95df33bd316f4eb62a2cc198be9ca77bd13a5e93eb7b83b60eeaea1"
+    },
+    "examples/14-nordic-storybook.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/14-nordic-storybook.png",
+      "bytes": 2360990,
+      "sha256": "9b582a81307599e22d11c9d6ba9dfab3dc6a5610947f8905f920ec237c354e4e"
+    },
+    "examples/15-softnose-vinyl-fullbody.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/15-softnose-vinyl-fullbody.png",
+      "bytes": 1541344,
+      "sha256": "b64cddf757396c054bc6123df3e6b55dcfcd08a0780298f693824ea1c8071531"
+    },
+    "examples/15-softnose-vinyl.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/15-softnose-vinyl.png",
+      "bytes": 1791630,
+      "sha256": "ec4bb21b67a7ecce12721865f08183171265593df630bf1cdda4b49349bb939b"
+    },
+    "examples/16-gouache-spotlight-bird.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/16-gouache-spotlight-bird.png",
+      "bytes": 2497017,
+      "sha256": "d146fb56ded26503a37646200283b85183d02293112de44b227206c668fcb6c6"
+    },
+    "examples/16-gouache-spotlight-boy.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/16-gouache-spotlight-boy.png",
+      "bytes": 2117421,
+      "sha256": "cd1536c9c19df288e082d9d4b48a601361dec0dd355f71fa91a842367ab66802"
+    },
+    "examples/16-gouache-spotlight-oldman.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/16-gouache-spotlight-oldman.png",
+      "bytes": 2732334,
+      "sha256": "cbc1f3d88b2ef5a806d6935cb83fd9371495ac9f7155c81923c99457f0085876"
+    },
+    "examples/16-gouache-spotlight.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/16-gouache-spotlight.png",
+      "bytes": 2413409,
+      "sha256": "ac213834b33eeee8914d8d1dca9815a47576827bde57dc6e3609ae5cd0eb93d7"
+    },
+    "examples/17-inked-storybook-boy.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/17-inked-storybook-boy.png",
+      "bytes": 2802880,
+      "sha256": "d519a3e71b8e0a7704bd658e83ae0026a1e72e4fcc4ce24635c5689bc2613aa8"
+    },
+    "examples/17-inked-storybook-redhat.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/17-inked-storybook-redhat.png",
+      "bytes": 2734009,
+      "sha256": "ee5e031b83e5ddaa30b4e5ec5a528fb1d47545597e43c73ce9f84a17ed1303d6"
+    },
+    "examples/17-inked-storybook.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/17-inked-storybook.png",
+      "bytes": 2598920,
+      "sha256": "ac072cf12962eb479c7fed4773295c2a69e0fb2db531e317d3ac9513f1f320d8"
+    },
+    "examples/18-warm-flat-storybook.png": {
+      "url": "https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/18-warm-flat-storybook.png",
+      "bytes": 1129272,
+      "sha256": "ff5baf34ab04c813a0fe1512f174dea0fd15aee1f978a937b8520e7f6853ffc9"
+    }
+  }
+}

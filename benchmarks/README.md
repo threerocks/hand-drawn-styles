@@ -3,6 +3,8 @@
 目的:gpt-image(codex)出图"数字感偏重",以 Midjourney V7 为材质标杆,迭代 prompt 直到 codex 接近。产出 = STYLES.md 附录 A「实拍纸质感增强层」。
 
 - 统一场景见 `scene.md`;四画风:3.1 蜡笔童涂潦草自画 / 8 蜡笔实拍 / 1.1 儿童涂色低饱和 / 11 情绪叙事淡彩速写。
+图片已迁移到 Netlify，完整地址见 [图片清单](../assets/image-manifest.json)。下列路径是清单中的名称，图片文件不保存在 Git 中。
+
 - `mj/sXX-*.png` = MJ V7 标杆(四宫格挑格,grid-*.png 为原格);`codex-r1/` = 仓库原配方基线;`codex-r2/` = 叠加材质增强层;`compare/` = 三列对照图。
 
 ## 结论

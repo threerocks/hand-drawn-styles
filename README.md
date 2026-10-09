@@ -6,7 +6,7 @@ hand-drawn-styles 是一套**工具无关的手绘画风提示词配方**。把�
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-**默认安装：[下载轻量包 hand-drawn-skill.zip](https://github.com/threerocks/hand-drawn-styles/releases/latest/download/hand-drawn-skill.zip)**（约 9.5 MiB）。包含全部 21 套配方、运行脚本和必要参考图。完整仓库用于维护与查看样图，安装 Skill 使用轻量包即可。
+**默认安装：[下载轻量包 hand-drawn-skill.zip](https://github.com/threerocks/hand-drawn-styles/releases/latest/download/hand-drawn-skill.zip)**（约 81 KiB）。包含全部 21 套配方、运行脚本和图片清单。图片由 Netlify 公开托管，运行参考图首次使用时下载并校验。
 
 ## 这是什么
 
@@ -34,7 +34,7 @@ hand-drawn-styles 是一套**工具无关的手绘画风提示词配方**。把�
 解压后保留 hand-drawn/ 的完整目录结构，并运行 scripts/check_skill.py 验证安装。
 ```
 
-优先下载 [Release 轻量包](https://github.com/threerocks/hand-drawn-styles/releases/latest/download/hand-drawn-skill.zip)，解压后保留 `hand-drawn/` 的目录结构。轻量包不包含 Git 历史、展示图库或研发对照图。安装方式与检查命令见 [INSTALL.md](INSTALL.md)；完整文件校验值见 [SHA256SUMS](https://github.com/threerocks/hand-drawn-styles/releases/latest/download/SHA256SUMS)。需要从源码安装时，可使用下文的部分克隆命令。
+优先下载 [Release 轻量包](https://github.com/threerocks/hand-drawn-styles/releases/latest/download/hand-drawn-skill.zip)，解压后保留 `hand-drawn/` 的目录结构。轻量包不包含 Git 历史、展示图库或研发对照图。安装方式与检查命令见 [INSTALL.md](INSTALL.md)；完整文件校验值见 [SHA256SUMS](https://github.com/threerocks/hand-drawn-styles/releases/latest/download/SHA256SUMS)。需要从源码安装时，可使用下文的浅克隆命令。
 
 ## 内置画风
 
@@ -68,28 +68,23 @@ hand-drawn-styles 是一套**工具无关的手绘画风提示词配方**。把�
 
 | | | | |
 |:--:|:--:|:--:|:--:|
-| <img src="examples/01-minimal-line.png" width="200"><br>**1** 极简线条 xkcd 火柴人 | <img src="examples/02-crayon.png" width="200"><br>**2** 蜡笔童涂 | <img src="examples/03-ghibli.png" width="200"><br>**3** 吉卜力 | <img src="assets/style-3.1/anchor-family.png" width="200"><br>**3.1** 蜡笔童涂-潦草自画版 |
-| <img src="examples/04-bean-doodle.png" width="200"><br>**4** 小豆人信息图 | <img src="examples/05-ms-paint.png" width="200"><br>**5** MS Paint 烂涂鸦 | <img src="examples/06-pen-scribble.png" width="200"><br>**6** 圆珠笔单线涂鸦 | <img src="examples/07-real-crayon.png" width="200"><br>**7** 蜡笔实拍 |
-| <img src="examples/08-ink-wash.png" width="200"><br>**8** 水墨写意 | <img src="examples/09-pixel-art.png" width="200"><br>**9** 复古像素 | <img src="examples/10-emo-sketch.png" width="200"><br>**10** 情绪叙事淡彩速写 | <img src="examples/11-retro-concept.png" width="200"><br>**11** 二维水彩风格 |
-| <img src="examples/12-sunlit-storybook.png" width="200"><br>**12** 暖光童画 | <img src="examples/13-paper-folk.png" width="200"><br>**13** 北欧纸雕 | <img src="examples/14-nordic-storybook.png" width="200"><br>**14** 北欧绘本水粉 | <img src="examples/15-softnose-vinyl.png" width="200"><br>**15** 大鼻软偶 |
-| <img src="examples/16-gouache-spotlight.png" width="200"><br>**16** 聚光水粉立绘 | <img src="examples/17-inked-storybook.png" width="200"><br>**17** 墨线绘本 | <img src="examples/18-warm-flat-storybook.png" width="200"><br>**18** 暖色扁平绘本 | <img src="assets/style-19/anchor-roundhead-redline.png" width="200"><br>**19** 圆头红线极简童画 |
-| <img src="assets/style-20/anchor-warm-yellow-ink-story.png" width="200"><br>**20** 暖黄墨线情绪小剧场 | | | |
+| <img src="https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/01-minimal-line.png" width="200"><br>**1** 极简线条 xkcd 火柴人 | <img src="https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/02-crayon.png" width="200"><br>**2** 蜡笔童涂 | <img src="https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/03-ghibli.png" width="200"><br>**3** 吉卜力 | <img src="https://gentle-starburst-99bd99.netlify.app/hand-drawn/assets/style-3.1/anchor-family.png" width="200"><br>**3.1** 蜡笔童涂-潦草自画版 |
+| <img src="https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/04-bean-doodle.png" width="200"><br>**4** 小豆人信息图 | <img src="https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/05-ms-paint.png" width="200"><br>**5** MS Paint 烂涂鸦 | <img src="https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/06-pen-scribble.png" width="200"><br>**6** 圆珠笔单线涂鸦 | <img src="https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/07-real-crayon.png" width="200"><br>**7** 蜡笔实拍 |
+| <img src="https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/08-ink-wash.png" width="200"><br>**8** 水墨写意 | <img src="https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/09-pixel-art.png" width="200"><br>**9** 复古像素 | <img src="https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/10-emo-sketch.png" width="200"><br>**10** 情绪叙事淡彩速写 | <img src="https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/11-retro-concept.png" width="200"><br>**11** 二维水彩风格 |
+| <img src="https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/12-sunlit-storybook.png" width="200"><br>**12** 暖光童画 | <img src="https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/13-paper-folk.png" width="200"><br>**13** 北欧纸雕 | <img src="https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/14-nordic-storybook.png" width="200"><br>**14** 北欧绘本水粉 | <img src="https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/15-softnose-vinyl.png" width="200"><br>**15** 大鼻软偶 |
+| <img src="https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/16-gouache-spotlight.png" width="200"><br>**16** 聚光水粉立绘 | <img src="https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/17-inked-storybook.png" width="200"><br>**17** 墨线绘本 | <img src="https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/18-warm-flat-storybook.png" width="200"><br>**18** 暖色扁平绘本 | <img src="https://gentle-starburst-99bd99.netlify.app/hand-drawn/assets/style-19/anchor-roundhead-redline.png" width="200"><br>**19** 圆头红线极简童画 |
+| <img src="https://gentle-starburst-99bd99.netlify.app/hand-drawn/assets/style-20/anchor-warm-yellow-ink-story.png" width="200"><br>**20** 暖黄墨线情绪小剧场 | | | |
 
 > 每种画风的输入示例与完整提示词见 [examples/](examples/)。
 
 ## 接入各 Agent 工具
 
-核心是工具无关的 [`PROTOCOL.md`](PROTOCOL.md)(执行流程)+ [`STYLES.md`](STYLES.md)(画风配方)。风格 3.1、19 和 20 分别依赖三张正式锚点；风格 13 还使用两张北欧纸雕参考图。轻量包保留这些依赖，正式生产必须安装整个包，不要只复制文本片段。
+核心是工具无关的 [`PROTOCOL.md`](PROTOCOL.md)(执行流程)+ [`STYLES.md`](STYLES.md)(画风配方)。风格 3.1、19 和 20 分别依赖三张正式锚点；风格 13 还使用两张北欧纸雕参考图。轻量包保留图片地址和校验值，渲染器按需下载到独立缓存。正式生产必须安装整个包，不要只复制文本片段。
 
-需要从源码安装时，使用浅克隆和部分克隆，只下载运行目录。服务器需要支持 Git 的部分克隆；不支持时，使用 [Release 轻量包](https://github.com/threerocks/hand-drawn-styles/releases/latest/download/hand-drawn-skill.zip)。
+需要从源码安装时，使用浅克隆。当前版本不含图片文件；旧图片仍在 Git 历史中，因此不带 `--depth 1` 的完整克隆仍会下载历史图片。
 
 ```bash
-git clone --depth 1 --filter=blob:none --sparse \
-  https://github.com/threerocks/hand-drawn-styles.git
-git -C hand-drawn-styles sparse-checkout set --no-cone \
-  '/SKILL.md' '/AGENTS.md' '/PROTOCOL.md' '/STYLES.md' '/LICENSE' '/INSTALL.md' \
-  '/scripts/' '/assets/' \
-  '/examples/13-paper-folk.png' '/examples/13-paper-folk-musician.png'
+git clone --depth 1 https://github.com/threerocks/hand-drawn-styles.git
 python3 -B hand-drawn-styles/scripts/check_skill.py
 ```
 
@@ -108,12 +103,15 @@ python3 -B hand-drawn-styles/scripts/check_skill.py
 Python 3.10 或更高版本即可运行，不需要 Python 第三方依赖：
 
 ```bash
+python3 -B scripts/hosted_images.py fetch
 python3 -B -m unittest discover -s scripts -p 'test_*.py'
 python3 -B scripts/check_skill.py
 python3 -B scripts/build_skill_package.py
 ```
 
-打包脚本从配方中的资源引用收集必要图片，在仓库外解压 ZIP，再调用全部画风。只有依赖检查和独立安装验证通过，输出才标为 `verified`。包内的 `PACKAGE-MANIFEST.json` 记录文件大小和 SHA-256；图片按原字节保留。安装包大小上限为 15 MiB，超出时构建失败，维护者需要核对新增依赖。
+打包脚本只收集运行文本，在仓库外解压 ZIP，再调用全部画风。只有依赖检查和独立安装验证通过，输出才标为 `verified`。包内的 `PACKAGE-MANIFEST.json` 记录安装文件大小和 SHA-256；`assets/image-manifest.json` 记录图片地址、大小和 SHA-256。安装包上限为 1 MiB，仓库检查拒绝已跟踪的图片文件。
+
+新图片必须先完成隐私清理、Netlify 上传和匿名下载校验，再提交链接与审计记录。完整步骤见 [图片托管与维护规则](docs/image-hosting.md)。缓存可通过 `HAND_DRAWN_IMAGE_CACHE` 指定；`HAND_DRAWN_OFFLINE=1` 允许用有效缓存完成离线调用。
 
 默认产物是 `dist/hand-drawn-skill.zip`。`--skip-verify` 只生成 `candidate-only` 候选包。持续集成执行相同检查并保存 ZIP 工件；公开发布附件需要维护者另行发布。
 

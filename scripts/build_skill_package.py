@@ -17,7 +17,7 @@ import check_skill
 
 ROOT = Path(__file__).resolve().parents[1]
 PACKAGE_DIRECTORY = "hand-drawn"
-MAXIMUM_PACKAGE_BYTES = 15 * 1024 * 1024
+MAXIMUM_PACKAGE_BYTES = 1024 * 1024
 
 
 def build_archive(output: Path) -> dict[str, object]:
@@ -45,7 +45,7 @@ def build_archive(output: Path) -> dict[str, object]:
                 entry.compress_type = zipfile.ZIP_DEFLATED
                 archive.writestr(entry, content)
         if temporary_path.stat().st_size > MAXIMUM_PACKAGE_BYTES:
-            raise ValueError("安装包超过 15 MiB;请检查新增运行依赖,不要删除必要锚点")
+            raise ValueError("安装包超过 1 MiB;图片必须托管并登记链接，禁止打包图片缓存")
         temporary_path.replace(output)
     finally:
         temporary_path.unlink(missing_ok=True)

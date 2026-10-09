@@ -1,10 +1,10 @@
 # 历史编号 #19 / 当前 #18 暖色扁平绘本验证记录
 
-> 本目录名保留自 2026-08-23 之前的编号。当前 `STYLES.md` 中暖色扁平绘本是 #18;当前 #19 是 `roundhead-redline`,定稿图在 `../../assets/style-19/anchor-roundhead-redline.png`。不要按本目录名调用当前 #19。
+> 本目录名保留自 2026-08-23 之前的编号。当前 `STYLES.md` 中暖色扁平绘本是 #18;当前 #19 是 `roundhead-redline`,定稿图在 [../../assets/style-19/anchor-roundhead-redline.png](https://gentle-starburst-99bd99.netlify.app/hand-drawn/assets/style-19/anchor-roundhead-redline.png)。不要按本目录名调用当前 #19。
 
 ## 目标
 
-复刻 `reference.webp` 的视觉语言,并验证脱离参考图后能否跨主体稳定复现。
+复刻 [reference.webp](https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/style-19/reference.webp) 的视觉语言,并验证脱离参考图后能否跨主体稳定复现。
 
 判定维度:
 
@@ -18,23 +18,23 @@
 
 ### r1:材质方向
 
-- `candidate-a-clean-flat.png`:色板基本正确,但偏普通商业矢量,母亲动作与附件差距较大。
-- `candidate-b-paper-flat.png`:人物叠放、手势、留白最接近附件,作为后续基线。
-- `candidate-c-soft-depth.png`:结构接近,但体积阴影偏重。
-- `compare/r1-contact-sheet.png`:从左到右为参考图、A、B、C。
-- `compare/final-contact-sheet.png`:从左到右为参考图、最终家庭样图、单人泛化、动物泛化。
+- [candidate-a-clean-flat.png](https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/style-19/r1/candidate-a-clean-flat.png):色板基本正确,但偏普通商业矢量,母亲动作与附件差距较大。
+- [candidate-b-paper-flat.png](https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/style-19/r1/candidate-b-paper-flat.png):人物叠放、手势、留白最接近附件,作为后续基线。
+- [candidate-c-soft-depth.png](https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/style-19/r1/candidate-c-soft-depth.png):结构接近,但体积阴影偏重。
+- [compare/r1-contact-sheet.png](https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/style-19/compare/r1-contact-sheet.png):从左到右为参考图、A、B、C。
+- [compare/final-contact-sheet.png](https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/style-19/compare/final-contact-sheet.png):从左到右为参考图、最终家庭样图、单人泛化、动物泛化。
 
 ### r2:比例与图形修正
 
-`r2/family-refined.png` 只修正四项:父亲巨肩与圆弧抬臂、成人窄脸/方下巴、母亲短发几何块、每块最多一深一浅阴影。其余色板和留白保持 r1-B。
+[r2/family-refined.png](https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/style-19/r2/family-refined.png) 只修正四项:父亲巨肩与圆弧抬臂、成人窄脸/方下巴、母亲短发几何块、每块最多一深一浅阴影。其余色板和留白保持 r1-B。
 
 ### 无参考图泛化
 
-以下三张均未输入 `reference.webp`,只使用最终候选配方:
+以下三张均未输入 [reference.webp](https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/style-19/reference.webp),只使用最终候选配方:
 
-- `generalization/librarian.png`:单人抱书,验证细长成人与道具色板。
-- `generalization/high-five.png`:双人击掌,验证巨肩/细长体型对比与动作弧线。
-- `generalization/bear-and-fox.png`:动物共读,验证非人物题材的几何翻译能力。
+- [generalization/librarian.png](https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/style-19/generalization/librarian.png):单人抱书,验证细长成人与道具色板。
+- [generalization/high-five.png](https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/style-19/generalization/high-five.png):双人击掌,验证巨肩/细长体型对比与动作弧线。
+- [generalization/bear-and-fox.png](https://gentle-starburst-99bd99.netlify.app/hand-drawn/benchmarks/style-19/generalization/bear-and-fox.png):动物共读,验证非人物题材的几何翻译能力。
 
 三项均保留限定色板、极少轮廓线、平涂硬边阴影和暖白大留白,通过入库门槛。
 
@@ -42,6 +42,6 @@
 
 - 模板:`STYLES.md` #18。
 - 协议登记:`PROTOCOL.md`。
-- 典型样图:`examples/18-warm-flat-storybook.png`。
+- 典型样图:[examples/18-warm-flat-storybook.png](https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/18-warm-flat-storybook.png)。
 - 单人、双人和动物泛化图只作为本目录的验证证据,不进入公开样图画廊。
 - 隐私审计:`privacy-audit.json`。

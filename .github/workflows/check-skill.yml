@@ -11,6 +11,8 @@ permissions:
 jobs:
   check:
     runs-on: ubuntu-latest
+    env:
+      HAND_DRAWN_IMAGE_CACHE: /tmp/hand-drawn-images
     strategy:
       matrix:
         python-version: ['3.10', '3.13']
@@ -19,9 +21,16 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
+      - run: python -B scripts/hosted_images.py fetch
       - run: python -B -m unittest discover -s scripts -p 'test_*.py'
+        env:
+          HAND_DRAWN_OFFLINE: '1'
       - run: python -B scripts/check_skill.py
+        env:
+          HAND_DRAWN_OFFLINE: '1'
       - run: python -B scripts/build_skill_package.py
+        env:
+          HAND_DRAWN_OFFLINE: '1'
       - uses: actions/upload-artifact@v4
         if: matrix.python-version == '3.13'
         with:

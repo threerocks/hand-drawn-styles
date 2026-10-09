@@ -8,7 +8,7 @@
 
 > 别名:`rawkid`、`kid-scrawl`、`stick-kid`、`family-crayon-card`、`parent-child-crayon`、`submission-crayon`。纯风格(可选顶部手写中文标题)。比例:不传则不注入。占位符 `【主体】【文字】` 自动推断。
 >
-> 唯一主视觉真源:`assets/style-3.1/anchor-family.png`。这张图的视觉判断优先于文字配方;文字只负责把它转译到新人物、新动作和新场景,不能另造一套更规整的审美。正式生产、连续故事或多页作品必须把它作为**纯画风参考**随每一张请求一起传入;只参考线条、五官、人物比例、蜡笔涂抹轨迹、留白和纸面,不得复制参考图中的家庭成员、站位、衣服或情节。参考图不可用时停止正式生产,不能改用业务项目自己的画风段落补救。
+> 唯一主视觉真源:[assets/style-3.1/anchor-family.png](https://gentle-starburst-99bd99.netlify.app/hand-drawn/assets/style-3.1/anchor-family.png)。这张图的视觉判断优先于文字配方;文字只负责把它转译到新人物、新动作和新场景,不能另造一套更规整的审美。正式生产、连续故事或多页作品必须把它作为**纯画风参考**随每一张请求一起传入;只参考线条、五官、人物比例、蜡笔涂抹轨迹、留白和纸面,不得复制参考图中的家庭成员、站位、衣服或情节。参考图不可用时停止正式生产,不能改用业务项目自己的画风段落补救。
 >
 > 正式合同为 `family-crayon-card-v3`:基础生成后必须依次做两轮只改蜡笔轨迹的编辑。第一轮温和打散统一纹理,第二轮只处理残余规整排线并放大粗钝笔触与大片漏白;前两阶段都不是 final。一次强修正虽然可能得到足够乱度,但实测会擅自改衣服配色或人物形态,禁止用它替代递进流程。
 >
@@ -309,7 +309,7 @@ STYLE RECIPE (follow exactly): MATTE traditional gouache finish over the whole i
 >
 > 出身:Midjourney --sref 1399033614 的 gpt-image 复刻(2026-07-16 五张对照迭代定稿,refB 终评 96+):层叠纸雕 × 斯堪的纳维亚民俗图案 × 编辑设计配色,手工、温暖、个性。适合人物立绘、民俗动物、叙事场景。
 > 命门(两轮翻车点,五条都必须写死):**① NOT flat papercut**——不写就出平面对称剪纸花边(第一版翻车原因);本风格是"立体纸雕塑的柔光渲染/实拍",不是剪纸;**②头是定格木偶式立体雕塑头**——不写死就出"平面贴片脸+画上去的三角鼻"(第二轮翻车原因):刘海是有体积的圆顶并在额头投影、鼻子是物理凸出的纸楔(一侧受光一侧投影);**③留白 + 不对称 editorial 构图**——不写死模型会把画面填满变成装饰壁纸;**④立体感三件套**:部件物理垫高 + 大而柔的真实投影 + 左上柔光 + 背景方向性明暗渐变,丢一样就"变平";**⑤脸的身份特征**:闭眼细弧线 + 圆形腮红贴片,眼睛一睁开就串味。
-> 满分打法(codex/gpt-image 通道):生成前先用 view_image 看 `examples/13-paper-folk.png` 和 `examples/13-paper-folk-musician.png` 做风格锚定(只学风格不抄构图),再走本模板——实测比纯文字模板再高一档(96+ vs ~90)。
+> 满分打法(codex/gpt-image 通道):生成前先用 view_image 看 [examples/13-paper-folk.png](https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/13-paper-folk.png) 和 [examples/13-paper-folk-musician.png](https://gentle-starburst-99bd99.netlify.app/hand-drawn/examples/13-paper-folk-musician.png) 做风格锚定(只学风格不抄构图),再走本模板——实测比纯文字模板再高一档(96+ vs ~90)。
 > 模板为已验证英文原文,占位符也填英文,不要转译。
 
 ```
@@ -444,7 +444,7 @@ AVOID: generic corporate vector clip-art, stock infographic people, mainstream r
 
 ## 19. 圆头红线极简童画(roundhead-redline)
 
-> 别名:`roundhead-redline`、`redline-roundhead`、`graphite-redline`、`圆头红线`、`黑红白圆头童画`。纯风格。比例:不传则不注入。占位符 `【主体】【文字】` 自动推断。正式生产必须附带 `assets/style-19/anchor-roundhead-redline.png`，默认无字。
+> 别名:`roundhead-redline`、`redline-roundhead`、`graphite-redline`、`圆头红线`、`黑红白圆头童画`。纯风格。比例:不传则不注入。占位符 `【主体】【文字】` 自动推断。正式生产必须附带 [assets/style-19/anchor-roundhead-redline.png](https://gentle-starburst-99bd99.netlify.app/hand-drawn/assets/style-19/anchor-roundhead-redline.png)，默认无字。
 >
 > 研发边界:本配方从五张外部动画设定参考中抽取平面结构、铅笔压力、干性颜料、限色色板和负空间机制；锚点、样图、默认人物、服装、道具和动作均为原创，不保存或分发外部参考，不复现片名、标识、固定角色、固定红白横条服装或海报排版。
 >
@@ -481,7 +481,7 @@ AVOID: any title, logo, watermark or poster layout; red-and-white striped shirt 
 
 ## 20. 暖黄墨线情绪小剧场(warm-yellow-ink-story)
 
-> 别名:`warm-yellow-ink-story`、`yellow-ink-story`、`mustard-ink-story`、`暖黄墨线`。纯风格。比例:不传则不注入。占位符 `【主体】【文字】` 自动推断。正式生产必须附带 `assets/style-20/anchor-warm-yellow-ink-story.png`，默认无字。
+> 别名:`warm-yellow-ink-story`、`yellow-ink-story`、`mustard-ink-story`、`暖黄墨线`。纯风格。比例:不传则不注入。占位符 `【主体】【文字】` 自动推断。正式生产必须附带 [assets/style-20/anchor-warm-yellow-ink-story.png](https://gentle-starburst-99bd99.netlify.app/hand-drawn/assets/style-20/anchor-warm-yellow-ink-story.png)，默认无字。
 >
 > 研发边界:本配方从十张外部参考中抽取暖白负空间、干性黑色墨线、方向性黑色排线、芥末黄、淡珊瑚腮红、紧凑形体和单动作叙事机制。原创锚点、样图、默认人物、动物和动作均为本轮新设计；不保存或分发外部参考，不复现作者名、账号、水印、固定黄兜帽角色、原作文案或原图布局。
 >

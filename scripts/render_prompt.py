@@ -12,6 +12,8 @@ import sys
 import zlib
 from pathlib import Path
 
+import hosted_images
+
 
 ROOT = Path(__file__).resolve().parents[1]
 STYLES_PATH = ROOT / "STYLES.md"
@@ -263,7 +265,7 @@ def list_styles() -> list[dict[str, object]]:
     catalog = []
     for style_id, section in sorted(load_style_sections().items(), key=lambda pair: tuple(map(int, pair[0].split(".")))):
         name = re.sub(r"^## \d+(?:\.\d+)?\.?\s+", "", section.splitlines()[0])
-        references = style_reference_paths(style_id)
+        references = style_reference_urls(style_id)
         catalog.append({
             "style_id": style_id,
             "name": name,
@@ -274,9 +276,15 @@ def list_styles() -> list[dict[str, object]]:
     return catalog
 
 
-def style_reference_paths(style_id: str) -> list[str]:
+def style_reference_urls(style_id: str) -> list[str]:
     section = load_style_sections().get(style_id, "")
-    return sorted(set(re.findall(r"`((?:assets|examples)/[^`\n]+\.(?:png|jpg|jpeg|webp))`", section)))
+    return sorted(set(re.findall(r"https://[^\s`<>\)\"']+\.(?:png|jpg|jpeg|webp)", section)))
+
+
+def hosted_image_reference(key: str) -> dict[str, str]:
+    record = hosted_images.image_record(key)
+    path = hosted_images.resolve_image(key)
+    return {"path": str(path), "url": record["url"], "sha256": record["sha256"], "role": "style-only"}
 
 
 def parse_vars(items: list[str]) -> dict[str, str]:
@@ -539,26 +547,24 @@ def build_payload(
         "inputs": {"variables": values, "aspect": aspect or None},
     }
     if style_id not in {"3.1", "19", "20"}:
-        for relative_path in style_reference_paths(style_id):
-            reference = (ROOT / relative_path).resolve()
-            if not reference.is_relative_to(ROOT.resolve()) or not reference.is_file():
-                raise ValueError(f"画风 {style_id} 参考图不可用: {relative_path}")
-            if reference.suffix.lower() == ".png":
-                png_size(reference)
+        for url in style_reference_urls(style_id):
+            reference = hosted_image_reference(hosted_images.key_for_url(url))
+            reference_path = Path(reference["path"])
+            if reference_path.suffix.lower() == ".png":
+                png_size(reference_path)
             payload["references"].append({
-                "path": str(reference),
-                "role": "style-only",
+                **reference,
                 "must_not_copy": "characters, objects, composition, or story content",
             })
         payload["references"].extend({"path": str(reference), "role": "character"} for reference in character_references)
     if style_id == "3.1":
-        anchor = ROOT / "assets/style-3.1/anchor-family.png"
+        anchor_reference = hosted_image_reference("assets/style-3.1/anchor-family.png")
+        anchor = Path(anchor_reference["path"])
         validate_style_3_1_anchor(anchor)
         payload["style_contract"] = "family-crayon-card-v3"
         references: list[dict[str, str]] = [
             {
-                "path": str(anchor),
-                "role": "style-only",
+                **anchor_reference,
                 "priority": "primary-visual-truth",
                 "required_for": "every production image",
                 "must_not_copy": "people, clothing, positions, or story content",
@@ -597,8 +603,7 @@ def build_payload(
                         },
                         {
                             "input_index": 2,
-                            "role": "style-only",
-                            "path": str(anchor),
+                            **anchor_reference,
                         },
                     ],
                     "must_preserve": (
@@ -621,8 +626,7 @@ def build_payload(
                         },
                         {
                             "input_index": 2,
-                            "role": "style-only",
-                            "path": str(anchor),
+                            **anchor_reference,
                         },
                     ],
                     "must_preserve": (
@@ -634,13 +638,13 @@ def build_payload(
             ],
         }
     elif style_id == "19":
-        anchor = ROOT / "assets/style-19/anchor-roundhead-redline.png"
+        anchor_reference = hosted_image_reference("assets/style-19/anchor-roundhead-redline.png")
+        anchor = Path(anchor_reference["path"])
         validate_style_19_anchor(anchor)
         payload["style_contract"] = "roundhead-redline-v1"
         references = [
             {
-                "path": str(anchor),
-                "role": "style-only",
+                **anchor_reference,
                 "priority": "primary-visual-truth",
                 "required_for": "every production image",
                 "must_not_copy": "people, animal, clothing, props, positions, or actions",
@@ -714,13 +718,13 @@ def build_payload(
             ],
         }
     elif style_id == "20":
-        anchor = ROOT / "assets/style-20/anchor-warm-yellow-ink-story.png"
+        anchor_reference = hosted_image_reference("assets/style-20/anchor-warm-yellow-ink-story.png")
+        anchor = Path(anchor_reference["path"])
         validate_style_20_anchor(anchor)
         payload["style_contract"] = "warm-yellow-ink-story-v3"
         references = [
             {
-                "path": str(anchor),
-                "role": "style-only",
+                **anchor_reference,
                 "priority": "primary-visual-truth",
                 "required_for": "every production image",
                 "must_not_copy": "people, animal, hair, clothing, props, positions, or actions",
@@ -896,13 +900,6 @@ def main() -> int:
         character_references = validate_character_references(args.character_reference)
         template = extract_template(style_id)
         prompt = render(template, values, args.aspect)
-        payload = build_payload(
-            style_id,
-            prompt,
-            values,
-            args.aspect,
-            character_references,
-        )
         locked_style_ids = {"3.1", "19", "20"}
         output_format = "json" if args.format == "auto" and style_id in locked_style_ids else args.format
         if output_format == "auto":
@@ -912,6 +909,7 @@ def main() -> int:
                 f"画风 {style_id} 正式生产不能只输出 prompt;请使用 --format json,"
                 "或仅在非生产预览时显式加 --text-only-preview"
             )
+        payload = build_payload(style_id, prompt, values, args.aspect, character_references) if output_format == "json" else None
     except (OSError, ValueError) as error:
         print(f"render_prompt: {error}", file=sys.stderr)
         return 2

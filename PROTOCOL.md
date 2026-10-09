@@ -47,11 +47,13 @@
 
 打开 [STYLES.md](STYLES.md),取对应编号那段完整提示词模板。
 
+图片地址与文件 SHA-256 以 `assets/image-manifest.json` 为准。渲染器按需下载、校验并缓存参考图；JSON 的 `references` 同时给出公开 `url`、文件 `sha256` 和缓存绝对 `path`。首次调用需要联网，后续可复用有效缓存。文件下载校验固定托管原件，以下像素校验继续约束画风身份；两项检查均须通过。缓存缺失或校验失败时停止需要参考图的调用。规则见 [docs/image-hosting.md](docs/image-hosting.md)。
+
 **禁止手工缩写或混配:**不得摘几句、同义改写、把多个画风揉在一起,也不得让业务项目追加第二套线条、五官、比例、填色、色板或纸面规则。运行环境能执行脚本时,优先使用 `scripts/render_prompt.py` 从 `STYLES.md` 原样提取并填充;业务项目只提供画风编号、内容、文字和比例。
 
 风格 3.1 有额外的稳定性合同:
 
-- 正式生产、连续故事和多页作品的每一张请求,都必须附带 `assets/style-3.1/anchor-family.png`,并标记为“纯画风参考”。不能只在角色卡或第一页使用一次。
+- 正式生产、连续故事和多页作品的每一张请求,都必须附带 [assets/style-3.1/anchor-family.png](https://gentle-starburst-99bd99.netlify.app/hand-drawn/assets/style-3.1/anchor-family.png),并标记为“纯画风参考”。不能只在角色卡或第一页使用一次。
 - 画风锚点只约束视觉语言,不能让模型复制其中人物、衣服、站位与情节。若还需固定角色,角色参考图作为另一份输入单独传递,不得替代画风锚点。
 - 锚点按 PNG 尺寸与解码后的像素 SHA-256 固定;EXIF、IPTC、C2PA 等元数据变化不改变画风身份,但任何实际像素变化都必须失败关闭。锚点缺失、损坏、被换图或调用端不能传参考图时,停止正式生产并明确报告“画风锚点未生效”;不得退回文字版、不得改用业务项目自定义画风块蒙混出图。
 - 需要可机读调用包时执行:`python3 scripts/render_prompt.py --style 3.1 --subject '…' --text '…' --aspect 3:4 --format json`。JSON 会给出最终 prompt、画风锚点绝对路径和参考角色。
@@ -62,7 +64,7 @@
 
 风格 19 有独立的稳定性合同:
 
-- 正式生产每张请求都必须附带 `assets/style-19/anchor-roundhead-redline.png`，并标记为 `style-only`。只继承形体、五官、动作弧线、铅笔压力、干性颜料、限色色板和负空间，不复制锚点中的人物、动物、服装、道具、站位或动作。
+- 正式生产每张请求都必须附带 [assets/style-19/anchor-roundhead-redline.png](https://gentle-starburst-99bd99.netlify.app/hand-drawn/assets/style-19/anchor-roundhead-redline.png)，并标记为 `style-only`。只继承形体、五官、动作弧线、铅笔压力、干性颜料、限色色板和负空间，不复制锚点中的人物、动物、服装、道具、站位或动作。
 - 锚点按 1024×1536 尺寸和解码像素 SHA-256 固定。锚点缺失、损坏、像素变化，或调用端不能高保真传入参考图时停止正式生产；元数据变化不改变画风身份。
 - 正式调用执行 `python3 scripts/render_prompt.py --style 19 --subject '…' --aspect 3:4 --format json`。渲染器默认填入无字指令，输出 正式调用包、固定模型快照要求、画风锚点、角色参考顺序、候选状态和拒收规则。
 - 基础生成结果只能标为 `candidate-only`。调用端必须按 `acceptance_contract` 的 7 项维度评分，并检查所有硬失败条件；只有总分至少 30/35 且无硬失败项时才能标为 final。失败图拒收，不能靠统一抖线、加粗描边或蜡笔滤镜补救。
@@ -72,7 +74,7 @@
 
 风格 20 有独立的直接生成与失败关闭验收合同:
 
-- 正式生产每张请求都必须附带 `assets/style-20/anchor-warm-yellow-ink-story.png`，并标记为 `style-only`。锚点只约束暖白负空间、紧凑形体、极简五官、干性墨线、方向性黑色排线、芥末黄、安静无纹样衣物和动作叙事，不能复制锚点中的人物、发型、衣服、道具、站位或动作。
+- 正式生产每张请求都必须附带 [assets/style-20/anchor-warm-yellow-ink-story.png](https://gentle-starburst-99bd99.netlify.app/hand-drawn/assets/style-20/anchor-warm-yellow-ink-story.png)，并标记为 `style-only`。锚点只约束暖白负空间、紧凑形体、极简五官、干性墨线、方向性黑色排线、芥末黄、安静无纹样衣物和动作叙事，不能复制锚点中的人物、发型、衣服、道具、站位或动作。
 - 锚点按 1156×1361 尺寸和解码像素 SHA-256 固定。锚点缺失、损坏、像素变化，或调用端不能高保真传入参考图时停止正式生产；元数据变化不改变画风身份。
 - 正式调用执行 `python3 scripts/render_prompt.py --style 20 --subject '…' --aspect 3:4 --format json`。渲染器默认填入无字指令，输出 正式调用包、固定模型快照要求、画风锚点、角色参考顺序、直接生成流程、最终验收流程和拒收规则。
 - 基础生成结果只能标为 `final-candidate`。不得用通用画风迁移编辑修补失败候选。失败时拒收整张图，并用同一正式调用包重新基础生成。

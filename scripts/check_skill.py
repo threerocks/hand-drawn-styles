@@ -14,6 +14,7 @@ from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
 import render_prompt
+import hosted_images
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -21,6 +22,7 @@ RUNTIME_FILES = (
     "SKILL.md", "AGENTS.md", "PROTOCOL.md", "STYLES.md", "LICENSE", "INSTALL.md",
     "scripts/render_prompt.py", "scripts/check_skill.py",
     "scripts/validate_style_20_asset.py",
+    "scripts/hosted_images.py", "assets/image-manifest.json", "docs/image-hosting.md",
 )
 DEFAULT_SCENE = (
     "SCENE: background painted with long rough vertical and diagonal dry-brush streaks "
@@ -55,13 +57,30 @@ SMOKE_PARAMETERS = {
 
 def collect_runtime_paths() -> list[str]:
     paths = set(RUNTIME_FILES)
-    for style in render_prompt.list_styles():
-        for reference in style["references"]:
-            paths.add(reference)
-            for suffix in (".privacy.json", ".provenance.json"):
-                if (ROOT / f"{reference}{suffix}").is_file():
-                    paths.add(f"{reference}{suffix}")
+    for pattern in ("*.privacy.json", "*.provenance.json"):
+        paths.update(path.relative_to(ROOT).as_posix() for path in (ROOT / "assets").rglob(pattern))
     return sorted(paths)
+
+
+def check_repository_images(root: Path) -> list[str]:
+    if not (root / ".git").exists():
+        return []
+    tracked = subprocess.run(["git", "ls-files", "-z"], cwd=root, capture_output=True, text=True, check=True).stdout.split("\0")
+    return [f"仓库禁止跟踪图片二进制，请先托管并改用链接: {name}" for name in tracked if Path(name).suffix.lower() in hosted_images.IMAGE_SUFFIXES and (root / name).is_file()]
+
+
+def check_hosted_references(root: Path, manifest: dict) -> list[str]:
+    registered_urls = {record["url"] for record in manifest["images"].values()}
+    documents = list(root.glob("*.md"))
+    for directory in ("docs", "examples", "benchmarks"):
+        documents.extend((root / directory).rglob("*.md"))
+    failures = []
+    for document in documents:
+        urls = re.findall(r"https://[^\s`<>\)\"']+\.(?:png|jpg|jpeg|webp|gif|svg|avif)", document.read_text(encoding="utf-8"))
+        for url in set(urls):
+            if url not in registered_urls and not url.startswith("https://img.shields.io/"):
+                failures.append(f"{document.relative_to(root)}: 图片链接未登记: {url}")
+    return failures
 
 
 def check_document_dependencies(root: Path) -> list[str]:
@@ -110,6 +129,7 @@ def check_package_manifest(root: Path) -> list[str]:
 
 def run_smoke_checks(root: Path) -> list[dict[str, object]]:
     checks = []
+    manifest = hosted_images.load_manifest(root / "assets/image-manifest.json")
     with tempfile.TemporaryDirectory(prefix="hand-drawn-calls-") as working_directory:
         for style in render_prompt.list_styles():
             style_id = style["style_id"]
@@ -149,10 +169,15 @@ def run_smoke_checks(root: Path) -> list[dict[str, object]]:
                     style_references = set()
                     for reference in payload["references"]:
                         reference_path = Path(reference["path"]).resolve()
-                        if not reference_path.is_relative_to(root.resolve()) or not reference_path.is_file():
-                            failure = "JSON 调用包未引用安装目录内的参考图"
+                        if not reference_path.is_file():
+                            failure = "JSON 调用包引用的缓存参考图不存在"
                         elif reference["role"] == "style-only":
-                            style_references.add(reference_path.relative_to(root.resolve()).as_posix())
+                            key = hosted_images.key_for_url(reference["url"], manifest)
+                            record = manifest["images"][key]
+                            hosted_images.verify_image_bytes(reference_path.read_bytes(), record, key)
+                            if reference["sha256"] != record["sha256"]:
+                                failure = "JSON 参考图校验值与清单不一致"
+                            style_references.add(reference["url"])
                     if style_references != set(style["references"]):
                         failure = "JSON 参考图与配方引用不一致"
                 except (ValueError, TypeError, KeyError):
@@ -167,7 +192,16 @@ def build_check_report(root: Path, *, smoke: bool = True) -> dict[str, object]:
     failures = [f"缺少运行文件: {name}" for name in collect_runtime_paths() if not (root / name).is_file()]
     failures += check_document_dependencies(root)
     failures += check_package_manifest(root)
+    failures += check_repository_images(root)
     catalog = render_prompt.list_styles()
+    try:
+        manifest = hosted_images.load_manifest(root / "assets/image-manifest.json")
+        failures += check_hosted_references(root, manifest)
+        for style in catalog:
+            for reference in style["references"]:
+                hosted_images.key_for_url(reference, manifest)
+    except (OSError, ValueError) as error:
+        failures.append(str(error))
     style_ids = {style["style_id"] for style in catalog}
     for alias, style_id in render_prompt.STYLE_ALIASES.items():
         if style_id not in style_ids or render_prompt.canonical_style_id(alias) != style_id:

@@ -5,6 +5,7 @@ from __future__ import annotations
 import hashlib
 import json
 import importlib.util
+import os
 import struct
 import subprocess
 import sys
@@ -90,6 +91,21 @@ class RenderPromptTests(unittest.TestCase):
         self.assertEqual(payload["style_id"], "3.1")
         self.assertEqual(payload["style_contract"], "family-crayon-card-v3")
         self.assertIn("assets/style-3.1/anchor-family.png", payload["references"][0]["path"])
+
+    def test_formal_json_has_public_url_and_verified_cached_reference(self) -> None:
+        result = self.run_renderer("--style", "19", "--subject", "a child holding one kite")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        reference = json.loads(result.stdout)["references"][0]
+        self.assertIn("url", reference)
+        self.assertTrue(reference["url"].startswith("https://gentle-starburst-99bd99.netlify.app/hand-drawn/"))
+        self.assertEqual(hashlib.sha256(Path(reference["path"]).read_bytes()).hexdigest(), reference["sha256"])
+
+    def test_paper_folk_plain_prompt_does_not_require_image_download(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            with patch.dict(os.environ, {"HAND_DRAWN_IMAGE_CACHE": temp_dir, "HAND_DRAWN_OFFLINE": "1"}):
+                result = self.run_renderer("--style", "paper-folk", "--subject", "a musician holding a violin", "--var", "构图=centered, waist-up", "--var", "底色=warm ochre-brown", "--var", "点缀元素=one stylized folk cloud", "--format", "text")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertTrue(result.stdout.strip())
 
     def test_style_3_1_json_contains_required_anchor(self) -> None:
         result = self.run_renderer(
@@ -296,7 +312,7 @@ class RenderPromptTests(unittest.TestCase):
         self.assertIn("逐字为“摔倒以后，妈妈先做什么？”", payload["prompt"])
 
     def test_character_reference_is_appended_after_style_anchor(self) -> None:
-        character_reference = ROOT / "assets/style-3.1/anchor-family.png"
+        character_reference = RENDER_PROMPT.hosted_images.resolve_image("assets/style-3.1/anchor-family.png")
         result = self.run_renderer(
             "--style",
             "3.1",
@@ -350,7 +366,7 @@ class RenderPromptTests(unittest.TestCase):
         )
 
     def test_style_19_character_reference_follows_style_anchor(self) -> None:
-        character_reference = ROOT / "assets/style-19/anchor-roundhead-redline.png"
+        character_reference = RENDER_PROMPT.hosted_images.resolve_image("assets/style-19/anchor-roundhead-redline.png")
         result = self.run_renderer(
             "--style",
             "19",
@@ -399,7 +415,7 @@ class RenderPromptTests(unittest.TestCase):
         self.assertIn("标题需走独立排版流程", title_result.stderr)
 
     def test_style_19_metadata_only_change_preserves_anchor_identity(self) -> None:
-        original = ROOT / "assets/style-19/anchor-roundhead-redline.png"
+        original = RENDER_PROMPT.hosted_images.resolve_image("assets/style-19/anchor-roundhead-redline.png")
         with tempfile.TemporaryDirectory() as temp_dir:
             candidate = Path(temp_dir) / "anchor.png"
             data = original.read_bytes()
@@ -418,7 +434,7 @@ class RenderPromptTests(unittest.TestCase):
             RENDER_PROMPT.validate_style_19_anchor(candidate)
 
     def test_style_19_modified_anchor_pixels_fail_closed(self) -> None:
-        original = ROOT / "assets/style-19/anchor-roundhead-redline.png"
+        original = RENDER_PROMPT.hosted_images.resolve_image("assets/style-19/anchor-roundhead-redline.png")
         with tempfile.TemporaryDirectory() as temp_dir:
             candidate = Path(temp_dir) / "anchor.png"
             data = bytearray(original.read_bytes())
@@ -469,7 +485,7 @@ class RenderPromptTests(unittest.TestCase):
         self.assertEqual(payload["acceptance_contract"]["maximum_score"], 40)
 
     def test_style_20_character_reference_follows_style_anchor(self) -> None:
-        character_reference = ROOT / "assets/style-20/anchor-warm-yellow-ink-story.png"
+        character_reference = RENDER_PROMPT.hosted_images.resolve_image("assets/style-20/anchor-warm-yellow-ink-story.png")
         result = self.run_renderer(
             "--style",
             "20",
@@ -518,7 +534,7 @@ class RenderPromptTests(unittest.TestCase):
         self.assertIn("画风 19/20 的标题需走独立排版流程", title_result.stderr)
 
     def test_style_20_metadata_only_change_preserves_anchor_identity(self) -> None:
-        original = ROOT / "assets/style-20/anchor-warm-yellow-ink-story.png"
+        original = RENDER_PROMPT.hosted_images.resolve_image("assets/style-20/anchor-warm-yellow-ink-story.png")
         with tempfile.TemporaryDirectory() as temp_dir:
             candidate = Path(temp_dir) / "anchor.png"
             data = original.read_bytes()
@@ -537,7 +553,7 @@ class RenderPromptTests(unittest.TestCase):
             RENDER_PROMPT.validate_style_20_anchor(candidate)
 
     def test_style_20_modified_anchor_pixels_fail_closed(self) -> None:
-        original = ROOT / "assets/style-20/anchor-warm-yellow-ink-story.png"
+        original = RENDER_PROMPT.hosted_images.resolve_image("assets/style-20/anchor-warm-yellow-ink-story.png")
         with tempfile.TemporaryDirectory() as temp_dir:
             candidate = Path(temp_dir) / "anchor.png"
             data = bytearray(original.read_bytes())
@@ -648,7 +664,7 @@ class RenderPromptTests(unittest.TestCase):
             self.assertTrue(any("white_ratio" in failure for failure in report["failures"]))
 
     def test_metadata_only_change_preserves_anchor_identity(self) -> None:
-        original = ROOT / "assets/style-3.1/anchor-family.png"
+        original = RENDER_PROMPT.hosted_images.resolve_image("assets/style-3.1/anchor-family.png")
         with tempfile.TemporaryDirectory() as temp_dir:
             candidate = Path(temp_dir) / "anchor.png"
             data = original.read_bytes()
@@ -667,7 +683,7 @@ class RenderPromptTests(unittest.TestCase):
             RENDER_PROMPT.validate_style_3_1_anchor(candidate)
 
     def test_modified_anchor_pixels_fail_closed(self) -> None:
-        original = ROOT / "assets/style-3.1/anchor-family.png"
+        original = RENDER_PROMPT.hosted_images.resolve_image("assets/style-3.1/anchor-family.png")
         with tempfile.TemporaryDirectory() as temp_dir:
             candidate = Path(temp_dir) / "anchor.png"
             data = bytearray(original.read_bytes())
@@ -761,8 +777,8 @@ class RenderPromptTests(unittest.TestCase):
 
     def test_missing_paper_folk_reference_is_reported(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
-            with patch.object(RENDER_PROMPT, "ROOT", Path(temp_dir)):
-                with self.assertRaisesRegex(ValueError, "参考图不可用"):
+            with patch.dict(os.environ, {"HAND_DRAWN_IMAGE_CACHE": temp_dir, "HAND_DRAWN_OFFLINE": "1"}):
+                with self.assertRaisesRegex(ValueError, "离线缓存缺少有效图片"):
                     RENDER_PROMPT.build_payload("13", "prompt", {"主体": "a musician"}, None, [])
 
     def test_missing_recipe_does_not_steal_next_style_template(self) -> None:

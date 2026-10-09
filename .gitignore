@@ -14,3 +14,13 @@ __pycache__/
 *.py[cod]
 dist/
 reports/
+
+# Images are hosted on Netlify; commit their URLs and checksums only.
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
+*.svg
+*.avif
+.cache/

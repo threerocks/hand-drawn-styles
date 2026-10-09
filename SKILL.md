@@ -16,3 +16,5 @@ description: Use when users ask for a hand-drawn or illustrated image prompt, na
 7. 其他画风默认只输出最终 prompt;风格 3.1/19/20 的纯文本只允许显式 `--text-only-preview`。不生图;仓库维护者新增或验收画风时,按 `AGENTS.md` 的维护者验证例外执行。
 
 安装方法见 [INSTALL.md](INSTALL.md)。安装后先运行 `python3 -B scripts/check_skill.py` 汇总检查文件、参考图、别名和全部画风调用；检查不生图。使用 `python3 -B scripts/render_prompt.py --list` 取得菜单与参数，保持整个安装包的目录结构。
+
+图片使用 `assets/image-manifest.json` 中的公开链接。渲染器按需下载并校验参考图，JSON 同时返回公开地址、SHA-256 和缓存绝对路径；正式调用仍须传入参考图文件。首次调用需要网络，可先运行 `python3 -B scripts/hosted_images.py fetch`。缓存和离线规则、新图片上传步骤见 [docs/image-hosting.md](docs/image-hosting.md)。不要向 Git 或安装包添加图片二进制。

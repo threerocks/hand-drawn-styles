@@ -13,6 +13,7 @@ from pathlib import Path
 
 import build_skill_package
 import check_skill
+import hosted_images
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -39,7 +40,7 @@ class InstallationTests(unittest.TestCase):
         self.assertTrue(any("examples/missing.png" in failure for failure in failures))
         self.assertTrue(any("scripts/missing.py" in failure for failure in failures))
 
-    def test_archive_excludes_development_assets_and_preserves_references(self) -> None:
+    def test_archive_excludes_image_bytes_and_preserves_reference_links(self) -> None:
         with zipfile.ZipFile(self.archive) as archive:
             names = archive.namelist()
             self.assertTrue(all(name.startswith("hand-drawn/") for name in names))
@@ -47,9 +48,12 @@ class InstallationTests(unittest.TestCase):
             self.assertFalse(any("monologue" in name or "style-21" in name for name in names))
             references = {reference for style in check_skill.render_prompt.list_styles() for reference in style["references"]}
             self.assertEqual(len(references), 5)
+            self.assertFalse(any(Path(name).suffix.lower() in hosted_images.IMAGE_SUFFIXES for name in names))
+            manifest = json.loads(archive.read("hand-drawn/assets/image-manifest.json"))
+            registered_urls = {record["url"] for record in manifest["images"].values()}
             for reference in references:
                 with self.subTest(reference=reference):
-                    self.assertEqual(archive.read(f"hand-drawn/{reference}"), (ROOT / reference).read_bytes())
+                    self.assertIn(reference, registered_urls)
             self.assertLess(self.archive.stat().st_size, build_skill_package.MAXIMUM_PACKAGE_BYTES)
 
     def test_installed_archive_exercises_all_styles_outside_checkout(self) -> None:
@@ -77,18 +81,32 @@ class InstallationTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "越界路径"):
                 build_skill_package.verify_archive(archive)
 
-    def test_installed_checker_reports_missing_reference(self) -> None:
+    def test_installed_checker_reports_unregistered_reference(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
             installation = Path(temp_dir)
             with zipfile.ZipFile(self.archive) as archive:
                 archive.extractall(installation)
             root = installation / "hand-drawn"
-            (root / "examples/13-paper-folk-musician.png").unlink()
+            manifest_path = root / "assets/image-manifest.json"
+            manifest = json.loads(manifest_path.read_text())
+            del manifest["images"]["examples/13-paper-folk-musician.png"]
+            manifest_path.write_text(json.dumps(manifest))
             completed = subprocess.run([sys.executable, "-B", str(root / "scripts/check_skill.py"), "--json"], cwd=installation, capture_output=True, text=True)
         self.assertEqual(completed.returncode, 2)
         report = json.loads(completed.stdout)
         self.assertEqual(report["smoke_checked"], 0)
         self.assertTrue(any("13-paper-folk-musician.png" in failure for failure in report["failures"]))
+
+    def test_repository_check_rejects_tracked_image_even_if_registered(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            subprocess.run(["git", "init", "-q", str(root)], check=True, capture_output=True)
+            image = root / "example.png"
+            image.write_bytes(b"binary fixture")
+            subprocess.run(["git", "-C", str(root), "add", "--", "example.png"], check=True, capture_output=True)
+            failures = check_skill.check_repository_images(root)
+        self.assertEqual(len(failures), 1)
+        self.assertIn("example.png", failures[0])
 
     def test_repeated_builds_have_identical_bytes(self) -> None:
         second = Path(self.workspace.name) / "second.zip"

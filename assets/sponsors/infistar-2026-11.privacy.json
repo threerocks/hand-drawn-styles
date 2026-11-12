@@ -1,0 +1,44 @@
+{
+  "asset": "assets/sponsors/infistar-2026-11.png",
+  "date": "2026-11-12",
+  "source": "Sponsor-provided banner supplied by repository maintainer",
+  "privacy_tool": "sweety-image-privacy",
+  "processing": [
+    "Ran skill sanitizer with exiftool",
+    "Removed all embedded metadata again to avoid attaching synthetic camera metadata to a sponsor graphic",
+    "Attempted macOS source extended attribute cleanup",
+    "Built full gallery ZIP with no extended-attribute fields or AppleDouble files"
+  ],
+  "dimensions": [
+    1600,
+    800
+  ],
+  "original_pixels_preserved": true,
+  "embedded_metadata": {
+    "exif_present": false,
+    "gps_present": false,
+    "xmp_present": false,
+    "iptc_present": false,
+    "source_fields_present": false,
+    "camera_profile_present": false
+  },
+  "local_mac_source_xattrs_remaining": [
+    "com.apple.provenance"
+  ],
+  "local_xattr_status": "com.apple.provenance persists as a system-managed local attribute; complete local xattr removal is not claimed",
+  "deployment_archive": {
+    "image_count": 78,
+    "file_count": 81,
+    "zip_extra_fields_present": false,
+    "appledouble_entries_present": false,
+    "source_xattrs_in_upload": false
+  },
+  "bytes": 378458,
+  "sha256": "aab8091c12c3dca0ae079d005c3d33aa1047afb4b6e2ce93e6b47060d9c9129f",
+  "remote_verification": {
+    "status": "pass",
+    "verified_image_count": 78,
+    "method": "Anonymous HTTP download with byte-size and SHA-256 comparison",
+    "url": "https://hand-drawn-images.pages.dev/hand-drawn/assets/sponsors/infistar-2026-11.png"
+  }
+}

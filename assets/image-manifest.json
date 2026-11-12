@@ -386,6 +386,11 @@
       "url": "https://hand-drawn-images.pages.dev/hand-drawn/examples/23-shadow-puppet.png",
       "bytes": 2364548,
       "sha256": "5dec774011cda59f8631f101eb6f2a7cf25d95ca21f6c61b626f670488137928"
+    },
+    "assets/sponsors/infistar-2026-11.png": {
+      "url": "https://hand-drawn-images.pages.dev/hand-drawn/assets/sponsors/infistar-2026-11.png",
+      "bytes": 378458,
+      "sha256": "aab8091c12c3dca0ae079d005c3d33aa1047afb4b6e2ce93e6b47060d9c9129f"
     }
   }
 }

@@ -1,14 +1,14 @@
 # hand-drawn-styles
 
-**项目赞助**
+[![hand-drawn-styles × Infistar.cc 赞助横幅](https://hand-drawn-images.pages.dev/hand-drawn/assets/sponsors/infistar-2026-11-lossless.webp)](https://infistar.ai/register?aff=HANDDRAWNSTYLES&ref_source=link)
 
-[![hand-drawn-styles × Infistar.cc 赞助横幅](https://hand-drawn-images.pages.dev/hand-drawn/assets/sponsors/infistar-2026-11.png)](https://infistar.ai/register?aff=HANDDRAWNSTYLES&ref_source=link)
+hand-drawn-styles × Infistar.cc
 
-[**hand-drawn-styles × Infistar.cc**](https://infistar.ai/register?aff=HANDDRAWNSTYLES&ref_source=link)
+低至官方 0.1 折，省 99%；Claude、GPT、Gemini、Grok、DeepSeek 等一个 Key 使用。官方渠道，模型可验真；200+ 模型、16 个品牌，文本、图片、视频一个 Key 全搞定。
 
-[低至官方 0.1 折，省 99%；Claude、GPT、Gemini、Grok、DeepSeek 等一个 Key 使用。官方渠道，模型可验真；200+ 模型、16 个品牌，文本、图片、视频一个 Key 全搞定。](https://infistar.ai/register?aff=HANDDRAWNSTYLES&ref_source=link)
+hand-drawn-styles 用户通过[专属链接](https://infistar.ai/register?aff=HANDDRAWNSTYLES&ref_source=link)注册直接送 ¥5。
 
-[hand-drawn-styles 用户通过专属链接注册直接送 ¥5。](https://infistar.ai/register?aff=HANDDRAWNSTYLES&ref_source=link)
+专属链接：[https://infistar.ai/register?aff=HANDDRAWNSTYLES&ref_source=link](https://infistar.ai/register?aff=HANDDRAWNSTYLES&ref_source=link)
 
 ---
 

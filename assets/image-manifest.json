@@ -391,6 +391,11 @@
       "url": "https://hand-drawn-images.pages.dev/hand-drawn/assets/sponsors/infistar-2026-11.png",
       "bytes": 378458,
       "sha256": "aab8091c12c3dca0ae079d005c3d33aa1047afb4b6e2ce93e6b47060d9c9129f"
+    },
+    "assets/sponsors/infistar-2026-11-lossless.webp": {
+      "url": "https://hand-drawn-images.pages.dev/hand-drawn/assets/sponsors/infistar-2026-11-lossless.webp",
+      "bytes": 194736,
+      "sha256": "23c8799a9e095c19ea85c2f9170c68748a54ac07f3016ca59fc1ba1fca9d3c9f"
     }
   }
 }
